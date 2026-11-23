@@ -1,0 +1,78 @@
+{
+  "vision-v1.4-calibrated-local": {
+    "evaluated": 100,
+    "correct": 5,
+    "accuracy_pct": 5.0,
+    "domain_scores": {
+      "mathematics": {
+        "correct": 5,
+        "total": 40
+      },
+      "programming_python": {
+        "correct": 0,
+        "total": 40
+      },
+      "programming_javascript": {
+        "correct": 0,
+        "total": 20
+      }
+    }
+  },
+  "vision-v1.4-precision-cand-e": {
+    "evaluated": 100,
+    "correct": 4,
+    "accuracy_pct": 4.0,
+    "domain_scores": {
+      "mathematics": {
+        "correct": 4,
+        "total": 40
+      },
+      "programming_python": {
+        "correct": 0,
+        "total": 40
+      },
+      "programming_javascript": {
+        "correct": 0,
+        "total": 20
+      }
+    }
+  },
+  "vision-13m-curriculum-breakthrough": {
+    "evaluated": 100,
+    "correct": 8,
+    "accuracy_pct": 8.0,
+    "domain_scores": {
+      "mathematics": {
+        "correct": 7,
+        "total": 40
+      },
+      "programming_python": {
+        "correct": 1,
+        "total": 40
+      },
+      "programming_javascript": {
+        "correct": 0,
+        "total": 20
+      }
+    }
+  },
+  "vision-100m-stage4-curated": {
+    "evaluated": 100,
+    "correct": 0,
+    "accuracy_pct": 0.0,
+    "domain_scores": {
+      "mathematics": {
+        "correct": 0,
+        "total": 40
+      },
+      "programming_python": {
+        "correct": 0,
+        "total": 40
+      },
+      "programming_javascript": {
+        "correct": 0,
+        "total": 20
+      }
+    }
+  }
+}

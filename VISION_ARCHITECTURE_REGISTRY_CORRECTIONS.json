@@ -1,0 +1,93 @@
+{
+  "audit_timestamp": "2026-11-22T16:15:00+05:30",
+  "forensic_finding": "Previous reports conflated paper theoretical architectures (d=512, L=6, vocab=20480) with actual checkpoint weights (d=320, L=8, vocab=8192 with GQA and multimodal encoders). Parameter figures 13.33M and 98.26M represent tied-embedding multimodal models.",
+  "models": {
+    "vision-13m-stage4-relational": {
+      "previously_reported": {
+        "d_model": 512,
+        "n_layers": 6,
+        "n_heads": 8,
+        "d_ff": 2048,
+        "vocab_size": 20480,
+        "total_parameters": 13330432,
+        "embedding_parameters": 10485760,
+        "non_embedding_parameters": 3095552
+      },
+      "actual_verified_architecture": {
+        "d_model": 320,
+        "n_layers": 8,
+        "n_heads": 8,
+        "n_kv_heads": 4,
+        "head_dim": 40,
+        "d_ff": 896,
+        "vocab_size": 8192,
+        "tie_word_embeddings": true,
+        "qk_norm": true,
+        "includes_vision_encoder": true,
+        "includes_audio_encoder": true,
+        "total_unique_parameters_tied": 13332498,
+        "checkpoint_state_dict_sum": 15953938,
+        "text_only_parameters_tied": 11966400,
+        "token_embedding_parameters": 2621440,
+        "text_non_embedding_parameters": 9344960,
+        "vision_encoder_parameters": 1230412,
+        "audio_encoder_parameters": 135686
+      },
+      "reconciliation_verdict": "CONFIRMED: Actual model has 8 layers of d=320 with 8192 vocab. 13.33M is the exact tied parameter count including multimodal encoders (11.97M text + 1.37M multimodal)."
+    },
+    "vision-100m-foundation": {
+      "previously_reported": {
+        "d_model": 768,
+        "n_layers": 12,
+        "n_heads": 12,
+        "d_ff": 3072,
+        "vocab_size": 32000,
+        "total_parameters": 98260000
+      },
+      "actual_verified_architecture": {
+        "d_model": 768,
+        "n_layers": 14,
+        "n_heads": 12,
+        "n_kv_heads": 4,
+        "head_dim": 64,
+        "d_ff": 2048,
+        "vocab_size": 8192,
+        "tie_word_embeddings": true,
+        "qk_norm": true,
+        "includes_vision_encoder": true,
+        "includes_audio_encoder": true,
+        "total_unique_parameters_tied": 98258258,
+        "checkpoint_state_dict_sum": 104549714,
+        "text_only_parameters_tied": 94394112,
+        "token_embedding_parameters": 6291456,
+        "text_non_embedding_parameters": 88102656,
+        "vision_encoder_parameters": 3194444,
+        "audio_encoder_parameters": 669702
+      },
+      "reconciliation_verdict": "CONFIRMED: Actual model has 14 layers of d=768 with 8192 vocab. 98.26M is the exact tied parameter count (94.39M text + 3.86M multimodal)."
+    },
+    "vision-25m-compact-foundation": {
+      "previously_reported": {
+        "total_parameters": 25000000
+      },
+      "actual_verified_architecture": {
+        "d_model": 448,
+        "n_layers": 10,
+        "n_heads": 8,
+        "n_kv_heads": 4,
+        "head_dim": 56,
+        "d_ff": 1280,
+        "vocab_size": 8192,
+        "tie_word_embeddings": true,
+        "total_unique_parameters_tied": 27759122,
+        "checkpoint_state_dict_sum": 31429138,
+        "text_only_parameters_tied": 26903744,
+        "token_embedding_parameters": 3670016,
+        "text_non_embedding_parameters": 23233728,
+        "vision_encoder_parameters": 608076,
+        "audio_encoder_parameters": 247302
+      },
+      "reconciliation_verdict": "CONFIRMED: Actual model is 27.76M tied parameters (26.90M text + 0.86M multimodal)."
+    }
+  }
+}

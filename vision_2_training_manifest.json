@@ -1,0 +1,76 @@
+{
+  "candidate_name": "vision-2.0-candidate-g",
+  "program": "VISION 2.0 Foundation Model Evolution",
+  "timestamp_iso": "2026-11-20T14:57:56.267792",
+  "status": "COMPLETED",
+  "base_checkpoint": "vision-v1.4-replay-cand-b",
+  "base_sha256": "2fee4c30f579ed1a29fae6aecb4a7ff0063df08fbe3247b5806132e7a7817261",
+  "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-2.0-candidate-g",
+  "weights_sha256": "576e21f6b49dec1088da1f96f06d9653fe576ce50f54e6ff83266ce376198039",
+  "weights_size_mb": 50.91,
+  "total_parameters": 13332498,
+  "training_telemetry": {
+    "total_steps": 160,
+    "warmup_steps": 15,
+    "peak_lr": 1e-05,
+    "min_lr": 1e-06,
+    "initial_loss": 6.7491,
+    "final_loss": 6.0668,
+    "val_loss": 6.5643,
+    "val_ppl": 709.34,
+    "wall_clock_seconds": 468.79,
+    "tokens_per_second": 109.2,
+    "total_tokens_trained": 51200,
+    "thread_allocation": 2,
+    "device": "cpu (AVX2)"
+  },
+  "compute_feasibility_analysis_section_16": {
+    "measured_cpu_throughput_tok_sec": 109.2,
+    "thread_allocation": 2,
+    "projection_table": {
+      "100K_tokens": {
+        "tokens": 100000,
+        "estimated_seconds": 915.8,
+        "estimated_minutes": 15.26,
+        "estimated_hours": 0.25,
+        "feasibility_on_local_cpu": "FEASIBLE (<30 mins)"
+      },
+      "500K_tokens": {
+        "tokens": 500000,
+        "estimated_seconds": 4578.8,
+        "estimated_minutes": 76.31,
+        "estimated_hours": 1.27,
+        "feasibility_on_local_cpu": "FEASIBLE (Overnight/Batch)"
+      },
+      "1M_tokens": {
+        "tokens": 1000000,
+        "estimated_seconds": 9157.5,
+        "estimated_minutes": 152.63,
+        "estimated_hours": 2.54,
+        "feasibility_on_local_cpu": "FEASIBLE (Overnight/Batch)"
+      },
+      "5M_tokens": {
+        "tokens": 5000000,
+        "estimated_seconds": 45787.5,
+        "estimated_minutes": 763.13,
+        "estimated_hours": 12.72,
+        "feasibility_on_local_cpu": "REQUIRES CLUSTER/ACCELERATOR"
+      },
+      "15M_tokens": {
+        "tokens": 15000000,
+        "estimated_seconds": 137362.6,
+        "estimated_minutes": 2289.38,
+        "estimated_hours": 38.16,
+        "feasibility_on_local_cpu": "REQUIRES CLUSTER/ACCELERATOR"
+      },
+      "50M_tokens": {
+        "tokens": 50000000,
+        "estimated_seconds": 457875.5,
+        "estimated_minutes": 7631.26,
+        "estimated_hours": 127.19,
+        "feasibility_on_local_cpu": "REQUIRES CLUSTER/ACCELERATOR"
+      }
+    },
+    "hardware_bottleneck_audit": "CPU instruction decode and memory bandwidth during GEMM. AVX2 SIMD utilized. Feasible for datasets <=5M tokens locally on CPU. Scaling to >=50M tokens requires GPU/TPU cluster compute."
+  }
+}

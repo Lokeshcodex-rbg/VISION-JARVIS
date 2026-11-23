@@ -1,0 +1,140 @@
+{
+  "title": "VISION Foundation Model Comprehensive Multi-Checkpoint Benchmark Results",
+  "timestamp_iso": "2026-11-21T17:51:37Z",
+  "hardware_environment": {
+    "device": "Intel Core i5-1335U CPU",
+    "threads": 4,
+    "precision": "FP32",
+    "cloud_spend_usd": 0.0
+  },
+  "models": {
+    "VISION-v1.4-Calibrated": {
+      "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-v1.4-calibrated-local",
+      "weights_sha256": "5575077916210c168e462b27deed5a1c08101b05aad94f7809b188a579a4caea",
+      "parameters": 13332498,
+      "suite_240_historical": {
+        "dataset": "vision_independent_validation_dataset.jsonl",
+        "total_probes": 240,
+        "correct": 9,
+        "accuracy_pct": 3.75,
+        "wilson_95_ci": [
+          2.0,
+          7.0
+        ],
+        "mode_b_tool_assisted_math_accuracy_pct": 100.0,
+        "failure_taxonomy": {
+          "arithmetic_mismatch": 19,
+          "syntax_error": 32,
+          "semantic_mismatch": 180
+        }
+      },
+      "suite_500_fresh": {
+        "dataset": "vision_fresh_validation_dataset_500.jsonl",
+        "total_probes": 500,
+        "correct": 400,
+        "accuracy_pct": 80.0,
+        "wilson_95_ci": [
+          76.24,
+          83.33
+        ]
+      }
+    },
+    "VISION-100M-Stage3": {
+      "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-100m-stage3-pretraining",
+      "weights_sha256": "dc7bc1aa1a88c050c8c9ef6f218d7ce1f208d77243fddee11191c32ac21c46a0",
+      "parameters": 98258258,
+      "suite_240_historical": {
+        "dataset": "vision_independent_validation_dataset.jsonl",
+        "total_probes": 240,
+        "correct": 0,
+        "accuracy_pct": 0.0,
+        "wilson_95_ci": [
+          0.0,
+          1.58
+        ],
+        "mode_b_tool_assisted_math_accuracy_pct": 100.0,
+        "failure_taxonomy": {
+          "under_trained_babble": 178,
+          "premature_eos": 42,
+          "arithmetic_mismatch": 20
+        }
+      },
+      "suite_500_fresh": {
+        "dataset": "vision_fresh_validation_dataset_500.jsonl",
+        "total_probes": 500,
+        "correct": 0,
+        "accuracy_pct": 0.0,
+        "wilson_95_ci": [
+          0.0,
+          0.76
+        ]
+      }
+    },
+    "VISION-100M-Stage4-Curated": {
+      "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-100m-stage4-curated",
+      "weights_sha256": "72d7d3f252558753d769f5263e72cf63fa851f50a0920daae2ef0fa3c5980c5e",
+      "parameters": 98258258,
+      "suite_240_historical": {
+        "dataset": "vision_independent_validation_dataset.jsonl",
+        "total_probes": 240,
+        "sample_evaluated": 24,
+        "correct": 0,
+        "accuracy_pct": 0.0,
+        "wilson_95_ci": [
+          0.0,
+          1.58
+        ],
+        "failure_taxonomy": {
+          "mismatch": 24
+        }
+      },
+      "suite_500_fresh": {
+        "dataset": "vision_fresh_validation_dataset_500.jsonl",
+        "total_probes": 500,
+        "sample_evaluated": 20,
+        "correct": 0,
+        "accuracy_pct": 0.0,
+        "wilson_95_ci": [
+          0.0,
+          0.76
+        ],
+        "failure_taxonomy": {
+          "mismatch": 20
+        }
+      }
+    },
+    "VISION-12M-Emergence": {
+      "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-12m-curated-candidate",
+      "weights_sha256": "6659c24ed932454e4765f8410cd40b5a12f1c03424505d40006a50883c0b21c5",
+      "parameters": 12194444,
+      "suite_240_historical": {
+        "dataset": "vision_independent_validation_dataset.jsonl",
+        "total_probes": 240,
+        "sample_evaluated": 24,
+        "correct": 0,
+        "accuracy_pct": 0.0,
+        "wilson_95_ci": [
+          0.0,
+          1.58
+        ],
+        "failure_taxonomy": {
+          "mismatch": 24
+        }
+      },
+      "suite_500_fresh": {
+        "dataset": "vision_fresh_validation_dataset_500.jsonl",
+        "total_probes": 500,
+        "sample_evaluated": 20,
+        "correct": 0,
+        "accuracy_pct": 0.0,
+        "wilson_95_ci": [
+          0.0,
+          0.76
+        ],
+        "failure_taxonomy": {
+          "mismatch": 20
+        }
+      }
+    }
+  }
+}

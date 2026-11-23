@@ -1,0 +1,2121 @@
+{
+  "audit_title": "VISION Stage 4 Checkpoint Forensic Reproduction",
+  "evaluator": "ml_foundation/functional_rescorer.py (strict functional & non-contradictory)",
+  "evaluation_conditions": {
+    "temperature": 0.0,
+    "repetition_penalty": 1.0,
+    "dropout_disabled": true,
+    "max_new_tokens": 48
+  },
+  "checkpoints": [
+    {
+      "name": "vision-pretraining-validation-13m (Step 0 Baseline)",
+      "step": 0,
+      "weights_path": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-pretraining-validation-13m\\weights.pt",
+      "generalization_suite_100": {
+        "total_probes": 100,
+        "syntax_passed_probes": 72,
+        "syntax_accuracy_pct": 72.0,
+        "functional_passed_probes": 0,
+        "functional_accuracy_pct": 0.0,
+        "category_breakdown": {
+          "memorization_subset": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "new_numerical_values": {
+            "total": 10,
+            "syntax_pass": 1,
+            "functional_pass": 0
+          },
+          "unseen_operation_combinations": {
+            "total": 10,
+            "syntax_pass": 1,
+            "functional_pass": 0
+          },
+          "new_word_problems": {
+            "total": 10,
+            "syntax_pass": 0,
+            "functional_pass": 0
+          },
+          "new_python_functions": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "unseen_java_javascript": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "hindi_hinglish_generation": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "reading_comprehension": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "multi_turn_context": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "instruction_following": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          }
+        },
+        "passes": [],
+        "sample_failures": [
+          {
+            "id": "GEN-01-MEM-01",
+            "category": "memorization_subset",
+            "prompt": "Write a Python function `parse_json_str` that takes a JSON string and returns the corresponding Python data structure. If the input is not a valid JSON string, raise a `ValueError` exception with the message \"Invalid JSON string\".",
+            "expected": "Here's an example implementation using the `json` module:\n\n```python\nimport json\n\ndef parse_json_str(json_str):\n    try:\n        return json.loads(json_str)\n    except json.JSONDecodeError:\n        raise ValueError('Invalid JSON string')\n```\n\nThis function uses the `loads()` method from the `json` module to parse the JSON string and convert it into a Python data structure. It uses a `try-except` block to handle the `JSONDecodeError`, which is raised when the input is not a valid JSON string. The function raises a custom `ValueError` with a message indicating that the input JSON string is invalid.",
+            "generated": "The function should be a function that the function that the function that the function that the function that the function that the function that the function that the function that the function that the number of the number of the number of the number of the number",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Here's an example implementation using the `json` module:\n\n```python\nimport json\n\ndef parse_json_str(json_str):\n    try:\n        return json.loads(json_str)\n    except json.JSONDecodeError:\n        raise ValueError('Invalid JSON string')\n```\n\nThis function uses the `loads()` method from the `json` module to parse the JSON string and convert it into a Python data structure. It uses a `try-except` block to handle the `JSONDecodeError`, which is raised when the input is not a valid JSON string. The function raises a custom `ValueError` with a message indicating that the input JSON string is invalid., got The function should be a function that the function that the)"
+          },
+          {
+            "id": "GEN-01-MEM-02",
+            "category": "memorization_subset",
+            "prompt": "Janine read 5 books last month. This month, she read twice as many books. If each book has 10 pages, how many pages did Janine read in two months?",
+            "expected": "Janine read 5 x 2 = 10 books this month.\nSo, she read a total of 5 + 10 = 15 books.\nTherefore, she read 15 x 10 = 150 pages in all.\n#### 150",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Janine read 5 x 2 = 10 books this month.\nSo, she read a total of 5 + 10 = 15 books.\nTherefore, she read 15 x 10 = 150 pages in all.\n#### 150, got To find the number of the number of the number of the number)"
+          },
+          {
+            "id": "GEN-01-MEM-03",
+            "category": "memorization_subset",
+            "prompt": "Translate the following from Hinglish into English.\nMonday ko dinner ka reminder update kare.",
+            "expected": "Update the dinner reminder to Monday.",
+            "generated": "The correct answer is 1.\n\nThe correct answer is 1.\n\nThe equation of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Update the dinner reminder to Monday., got The correct answer is 1.\n\nThe correct answer is 1.\n\nThe equa)"
+          },
+          {
+            "id": "GEN-01-MEM-04",
+            "category": "memorization_subset",
+            "prompt": "Brad\u2019s zip code consists of five numbers that add up to 10. The first and second numbers are the same. The third number is zero. The fourth number is double the first number. The fourth and fifth numbers add up to 8. What is Brad\u2019s zip code?",
+            "expected": "The five numbers add up to 10, so the first three numbers add up to 10 - 8 = 2.\nThe third number is 0, so the first two numbers add up to 2 - 0 = 2.\nThe first and second numbers are equal, so they are both 2 / 2 = 1.\nThe fourth number is double the first number, so it is 2 * 1 = 2.\nThe fifth number is 8 - 2 = 6.\nThus, Brad\u2019s zip code is 11026.\n#### 11026",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected The five numbers add up to 10, so the first three numbers add up to 10 - 8 = 2.\nThe third number is 0, so the first two numbers add up to 2 - 0 = 2.\nThe first and second numbers are equal, so they are both 2 / 2 = 1.\nThe fourth number is double the first number, so it is 2 * 1 = 2.\nThe fifth number is 8 - 2 = 6.\nThus, Brad\u2019s zip code is 11026.\n#### 11026, got To find the number of the number of the number of the number)"
+          },
+          {
+            "id": "GEN-01-MEM-05",
+            "category": "memorization_subset",
+            "prompt": "Hinglish se English mein translate kare.\nplace hearts ki queen ke bagal men place hearts ke king ko rakhen",
+            "expected": "Place the king of hearts next to the queen of hearts.",
+            "generated": "The correct answer is 1000000000000000000000000000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Place the king of hearts next to the queen of hearts., got The correct answer is 10000000000000000000000000000000000000)"
+          },
+          {
+            "id": "GEN-01-MEM-06",
+            "category": "memorization_subset",
+            "prompt": "Design a Python function to sort a list of tuples by their second element in descending order. The first element of each tuple is a string, and the second element is an integer.\n\nFor example, if the input list is [('a', 1), ('b', 2), ('c', 1)], the function should return [('b', 2), ('a', 1), ('c', 1)].",
+            "expected": "To sort a list of tuples by their second element in descending order, we'll use the `sorted` function in Python. The `sorted` function takes a sequence and a `key` parameter that specifies how to extract the key to sort by. We can define a `key` function that returns the second element of each tuple and use it as the `key` parameter in `sorted`.\n\nHere's an example implementation:\n\n```python\ndef sort_by_second_element(tuples):\n    return sorted(tuples, key=lambda x: x[1], reverse=True)\n```",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected To sort a list of tuples by their second element in descending order, we'll use the `sorted` function in Python. The `sorted` function takes a sequence and a `key` parameter that specifies how to extract the key to sort by. We can define a `key` function that returns the second element of each tuple and use it as the `key` parameter in `sorted`.\n\nHere's an example implementation:\n\n```python\ndef sort_by_second_element(tuples):\n    return sorted(tuples, key=lambda x: x[1], reverse=True)\n```, got To find the number of the number of the number of the number)"
+          },
+          {
+            "id": "GEN-01-MEM-07",
+            "category": "memorization_subset",
+            "prompt": "Come up with a haiku that can double as a chocolate chip recipe. Pehle English mein likhna, phir Hindi mein translate karna.",
+            "expected": "Cream, sugar, butter\nChips, flour, and some eggs mixed in\nBake till a gold brown\nTranslation of the above into Hindi:\n\u0915\u094d\u0930\u0940\u092e, \u091a\u0940\u0928\u0940, \u092e\u0915\u094d\u0916\u0928 \u091a\u093f\u092a\u094d\u0938, \u0906\u091f\u093e \u0914\u0930 \u0915\u0941\u091b \u0905\u0902\u0921\u0947 \u092e\u093f\u0932\u093e\u0915\u0930 \u0938\u0941\u0928\u0939\u0930\u093e \u092d\u0942\u0930\u093e \u0939\u094b\u0928\u0947 \u0924\u0915 \u092c\u0947\u0915 \u0915\u0930\u0947\u0902\u0964",
+            "generated": "The function is a function that the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Cream, sugar, butter\nChips, flour, and some eggs mixed in\nBake till a gold brown\nTranslation of the above into Hindi:\n\u0915\u094d\u0930\u0940\u092e, \u091a\u0940\u0928\u0940, \u092e\u0915\u094d\u0916\u0928 \u091a\u093f\u092a\u094d\u0938, \u0906\u091f\u093e \u0914\u0930 \u0915\u0941\u091b \u0905\u0902\u0921\u0947 \u092e\u093f\u0932\u093e\u0915\u0930 \u0938\u0941\u0928\u0939\u0930\u093e \u092d\u0942\u0930\u093e \u0939\u094b\u0928\u0947 \u0924\u0915 \u092c\u0947\u0915 \u0915\u0930\u0947\u0902\u0964, got The function is a function that the number of the number of )"
+          },
+          {
+            "id": "GEN-01-MEM-08",
+            "category": "memorization_subset",
+            "prompt": "There is a rectangle that is 4 inches wide. If the rectangle's perimeter is 30 inches, what is the area of the rectangle?",
+            "expected": "Twice the height of the rectangle is 30 inches - 2 * 4 inches = 22 inches.\nThe rectangle's height is 22 inches / 2 = 11 inches.\nThe area of the rectangle is 4 inches * 11 inches = 44 square inches.\n#### 44",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Twice the height of the rectangle is 30 inches - 2 * 4 inches = 22 inches.\nThe rectangle's height is 22 inches / 2 = 11 inches.\nThe area of the rectangle is 4 inches * 11 inches = 44 square inches.\n#### 44, got To find the number of the number of the number of the number)"
+          },
+          {
+            "id": "GEN-01-MEM-09",
+            "category": "memorization_subset",
+            "prompt": "A rectangle has a length of 6 meters and a width of 4 meters. Calculate its perimeter in meters.",
+            "expected": "Perimeter = 2 * (length + width) = 2 * (6 + 4) = 2 * 10 = 20.\nThe answer is 20.",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Perimeter = 2 * (length + width) = 2 * (6 + 4) = 2 * 10 = 20.\nThe answer is 20., got To find the number of the number of the number of the number)"
+          },
+          {
+            "id": "GEN-01-MEM-10",
+            "category": "memorization_subset",
+            "prompt": "\u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0928\u0938\u094d\u0932 \u0915\u094c\u0928 \u0938\u0940 \u0939\u0948? \u0915\u094d\u092f\u093e \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u093e \u091c\u0940\u0935\u0928\u0915\u093e\u0932 \u091b\u094b\u091f\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0938\u0947 \u092d\u093f\u0928\u094d\u0928 \u0939\u094b\u0924\u093e \u0939\u0948?",
+            "expected": "\u0905\u0902\u0917\u094d\u0930\u0947\u091c\u0940 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0926\u0941\u0928\u093f\u092f\u093e \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u0928\u0938\u094d\u0932 \u0939\u0948\u0964 \u0917\u093f\u0928\u0940\u091c \u0935\u0930\u094d\u0932\u094d\u0921 \u092c\u0941\u0915 \u0911\u092b \u0930\u093f\u0915\u0949\u0930\u094d\u0921\u094d\u0938 \u0915\u0947 \u0905\u0928\u0941\u0938\u093e\u0930, 1981 \u092e\u0947\u0902 \u091c\u093c\u094b\u0930\u092c\u093e \u0928\u093e\u092e \u0915\u093e \u090f\u0915 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0925\u093e \u091c\u094b \u092c\u0922\u093c\u0915\u0930 142 \u0924\u0915 \u092a\u0939\u0941\u0902\u091a \u0917\u092f\u093e\u0964 7 \u0915\u093f\u0917\u094d\u0930\u093e, \u092f\u093e 314 6 \u092a\u093e\u0909\u0902\u0921\u0964 \u0914\u0938\u0924\u0928, \u090f\u0915 \u091b\u094b\u091f\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u093e \u091c\u0940\u0935\u0928\u0915\u093e\u0932 12-15 \u0935\u0930\u094d\u0937 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0930\u0942\u092a \u0938\u0947 7-10 \u0935\u0930\u094d\u0937\u094b\u0902 \u092e\u0947\u0902 \u090f\u0915 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u091c\u0940\u0935\u0928 \u092a\u094d\u0930\u0924\u094d\u092f\u093e\u0936\u093e \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u092f\u093e \u0938\u0947\u0902\u091f \u092c\u0930\u094d\u0928\u093e\u0930\u094d\u0921 \u091c\u0948\u0938\u0940 \u0935\u093f\u0936\u093e\u0932 \u0928\u0938\u094d\u0932\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f, \u091c\u0940\u0935\u0928\u0915\u093e\u0932 \u0915\u0947\u0935\u0932 5 \u0938\u0947 8 \u0935\u0930\u094d\u0937 \u0939\u0948\u0964 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u092c\u0939\u0941\u0924 \u091c\u0932\u094d\u0926\u0940 \u092c\u0922\u093c\u0924\u0947 \u0939\u0948\u0902\u0964 \u0935\u0948\u091c\u094d\u091e\u093e\u0928\u093f\u0915\u094b\u0902 \u0915\u093e \u092e\u093e\u0928\u0928\u093e \u0939\u0948 \u0915\u093f \u092e\u0941\u0915\u094d\u0924 \u0915\u091f\u094d\u091f\u0930\u092a\u0902\u0925\u0940 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u092e\u0947\u0902 \u0935\u0943\u0926\u094d\u0927\u093f \u0915\u0947 \u0905\u0932\u093e\u0935\u093e \u0907\u0938 \u0924\u094d\u0935\u0930\u093f\u0924 \u0935\u093f\u0915\u093e\u0938 \u0915\u0947 \u0915\u093e\u0930\u0923 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u092e \u0909\u092e\u094d\u0930 \u092e\u0947\u0902 \u092e\u0930 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964",
+            "generated": "The correct answer is 1000000000000000000000000000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected \u0905\u0902\u0917\u094d\u0930\u0947\u091c\u0940 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0926\u0941\u0928\u093f\u092f\u093e \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u0928\u0938\u094d\u0932 \u0939\u0948\u0964 \u0917\u093f\u0928\u0940\u091c \u0935\u0930\u094d\u0932\u094d\u0921 \u092c\u0941\u0915 \u0911\u092b \u0930\u093f\u0915\u0949\u0930\u094d\u0921\u094d\u0938 \u0915\u0947 \u0905\u0928\u0941\u0938\u093e\u0930, 1981 \u092e\u0947\u0902 \u091c\u093c\u094b\u0930\u092c\u093e \u0928\u093e\u092e \u0915\u093e \u090f\u0915 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0925\u093e \u091c\u094b \u092c\u0922\u093c\u0915\u0930 142 \u0924\u0915 \u092a\u0939\u0941\u0902\u091a \u0917\u092f\u093e\u0964 7 \u0915\u093f\u0917\u094d\u0930\u093e, \u092f\u093e 314 6 \u092a\u093e\u0909\u0902\u0921\u0964 \u0914\u0938\u0924\u0928, \u090f\u0915 \u091b\u094b\u091f\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u093e \u091c\u0940\u0935\u0928\u0915\u093e\u0932 12-15 \u0935\u0930\u094d\u0937 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0930\u0942\u092a \u0938\u0947 7-10 \u0935\u0930\u094d\u0937\u094b\u0902 \u092e\u0947\u0902 \u090f\u0915 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u091c\u0940\u0935\u0928 \u092a\u094d\u0930\u0924\u094d\u092f\u093e\u0936\u093e \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u092f\u093e \u0938\u0947\u0902\u091f \u092c\u0930\u094d\u0928\u093e\u0930\u094d\u0921 \u091c\u0948\u0938\u0940 \u0935\u093f\u0936\u093e\u0932 \u0928\u0938\u094d\u0932\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f, \u091c\u0940\u0935\u0928\u0915\u093e\u0932 \u0915\u0947\u0935\u0932 5 \u0938\u0947 8 \u0935\u0930\u094d\u0937 \u0939\u0948\u0964 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u092c\u0939\u0941\u0924 \u091c\u0932\u094d\u0926\u0940 \u092c\u0922\u093c\u0924\u0947 \u0939\u0948\u0902\u0964 \u0935\u0948\u091c\u094d\u091e\u093e\u0928\u093f\u0915\u094b\u0902 \u0915\u093e \u092e\u093e\u0928\u0928\u093e \u0939\u0948 \u0915\u093f \u092e\u0941\u0915\u094d\u0924 \u0915\u091f\u094d\u091f\u0930\u092a\u0902\u0925\u0940 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u092e\u0947\u0902 \u0935\u0943\u0926\u094d\u0927\u093f \u0915\u0947 \u0905\u0932\u093e\u0935\u093e \u0907\u0938 \u0924\u094d\u0935\u0930\u093f\u0924 \u0935\u093f\u0915\u093e\u0938 \u0915\u0947 \u0915\u093e\u0930\u0923 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u092e \u0909\u092e\u094d\u0930 \u092e\u0947\u0902 \u092e\u0930 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964, got The correct answer is 10000000000000000000000000000000000000)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-01",
+            "category": "new_numerical_values",
+            "prompt": "Compute the exact value of (128 + 256) - 114.",
+            "expected": "270",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "GEN-02-NUMVAL-02",
+            "category": "new_numerical_values",
+            "prompt": "Compute the exact value of (315 + 420) - 215.",
+            "expected": "520",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "GEN-02-NUMVAL-03",
+            "category": "new_numerical_values",
+            "prompt": "Calculate 35% of 600.",
+            "expected": "210",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "GEN-02-NUMVAL-04",
+            "category": "new_numerical_values",
+            "prompt": "What is 3/8 of 240?",
+            "expected": "90",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "GEN-02-NUMVAL-05",
+            "category": "new_numerical_values",
+            "prompt": "Solve for x: 7x + 14 = 77.",
+            "expected": "9",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          }
+        ]
+      },
+      "private_eval_suite_100": {
+        "total_probes": 100,
+        "syntax_passed_probes": 90,
+        "syntax_accuracy_pct": 90.0,
+        "functional_passed_probes": 0,
+        "functional_accuracy_pct": 0.0,
+        "category_breakdown": {
+          "private_mathematics": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_word_problems": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_python_functions": {
+            "total": 10,
+            "syntax_pass": 0,
+            "functional_pass": 0
+          },
+          "private_polyglot": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_hindi_hinglish": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_reading_comprehension": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_multiturn": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_instruction_following": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_formal_logic": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_science": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          }
+        },
+        "passes": [],
+        "sample_failures": [
+          {
+            "id": "PRIV-01-MATH-01",
+            "category": "private_mathematics",
+            "prompt": "Compute: (240 + 360) - 180.",
+            "expected": "420",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-01-MATH-02",
+            "category": "private_mathematics",
+            "prompt": "Compute: (550 - 225) + 175.",
+            "expected": "500",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-01-MATH-03",
+            "category": "private_mathematics",
+            "prompt": "Calculate 45% of 800.",
+            "expected": "360",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-01-MATH-04",
+            "category": "private_mathematics",
+            "prompt": "What is 5/6 of 180?",
+            "expected": "150",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-01-MATH-05",
+            "category": "private_mathematics",
+            "prompt": "Calculate 15% of 600, then add 50.",
+            "expected": "140",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-01-MATH-06",
+            "category": "private_mathematics",
+            "prompt": "Solve for x: 8x + 24 = 88.",
+            "expected": "8",
+            "generated": "To find the equation:\n\n1.\n1.\n\n1.10\n\n10\n\n10\n100000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "100000000000000000000",
+            "reason": "NUMERICAL_MISMATCH (Expected 8, Extracted 100000000000000000000)"
+          },
+          {
+            "id": "PRIV-01-MATH-07",
+            "category": "private_mathematics",
+            "prompt": "Solve for x: 6x - 18 = 42.",
+            "expected": "10",
+            "generated": "To find the equation:\n\n1.\n1.1.10\n\n10\n10\n\n10\n10000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10000000000000000000",
+            "reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 10000000000000000000)"
+          },
+          {
+            "id": "PRIV-01-MATH-08",
+            "category": "private_mathematics",
+            "prompt": "Find the next term in the sequence: 12, 19, 26, 33, ...",
+            "expected": "40",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-01-MATH-09",
+            "category": "private_mathematics",
+            "prompt": "Evaluate: ((20 + 30) * 4) - 75.",
+            "expected": "125",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-01-MATH-10",
+            "category": "private_mathematics",
+            "prompt": "Divide 280 by 7, then multiply by 3.",
+            "expected": "120",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-02-WORD-01",
+            "category": "private_word_problems",
+            "prompt": "A cyclist rides at 25 km/h for 3 hours. What is the total distance traveled in km?",
+            "expected": "75",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-02-WORD-02",
+            "category": "private_word_problems",
+            "prompt": "A warehouse has 320 boxes. 140 boxes are shipped out, and 80 new boxes arrive. How many boxes remain?",
+            "expected": "260",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-02-WORD-03",
+            "category": "private_word_problems",
+            "prompt": "A farmer packs 120 eggs into cartons of 12 eggs each. How many full cartons are packed?",
+            "expected": "10",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-02-WORD-04",
+            "category": "private_word_problems",
+            "prompt": "A rectangular field is 30 meters long and 15 meters wide. Calculate its perimeter in meters.",
+            "expected": "90",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "PRIV-02-WORD-05",
+            "category": "private_word_problems",
+            "prompt": "A rectangular garden has length 20 meters and width 10 meters. What is its area in square meters?",
+            "expected": "200",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          }
+        ]
+      },
+      "transfer_suite_200": {
+        "total_probes": 200,
+        "syntax_passed_probes": 168,
+        "syntax_accuracy_pct": 84.0,
+        "functional_passed_probes": 0,
+        "functional_accuracy_pct": 0.0,
+        "category_breakdown": {
+          "mathematics": {
+            "total": 40,
+            "syntax_pass": 8,
+            "functional_pass": 0
+          },
+          "programming_python": {
+            "total": 40,
+            "syntax_pass": 40,
+            "functional_pass": 0
+          },
+          "formal_reasoning": {
+            "total": 30,
+            "syntax_pass": 30,
+            "functional_pass": 0
+          },
+          "science_engineering": {
+            "total": 30,
+            "syntax_pass": 30,
+            "functional_pass": 0
+          },
+          "hindi_comprehension": {
+            "total": 20,
+            "syntax_pass": 20,
+            "functional_pass": 0
+          },
+          "hinglish_dialogue": {
+            "total": 20,
+            "syntax_pass": 20,
+            "functional_pass": 0
+          },
+          "instruction_following": {
+            "total": 20,
+            "syntax_pass": 20,
+            "functional_pass": 0
+          }
+        },
+        "passes": [],
+        "sample_failures": [
+          {
+            "id": "TRF-0001",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0002",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0003",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0004",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0005",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "To find the equation:\n\n1.\n#x = 12x = 12\n\n#\n#\n#\n#x = 12x = 12x = 12\n\n#",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0006",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0007",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0008",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0009",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0010",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0011",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (47 + 40) - 2.",
+            "expected": "85",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0012",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (51 + 43) - 7.",
+            "expected": "87",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0013",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (55 + 46) - 12.",
+            "expected": "89",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0014",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (59 + 49) - 6.",
+            "expected": "102",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          },
+          {
+            "id": "TRF-0015",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (63 + 52) - 11.",
+            "expected": "104",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "syntax_passed": false,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "NO_MATHEMATICAL_ANSWER_DECLARED"
+          }
+        ]
+      },
+      "elapsed_time_s": 166.98
+    },
+    {
+      "name": "vision-13m-stage4-relational-step100 (Step 100 Midpoint)",
+      "step": 100,
+      "weights_path": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-13m-stage4-relational\\step_100\\weights.pt",
+      "generalization_suite_100": {
+        "total_probes": 100,
+        "syntax_passed_probes": 89,
+        "syntax_accuracy_pct": 89.0,
+        "functional_passed_probes": 0,
+        "functional_accuracy_pct": 0.0,
+        "category_breakdown": {
+          "memorization_subset": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "new_numerical_values": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "unseen_operation_combinations": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "new_word_problems": {
+            "total": 10,
+            "syntax_pass": 7,
+            "functional_pass": 0
+          },
+          "new_python_functions": {
+            "total": 10,
+            "syntax_pass": 2,
+            "functional_pass": 0
+          },
+          "unseen_java_javascript": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "hindi_hinglish_generation": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "reading_comprehension": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "multi_turn_context": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "instruction_following": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          }
+        },
+        "passes": [],
+        "sample_failures": [
+          {
+            "id": "GEN-01-MEM-01",
+            "category": "memorization_subset",
+            "prompt": "Write a Python function `parse_json_str` that takes a JSON string and returns the corresponding Python data structure. If the input is not a valid JSON string, raise a `ValueError` exception with the message \"Invalid JSON string\".",
+            "expected": "Here's an example implementation using the `json` module:\n\n```python\nimport json\n\ndef parse_json_str(json_str):\n    try:\n        return json.loads(json_str)\n    except json.JSONDecodeError:\n        raise ValueError('Invalid JSON string')\n```\n\nThis function uses the `loads()` method from the `json` module to parse the JSON string and convert it into a Python data structure. It uses a `try-except` block to handle the `JSONDecodeError`, which is raised when the input is not a valid JSON string. The function raises a custom `ValueError` with a message indicating that the input JSON string is invalid.",
+            "generated": "Here's how you can use the `f` function:\n\n```python\ndefpython\ndefpython\ndefpython\ndefpython\ndefpython\ndefpython\ndefpython\ndefdefdef\n    return(f(f):",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Here's an example implementation using the `json` module:\n\n```python\nimport json\n\ndef parse_json_str(json_str):\n    try:\n        return json.loads(json_str)\n    except json.JSONDecodeError:\n        raise ValueError('Invalid JSON string')\n```\n\nThis function uses the `loads()` method from the `json` module to parse the JSON string and convert it into a Python data structure. It uses a `try-except` block to handle the `JSONDecodeError`, which is raised when the input is not a valid JSON string. The function raises a custom `ValueError` with a message indicating that the input JSON string is invalid., got Here's how you can use the `f` function:\n\n```python\ndefpytho)"
+          },
+          {
+            "id": "GEN-01-MEM-02",
+            "category": "memorization_subset",
+            "prompt": "Janine read 5 books last month. This month, she read twice as many books. If each book has 10 pages, how many pages did Janine read in two months?",
+            "expected": "Janine read 5 x 2 = 10 books this month.\nSo, she read a total of 5 + 10 = 15 books.\nTherefore, she read 15 x 10 = 150 pages in all.\n#### 150",
+            "generated": "The total of 10000000000000000000000000000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Janine read 5 x 2 = 10 books this month.\nSo, she read a total of 5 + 10 = 15 books.\nTherefore, she read 15 x 10 = 150 pages in all.\n#### 150, got The total of 10000000000000000000000000000000000000000000)"
+          },
+          {
+            "id": "GEN-01-MEM-03",
+            "category": "memorization_subset",
+            "prompt": "Translate the following from Hinglish into English.\nMonday ko dinner ka reminder update kare.",
+            "expected": "Update the dinner reminder to Monday.",
+            "generated": "The correct choice is (1.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Update the dinner reminder to Monday., got The correct choice is (1.)"
+          },
+          {
+            "id": "GEN-01-MEM-04",
+            "category": "memorization_subset",
+            "prompt": "Brad\u2019s zip code consists of five numbers that add up to 10. The first and second numbers are the same. The third number is zero. The fourth number is double the first number. The fourth and fifth numbers add up to 8. What is Brad\u2019s zip code?",
+            "expected": "The five numbers add up to 10, so the first three numbers add up to 10 - 8 = 2.\nThe third number is 0, so the first two numbers add up to 2 - 0 = 2.\nThe first and second numbers are equal, so they are both 2 / 2 = 1.\nThe fourth number is double the first number, so it is 2 * 1 = 2.\nThe fifth number is 8 - 2 = 6.\nThus, Brad\u2019s zip code is 11026.\n#### 11026",
+            "generated": "The total number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected The five numbers add up to 10, so the first three numbers add up to 10 - 8 = 2.\nThe third number is 0, so the first two numbers add up to 2 - 0 = 2.\nThe first and second numbers are equal, so they are both 2 / 2 = 1.\nThe fourth number is double the first number, so it is 2 * 1 = 2.\nThe fifth number is 8 - 2 = 6.\nThus, Brad\u2019s zip code is 11026.\n#### 11026, got The total number of the number of the number of the number o)"
+          },
+          {
+            "id": "GEN-01-MEM-05",
+            "category": "memorization_subset",
+            "prompt": "Hinglish se English mein translate kare.\nplace hearts ki queen ke bagal men place hearts ke king ko rakhen",
+            "expected": "Place the king of hearts next to the queen of hearts.",
+            "generated": "The correct choice is (2 + 2) = 100.\nThe correct choice is 100 = 10.\nThe answer is 1000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Place the king of hearts next to the queen of hearts., got The correct choice is (2 + 2) = 100.\nThe correct choice is 1)"
+          },
+          {
+            "id": "GEN-01-MEM-06",
+            "category": "memorization_subset",
+            "prompt": "Design a Python function to sort a list of tuples by their second element in descending order. The first element of each tuple is a string, and the second element is an integer.\n\nFor example, if the input list is [('a', 1), ('b', 2), ('c', 1)], the function should return [('b', 2), ('a', 1), ('c', 1)].",
+            "expected": "To sort a list of tuples by their second element in descending order, we'll use the `sorted` function in Python. The `sorted` function takes a sequence and a `key` parameter that specifies how to extract the key to sort by. We can define a `key` function that returns the second element of each tuple and use it as the `key` parameter in `sorted`.\n\nHere's an example implementation:\n\n```python\ndef sort_by_second_element(tuples):\n    return sorted(tuples, key=lambda x: x[1], reverse=True)\n```",
+            "generated": "The function that is 1.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected To sort a list of tuples by their second element in descending order, we'll use the `sorted` function in Python. The `sorted` function takes a sequence and a `key` parameter that specifies how to extract the key to sort by. We can define a `key` function that returns the second element of each tuple and use it as the `key` parameter in `sorted`.\n\nHere's an example implementation:\n\n```python\ndef sort_by_second_element(tuples):\n    return sorted(tuples, key=lambda x: x[1], reverse=True)\n```, got The function that is 1.)"
+          },
+          {
+            "id": "GEN-01-MEM-07",
+            "category": "memorization_subset",
+            "prompt": "Come up with a haiku that can double as a chocolate chip recipe. Pehle English mein likhna, phir Hindi mein translate karna.",
+            "expected": "Cream, sugar, butter\nChips, flour, and some eggs mixed in\nBake till a gold brown\nTranslation of the above into Hindi:\n\u0915\u094d\u0930\u0940\u092e, \u091a\u0940\u0928\u0940, \u092e\u0915\u094d\u0916\u0928 \u091a\u093f\u092a\u094d\u0938, \u0906\u091f\u093e \u0914\u0930 \u0915\u0941\u091b \u0905\u0902\u0921\u0947 \u092e\u093f\u0932\u093e\u0915\u0930 \u0938\u0941\u0928\u0939\u0930\u093e \u092d\u0942\u0930\u093e \u0939\u094b\u0928\u0947 \u0924\u0915 \u092c\u0947\u0915 \u0915\u0930\u0947\u0902\u0964",
+            "generated": "The correct choice is (a, and the `a` function that takes a list of the `a` function to the `a` function to the `a` function to the `a` function to the `a` function to",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Cream, sugar, butter\nChips, flour, and some eggs mixed in\nBake till a gold brown\nTranslation of the above into Hindi:\n\u0915\u094d\u0930\u0940\u092e, \u091a\u0940\u0928\u0940, \u092e\u0915\u094d\u0916\u0928 \u091a\u093f\u092a\u094d\u0938, \u0906\u091f\u093e \u0914\u0930 \u0915\u0941\u091b \u0905\u0902\u0921\u0947 \u092e\u093f\u0932\u093e\u0915\u0930 \u0938\u0941\u0928\u0939\u0930\u093e \u092d\u0942\u0930\u093e \u0939\u094b\u0928\u0947 \u0924\u0915 \u092c\u0947\u0915 \u0915\u0930\u0947\u0902\u0964, got The correct choice is (a, and the `a` function that takes a )"
+          },
+          {
+            "id": "GEN-01-MEM-08",
+            "category": "memorization_subset",
+            "prompt": "There is a rectangle that is 4 inches wide. If the rectangle's perimeter is 30 inches, what is the area of the rectangle?",
+            "expected": "Twice the height of the rectangle is 30 inches - 2 * 4 inches = 22 inches.\nThe rectangle's height is 22 inches / 2 = 11 inches.\nThe area of the rectangle is 4 inches * 11 inches = 44 square inches.\n#### 44",
+            "generated": "The correct choice is (20) = 10) / 10 = 10.\nThe answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Twice the height of the rectangle is 30 inches - 2 * 4 inches = 22 inches.\nThe rectangle's height is 22 inches / 2 = 11 inches.\nThe area of the rectangle is 4 inches * 11 inches = 44 square inches.\n#### 44, got The correct choice is (20) = 10) / 10 = 10.\nThe answer is 10)"
+          },
+          {
+            "id": "GEN-01-MEM-09",
+            "category": "memorization_subset",
+            "prompt": "A rectangle has a length of 6 meters and a width of 4 meters. Calculate its perimeter in meters.",
+            "expected": "Perimeter = 2 * (length + width) = 2 * (6 + 4) = 2 * 10 = 20.\nThe answer is 20.",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Perimeter = 2 * (length + width) = 2 * (6 + 4) = 2 * 10 = 20.\nThe answer is 20., got The answer is 12.)"
+          },
+          {
+            "id": "GEN-01-MEM-10",
+            "category": "memorization_subset",
+            "prompt": "\u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0928\u0938\u094d\u0932 \u0915\u094c\u0928 \u0938\u0940 \u0939\u0948? \u0915\u094d\u092f\u093e \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u093e \u091c\u0940\u0935\u0928\u0915\u093e\u0932 \u091b\u094b\u091f\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0938\u0947 \u092d\u093f\u0928\u094d\u0928 \u0939\u094b\u0924\u093e \u0939\u0948?",
+            "expected": "\u0905\u0902\u0917\u094d\u0930\u0947\u091c\u0940 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0926\u0941\u0928\u093f\u092f\u093e \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u0928\u0938\u094d\u0932 \u0939\u0948\u0964 \u0917\u093f\u0928\u0940\u091c \u0935\u0930\u094d\u0932\u094d\u0921 \u092c\u0941\u0915 \u0911\u092b \u0930\u093f\u0915\u0949\u0930\u094d\u0921\u094d\u0938 \u0915\u0947 \u0905\u0928\u0941\u0938\u093e\u0930, 1981 \u092e\u0947\u0902 \u091c\u093c\u094b\u0930\u092c\u093e \u0928\u093e\u092e \u0915\u093e \u090f\u0915 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0925\u093e \u091c\u094b \u092c\u0922\u093c\u0915\u0930 142 \u0924\u0915 \u092a\u0939\u0941\u0902\u091a \u0917\u092f\u093e\u0964 7 \u0915\u093f\u0917\u094d\u0930\u093e, \u092f\u093e 314 6 \u092a\u093e\u0909\u0902\u0921\u0964 \u0914\u0938\u0924\u0928, \u090f\u0915 \u091b\u094b\u091f\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u093e \u091c\u0940\u0935\u0928\u0915\u093e\u0932 12-15 \u0935\u0930\u094d\u0937 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0930\u0942\u092a \u0938\u0947 7-10 \u0935\u0930\u094d\u0937\u094b\u0902 \u092e\u0947\u0902 \u090f\u0915 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u091c\u0940\u0935\u0928 \u092a\u094d\u0930\u0924\u094d\u092f\u093e\u0936\u093e \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u092f\u093e \u0938\u0947\u0902\u091f \u092c\u0930\u094d\u0928\u093e\u0930\u094d\u0921 \u091c\u0948\u0938\u0940 \u0935\u093f\u0936\u093e\u0932 \u0928\u0938\u094d\u0932\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f, \u091c\u0940\u0935\u0928\u0915\u093e\u0932 \u0915\u0947\u0935\u0932 5 \u0938\u0947 8 \u0935\u0930\u094d\u0937 \u0939\u0948\u0964 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u092c\u0939\u0941\u0924 \u091c\u0932\u094d\u0926\u0940 \u092c\u0922\u093c\u0924\u0947 \u0939\u0948\u0902\u0964 \u0935\u0948\u091c\u094d\u091e\u093e\u0928\u093f\u0915\u094b\u0902 \u0915\u093e \u092e\u093e\u0928\u0928\u093e \u0939\u0948 \u0915\u093f \u092e\u0941\u0915\u094d\u0924 \u0915\u091f\u094d\u091f\u0930\u092a\u0902\u0925\u0940 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u092e\u0947\u0902 \u0935\u0943\u0926\u094d\u0927\u093f \u0915\u0947 \u0905\u0932\u093e\u0935\u093e \u0907\u0938 \u0924\u094d\u0935\u0930\u093f\u0924 \u0935\u093f\u0915\u093e\u0938 \u0915\u0947 \u0915\u093e\u0930\u0923 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u092e \u0909\u092e\u094d\u0930 \u092e\u0947\u0902 \u092e\u0930 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964",
+            "generated": "The correct choice is (100) = 1000000000000000000000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected \u0905\u0902\u0917\u094d\u0930\u0947\u091c\u0940 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0926\u0941\u0928\u093f\u092f\u093e \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u0928\u0938\u094d\u0932 \u0939\u0948\u0964 \u0917\u093f\u0928\u0940\u091c \u0935\u0930\u094d\u0932\u094d\u0921 \u092c\u0941\u0915 \u0911\u092b \u0930\u093f\u0915\u0949\u0930\u094d\u0921\u094d\u0938 \u0915\u0947 \u0905\u0928\u0941\u0938\u093e\u0930, 1981 \u092e\u0947\u0902 \u091c\u093c\u094b\u0930\u092c\u093e \u0928\u093e\u092e \u0915\u093e \u090f\u0915 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0925\u093e \u091c\u094b \u092c\u0922\u093c\u0915\u0930 142 \u0924\u0915 \u092a\u0939\u0941\u0902\u091a \u0917\u092f\u093e\u0964 7 \u0915\u093f\u0917\u094d\u0930\u093e, \u092f\u093e 314 6 \u092a\u093e\u0909\u0902\u0921\u0964 \u0914\u0938\u0924\u0928, \u090f\u0915 \u091b\u094b\u091f\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u093e \u091c\u0940\u0935\u0928\u0915\u093e\u0932 12-15 \u0935\u0930\u094d\u0937 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0930\u0942\u092a \u0938\u0947 7-10 \u0935\u0930\u094d\u0937\u094b\u0902 \u092e\u0947\u0902 \u090f\u0915 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u091c\u0940\u0935\u0928 \u092a\u094d\u0930\u0924\u094d\u092f\u093e\u0936\u093e \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u092f\u093e \u0938\u0947\u0902\u091f \u092c\u0930\u094d\u0928\u093e\u0930\u094d\u0921 \u091c\u0948\u0938\u0940 \u0935\u093f\u0936\u093e\u0932 \u0928\u0938\u094d\u0932\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f, \u091c\u0940\u0935\u0928\u0915\u093e\u0932 \u0915\u0947\u0935\u0932 5 \u0938\u0947 8 \u0935\u0930\u094d\u0937 \u0939\u0948\u0964 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u092c\u0939\u0941\u0924 \u091c\u0932\u094d\u0926\u0940 \u092c\u0922\u093c\u0924\u0947 \u0939\u0948\u0902\u0964 \u0935\u0948\u091c\u094d\u091e\u093e\u0928\u093f\u0915\u094b\u0902 \u0915\u093e \u092e\u093e\u0928\u0928\u093e \u0939\u0948 \u0915\u093f \u092e\u0941\u0915\u094d\u0924 \u0915\u091f\u094d\u091f\u0930\u092a\u0902\u0925\u0940 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u092e\u0947\u0902 \u0935\u0943\u0926\u094d\u0927\u093f \u0915\u0947 \u0905\u0932\u093e\u0935\u093e \u0907\u0938 \u0924\u094d\u0935\u0930\u093f\u0924 \u0935\u093f\u0915\u093e\u0938 \u0915\u0947 \u0915\u093e\u0930\u0923 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u092e \u0909\u092e\u094d\u0930 \u092e\u0947\u0902 \u092e\u0930 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964, got The correct choice is (100) = 100000000000000000000000000000)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-01",
+            "category": "new_numerical_values",
+            "prompt": "Compute the exact value of (128 + 256) - 114.",
+            "expected": "270",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 270, Extracted 12)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-02",
+            "category": "new_numerical_values",
+            "prompt": "Compute the exact value of (315 + 420) - 215.",
+            "expected": "520",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 520, Extracted 10)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-03",
+            "category": "new_numerical_values",
+            "prompt": "Calculate 35% of 600.",
+            "expected": "210",
+            "generated": "To find 10% of 10, multiply 10 by 100000: (100 * 10) / 10 = 10.\nThe answer is 1",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "1",
+            "reason": "NUMERICAL_MISMATCH (Expected 210, Extracted 1)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-04",
+            "category": "new_numerical_values",
+            "prompt": "What is 3/8 of 240?",
+            "expected": "90",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 90, Extracted 10)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-05",
+            "category": "new_numerical_values",
+            "prompt": "Solve for x: 7x + 14 = 77.",
+            "expected": "9",
+            "generated": "Subtract 11.\nThe answer is 11.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "11",
+            "reason": "NUMERICAL_MISMATCH (Expected 9, Extracted 11)"
+          }
+        ]
+      },
+      "private_eval_suite_100": {
+        "total_probes": 100,
+        "syntax_passed_probes": 90,
+        "syntax_accuracy_pct": 90.0,
+        "functional_passed_probes": 1,
+        "functional_accuracy_pct": 1.0,
+        "category_breakdown": {
+          "private_mathematics": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_word_problems": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_python_functions": {
+            "total": 10,
+            "syntax_pass": 0,
+            "functional_pass": 0
+          },
+          "private_polyglot": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_hindi_hinglish": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_reading_comprehension": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 1
+          },
+          "private_multiturn": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_instruction_following": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_formal_logic": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_science": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          }
+        },
+        "passes": [
+          {
+            "id": "PRIV-06-RC-07",
+            "category": "private_reading_comprehension",
+            "prompt": "Passage: Water boils at 100 degrees Celsius at standard atmospheric sea-level pressure.\nQuestion: At how many degrees Celsius does water boil at sea level?",
+            "expected": "100",
+            "generated": "The correct choice is (100) / 10 = 10.\nThe answer is 100.",
+            "syntax_passed": true,
+            "functional_passed": true,
+            "extracted_answer": "100",
+            "reason": "EXACT_NUMERICAL_MATCH"
+          }
+        ],
+        "sample_failures": [
+          {
+            "id": "PRIV-01-MATH-01",
+            "category": "private_mathematics",
+            "prompt": "Compute: (240 + 360) - 180.",
+            "expected": "420",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 420, Extracted 10)"
+          },
+          {
+            "id": "PRIV-01-MATH-02",
+            "category": "private_mathematics",
+            "prompt": "Compute: (550 - 225) + 175.",
+            "expected": "500",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 500, Extracted 12)"
+          },
+          {
+            "id": "PRIV-01-MATH-03",
+            "category": "private_mathematics",
+            "prompt": "Calculate 45% of 800.",
+            "expected": "360",
+            "generated": "To find 10% of 10, multiply 100 by 100000: (10000) / 100 = 10.\nThe answer is 1",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "1",
+            "reason": "NUMERICAL_MISMATCH (Expected 360, Extracted 1)"
+          },
+          {
+            "id": "PRIV-01-MATH-04",
+            "category": "private_mathematics",
+            "prompt": "What is 5/6 of 180?",
+            "expected": "150",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 150, Extracted 10)"
+          },
+          {
+            "id": "PRIV-01-MATH-05",
+            "category": "private_mathematics",
+            "prompt": "Calculate 15% of 600, then add 50.",
+            "expected": "140",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 140, Extracted 10)"
+          },
+          {
+            "id": "PRIV-01-MATH-06",
+            "category": "private_mathematics",
+            "prompt": "Solve for x: 8x + 24 = 88.",
+            "expected": "8",
+            "generated": "Subtract 11.\nThe answer is 11.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "11",
+            "reason": "NUMERICAL_MISMATCH (Expected 8, Extracted 11)"
+          },
+          {
+            "id": "PRIV-01-MATH-07",
+            "category": "private_mathematics",
+            "prompt": "Solve for x: 6x - 18 = 42.",
+            "expected": "10",
+            "generated": "Subtract 11.\nThe answer is 11.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "11",
+            "reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 11)"
+          },
+          {
+            "id": "PRIV-01-MATH-08",
+            "category": "private_mathematics",
+            "prompt": "Find the next term in the sequence: 12, 19, 26, 33, ...",
+            "expected": "40",
+            "generated": "The common difference is 12 - 1 = 1.\nThe answer is 1.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "1",
+            "reason": "NUMERICAL_MISMATCH (Expected 40, Extracted 1)"
+          },
+          {
+            "id": "PRIV-01-MATH-09",
+            "category": "private_mathematics",
+            "prompt": "Evaluate: ((20 + 30) * 4) - 75.",
+            "expected": "125",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 125, Extracted 10)"
+          },
+          {
+            "id": "PRIV-01-MATH-10",
+            "category": "private_mathematics",
+            "prompt": "Divide 280 by 7, then multiply by 3.",
+            "expected": "120",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 120, Extracted 10)"
+          },
+          {
+            "id": "PRIV-02-WORD-01",
+            "category": "private_word_problems",
+            "prompt": "A cyclist rides at 25 km/h for 3 hours. What is the total distance traveled in km?",
+            "expected": "75",
+            "generated": "The correct choice is (10 + 10) = 10.\nThe answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 75, Extracted 10)"
+          },
+          {
+            "id": "PRIV-02-WORD-02",
+            "category": "private_word_problems",
+            "prompt": "A warehouse has 320 boxes. 140 boxes are shipped out, and 80 new boxes arrive. How many boxes remain?",
+            "expected": "260",
+            "generated": "The total of 10000000000000000000000000000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10000000000000000000000000000000000000000000",
+            "reason": "NUMERICAL_MISMATCH (Expected 260, Extracted 10000000000000000000000000000000000000000000)"
+          },
+          {
+            "id": "PRIV-02-WORD-03",
+            "category": "private_word_problems",
+            "prompt": "A farmer packs 120 eggs into cartons of 12 eggs each. How many full cartons are packed?",
+            "expected": "10",
+            "generated": "The total number of 1000000000000000000000000000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "1000000000000000000000000000000000000000000",
+            "reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 1000000000000000000000000000000000000000000)"
+          },
+          {
+            "id": "PRIV-02-WORD-04",
+            "category": "private_word_problems",
+            "prompt": "A rectangular field is 30 meters long and 15 meters wide. Calculate its perimeter in meters.",
+            "expected": "90",
+            "generated": "The answer is 100 = 10.\nThe answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 90, Extracted 10)"
+          },
+          {
+            "id": "PRIV-02-WORD-05",
+            "category": "private_word_problems",
+            "prompt": "A rectangular garden has length 20 meters and width 10 meters. What is its area in square meters?",
+            "expected": "200",
+            "generated": "The answer is 100 = 10.\nThe answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 200, Extracted 10)"
+          }
+        ]
+      },
+      "transfer_suite_200": {
+        "total_probes": 200,
+        "syntax_passed_probes": 200,
+        "syntax_accuracy_pct": 100.0,
+        "functional_passed_probes": 1,
+        "functional_accuracy_pct": 0.5,
+        "category_breakdown": {
+          "mathematics": {
+            "total": 40,
+            "syntax_pass": 40,
+            "functional_pass": 1
+          },
+          "programming_python": {
+            "total": 40,
+            "syntax_pass": 40,
+            "functional_pass": 0
+          },
+          "formal_reasoning": {
+            "total": 30,
+            "syntax_pass": 30,
+            "functional_pass": 0
+          },
+          "science_engineering": {
+            "total": 30,
+            "syntax_pass": 30,
+            "functional_pass": 0
+          },
+          "hindi_comprehension": {
+            "total": 20,
+            "syntax_pass": 20,
+            "functional_pass": 0
+          },
+          "hinglish_dialogue": {
+            "total": 20,
+            "syntax_pass": 20,
+            "functional_pass": 0
+          },
+          "instruction_following": {
+            "total": 20,
+            "syntax_pass": 20,
+            "functional_pass": 0
+          }
+        },
+        "passes": [
+          {
+            "id": "TRF-0001",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": true,
+            "extracted_answer": "10",
+            "reason": "EXACT_NUMERICAL_MATCH"
+          }
+        ],
+        "sample_failures": [
+          {
+            "id": "TRF-0002",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "The answer is 11.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "11",
+            "reason": "NUMERICAL_MISMATCH (Expected 12, Extracted 11)"
+          },
+          {
+            "id": "TRF-0003",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 25, Extracted 12)"
+          },
+          {
+            "id": "TRF-0004",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "The answer is 11.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "11",
+            "reason": "NUMERICAL_MISMATCH (Expected 27, Extracted 11)"
+          },
+          {
+            "id": "TRF-0005",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 40, Extracted 12)"
+          },
+          {
+            "id": "TRF-0006",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 42, Extracted 10)"
+          },
+          {
+            "id": "TRF-0007",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 55, Extracted 12)"
+          },
+          {
+            "id": "TRF-0008",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 57, Extracted 12)"
+          },
+          {
+            "id": "TRF-0009",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 70, Extracted 12)"
+          },
+          {
+            "id": "TRF-0010",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 72, Extracted 12)"
+          },
+          {
+            "id": "TRF-0011",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (47 + 40) - 2.",
+            "expected": "85",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 85, Extracted 10)"
+          },
+          {
+            "id": "TRF-0012",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (51 + 43) - 7.",
+            "expected": "87",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 87, Extracted 12)"
+          },
+          {
+            "id": "TRF-0013",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (55 + 46) - 12.",
+            "expected": "89",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 89, Extracted 12)"
+          },
+          {
+            "id": "TRF-0014",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (59 + 49) - 6.",
+            "expected": "102",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 102, Extracted 12)"
+          },
+          {
+            "id": "TRF-0015",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (63 + 52) - 11.",
+            "expected": "104",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 104, Extracted 12)"
+          },
+          {
+            "id": "TRF-0016",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (67 + 55) - 5.",
+            "expected": "117",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 117, Extracted 12)"
+          }
+        ]
+      },
+      "elapsed_time_s": 101.75
+    },
+    {
+      "name": "vision-13m-stage4-relational (Step 250 Final)",
+      "step": 250,
+      "weights_path": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-13m-stage4-relational\\weights.pt",
+      "generalization_suite_100": {
+        "total_probes": 100,
+        "syntax_passed_probes": 98,
+        "syntax_accuracy_pct": 98.0,
+        "functional_passed_probes": 3,
+        "functional_accuracy_pct": 3.0,
+        "category_breakdown": {
+          "memorization_subset": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "new_numerical_values": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "unseen_operation_combinations": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 1
+          },
+          "new_word_problems": {
+            "total": 10,
+            "syntax_pass": 9,
+            "functional_pass": 0
+          },
+          "new_python_functions": {
+            "total": 10,
+            "syntax_pass": 9,
+            "functional_pass": 0
+          },
+          "unseen_java_javascript": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "hindi_hinglish_generation": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "reading_comprehension": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "multi_turn_context": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 2
+          },
+          "instruction_following": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          }
+        },
+        "passes": [
+          {
+            "id": "GEN-03-UNSEENOP-06",
+            "category": "unseen_operation_combinations",
+            "prompt": "Calculate 10% of 500 plus 20% of 250.",
+            "expected": "100",
+            "generated": "To find 10% of 100, multiply 100 by 100/100: (10 * 100) / 100 = 100.",
+            "syntax_passed": true,
+            "functional_passed": true,
+            "extracted_answer": "100",
+            "reason": "EXACT_NUMERICAL_MATCH"
+          },
+          {
+            "id": "GEN-09-MULTITURN-03",
+            "category": "multi_turn_context",
+            "prompt": "User: The target temperature is 24 degrees Celsius.\nAssistant: Target temperature set to 24C.\nUser: What is the target temperature?",
+            "expected": "24",
+            "generated": "The correct choice is (2 + 2) = 2 * 2 = 24.\nThe answer is 24.",
+            "syntax_passed": true,
+            "functional_passed": true,
+            "extracted_answer": "24",
+            "reason": "CONTEXT_NUMERICAL_RETAINED"
+          },
+          {
+            "id": "GEN-09-MULTITURN-09",
+            "category": "multi_turn_context",
+            "prompt": "User: I have 5 red pens and 3 blue pens.\nAssistant: 8 pens total.\nUser: How many red pens do I have?",
+            "expected": "5",
+            "generated": "The total number of 15 + 15 = 15.\nThe answer is 15.",
+            "syntax_passed": true,
+            "functional_passed": true,
+            "extracted_answer": "5",
+            "reason": "CONTEXT_ENTITY_RETAINED"
+          }
+        ],
+        "sample_failures": [
+          {
+            "id": "GEN-01-MEM-01",
+            "category": "memorization_subset",
+            "prompt": "Write a Python function `parse_json_str` that takes a JSON string and returns the corresponding Python data structure. If the input is not a valid JSON string, raise a `ValueError` exception with the message \"Invalid JSON string\".",
+            "expected": "Here's an example implementation using the `json` module:\n\n```python\nimport json\n\ndef parse_json_str(json_str):\n    try:\n        return json.loads(json_str)\n    except json.JSONDecodeError:\n        raise ValueError('Invalid JSON string')\n```\n\nThis function uses the `loads()` method from the `json` module to parse the JSON string and convert it into a Python data structure. It uses a `try-except` block to handle the `JSONDecodeError`, which is raised when the input is not a valid JSON string. The function raises a custom `ValueError` with a message indicating that the input JSON string is invalid.",
+            "generated": "Here's how you can implement this:\n\n```python\ndef find_f(f):\n    return {\n    return 0\n    return 0\n```\n\ndef find_f(f, 0):\n    return",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Here's an example implementation using the `json` module:\n\n```python\nimport json\n\ndef parse_json_str(json_str):\n    try:\n        return json.loads(json_str)\n    except json.JSONDecodeError:\n        raise ValueError('Invalid JSON string')\n```\n\nThis function uses the `loads()` method from the `json` module to parse the JSON string and convert it into a Python data structure. It uses a `try-except` block to handle the `JSONDecodeError`, which is raised when the input is not a valid JSON string. The function raises a custom `ValueError` with a message indicating that the input JSON string is invalid., got Here's how you can implement this:\n\n```python\ndef find_f(f):)"
+          },
+          {
+            "id": "GEN-01-MEM-02",
+            "category": "memorization_subset",
+            "prompt": "Janine read 5 books last month. This month, she read twice as many books. If each book has 10 pages, how many pages did Janine read in two months?",
+            "expected": "Janine read 5 x 2 = 10 books this month.\nSo, she read a total of 5 + 10 = 15 books.\nTherefore, she read 15 x 10 = 150 pages in all.\n#### 150",
+            "generated": "The total number of 1000000000000000000000000000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Janine read 5 x 2 = 10 books this month.\nSo, she read a total of 5 + 10 = 15 books.\nTherefore, she read 15 x 10 = 150 pages in all.\n#### 150, got The total number of 1000000000000000000000000000000000000000)"
+          },
+          {
+            "id": "GEN-01-MEM-03",
+            "category": "memorization_subset",
+            "prompt": "Translate the following from Hinglish into English.\nMonday ko dinner ka reminder update kare.",
+            "expected": "Update the dinner reminder to Monday.",
+            "generated": "The correct choice is (1 + 1) + 10 = 12.\nThe correct choice is 100 = 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Update the dinner reminder to Monday., got The correct choice is (1 + 1) + 10 = 12.\nThe correct choice )"
+          },
+          {
+            "id": "GEN-01-MEM-04",
+            "category": "memorization_subset",
+            "prompt": "Brad\u2019s zip code consists of five numbers that add up to 10. The first and second numbers are the same. The third number is zero. The fourth number is double the first number. The fourth and fifth numbers add up to 8. What is Brad\u2019s zip code?",
+            "expected": "The five numbers add up to 10, so the first three numbers add up to 10 - 8 = 2.\nThe third number is 0, so the first two numbers add up to 2 - 0 = 2.\nThe first and second numbers are equal, so they are both 2 / 2 = 1.\nThe fourth number is double the first number, so it is 2 * 1 = 2.\nThe fifth number is 8 - 2 = 6.\nThus, Brad\u2019s zip code is 11026.\n#### 11026",
+            "generated": "The total number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected The five numbers add up to 10, so the first three numbers add up to 10 - 8 = 2.\nThe third number is 0, so the first two numbers add up to 2 - 0 = 2.\nThe first and second numbers are equal, so they are both 2 / 2 = 1.\nThe fourth number is double the first number, so it is 2 * 1 = 2.\nThe fifth number is 8 - 2 = 6.\nThus, Brad\u2019s zip code is 11026.\n#### 11026, got The total number of the number of the number of the number o)"
+          },
+          {
+            "id": "GEN-01-MEM-05",
+            "category": "memorization_subset",
+            "prompt": "Hinglish se English mein translate kare.\nplace hearts ki queen ke bagal men place hearts ke king ko rakhen",
+            "expected": "Place the king of hearts next to the queen of hearts.",
+            "generated": "The correct choice is (1 + 1) = 10 * 10 = 100.\nThe answer is 100.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Place the king of hearts next to the queen of hearts., got The correct choice is (1 + 1) = 10 * 10 = 100.\nThe answer is)"
+          },
+          {
+            "id": "GEN-01-MEM-06",
+            "category": "memorization_subset",
+            "prompt": "Design a Python function to sort a list of tuples by their second element in descending order. The first element of each tuple is a string, and the second element is an integer.\n\nFor example, if the input list is [('a', 1), ('b', 2), ('c', 1)], the function should return [('b', 2), ('a', 1), ('c', 1)].",
+            "expected": "To sort a list of tuples by their second element in descending order, we'll use the `sorted` function in Python. The `sorted` function takes a sequence and a `key` parameter that specifies how to extract the key to sort by. We can define a `key` function that returns the second element of each tuple and use it as the `key` parameter in `sorted`.\n\nHere's an example implementation:\n\n```python\ndef sort_by_second_element(tuples):\n    return sorted(tuples, key=lambda x: x[1], reverse=True)\n```",
+            "generated": "Here's how you can implement this:\n\n```python\ndef find_f(x):\n    return 1\n    return 1\n    return 1\n```\n\nThe function that takes a list of the `x` function",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected To sort a list of tuples by their second element in descending order, we'll use the `sorted` function in Python. The `sorted` function takes a sequence and a `key` parameter that specifies how to extract the key to sort by. We can define a `key` function that returns the second element of each tuple and use it as the `key` parameter in `sorted`.\n\nHere's an example implementation:\n\n```python\ndef sort_by_second_element(tuples):\n    return sorted(tuples, key=lambda x: x[1], reverse=True)\n```, got Here's how you can implement this:\n\n```python\ndef find_f(x):)"
+          },
+          {
+            "id": "GEN-01-MEM-07",
+            "category": "memorization_subset",
+            "prompt": "Come up with a haiku that can double as a chocolate chip recipe. Pehle English mein likhna, phir Hindi mein translate karna.",
+            "expected": "Cream, sugar, butter\nChips, flour, and some eggs mixed in\nBake till a gold brown\nTranslation of the above into Hindi:\n\u0915\u094d\u0930\u0940\u092e, \u091a\u0940\u0928\u0940, \u092e\u0915\u094d\u0916\u0928 \u091a\u093f\u092a\u094d\u0938, \u0906\u091f\u093e \u0914\u0930 \u0915\u0941\u091b \u0905\u0902\u0921\u0947 \u092e\u093f\u0932\u093e\u0915\u0930 \u0938\u0941\u0928\u0939\u0930\u093e \u092d\u0942\u0930\u093e \u0939\u094b\u0928\u0947 \u0924\u0915 \u092c\u0947\u0915 \u0915\u0930\u0947\u0902\u0964",
+            "generated": "The correct choice is (10) / 10) / 10 = 100.\nThe correct choice is 100 = 100.\nThe answer is 100.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Cream, sugar, butter\nChips, flour, and some eggs mixed in\nBake till a gold brown\nTranslation of the above into Hindi:\n\u0915\u094d\u0930\u0940\u092e, \u091a\u0940\u0928\u0940, \u092e\u0915\u094d\u0916\u0928 \u091a\u093f\u092a\u094d\u0938, \u0906\u091f\u093e \u0914\u0930 \u0915\u0941\u091b \u0905\u0902\u0921\u0947 \u092e\u093f\u0932\u093e\u0915\u0930 \u0938\u0941\u0928\u0939\u0930\u093e \u092d\u0942\u0930\u093e \u0939\u094b\u0928\u0947 \u0924\u0915 \u092c\u0947\u0915 \u0915\u0930\u0947\u0902\u0964, got The correct choice is (10) / 10) / 10 = 100.\nThe correct cho)"
+          },
+          {
+            "id": "GEN-01-MEM-08",
+            "category": "memorization_subset",
+            "prompt": "There is a rectangle that is 4 inches wide. If the rectangle's perimeter is 30 inches, what is the area of the rectangle?",
+            "expected": "Twice the height of the rectangle is 30 inches - 2 * 4 inches = 22 inches.\nThe rectangle's height is 22 inches / 2 = 11 inches.\nThe area of the rectangle is 4 inches * 11 inches = 44 square inches.\n#### 44",
+            "generated": "The total number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Twice the height of the rectangle is 30 inches - 2 * 4 inches = 22 inches.\nThe rectangle's height is 22 inches / 2 = 11 inches.\nThe area of the rectangle is 4 inches * 11 inches = 44 square inches.\n#### 44, got The total number of the number of the number of the number o)"
+          },
+          {
+            "id": "GEN-01-MEM-09",
+            "category": "memorization_subset",
+            "prompt": "A rectangle has a length of 6 meters and a width of 4 meters. Calculate its perimeter in meters.",
+            "expected": "Perimeter = 2 * (length + width) = 2 * (6 + 4) = 2 * 10 = 20.\nThe answer is 20.",
+            "generated": "Perimeter = 2 * (length + width) = 2 * (2 * (2) = 2 * 2) = 24.\nThe answer is 24.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected Perimeter = 2 * (length + width) = 2 * (6 + 4) = 2 * 10 = 20.\nThe answer is 20., got Perimeter = 2 * (length + width) = 2 * (2 * (2) = 2 * 2) = 2)"
+          },
+          {
+            "id": "GEN-01-MEM-10",
+            "category": "memorization_subset",
+            "prompt": "\u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0928\u0938\u094d\u0932 \u0915\u094c\u0928 \u0938\u0940 \u0939\u0948? \u0915\u094d\u092f\u093e \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u093e \u091c\u0940\u0935\u0928\u0915\u093e\u0932 \u091b\u094b\u091f\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0938\u0947 \u092d\u093f\u0928\u094d\u0928 \u0939\u094b\u0924\u093e \u0939\u0948?",
+            "expected": "\u0905\u0902\u0917\u094d\u0930\u0947\u091c\u0940 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0926\u0941\u0928\u093f\u092f\u093e \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u0928\u0938\u094d\u0932 \u0939\u0948\u0964 \u0917\u093f\u0928\u0940\u091c \u0935\u0930\u094d\u0932\u094d\u0921 \u092c\u0941\u0915 \u0911\u092b \u0930\u093f\u0915\u0949\u0930\u094d\u0921\u094d\u0938 \u0915\u0947 \u0905\u0928\u0941\u0938\u093e\u0930, 1981 \u092e\u0947\u0902 \u091c\u093c\u094b\u0930\u092c\u093e \u0928\u093e\u092e \u0915\u093e \u090f\u0915 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0925\u093e \u091c\u094b \u092c\u0922\u093c\u0915\u0930 142 \u0924\u0915 \u092a\u0939\u0941\u0902\u091a \u0917\u092f\u093e\u0964 7 \u0915\u093f\u0917\u094d\u0930\u093e, \u092f\u093e 314 6 \u092a\u093e\u0909\u0902\u0921\u0964 \u0914\u0938\u0924\u0928, \u090f\u0915 \u091b\u094b\u091f\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u093e \u091c\u0940\u0935\u0928\u0915\u093e\u0932 12-15 \u0935\u0930\u094d\u0937 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0930\u0942\u092a \u0938\u0947 7-10 \u0935\u0930\u094d\u0937\u094b\u0902 \u092e\u0947\u0902 \u090f\u0915 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u091c\u0940\u0935\u0928 \u092a\u094d\u0930\u0924\u094d\u092f\u093e\u0936\u093e \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u092f\u093e \u0938\u0947\u0902\u091f \u092c\u0930\u094d\u0928\u093e\u0930\u094d\u0921 \u091c\u0948\u0938\u0940 \u0935\u093f\u0936\u093e\u0932 \u0928\u0938\u094d\u0932\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f, \u091c\u0940\u0935\u0928\u0915\u093e\u0932 \u0915\u0947\u0935\u0932 5 \u0938\u0947 8 \u0935\u0930\u094d\u0937 \u0939\u0948\u0964 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u092c\u0939\u0941\u0924 \u091c\u0932\u094d\u0926\u0940 \u092c\u0922\u093c\u0924\u0947 \u0939\u0948\u0902\u0964 \u0935\u0948\u091c\u094d\u091e\u093e\u0928\u093f\u0915\u094b\u0902 \u0915\u093e \u092e\u093e\u0928\u0928\u093e \u0939\u0948 \u0915\u093f \u092e\u0941\u0915\u094d\u0924 \u0915\u091f\u094d\u091f\u0930\u092a\u0902\u0925\u0940 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u092e\u0947\u0902 \u0935\u0943\u0926\u094d\u0927\u093f \u0915\u0947 \u0905\u0932\u093e\u0935\u093e \u0907\u0938 \u0924\u094d\u0935\u0930\u093f\u0924 \u0935\u093f\u0915\u093e\u0938 \u0915\u0947 \u0915\u093e\u0930\u0923 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u092e \u0909\u092e\u094d\u0930 \u092e\u0947\u0902 \u092e\u0930 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964",
+            "generated": "\u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": null,
+            "reason": "SEMANTIC_MISMATCH (Expected \u0905\u0902\u0917\u094d\u0930\u0947\u091c\u0940 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0926\u0941\u0928\u093f\u092f\u093e \u0915\u0940 \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u0940 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u0928\u0938\u094d\u0932 \u0939\u0948\u0964 \u0917\u093f\u0928\u0940\u091c \u0935\u0930\u094d\u0932\u094d\u0921 \u092c\u0941\u0915 \u0911\u092b \u0930\u093f\u0915\u0949\u0930\u094d\u0921\u094d\u0938 \u0915\u0947 \u0905\u0928\u0941\u0938\u093e\u0930, 1981 \u092e\u0947\u0902 \u091c\u093c\u094b\u0930\u092c\u093e \u0928\u093e\u092e \u0915\u093e \u090f\u0915 \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u0925\u093e \u091c\u094b \u092c\u0922\u093c\u0915\u0930 142 \u0924\u0915 \u092a\u0939\u0941\u0902\u091a \u0917\u092f\u093e\u0964 7 \u0915\u093f\u0917\u094d\u0930\u093e, \u092f\u093e 314 6 \u092a\u093e\u0909\u0902\u0921\u0964 \u0914\u0938\u0924\u0928, \u090f\u0915 \u091b\u094b\u091f\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u093e \u091c\u0940\u0935\u0928\u0915\u093e\u0932 12-15 \u0935\u0930\u094d\u0937 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0930\u0942\u092a \u0938\u0947 7-10 \u0935\u0930\u094d\u0937\u094b\u0902 \u092e\u0947\u0902 \u090f\u0915 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u0940 \u091c\u0940\u0935\u0928 \u092a\u094d\u0930\u0924\u094d\u092f\u093e\u0936\u093e \u092e\u093e\u0938\u094d\u091f\u093f\u092b \u092f\u093e \u0938\u0947\u0902\u091f \u092c\u0930\u094d\u0928\u093e\u0930\u094d\u0921 \u091c\u0948\u0938\u0940 \u0935\u093f\u0936\u093e\u0932 \u0928\u0938\u094d\u0932\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f, \u091c\u0940\u0935\u0928\u0915\u093e\u0932 \u0915\u0947\u0935\u0932 5 \u0938\u0947 8 \u0935\u0930\u094d\u0937 \u0939\u0948\u0964 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u092c\u0939\u0941\u0924 \u091c\u0932\u094d\u0926\u0940 \u092c\u0922\u093c\u0924\u0947 \u0939\u0948\u0902\u0964 \u0935\u0948\u091c\u094d\u091e\u093e\u0928\u093f\u0915\u094b\u0902 \u0915\u093e \u092e\u093e\u0928\u0928\u093e \u0939\u0948 \u0915\u093f \u092e\u0941\u0915\u094d\u0924 \u0915\u091f\u094d\u091f\u0930\u092a\u0902\u0925\u0940 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u092e\u0947\u0902 \u0935\u0943\u0926\u094d\u0927\u093f \u0915\u0947 \u0905\u0932\u093e\u0935\u093e \u0907\u0938 \u0924\u094d\u0935\u0930\u093f\u0924 \u0935\u093f\u0915\u093e\u0938 \u0915\u0947 \u0915\u093e\u0930\u0923 \u092c\u0921\u093c\u0947 \u0915\u0941\u0924\u094d\u0924\u0947 \u0915\u092e \u0909\u092e\u094d\u0930 \u092e\u0947\u0902 \u092e\u0930 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964, got \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 \u0915\u0947 )"
+          },
+          {
+            "id": "GEN-02-NUMVAL-01",
+            "category": "new_numerical_values",
+            "prompt": "Compute the exact value of (128 + 256) - 114.",
+            "expected": "270",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 270, Extracted 12)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-02",
+            "category": "new_numerical_values",
+            "prompt": "Compute the exact value of (315 + 420) - 215.",
+            "expected": "520",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 520, Extracted 10)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-03",
+            "category": "new_numerical_values",
+            "prompt": "Calculate 35% of 600.",
+            "expected": "210",
+            "generated": "To find 10% of 100, multiply 100 by 10/100: (10 * 100) / 100 = 10.\nThe answer",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 210, Extracted 10)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-04",
+            "category": "new_numerical_values",
+            "prompt": "What is 3/8 of 240?",
+            "expected": "90",
+            "generated": "Multiply 100 by 1 and divide by 10: (100 * 1) / 10 = 10.\nThe answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 90, Extracted 10)"
+          },
+          {
+            "id": "GEN-02-NUMVAL-05",
+            "category": "new_numerical_values",
+            "prompt": "Solve for x: 7x + 14 = 77.",
+            "expected": "9",
+            "generated": "Subtract 12 from both sides: 12x = 12 - 12 = 12.\nDivide by 1: x = 12 / 1 = 12.\nThe",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 9, Extracted 12)"
+          }
+        ]
+      },
+      "private_eval_suite_100": {
+        "total_probes": 100,
+        "syntax_passed_probes": 98,
+        "syntax_accuracy_pct": 98.0,
+        "functional_passed_probes": 2,
+        "functional_accuracy_pct": 2.0,
+        "category_breakdown": {
+          "private_mathematics": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_word_problems": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_python_functions": {
+            "total": 10,
+            "syntax_pass": 8,
+            "functional_pass": 0
+          },
+          "private_polyglot": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_hindi_hinglish": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_reading_comprehension": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_multiturn": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 1
+          },
+          "private_instruction_following": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_formal_logic": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 0
+          },
+          "private_science": {
+            "total": 10,
+            "syntax_pass": 10,
+            "functional_pass": 1
+          }
+        },
+        "passes": [
+          {
+            "id": "PRIV-07-CTX-09",
+            "category": "private_multiturn",
+            "prompt": "User: We have 12 apples and 8 oranges.\nAssistant: Fruit counted.\nUser: How many apples do we have?",
+            "expected": "12",
+            "generated": "The total number of 12 - 12 = 12.\nThe total number of 12 + 12 = 12.\nThe answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": true,
+            "extracted_answer": "12",
+            "reason": "EXACT_NUMERICAL_MATCH"
+          },
+          {
+            "id": "PRIV-10-SCI-09",
+            "category": "private_science",
+            "prompt": "What is the decimal equivalent of binary 1010?",
+            "expected": "10",
+            "generated": "The ratio multiplier is 1000 / 10 = 100.\nThe answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": true,
+            "extracted_answer": "10",
+            "reason": "EXACT_NUMERICAL_MATCH"
+          }
+        ],
+        "sample_failures": [
+          {
+            "id": "PRIV-01-MATH-01",
+            "category": "private_mathematics",
+            "prompt": "Compute: (240 + 360) - 180.",
+            "expected": "420",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 420, Extracted 10)"
+          },
+          {
+            "id": "PRIV-01-MATH-02",
+            "category": "private_mathematics",
+            "prompt": "Compute: (550 - 225) + 175.",
+            "expected": "500",
+            "generated": "The answer is 15.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "15",
+            "reason": "NUMERICAL_MISMATCH (Expected 500, Extracted 15)"
+          },
+          {
+            "id": "PRIV-01-MATH-03",
+            "category": "private_mathematics",
+            "prompt": "Calculate 45% of 800.",
+            "expected": "360",
+            "generated": "To find 10% of 100, multiply 100 by 10/100: (10 * 100) / 100 = 10.\nThe answer",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 360, Extracted 10)"
+          },
+          {
+            "id": "PRIV-01-MATH-04",
+            "category": "private_mathematics",
+            "prompt": "What is 5/6 of 180?",
+            "expected": "150",
+            "generated": "Multiply 100 by 1 and divide by 10: (100 * 10) / 10 = 10.\nThe answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 150, Extracted 10)"
+          },
+          {
+            "id": "PRIV-01-MATH-05",
+            "category": "private_mathematics",
+            "prompt": "Calculate 15% of 600, then add 50.",
+            "expected": "140",
+            "generated": "To find 10% of 100, multiply 100 by 10/100: (10 * 100) / 100 = 10.\nThe answer",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 140, Extracted 10)"
+          },
+          {
+            "id": "PRIV-01-MATH-06",
+            "category": "private_mathematics",
+            "prompt": "Solve for x: 8x + 24 = 88.",
+            "expected": "8",
+            "generated": "Subtract 24 from both sides: 2x = 24 - 24 = 24.\nDivide by 2: x = 24 / 2 = 2.\nThe answer is",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "2",
+            "reason": "NUMERICAL_MISMATCH (Expected 8, Extracted 2)"
+          },
+          {
+            "id": "PRIV-01-MATH-07",
+            "category": "private_mathematics",
+            "prompt": "Solve for x: 6x - 18 = 42.",
+            "expected": "10",
+            "generated": "Subtract 12 from both sides: 12x = 12 - 12 = 12.\nDivide by 1: x = 12 / 1 = 12.\nThe",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 12)"
+          },
+          {
+            "id": "PRIV-01-MATH-08",
+            "category": "private_mathematics",
+            "prompt": "Find the next term in the sequence: 12, 19, 26, 33, ...",
+            "expected": "40",
+            "generated": "The common difference is 12 - 12 = 12.\nThe next term is 12 + 12 = 12.\nThe answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 40, Extracted 12)"
+          },
+          {
+            "id": "PRIV-01-MATH-09",
+            "category": "private_mathematics",
+            "prompt": "Evaluate: ((20 + 30) * 4) - 75.",
+            "expected": "125",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 125, Extracted 10)"
+          },
+          {
+            "id": "PRIV-01-MATH-10",
+            "category": "private_mathematics",
+            "prompt": "Divide 280 by 7, then multiply by 3.",
+            "expected": "120",
+            "generated": "To find 20: (20 * 20) / 20 = 20.\nThe answer is 20.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "20",
+            "reason": "NUMERICAL_MISMATCH (Expected 120, Extracted 20)"
+          },
+          {
+            "id": "PRIV-02-WORD-01",
+            "category": "private_word_problems",
+            "prompt": "A cyclist rides at 25 km/h for 3 hours. What is the total distance traveled in km?",
+            "expected": "75",
+            "generated": "The total number of 20 * 2 = 200.\nThe answer is 200.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "200",
+            "reason": "NUMERICAL_MISMATCH (Expected 75, Extracted 200)"
+          },
+          {
+            "id": "PRIV-02-WORD-02",
+            "category": "private_word_problems",
+            "prompt": "A warehouse has 320 boxes. 140 boxes are shipped out, and 80 new boxes arrive. How many boxes remain?",
+            "expected": "260",
+            "generated": "The total number of 1000000000000000000000000000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "1000000000000000000000000000000000000000000",
+            "reason": "NUMERICAL_MISMATCH (Expected 260, Extracted 1000000000000000000000000000000000000000000)"
+          },
+          {
+            "id": "PRIV-02-WORD-03",
+            "category": "private_word_problems",
+            "prompt": "A farmer packs 120 eggs into cartons of 12 eggs each. How many full cartons are packed?",
+            "expected": "10",
+            "generated": "The total number of 1000000000000000000000000000000000000000000",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "1000000000000000000000000000000000000000000",
+            "reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 1000000000000000000000000000000000000000000)"
+          },
+          {
+            "id": "PRIV-02-WORD-04",
+            "category": "private_word_problems",
+            "prompt": "A rectangular field is 30 meters long and 15 meters wide. Calculate its perimeter in meters.",
+            "expected": "90",
+            "generated": "Area = 10 * 10 = 100.\nThe answer is 100.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "100",
+            "reason": "NUMERICAL_MISMATCH (Expected 90, Extracted 100)"
+          },
+          {
+            "id": "PRIV-02-WORD-05",
+            "category": "private_word_problems",
+            "prompt": "A rectangular garden has length 20 meters and width 10 meters. What is its area in square meters?",
+            "expected": "200",
+            "generated": "Area = 10 * 10 = 100.\nThe answer is 100.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "100",
+            "reason": "NUMERICAL_MISMATCH (Expected 200, Extracted 100)"
+          }
+        ]
+      },
+      "transfer_suite_200": {
+        "total_probes": 200,
+        "syntax_passed_probes": 162,
+        "syntax_accuracy_pct": 81.0,
+        "functional_passed_probes": 1,
+        "functional_accuracy_pct": 0.5,
+        "category_breakdown": {
+          "mathematics": {
+            "total": 40,
+            "syntax_pass": 40,
+            "functional_pass": 1
+          },
+          "programming_python": {
+            "total": 40,
+            "syntax_pass": 2,
+            "functional_pass": 0
+          },
+          "formal_reasoning": {
+            "total": 30,
+            "syntax_pass": 30,
+            "functional_pass": 0
+          },
+          "science_engineering": {
+            "total": 30,
+            "syntax_pass": 30,
+            "functional_pass": 0
+          },
+          "hindi_comprehension": {
+            "total": 20,
+            "syntax_pass": 20,
+            "functional_pass": 0
+          },
+          "hinglish_dialogue": {
+            "total": 20,
+            "syntax_pass": 20,
+            "functional_pass": 0
+          },
+          "instruction_following": {
+            "total": 20,
+            "syntax_pass": 20,
+            "functional_pass": 0
+          }
+        },
+        "passes": [
+          {
+            "id": "TRF-0001",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": true,
+            "extracted_answer": "10",
+            "reason": "EXACT_NUMERICAL_MATCH"
+          }
+        ],
+        "sample_failures": [
+          {
+            "id": "TRF-0002",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "To find the like terms: 12 - 11 = 11.\nThe answer is 11.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "11",
+            "reason": "NUMERICAL_MISMATCH (Expected 12, Extracted 11)"
+          },
+          {
+            "id": "TRF-0003",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "To find the like terms: (15 + 1) / 1) = 12.\nThe answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 25, Extracted 12)"
+          },
+          {
+            "id": "TRF-0004",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "To find the like terms: (11 + 1) / 10 = 11.\nThe answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 27, Extracted 12)"
+          },
+          {
+            "id": "TRF-0005",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "The answer is 24.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "24",
+            "reason": "NUMERICAL_MISMATCH (Expected 40, Extracted 24)"
+          },
+          {
+            "id": "TRF-0006",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "The answer is 10.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "10",
+            "reason": "NUMERICAL_MISMATCH (Expected 42, Extracted 10)"
+          },
+          {
+            "id": "TRF-0007",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 55, Extracted 12)"
+          },
+          {
+            "id": "TRF-0008",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 57, Extracted 12)"
+          },
+          {
+            "id": "TRF-0009",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 70, Extracted 12)"
+          },
+          {
+            "id": "TRF-0010",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "The answer is 24.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "24",
+            "reason": "NUMERICAL_MISMATCH (Expected 72, Extracted 24)"
+          },
+          {
+            "id": "TRF-0011",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (47 + 40) - 2.",
+            "expected": "85",
+            "generated": "The answer is 20.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "20",
+            "reason": "NUMERICAL_MISMATCH (Expected 85, Extracted 20)"
+          },
+          {
+            "id": "TRF-0012",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (51 + 43) - 7.",
+            "expected": "87",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 87, Extracted 12)"
+          },
+          {
+            "id": "TRF-0013",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (55 + 46) - 12.",
+            "expected": "89",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 89, Extracted 12)"
+          },
+          {
+            "id": "TRF-0014",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (59 + 49) - 6.",
+            "expected": "102",
+            "generated": "The answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 102, Extracted 12)"
+          },
+          {
+            "id": "TRF-0015",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (63 + 52) - 11.",
+            "expected": "104",
+            "generated": "To find the like terms: (2 * 12) / 10 = 12.\nThe answer is 12.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "12",
+            "reason": "NUMERICAL_MISMATCH (Expected 104, Extracted 12)"
+          },
+          {
+            "id": "TRF-0016",
+            "category": "mathematics",
+            "prompt": "Compute the exact value of (67 + 55) - 5.",
+            "expected": "117",
+            "generated": "The answer is 15.",
+            "syntax_passed": true,
+            "functional_passed": false,
+            "extracted_answer": "15",
+            "reason": "NUMERICAL_MISMATCH (Expected 117, Extracted 15)"
+          }
+        ]
+      },
+      "elapsed_time_s": 124.38
+    }
+  ]
+}

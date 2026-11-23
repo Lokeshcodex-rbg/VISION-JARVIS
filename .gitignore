@@ -1,0 +1,71 @@
+# Environment and Local Secrets
+.env
+.env.local
+data/.session_token
+data/audit_trail.jsonl
+data/emergency_stop_state.json
+data/desktop_agent_audit.json
+data/agent_runtime.json
+data/reboot_verification_result.json
+data/error_ledger.json
+
+# Dependencies and Virtual Environments
+node_modules/
+.venv/
+env/
+venv/
+
+# Python Cache and Build Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Model Weights and Large Datasets
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.parquet
+data/corpus_raw/
+data/hf_cache/
+data/neural_models/
+data/datasets/
+data/tasks/*_checkpoint.json
+data/missions/mission_*.json
+data/experiment_campaigns/
+data/multimodal_real/
+data/vision_temp/
+data/test_rag_fixtures/
+data/*.db
+data/*.db-shm
+data/*.db-wal
+*.jsonl
+
+# Logs, Diagnostics and Temporary Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+scratch/
+.tempmediaStorage/
+backups/
+Notes/
+workspace/
+
+# Generated Documents
+documents/*.docx
+documents/*.pdf
+documents/~*
+!documents/.gitkeep
+
+# Operating System Files
+Thumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Local App Profiles and Generated 3D Models
+data/3d_models/
+data/whatsapp_web_profile/

@@ -1,0 +1,103 @@
+{
+  "dataset_name": "VISION 2.0 Verifiable Multi-Domain Foundation Corpus",
+  "version": "2.2.0",
+  "created_at": "2026-11-20T14:46:00+05:30",
+  "tokenizer": "JarvisBPE (vocab_size=8192)",
+  "splits": {
+    "train": {
+      "examples": 13653,
+      "file": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_2_corpus\\train.jsonl",
+      "sha256": "731985a882646ffe1f22adc117983d36d616bd90f7606cf5edddd730f5918aa9"
+    },
+    "validation": {
+      "examples": 758,
+      "file": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_2_corpus\\val.jsonl"
+    },
+    "test": {
+      "examples": 760,
+      "file": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_2_corpus\\test.jsonl"
+    }
+  },
+  "total_examples": 15171,
+  "total_tokens": 10609055,
+  "mean_tokens_per_example": 699.3,
+  "zero_contamination_verified": true,
+  "probes_checked_count": 431,
+  "domain_breakdown": {
+    "programming_java": {
+      "examples": 800,
+      "tokens": 397453
+    },
+    "instruction_following": {
+      "examples": 1600,
+      "tokens": 321924
+    },
+    "tool_use_dialogue": {
+      "examples": 906,
+      "tokens": 852534
+    },
+    "mathematics_fractions": {
+      "examples": 498,
+      "tokens": 101971
+    },
+    "programming_javascript": {
+      "examples": 800,
+      "tokens": 319792
+    },
+    "science_engineering": {
+      "examples": 1221,
+      "tokens": 1249366
+    },
+    "coding_python": {
+      "examples": 896,
+      "tokens": 809029
+    },
+    "hindi_devanagari": {
+      "examples": 1303,
+      "tokens": 2187990
+    },
+    "coding_polyglot": {
+      "examples": 892,
+      "tokens": 622451
+    },
+    "mathematics_reasoning": {
+      "examples": 899,
+      "tokens": 926459
+    },
+    "mathematics_algebra": {
+      "examples": 500,
+      "tokens": 96906
+    },
+    "hinglish_dialog": {
+      "examples": 1308,
+      "tokens": 729737
+    },
+    "programming_python": {
+      "examples": 800,
+      "tokens": 307204
+    },
+    "general_language_academic": {
+      "examples": 903,
+      "tokens": 1171972
+    },
+    "causal_reasoning": {
+      "examples": 328,
+      "tokens": 167260
+    },
+    "mathematics_arithmetic": {
+      "examples": 981,
+      "tokens": 201362
+    },
+    "formal_reasoning": {
+      "examples": 536,
+      "tokens": 145645
+    }
+  },
+  "quality_controls": {
+    "exact_deduplication_sha256": true,
+    "zero_overlap_with_sets_a_b_c": true,
+    "intermediate_step_supervision": true,
+    "executable_code_validation": true,
+    "license": "Apache-2.0 / Permissive Verified"
+  }
+}

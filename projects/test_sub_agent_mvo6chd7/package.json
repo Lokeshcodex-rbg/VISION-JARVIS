@@ -1,0 +1,15 @@
+{
+  "name": "stark-ai-test_sub_agent_mvo6chd7",
+  "version": "1.0.0",
+  "description": "Dedicated test analytical assistant",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/test_agent.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "stark-ai",
+    "agent",
+    "test_sub_agent_mvo6chd7"
+  ]
+}

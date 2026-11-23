@@ -1,0 +1,3028 @@
+{
+  "title": "VISION 100M Stage 3 Post-Training Comprehensive Audit & Generation Quality Registry",
+  "timestamp_iso": "2026-11-21T17:13:42Z",
+  "model_parameters": 98258258,
+  "classification": "No statistically meaningful improvement",
+  "justification": "While Stage 3 successfully lowered training loss to 5.98, tightened validation perplexity to 2100.9, and reduced first-token entropy from 8.019 to 7.545, the model remains severely undertrained at 174,080 cumulative tokens (0.0087% of 2B Chinchilla optimal compute). The benchmark accuracy delta against Stage 2 is statistically inconclusive (0.0% vs 0.0%). Generation remains incoherent babble with high repetition in open-ended settings. Gemini remains JARVIS production primary.",
+  "production_guardrail": "Gemini 2.5 / 3.5 remains the active production primary for JARVIS",
+  "token_reconciliation": {
+    "cumulative_tokens_reported": 174080,
+    "stage3_tokens_processed": 81920,
+    "stage3_non_padding_tokens": 55884,
+    "stage3_target_tokens": 35707,
+    "stage3_padding_tokens": 26036,
+    "cumulative_non_padding_tokens": 143521,
+    "cumulative_target_tokens": 63520,
+    "cumulative_padding_tokens": 30559,
+    "optimizer_updates_stage3": 20,
+    "effective_epochs_stage3": 0.013809,
+    "loss_plateau_forensic_diagnosis": {
+      "step_128_validation_loss_exact": 7.650112,
+      "step_128_validation_ppl": 2100.88,
+      "step_160_validation_loss_exact": 7.650135,
+      "step_160_validation_ppl": 2100.93,
+      "absolute_loss_difference": 2.38e-05,
+      "root_cause_explanation": "1. Fixed Validation Subset: The validation loop evaluated the exact same 20 un-shuffled batches (40 sequences). 2. Learning Rate Annealing: The cosine schedule decayed LR from 3.01e-05 at step 128 to 1.50e-05 at step 160, reducing parameter update magnitude to 3.09e-04. 3. Representation Saturation: The model had reached its loss minimum for this batch subset given the low capacity and undertrained state, resulting in identical rounded loss (7.6501) while Shannon entropy tightened from 7.689 to 7.615."
+    }
+  },
+  "comparative_240_probe_benchmark": {
+    "suite_name": "vision_independent_validation_dataset_240",
+    "total_probes": 240,
+    "stage_3_results": {
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "wilson_95_ci": [
+        0.0,
+        1.58
+      ],
+      "mean_entropy": 7.561,
+      "mean_latency_ms": 1655.9,
+      "domain_breakdown": {
+        "mathematics": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "formal_reasoning": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "causal_counterfactual": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "programming_python": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "programming_javascript": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "programming_java": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "algorithms_complexity": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "science_engineering": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "english_comprehension": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "hindi_comprehension": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "hinglish_dialogue": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "instruction_conversational": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        }
+      }
+    },
+    "stage_2_results": {
+      "passed": 0,
+      "pass_rate_pct": 0.0,
+      "wilson_95_ci": [
+        0.0,
+        1.58
+      ],
+      "mean_entropy": 8.037,
+      "mean_latency_ms": 1752.2,
+      "domain_breakdown": {
+        "mathematics": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "formal_reasoning": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "causal_counterfactual": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "programming_python": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "programming_javascript": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "programming_java": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "algorithms_complexity": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "science_engineering": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "english_comprehension": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "hindi_comprehension": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "hinglish_dialogue": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        },
+        "instruction_conversational": {
+          "passed": 0,
+          "total": 20,
+          "pct": 0.0
+        }
+      }
+    },
+    "statistical_comparison": {
+      "net_passed_difference": 0,
+      "statistically_significant": false,
+      "conclusion": "No statistically meaningful improvement over Stage 2 in raw factual benchmark pass rate, though internal representation entropy tightened."
+    }
+  },
+  "held_out_100_prompts_evaluation": {
+    "total_prompts": 110,
+    "domains_covered": [
+      "hinglish_dialog",
+      "english_qa",
+      "algorithms",
+      "instruction_following",
+      "tool_orchestration",
+      "programming_java",
+      "programming_python",
+      "hindi_devanagari",
+      "programming_javascript",
+      "mathematics",
+      "science_engineering",
+      "formal_reasoning"
+    ],
+    "prompts": [
+      {
+        "index": 1,
+        "domain": "mathematics",
+        "prompt": "Solve for x: 3x + 15 = 45.",
+        "stage_3": {
+          "generated_text": "\":\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.562,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 61.3,
+          "latency_ms": 2487.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "111111111111 1 1 1 1 1 1 1 1 1 1",
+          "token_count": 32,
+          "entropy": 7.717,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 35.5,
+          "latency_ms": 2361.5
+        }
+      },
+      {
+        "index": 2,
+        "domain": "mathematics",
+        "prompt": "What is 144 divided by 12?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.642,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 61.3,
+          "latency_ms": 1878.8,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": " 1111 1 1 1 1 1 1 1 1 1 1 1 1 1 ",
+          "token_count": 32,
+          "entropy": 7.551,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 9.7,
+          "latency_ms": 1842.5
+        }
+      },
+      {
+        "index": 3,
+        "domain": "mathematics",
+        "prompt": "Calculate 35 * 14.",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.583,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2068.0,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": " 111 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+          "token_count": 32,
+          "entropy": 7.552,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 6.5,
+          "latency_ms": 1794.8
+        }
+      },
+      {
+        "index": 4,
+        "domain": "mathematics",
+        "prompt": "What is the square root of 625?",
+        "stage_3": {
+          "generated_text": ": 122222222222222222222222222222",
+          "token_count": 32,
+          "entropy": 7.445,
+          "unique_token_ratio": 0.125,
+          "repetition_rate_pct": 90.3,
+          "latency_ms": 1877.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.947,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 96.8,
+          "latency_ms": 1815.6
+        }
+      },
+      {
+        "index": 5,
+        "domain": "mathematics",
+        "prompt": "If a triangle has angles 50 and 60 degrees, what is the third angle?",
+        "stage_3": {
+          "generated_text": "::::::::::::::::::::::::::::::::",
+          "token_count": 32,
+          "entropy": 7.553,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2107.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.059,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2139.2
+        }
+      },
+      {
+        "index": 6,
+        "domain": "mathematics",
+        "prompt": "Simplify the fraction 24/36.",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n`````````````````````````````````````````````````````````\n````````````",
+          "token_count": 32,
+          "entropy": 7.434,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 90.3,
+          "latency_ms": 1801.7,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "........................ 1 1 1 1",
+          "token_count": 32,
+          "entropy": 7.838,
+          "unique_token_ratio": 0.094,
+          "repetition_rate_pct": 74.2,
+          "latency_ms": 1809.9
+        }
+      },
+      {
+        "index": 7,
+        "domain": "mathematics",
+        "prompt": "Find the area of a circle with radius 7 (use pi = 22/7).",
+        "stage_3": {
+          "generated_text": ":::: 122222222222222222222222222",
+          "token_count": 32,
+          "entropy": 7.467,
+          "unique_token_ratio": 0.125,
+          "repetition_rate_pct": 90.3,
+          "latency_ms": 2127.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": ".\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.906,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 96.8,
+          "latency_ms": 2122.7
+        }
+      },
+      {
+        "index": 8,
+        "domain": "mathematics",
+        "prompt": "What is 15% of 200?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.616,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1888.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": " 1111111 1 1 1 1 1 1 1 1 1 1 1 1",
+          "token_count": 32,
+          "entropy": 7.684,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 19.4,
+          "latency_ms": 1847.0
+        }
+      },
+      {
+        "index": 9,
+        "domain": "mathematics",
+        "prompt": "Solve the quadratic equation x^2 - 5x + 6 = 0.",
+        "stage_3": {
+          "generated_text": ": 122222222222222222222222222222",
+          "token_count": 32,
+          "entropy": 7.345,
+          "unique_token_ratio": 0.125,
+          "repetition_rate_pct": 90.3,
+          "latency_ms": 2411.7,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "111111111111111 1 1 1 1 1 1 1 1 ",
+          "token_count": 32,
+          "entropy": 7.758,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 45.2,
+          "latency_ms": 2078.6
+        }
+      },
+      {
+        "index": 10,
+        "domain": "mathematics",
+        "prompt": "A train travels 120 km in 2 hours. What is its average speed?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.629,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2086.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "........ 111111 1 1 1 1 1 1 1 1 ",
+          "token_count": 32,
+          "entropy": 7.769,
+          "unique_token_ratio": 0.094,
+          "repetition_rate_pct": 38.7,
+          "latency_ms": 2130.4
+        }
+      },
+      {
+        "index": 11,
+        "domain": "programming_python",
+        "prompt": "Write a Python function to check if a number is prime.",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.621,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1808.7,
+          "syntax_check": {
+            "valid": false,
+            "detail": "AST_SYNTAX_ERROR: illegal target for annotation (<unknown>, line 1)"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.098,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1805.1
+        }
+      },
+      {
+        "index": 12,
+        "domain": "programming_python",
+        "prompt": "Write a Python function to reverse a string.",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.629,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2024.3,
+          "syntax_check": {
+            "valid": false,
+            "detail": "AST_SYNTAX_ERROR: illegal target for annotation (<unknown>, line 1)"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.104,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2277.5
+        }
+      },
+      {
+        "index": 13,
+        "domain": "programming_python",
+        "prompt": "def fibonacci(n):",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.601,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1665.5,
+          "syntax_check": {
+            "valid": false,
+            "detail": "AST_SYNTAX_ERROR: illegal target for annotation (<unknown>, line 1)"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.109,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1845.2
+        }
+      },
+      {
+        "index": 14,
+        "domain": "programming_python",
+        "prompt": "Write Python code to find the maximum element in a list.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.651,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 77.4,
+          "latency_ms": 2029.9,
+          "syntax_check": {
+            "valid": true,
+            "detail": "AST_SYNTAX_VALID"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.095,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1844.7
+        }
+      },
+      {
+        "index": 15,
+        "domain": "programming_python",
+        "prompt": "How do you read a JSON file in Python?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.603,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2267.4,
+          "syntax_check": {
+            "valid": false,
+            "detail": "AST_SYNTAX_ERROR: illegal target for annotation (<unknown>, line 1)"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.108,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1918.8
+        }
+      },
+      {
+        "index": 16,
+        "domain": "programming_python",
+        "prompt": "Write a Python generator that yields even numbers up to N.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.63,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 83.9,
+          "latency_ms": 2035.8,
+          "syntax_check": {
+            "valid": true,
+            "detail": "AST_SYNTAX_VALID"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.099,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1876.1
+        }
+      },
+      {
+        "index": 17,
+        "domain": "programming_python",
+        "prompt": "def binary_search(arr, target):",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.635,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1717.8,
+          "syntax_check": {
+            "valid": false,
+            "detail": "AST_SYNTAX_ERROR: illegal target for annotation (<unknown>, line 1)"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.109,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1715.5
+        }
+      },
+      {
+        "index": 18,
+        "domain": "programming_python",
+        "prompt": "Write a Python class Person with name and age attributes.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \"\": \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.639,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 58.1,
+          "latency_ms": 1796.8,
+          "syntax_check": {
+            "valid": false,
+            "detail": "AST_SYNTAX_ERROR: illegal target for annotation (<unknown>, line 1)"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.096,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2106.1
+        }
+      },
+      {
+        "index": 19,
+        "domain": "programming_python",
+        "prompt": "How to handle ZeroDivisionError in Python with try-except?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.65,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2356.2,
+          "syntax_check": {
+            "valid": false,
+            "detail": "AST_SYNTAX_ERROR: illegal target for annotation (<unknown>, line 1)"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.105,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2131.2
+        }
+      },
+      {
+        "index": 20,
+        "domain": "programming_python",
+        "prompt": "Write a Python function to merge two sorted lists.",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.631,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1885.7,
+          "syntax_check": {
+            "valid": false,
+            "detail": "AST_SYNTAX_ERROR: illegal target for annotation (<unknown>, line 1)"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.102,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1762.3
+        }
+      },
+      {
+        "index": 21,
+        "domain": "programming_javascript",
+        "prompt": "Write a JavaScript function to deep clone an object.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.637,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 61.3,
+          "latency_ms": 1764.2,
+          "syntax_check": {
+            "valid": true,
+            "detail": "JS_SYNTAX_PLAUSIBLE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.096,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1805.3
+        }
+      },
+      {
+        "index": 22,
+        "domain": "programming_javascript",
+        "prompt": "How do you declare an async function in JavaScript?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.655,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 67.7,
+          "latency_ms": 1980.0,
+          "syntax_check": {
+            "valid": true,
+            "detail": "JS_SYNTAX_PLAUSIBLE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.101,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1931.7
+        }
+      },
+      {
+        "index": 23,
+        "domain": "programming_javascript",
+        "prompt": "function calculateSum(a, b) {",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.595,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 80.6,
+          "latency_ms": 2381.8,
+          "syntax_check": {
+            "valid": true,
+            "detail": "JS_SYNTAX_PLAUSIBLE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.105,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2183.6
+        }
+      },
+      {
+        "index": 24,
+        "domain": "programming_javascript",
+        "prompt": "Write JavaScript code using Array.prototype.reduce to sum an array.",
+        "stage_3": {
+          "generated_text": "\":\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.647,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 61.3,
+          "latency_ms": 2473.6,
+          "syntax_check": {
+            "valid": true,
+            "detail": "JS_SYNTAX_PLAUSIBLE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.096,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3000.7
+        }
+      },
+      {
+        "index": 25,
+        "domain": "programming_javascript",
+        "prompt": "Explain the difference between let, const, and var.",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n```\n\n```\n```\n```\n```\n```\n",
+          "token_count": 32,
+          "entropy": 7.591,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 61.3,
+          "latency_ms": 1913.1,
+          "syntax_check": {
+            "valid": true,
+            "detail": "JS_SYNTAX_PLAUSIBLE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.084,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1813.5
+        }
+      },
+      {
+        "index": 26,
+        "domain": "programming_javascript",
+        "prompt": "Write a JavaScript Promise that resolves after 1 second.",
+        "stage_3": {
+          "generated_text": "\":\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.61,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 54.8,
+          "latency_ms": 2212.1,
+          "syntax_check": {
+            "valid": true,
+            "detail": "JS_SYNTAX_PLAUSIBLE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.088,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1915.3
+        }
+      },
+      {
+        "index": 27,
+        "domain": "programming_javascript",
+        "prompt": "How do you add an event listener to a button in the DOM?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \"\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.643,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 54.8,
+          "latency_ms": 1993.0,
+          "syntax_check": {
+            "valid": true,
+            "detail": "JS_SYNTAX_PLAUSIBLE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.1,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2429.0
+        }
+      },
+      {
+        "index": 28,
+        "domain": "programming_javascript",
+        "prompt": "Write an arrow function in JavaScript that filters odd numbers.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.647,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 67.7,
+          "latency_ms": 1842.8,
+          "syntax_check": {
+            "valid": true,
+            "detail": "JS_SYNTAX_PLAUSIBLE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.102,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1943.7
+        }
+      },
+      {
+        "index": 29,
+        "domain": "programming_java",
+        "prompt": "Write a Java method to check if a string is a palindrome.",
+        "stage_3": {
+          "generated_text": "\":\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.634,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 77.4,
+          "latency_ms": 2236.4,
+          "syntax_check": {
+            "valid": false,
+            "detail": "MISSING_JAVA_CLASS_STRUCTURE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.093,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2690.3
+        }
+      },
+      {
+        "index": 30,
+        "domain": "programming_java",
+        "prompt": "public class Calculator {",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.612,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2313.0,
+          "syntax_check": {
+            "valid": false,
+            "detail": "MISSING_JAVA_CLASS_STRUCTURE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.112,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1830.4
+        }
+      },
+      {
+        "index": 31,
+        "domain": "programming_java",
+        "prompt": "How to create an ArrayList of integers in Java?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.606,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2280.5,
+          "syntax_check": {
+            "valid": false,
+            "detail": "MISSING_JAVA_CLASS_STRUCTURE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.106,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2136.8
+        }
+      },
+      {
+        "index": 32,
+        "domain": "programming_java",
+        "prompt": "Write a Java program to print Hello World.",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.645,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2611.5,
+          "syntax_check": {
+            "valid": false,
+            "detail": "MISSING_JAVA_CLASS_STRUCTURE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.101,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2650.2
+        }
+      },
+      {
+        "index": 33,
+        "domain": "programming_java",
+        "prompt": "Explain the difference between interface and abstract class in Java.",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.64,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2512.9,
+          "syntax_check": {
+            "valid": false,
+            "detail": "MISSING_JAVA_CLASS_STRUCTURE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.086,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2570.9
+        }
+      },
+      {
+        "index": 34,
+        "domain": "programming_java",
+        "prompt": "How do you implement Runnable in Java for multithreading?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.628,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2539.7,
+          "syntax_check": {
+            "valid": false,
+            "detail": "MISSING_JAVA_CLASS_STRUCTURE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.103,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2867.2
+        }
+      },
+      {
+        "index": 35,
+        "domain": "programming_java",
+        "prompt": "Write a Java method to calculate factorial of n recursively.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \"\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.649,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 54.8,
+          "latency_ms": 2494.5,
+          "syntax_check": {
+            "valid": false,
+            "detail": "MISSING_JAVA_CLASS_STRUCTURE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.093,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2829.0
+        }
+      },
+      {
+        "index": 36,
+        "domain": "programming_java",
+        "prompt": "What is the purpose of the static keyword in Java?",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.574,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1852.5,
+          "syntax_check": {
+            "valid": false,
+            "detail": "MISSING_JAVA_CLASS_STRUCTURE"
+          },
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.084,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1799.9
+        }
+      },
+      {
+        "index": 37,
+        "domain": "algorithms",
+        "prompt": "Explain how Dijkstra's algorithm finds the shortest path.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \"\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.657,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 48.4,
+          "latency_ms": 2055.7,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.091,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3050.7
+        }
+      },
+      {
+        "index": 38,
+        "domain": "algorithms",
+        "prompt": "What is the time complexity of QuickSort in the average and worst case?",
+        "stage_3": {
+          "generated_text": "::::::::::::::::::::::::::::::::",
+          "token_count": 32,
+          "entropy": 7.608,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2280.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.08,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2028.2
+        }
+      },
+      {
+        "index": 39,
+        "domain": "algorithms",
+        "prompt": "Explain how a hash map resolves collisions with separate chaining.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.659,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 61.3,
+          "latency_ms": 1997.0,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.095,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2475.5
+        }
+      },
+      {
+        "index": 40,
+        "domain": "algorithms",
+        "prompt": "What is dynamic programming and how does memoization work?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.64,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1905.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.104,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1949.5
+        }
+      },
+      {
+        "index": 41,
+        "domain": "algorithms",
+        "prompt": "Explain breadth-first search (BFS) on a graph.",
+        "stage_3": {
+          "generated_text": "\n\n\n```\n```\n```````````````````````````````````````````````````````````````````````````",
+          "token_count": 32,
+          "entropy": 7.661,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 83.9,
+          "latency_ms": 2888.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.082,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2608.4
+        }
+      },
+      {
+        "index": 42,
+        "domain": "algorithms",
+        "prompt": "How does merge sort work and why is it stable?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.618,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1850.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.108,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2141.7
+        }
+      },
+      {
+        "index": 43,
+        "domain": "algorithms",
+        "prompt": "What is the difference between a stack and a queue?",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.621,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2060.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.094,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2807.8
+        }
+      },
+      {
+        "index": 44,
+        "domain": "algorithms",
+        "prompt": "Explain how a binary search tree maintains sorted order.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.661,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 77.4,
+          "latency_ms": 3598.5,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.093,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3800.8
+        }
+      },
+      {
+        "index": 45,
+        "domain": "formal_reasoning",
+        "prompt": "All humans are mortal. Socrates is a human. What follows logically?",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```",
+          "token_count": 32,
+          "entropy": 7.632,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 25.8,
+          "latency_ms": 4181.8,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.088,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4653.3
+        }
+      },
+      {
+        "index": 46,
+        "domain": "formal_reasoning",
+        "prompt": "If it rains, the ground is wet. The ground is dry. Did it rain?",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.487,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4678.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.071,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4645.8
+        }
+      },
+      {
+        "index": 47,
+        "domain": "formal_reasoning",
+        "prompt": "Explain why correlation does not imply causation.",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.643,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3746.6,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.096,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4043.6
+        }
+      },
+      {
+        "index": 48,
+        "domain": "formal_reasoning",
+        "prompt": "If A implies B, and B implies C, does A imply C?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.626,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 54.8,
+          "latency_ms": 4521.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.094,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4295.9
+        }
+      },
+      {
+        "index": 49,
+        "domain": "formal_reasoning",
+        "prompt": "What is a false dichotomy logical fallacy?",
+        "stage_3": {
+          "generated_text": "\":\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.619,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 74.2,
+          "latency_ms": 3980.5,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.104,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4065.7
+        }
+      },
+      {
+        "index": 50,
+        "domain": "formal_reasoning",
+        "prompt": "A switch controls a lamp. If the switch is OFF and bulb is unlit, what happens when switched ON?",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.565,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 5347.6,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.064,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 5057.6
+        }
+      },
+      {
+        "index": 51,
+        "domain": "formal_reasoning",
+        "prompt": "Explain the difference between inductive and deductive reasoning.",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n```\n```\n```\n```\n```\n```",
+          "token_count": 32,
+          "entropy": 7.583,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 64.5,
+          "latency_ms": 4153.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.071,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3940.9
+        }
+      },
+      {
+        "index": 52,
+        "domain": "formal_reasoning",
+        "prompt": "If not all birds can fly, does that mean no birds can fly?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.641,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 61.3,
+          "latency_ms": 4046.0,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.098,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4038.7
+        }
+      },
+      {
+        "index": 53,
+        "domain": "science_engineering",
+        "prompt": "What is Newton's third law of motion?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.649,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3793.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.103,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3722.6
+        }
+      },
+      {
+        "index": 54,
+        "domain": "science_engineering",
+        "prompt": "Explain the role of mitochondria in a biological cell.",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.599,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4366.8,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.078,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4110.0
+        }
+      },
+      {
+        "index": 55,
+        "domain": "science_engineering",
+        "prompt": "What is Ohm's Law and its formula relating V, I, and R?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \"\": \"\": \" \" \" \" \" \" \" \" \"\":\":",
+          "token_count": 32,
+          "entropy": 7.654,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 48.4,
+          "latency_ms": 4468.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.098,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4451.5
+        }
+      },
+      {
+        "index": 56,
+        "domain": "science_engineering",
+        "prompt": "Explain the principle of conservation of energy.",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.61,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3673.7,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.085,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3776.2
+        }
+      },
+      {
+        "index": 57,
+        "domain": "science_engineering",
+        "prompt": "What is the difference between speed and velocity in physics?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.648,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3819.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.094,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3677.6
+        }
+      },
+      {
+        "index": 58,
+        "domain": "science_engineering",
+        "prompt": "How does an internal combustion engine work?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.636,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3828.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.106,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3509.4
+        }
+      },
+      {
+        "index": 59,
+        "domain": "science_engineering",
+        "prompt": "What is photosynthesis and what are its primary products?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.638,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3890.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.104,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3844.5
+        }
+      },
+      {
+        "index": 60,
+        "domain": "science_engineering",
+        "prompt": "Explain Bernoulli's principle in aerodynamics.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \"\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.645,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 67.7,
+          "latency_ms": 4228.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.103,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4166.4
+        }
+      },
+      {
+        "index": 61,
+        "domain": "hindi_devanagari",
+        "prompt": "\u092d\u093e\u0930\u0924 \u0915\u0940 \u0930\u093e\u091c\u0927\u093e\u0928\u0940 \u0915\u094d\u092f\u093e \u0939\u0948?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.641,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3772.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.103,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3534.2
+        }
+      },
+      {
+        "index": 62,
+        "domain": "hindi_devanagari",
+        "prompt": "\u0938\u0942\u0930\u094d\u092f \u0915\u093f\u0938 \u0926\u093f\u0936\u093e \u0938\u0947 \u0909\u0917\u0924\u093e \u0939\u0948?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.656,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3985.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.093,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4028.5
+        }
+      },
+      {
+        "index": 63,
+        "domain": "hindi_devanagari",
+        "prompt": "\u092a\u0947\u0921\u093c \u0939\u092e\u0947\u0902 \u0915\u094d\u092f\u093e \u092a\u094d\u0930\u0926\u093e\u0928 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.676,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3814.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.106,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3651.3
+        }
+      },
+      {
+        "index": 64,
+        "domain": "hindi_devanagari",
+        "prompt": "\u091c\u0932 \u0938\u0902\u0930\u0915\u094d\u0937\u0923 \u0915\u094d\u092f\u094b\u0902 \u0906\u0935\u0936\u094d\u092f\u0915 \u0939\u0948?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.713,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3663.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.113,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3665.8
+        }
+      },
+      {
+        "index": 65,
+        "domain": "hindi_devanagari",
+        "prompt": "\u0915\u0902\u092a\u094d\u092f\u0942\u091f\u0930 \u0915\u094d\u092f\u093e \u0939\u0948 \u0914\u0930 \u0907\u0938\u0915\u0947 \u092e\u0941\u0916\u094d\u092f \u092d\u093e\u0917 \u0915\u094c\u0928 \u0938\u0947 \u0939\u0948\u0902?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.692,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3946.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.108,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4053.1
+        }
+      },
+      {
+        "index": 66,
+        "domain": "hindi_devanagari",
+        "prompt": "\u0938\u091a\u094d\u091a\u093e \u092e\u093f\u0924\u094d\u0930 \u0915\u094c\u0928 \u0939\u094b\u0924\u093e \u0939\u0948?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.623,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3686.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.112,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3743.1
+        }
+      },
+      {
+        "index": 67,
+        "domain": "hindi_devanagari",
+        "prompt": "\u0938\u092e\u092f \u0915\u093e \u0938\u0926\u0941\u092a\u092f\u094b\u0917 \u0915\u094d\u092f\u094b\u0902 \u0915\u0930\u0928\u093e \u091a\u093e\u0939\u093f\u090f?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.588,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3562.6,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.109,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3478.5
+        }
+      },
+      {
+        "index": 68,
+        "domain": "hindi_devanagari",
+        "prompt": "\u0939\u093f\u0902\u0926\u0940 \u0935\u094d\u092f\u093e\u0915\u0930\u0923 \u092e\u0947\u0902 \u0938\u0902\u091c\u094d\u091e\u093e \u0915\u0940 \u092a\u0930\u093f\u092d\u093e\u0937\u093e \u0926\u0940\u091c\u093f\u090f\u0964",
+        "stage_3": {
+          "generated_text": "\":\":\":\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 8.087,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 41.9,
+          "latency_ms": 4491.7,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.095,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4433.0
+        }
+      },
+      {
+        "index": 69,
+        "domain": "hindi_devanagari",
+        "prompt": "\u090f\u0915 \u0935\u0930\u094d\u0937 \u092e\u0947\u0902 \u0915\u093f\u0924\u0928\u0947 \u092e\u0939\u0940\u0928\u0947 \u0939\u094b\u0924\u0947 \u0939\u0948\u0902?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.69,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3767.5,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.103,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3873.0
+        }
+      },
+      {
+        "index": 70,
+        "domain": "hindi_devanagari",
+        "prompt": "\u092a\u094d\u0930\u0915\u0943\u0924\u093f \u0915\u093e \u0938\u0902\u0924\u0941\u0932\u0928 \u092c\u0928\u093e\u090f \u0930\u0916\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0939\u092e\u0947\u0902 \u0915\u094d\u092f\u093e \u0915\u0930\u0928\u093e \u091a\u093e\u0939\u093f\u090f?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.695,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 41.9,
+          "latency_ms": 4650.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.094,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4257.6
+        }
+      },
+      {
+        "index": 71,
+        "domain": "hinglish_dialog",
+        "prompt": "Aap kaise ho JARVIS?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.647,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4397.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.104,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3172.9
+        }
+      },
+      {
+        "index": 72,
+        "domain": "hinglish_dialog",
+        "prompt": "Mujhe Python sikhna hai, kahan se start karu?",
+        "stage_3": {
+          "generated_text": "\":\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.64,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 74.2,
+          "latency_ms": 4338.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.097,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 4681.9
+        }
+      },
+      {
+        "index": 73,
+        "domain": "hinglish_dialog",
+        "prompt": "Aaj ka weather kaisa lag raha hai?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.649,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3465.8,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.098,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2674.0
+        }
+      },
+      {
+        "index": 74,
+        "domain": "hinglish_dialog",
+        "prompt": "Coding interview prepare karne ke liye best tips kya hain?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.642,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 74.2,
+          "latency_ms": 1947.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.104,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2077.6
+        }
+      },
+      {
+        "index": 75,
+        "domain": "hinglish_dialog",
+        "prompt": "Time management ke liye 3 simple rules batao.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.658,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 67.7,
+          "latency_ms": 2025.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.097,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1874.5
+        }
+      },
+      {
+        "index": 76,
+        "domain": "hinglish_dialog",
+        "prompt": "Ek healthy morning routine kaisa hona chahiye?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.633,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1889.5,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.105,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1859.5
+        }
+      },
+      {
+        "index": 77,
+        "domain": "hinglish_dialog",
+        "prompt": "Ek cup chai banane ki simple recipe batao.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.723,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 54.8,
+          "latency_ms": 2345.6,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.101,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1915.2
+        }
+      },
+      {
+        "index": 78,
+        "domain": "hinglish_dialog",
+        "prompt": "Bhai ek motivate karne wala quote share karo.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.765,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 58.1,
+          "latency_ms": 1931.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.099,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2376.2
+        }
+      },
+      {
+        "index": 79,
+        "domain": "hinglish_dialog",
+        "prompt": "RAM aur ROM me kya major difference hota hai?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.639,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1920.9,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.101,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1904.2
+        }
+      },
+      {
+        "index": 80,
+        "domain": "hinglish_dialog",
+        "prompt": "Main stress handle karne ke liye kya kar sakta hu?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.635,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 54.8,
+          "latency_ms": 2517.7,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.092,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2136.7
+        }
+      },
+      {
+        "index": 81,
+        "domain": "instruction_following",
+        "prompt": "Return only a JSON object with keys 'status' and 'code'.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.676,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 41.9,
+          "latency_ms": 3080.8,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.093,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1991.3
+        }
+      },
+      {
+        "index": 82,
+        "domain": "instruction_following",
+        "prompt": "List the three primary colors in alphabetical order separated by commas.",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.628,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2508.5,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.098,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1961.0
+        }
+      },
+      {
+        "index": 83,
+        "domain": "instruction_following",
+        "prompt": "Answer in exactly one word: Is the sun a planet or a star?",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.666,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2001.8,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.091,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2232.7
+        }
+      },
+      {
+        "index": 84,
+        "domain": "instruction_following",
+        "prompt": "Write a bulleted list of exactly three steps to make toast.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \" \"\": \" \" \" \" \" \" \" \" \" \" \" \" \" \"\": \" \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.643,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 71.0,
+          "latency_ms": 1958.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.095,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2344.0
+        }
+      },
+      {
+        "index": 85,
+        "domain": "instruction_following",
+        "prompt": "Output the word 'VERIFIED' in all capital letters with no other text.",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n```\n``````````````````````````````````````````````````````````````````",
+          "token_count": 32,
+          "entropy": 7.602,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 90.3,
+          "latency_ms": 2147.0,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.084,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2099.0
+        }
+      },
+      {
+        "index": 86,
+        "domain": "instruction_following",
+        "prompt": "Convert the temperature 100 Celsius to Fahrenheit.",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.65,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1858.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "............... 1 1 1 1 1 1 1 1 ",
+          "token_count": 32,
+          "entropy": 7.878,
+          "unique_token_ratio": 0.094,
+          "repetition_rate_pct": 45.2,
+          "latency_ms": 2012.5
+        }
+      },
+      {
+        "index": 87,
+        "domain": "instruction_following",
+        "prompt": "Count from 1 to 5 separated by hyphens.",
+        "stage_3": {
+          "generated_text": "\n```\n```\n```\n```````````````````````````````````````````````````````````````````````````",
+          "token_count": 32,
+          "entropy": 7.55,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 77.4,
+          "latency_ms": 1930.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": " 11 1 1 1 1 1 1 1 1 1 1 1 1 1 1 ",
+          "token_count": 32,
+          "entropy": 7.546,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 3.2,
+          "latency_ms": 1913.9
+        }
+      },
+      {
+        "index": 88,
+        "domain": "instruction_following",
+        "prompt": "Spell the word 'INTELLIGENCE' backwards.",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n``````````````````````````````",
+          "token_count": 32,
+          "entropy": 7.533,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 96.8,
+          "latency_ms": 2119.6,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.083,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 3005.8
+        }
+      },
+      {
+        "index": 89,
+        "domain": "instruction_following",
+        "prompt": "Provide a two-sentence summary of what an operating system does.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.66,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 83.9,
+          "latency_ms": 2381.0,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.096,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2140.5
+        }
+      },
+      {
+        "index": 90,
+        "domain": "instruction_following",
+        "prompt": "Output strict XML: <response><status>OK</status></response>",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.758,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 41.9,
+          "latency_ms": 2308.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.09,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2649.5
+        }
+      },
+      {
+        "index": 91,
+        "domain": "english_qa",
+        "prompt": "What is the capital city of France?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.65,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1770.6,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.102,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2121.4
+        }
+      },
+      {
+        "index": 92,
+        "domain": "english_qa",
+        "prompt": "Who wrote Romeo and Juliet?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \" \" \" \" \"\": \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.656,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 71.0,
+          "latency_ms": 1913.0,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.108,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1888.5
+        }
+      },
+      {
+        "index": 93,
+        "domain": "english_qa",
+        "prompt": "What is the largest ocean on Earth?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.643,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1777.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.1,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1900.3
+        }
+      },
+      {
+        "index": 94,
+        "domain": "english_qa",
+        "prompt": "In what year did the Apollo 11 moon landing take place?",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.619,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2083.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.065,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2056.2
+        }
+      },
+      {
+        "index": 95,
+        "domain": "english_qa",
+        "prompt": "What is the chemical symbol for gold?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.624,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1775.0,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.103,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1779.4
+        }
+      },
+      {
+        "index": 96,
+        "domain": "english_qa",
+        "prompt": "How many continents are there on Earth?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.628,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1802.5,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.106,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1757.2
+        }
+      },
+      {
+        "index": 97,
+        "domain": "english_qa",
+        "prompt": "What is the boiling point of water in Celsius?",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.63,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1830.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.092,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1860.5
+        }
+      },
+      {
+        "index": 98,
+        "domain": "english_qa",
+        "prompt": "What does CPU stand for?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.619,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1741.8,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.108,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2496.0
+        }
+      },
+      {
+        "index": 99,
+        "domain": "english_qa",
+        "prompt": "Which planet is known as the Red Planet?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \" \"\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.656,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 67.7,
+          "latency_ms": 2042.5,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.1,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2424.1
+        }
+      },
+      {
+        "index": 100,
+        "domain": "english_qa",
+        "prompt": "What is the longest river in the world?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.662,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1808.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.094,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2424.4
+        }
+      },
+      {
+        "index": 101,
+        "domain": "tool_orchestration",
+        "prompt": "How does JARVIS control the Windows mouse cursor using tools?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.631,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2140.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.099,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2162.5
+        }
+      },
+      {
+        "index": 102,
+        "domain": "tool_orchestration",
+        "prompt": "What tool does JARVIS invoke to take a full-screen desktop screenshot?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.638,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 45.2,
+          "latency_ms": 2817.3,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.101,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2424.8
+        }
+      },
+      {
+        "index": 103,
+        "domain": "tool_orchestration",
+        "prompt": "Explain the permission gate requirement before launching a desktop application.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \" \" \" \" \" \" \" \" \" \" \"\": \" \" \" \" \" \" \"",
+          "token_count": 32,
+          "entropy": 7.633,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 51.6,
+          "latency_ms": 2413.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.091,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2099.8
+        }
+      },
+      {
+        "index": 104,
+        "domain": "tool_orchestration",
+        "prompt": "Format a tool call: {\"tool\": \"google_search\", \"parameters\": {\"query\": \"AI news\"}}",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.536,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 74.2,
+          "latency_ms": 2589.5,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.108,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2733.6
+        }
+      },
+      {
+        "index": 105,
+        "domain": "tool_orchestration",
+        "prompt": "What happens when an emergency stop command is received by JARVIS?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.669,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2052.6,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.103,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2063.3
+        }
+      },
+      {
+        "index": 106,
+        "domain": "tool_orchestration",
+        "prompt": "Explain the role of the Unified Intelligence Layer in routing tool requests.",
+        "stage_3": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 7.544,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2185.2,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.063,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2165.6
+        }
+      },
+      {
+        "index": 107,
+        "domain": "tool_orchestration",
+        "prompt": "How does JARVIS transcribe caller audio in real-time voice calls?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.66,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 61.3,
+          "latency_ms": 2200.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.1,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2162.1
+        }
+      },
+      {
+        "index": 108,
+        "domain": "tool_orchestration",
+        "prompt": "What parameters are required to join a video meeting via JARVIS?",
+        "stage_3": {
+          "generated_text": "\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.624,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1935.8,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.104,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 1960.7
+        }
+      },
+      {
+        "index": 109,
+        "domain": "tool_orchestration",
+        "prompt": "Explain how JARVIS preserves user privacy when inspecting open window titles.",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.667,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 35.5,
+          "latency_ms": 2254.1,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.095,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2258.2
+        }
+      },
+      {
+        "index": 110,
+        "domain": "tool_orchestration",
+        "prompt": "Why is tool execution confirmation mandatory for irreversible actions?",
+        "stage_3": {
+          "generated_text": "\": \"\": \"\": \"\": \"\": \"\": \"\": \"\": \"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":",
+          "token_count": 32,
+          "entropy": 7.656,
+          "unique_token_ratio": 0.062,
+          "repetition_rate_pct": 48.4,
+          "latency_ms": 2065.4,
+          "syntax_check": null,
+          "coherence": false,
+          "correctness": false,
+          "failure_category": "repetition_loop"
+        },
+        "stage_2": {
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "token_count": 32,
+          "entropy": 8.099,
+          "unique_token_ratio": 0.031,
+          "repetition_rate_pct": 100.0,
+          "latency_ms": 2093.7
+        }
+      }
+    ]
+  }
+}

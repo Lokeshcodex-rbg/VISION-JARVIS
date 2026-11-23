@@ -1,0 +1,29 @@
+{
+  "manifest_name": "VISION 100M Foundation Pretraining Manifest",
+  "timestamp_iso": "2026-11-21T02:37:19.692760",
+  "checkpoint": {
+    "name": "vision-scale-100m-stage1-foundation",
+    "checkpoint_directory": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-100m-stage1-foundation",
+    "weights_sha256": "a152324e5cac8cff652c6ac141b68b124c637c727278a9c4b80ea82a1085afd6",
+    "total_parameters": 98258258,
+    "language_parameters": 94394112
+  },
+  "dataset_used": {
+    "train_file": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_2_corpus\\train.jsonl",
+    "val_file": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_2_corpus\\val.jsonl",
+    "total_train_samples": 600,
+    "sequence_length": 256,
+    "tokens_consumed": 30720,
+    "masking_mode": "corrected_assistant_only"
+  },
+  "training_outcome": {
+    "initial_loss": 9.1818,
+    "final_loss": 3.6555,
+    "validation_loss": 7.9898,
+    "validation_ppl": 2950.66,
+    "mean_output_entropy": 8.662,
+    "unigram_collapse_eliminated": false,
+    "unique_output_tokens": 1,
+    "wall_clock_seconds": 374.71
+  }
+}

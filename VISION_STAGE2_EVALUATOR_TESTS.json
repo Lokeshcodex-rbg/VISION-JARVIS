@@ -1,0 +1,250 @@
+{
+  "total_tests": 22,
+  "passed_tests": 22,
+  "failed_tests": 0,
+  "all_expectations_met": true,
+  "results": [
+    {
+      "test_name": "TRF-0001 Contradictory Hallucination (Must FAIL)",
+      "category": "contradictory_arithmetic",
+      "expected_answer": "10",
+      "generation": "10 = 2.\nThe answer is 3.",
+      "evaluator_verdict": false,
+      "evaluator_reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 3)",
+      "extracted_answer": "3",
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "TRF-0002 Contradictory Hallucination (Must FAIL)",
+      "category": "contradictory_arithmetic",
+      "expected_answer": "12",
+      "generation": "12 = 3.\nThe answer is 10.",
+      "evaluator_verdict": false,
+      "evaluator_reason": "NUMERICAL_MISMATCH (Expected 12, Extracted 10)",
+      "extracted_answer": "10",
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Correct number in question premise but wrong final answer (Must FAIL)",
+      "category": "incorrect_with_target_substring",
+      "expected_answer": "10",
+      "generation": "We start with 10 items and remove 6. The answer is 4.",
+      "evaluator_verdict": false,
+      "evaluator_reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 4)",
+      "extracted_answer": "4",
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Hallucinated equality equation (Must FAIL)",
+      "category": "contradictory_arithmetic",
+      "expected_answer": "10",
+      "generation": "10 = 25",
+      "evaluator_verdict": false,
+      "evaluator_reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 25)",
+      "extracted_answer": "25",
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Clean single number (Must PASS)",
+      "category": "correct_answer",
+      "expected_answer": "10",
+      "generation": "10",
+      "evaluator_verdict": true,
+      "evaluator_reason": "EXACT_NUMERICAL_MATCH",
+      "extracted_answer": "10",
+      "expected_evaluator_verdict": true,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Explicit answer declaration (Must PASS)",
+      "category": "correct_answer",
+      "expected_answer": "10",
+      "generation": "(7 + 10) - 7 = 17 - 7 = 10.\nThe answer is 10.",
+      "evaluator_verdict": true,
+      "evaluator_reason": "EXACT_NUMERICAL_MATCH",
+      "extracted_answer": "10",
+      "expected_evaluator_verdict": true,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Equals sign with number (Must PASS)",
+      "category": "correct_answer",
+      "expected_answer": "10",
+      "generation": "= 10",
+      "evaluator_verdict": true,
+      "evaluator_reason": "EXACT_NUMERICAL_MATCH",
+      "extracted_answer": "10",
+      "expected_evaluator_verdict": true,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Correct negative integer (Must PASS)",
+      "category": "negative_values",
+      "expected_answer": "-15",
+      "generation": "The answer is -15.",
+      "evaluator_verdict": true,
+      "evaluator_reason": "EXACT_NUMERICAL_MATCH",
+      "extracted_answer": "-15",
+      "expected_evaluator_verdict": true,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Wrong sign on negative number (Must FAIL)",
+      "category": "negative_values",
+      "expected_answer": "-15",
+      "generation": "The answer is 15.",
+      "evaluator_verdict": false,
+      "evaluator_reason": "NUMERICAL_MISMATCH (Expected -15, Extracted 15)",
+      "extracted_answer": "15",
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Decimal equivalent matching (Must PASS)",
+      "category": "decimal_values",
+      "expected_answer": "0.5",
+      "generation": "The answer is 0.50.",
+      "evaluator_verdict": true,
+      "evaluator_reason": "EXACT_NUMERICAL_MATCH",
+      "extracted_answer": "0.50",
+      "expected_evaluator_verdict": true,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Fraction equivalent to decimal (Must PASS)",
+      "category": "equivalent_expressions",
+      "expected_answer": "0.5",
+      "generation": "The answer is 1/2.",
+      "evaluator_verdict": true,
+      "evaluator_reason": "EXACT_NUMERICAL_MATCH",
+      "extracted_answer": "1/2",
+      "expected_evaluator_verdict": true,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Integer equivalent to float (Must PASS)",
+      "category": "equivalent_expressions",
+      "expected_answer": "10",
+      "generation": "10.0",
+      "evaluator_verdict": true,
+      "evaluator_reason": "EXACT_NUMERICAL_MATCH",
+      "extracted_answer": "10.0",
+      "expected_evaluator_verdict": true,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Multiple numbers without answer declaration (Must FAIL)",
+      "category": "multiple_numerical_values",
+      "expected_answer": "10",
+      "generation": "1.2 = 3, 10, 1, 15, 20",
+      "evaluator_verdict": false,
+      "evaluator_reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: '1.2 = 3, 10, 1, 15, 20')",
+      "extracted_answer": null,
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Empty string (Must FAIL)",
+      "category": "empty_and_malformed",
+      "expected_answer": "10",
+      "generation": "",
+      "evaluator_verdict": false,
+      "evaluator_reason": "EMPTY_GENERATION",
+      "extracted_answer": null,
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Whitespace only (Must FAIL)",
+      "category": "empty_and_malformed",
+      "expected_answer": "10",
+      "generation": "   \n\t  ",
+      "evaluator_verdict": false,
+      "evaluator_reason": "EMPTY_GENERATION",
+      "extracted_answer": null,
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Random punctuation (Must FAIL)",
+      "category": "empty_and_malformed",
+      "expected_answer": "10",
+      "generation": "### .... ;;; -- ??",
+      "evaluator_verdict": false,
+      "evaluator_reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: '### .... ;;; -- ??')",
+      "extracted_answer": null,
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Valid Python AST function (Must PASS)",
+      "category": "code_ast",
+      "expected_answer": "def add(a, b):",
+      "generation": "```python\ndef add(a, b):\n    return a + b\n```",
+      "evaluator_verdict": true,
+      "evaluator_reason": "VALID_PYTHON_AST",
+      "extracted_answer": "add",
+      "expected_evaluator_verdict": true,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Invalid Python syntax (Must FAIL)",
+      "category": "code_ast",
+      "expected_answer": "def add(a, b):",
+      "generation": "def add(a, b) return a + b",
+      "evaluator_verdict": false,
+      "evaluator_reason": "SYNTAX_INVALID (expected ':')",
+      "extracted_answer": "def add(a, b) return a + b",
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Python function missing return (Must FAIL)",
+      "category": "code_ast",
+      "expected_answer": "def add(a, b):",
+      "generation": "def add(a, b):\n    pass",
+      "evaluator_verdict": false,
+      "evaluator_reason": "FUNCTION_MISSING_RETURN",
+      "extracted_answer": "def add(a, b):\n    pass",
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Direct affirmative logic (Must PASS)",
+      "category": "categorical_logic",
+      "expected_answer": "Yes",
+      "generation": "Premise holds. Therefore, Yes.",
+      "evaluator_verdict": true,
+      "evaluator_reason": "EXACT_CATEGORICAL_MATCH",
+      "extracted_answer": "yes",
+      "expected_evaluator_verdict": true,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Contradictory Yes and No (Must FAIL)",
+      "category": "categorical_logic",
+      "expected_answer": "Yes",
+      "generation": "Yes, but actually no.",
+      "evaluator_verdict": false,
+      "evaluator_reason": "CONTRADICTORY_YES_NO",
+      "extracted_answer": null,
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    },
+    {
+      "test_name": "Substring false positive 'yesterday' (Must FAIL)",
+      "category": "categorical_logic",
+      "expected_answer": "Yes",
+      "generation": "The event happened yesterday.",
+      "evaluator_verdict": false,
+      "evaluator_reason": "MISSING_CATEGORICAL_ANSWER (Expected yes)",
+      "extracted_answer": null,
+      "expected_evaluator_verdict": false,
+      "test_status": "PASS"
+    }
+  ]
+}

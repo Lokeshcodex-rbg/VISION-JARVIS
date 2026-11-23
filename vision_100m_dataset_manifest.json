@@ -1,0 +1,151 @@
+{
+  "manifest_version": "1.0.0",
+  "dataset_name": "vision_2_verifiable_corpus_10m",
+  "purpose": "VISION 100M Foundation Model Pretraining & Validation",
+  "curation_standards": {
+    "deduplication": "Exact hash deduplication & substring filter applied",
+    "decontamination": "Zero probe overlap against 720-probe independent validation suites",
+    "multilingual_balance": "English (55%), Code (27.5%), Hindi Devanagari (8.5%), Hinglish (8.5%)",
+    "domain_synthesis": "Carry arithmetic, algebraic steps, fractional arithmetic, AST trees, logic proofs"
+  },
+  "split_summaries": {
+    "train": {
+      "file": "train.jsonl",
+      "examples": 13653,
+      "tokens": 2944176,
+      "avg_tokens_per_example": 215.64,
+      "domain_counts": {
+        "programming_java": 698,
+        "instruction_following": 1446,
+        "tool_use_dialogue": 807,
+        "mathematics_fractions": 439,
+        "programming_javascript": 723,
+        "science_engineering": 1109,
+        "coding_python": 809,
+        "hindi_devanagari": 1172,
+        "coding_polyglot": 813,
+        "mathematics_reasoning": 808,
+        "mathematics_algebra": 450,
+        "hinglish_dialog": 1172,
+        "programming_python": 729,
+        "general_language_academic": 815,
+        "causal_reasoning": 300,
+        "mathematics_arithmetic": 893,
+        "formal_reasoning": 470
+      }
+    },
+    "val": {
+      "file": "val.jsonl",
+      "examples": 758,
+      "tokens": 164025,
+      "avg_tokens_per_example": 216.39,
+      "domain_counts": {
+        "hindi_devanagari": 76,
+        "instruction_following": 89,
+        "hinglish_dialog": 63,
+        "mathematics_reasoning": 49,
+        "coding_python": 38,
+        "programming_python": 28,
+        "formal_reasoning": 30,
+        "causal_reasoning": 15,
+        "mathematics_arithmetic": 49,
+        "programming_javascript": 32,
+        "coding_polyglot": 42,
+        "general_language_academic": 50,
+        "mathematics_algebra": 26,
+        "science_engineering": 51,
+        "tool_use_dialogue": 43,
+        "mathematics_fractions": 33,
+        "programming_java": 44
+      }
+    },
+    "test": {
+      "file": "test.jsonl",
+      "examples": 760,
+      "tokens": 161616,
+      "avg_tokens_per_example": 212.65,
+      "domain_counts": {
+        "coding_python": 49,
+        "programming_java": 58,
+        "hinglish_dialog": 73,
+        "tool_use_dialogue": 56,
+        "formal_reasoning": 36,
+        "programming_python": 43,
+        "hindi_devanagari": 55,
+        "general_language_academic": 38,
+        "instruction_following": 65,
+        "science_engineering": 61,
+        "programming_javascript": 45,
+        "mathematics_algebra": 24,
+        "coding_polyglot": 37,
+        "mathematics_reasoning": 42,
+        "mathematics_arithmetic": 39,
+        "mathematics_fractions": 26,
+        "causal_reasoning": 13
+      }
+    }
+  },
+  "domain_distribution": {
+    "programming_java": 800,
+    "instruction_following": 1600,
+    "tool_use_dialogue": 906,
+    "mathematics_fractions": 498,
+    "programming_javascript": 800,
+    "science_engineering": 1221,
+    "coding_python": 896,
+    "hindi_devanagari": 1303,
+    "coding_polyglot": 892,
+    "mathematics_reasoning": 899,
+    "mathematics_algebra": 500,
+    "hinglish_dialog": 1308,
+    "programming_python": 800,
+    "general_language_academic": 903,
+    "causal_reasoning": 328,
+    "mathematics_arithmetic": 981,
+    "formal_reasoning": 536
+  },
+  "language_distribution": {
+    "english": 15171
+  },
+  "file_checksums": {
+    "train.jsonl": {
+      "sha256": "731985a882646ffe1f22adc117983d36d616bd90f7606cf5edddd730f5918aa9",
+      "size_bytes": 13558213,
+      "size_mb": 12.93
+    },
+    "val.jsonl": {
+      "sha256": "9288a29fda5b7e70d00cdb7d75d4c406d18ceefb79389222f53608f5f8e3f680",
+      "size_bytes": 772336,
+      "size_mb": 0.74
+    },
+    "test.jsonl": {
+      "sha256": "8280a7eaa9fa0022affbc80725a564652b3995ddd0648c42c099e9224ed2dead",
+      "size_bytes": 745483,
+      "size_mb": 0.71
+    },
+    "vision_independent_validation_dataset.jsonl": {
+      "sha256": "dd7533874aed446d89833f9637a8aabf4e8848eb6888e16865b9ea1eeb8e2baf",
+      "size_bytes": 80908
+    },
+    "vision_independent_validation_set_b.jsonl": {
+      "sha256": "0e43e4c2b3e19c83fa916ecc11747b0c1591badf2cb5c7c4d95080bcb368ad82",
+      "size_bytes": 77666
+    },
+    "vision_independent_validation_set_c.jsonl": {
+      "sha256": "516463ebd2e5f67e5010ea300be1526220c8276e8c9a6407602294d362396a7a",
+      "size_bytes": 77652
+    }
+  },
+  "totals": {
+    "total_examples": 15171,
+    "total_tokens_measured": 3269817,
+    "exact_duplicates": 29,
+    "duplication_rate_percent": 0.1912
+  },
+  "decontamination_audit": {
+    "total_validation_probes_audited": 720,
+    "contaminated_probes_found": 0,
+    "contamination_rate_percent": 0.0,
+    "status": "STRICTLY_DECONTAMINATED"
+  }
+}

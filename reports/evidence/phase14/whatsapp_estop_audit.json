@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-11-10T18:11:37.108Z",
+  "totalInvariants": 9,
+  "passed": 9,
+  "failed": 0,
+  "successRate": "100.0%",
+  "invariants": [
+    {
+      "name": "Invariant 1: Latched Emergency Stop immediately blocks WhatsApp dispatch",
+      "status": "PASS",
+      "evidence": "Dispatch returned halted_by_emergency_stop under latched E-Stop"
+    },
+    {
+      "name": "Invariant 2: Staging a message while Emergency Stop is latched is strictly blocked",
+      "status": "PASS",
+      "evidence": "Staging rejected with EMERGENCY_STOP_ACTIVE"
+    },
+    {
+      "name": "Invariant 3: Privileged operations cannot execute while Emergency Stop is active",
+      "status": "PASS",
+      "evidence": "Gateway strictly threw Security Violation under active Emergency Stop"
+    },
+    {
+      "name": "Invariant 4: Emergency Stop resets cleanly only through authorized reset() procedure",
+      "status": "PASS",
+      "evidence": "Emergency stop latched=false and returned to STANDBY"
+    },
+    {
+      "name": "Invariant 5: After E-Stop reset, staged messages remain DRAFTED and require explicit confirmation",
+      "status": "PASS",
+      "evidence": "Pending message remained AWAITING_USER_CONFIRMATION and was never dispatched automatically"
+    },
+    {
+      "name": "Invariant 6: Recipient identity strictly verified against contacts directory before staging",
+      "status": "PASS",
+      "evidence": "Harsh resolved to +919876543221, unknown target rejected"
+    },
+    {
+      "name": "Invariant 7: WhatsApp automator enforces maxRetries=0 to prevent duplicate dispatches",
+      "status": "PASS",
+      "evidence": "Zero automatic retries enforced for external messaging"
+    },
+    {
+      "name": "Invariant 8: Crash recovery/restarts never auto-dispatch pending messaging actions",
+      "status": "PASS",
+      "evidence": "Recovered task quarantined irreversible action without firing send"
+    },
+    {
+      "name": "Invariant 9: Emergency Stop permanently purges staged drafts and invalidates pending approvals",
+      "status": "PASS",
+      "evidence": "Pending message state was completely purged on E-Stop engagement"
+    }
+  ]
+}

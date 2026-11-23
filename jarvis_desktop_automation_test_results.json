@@ -1,0 +1,137 @@
+{
+  "testSuite": "JARVIS Full Windows Desktop Automation",
+  "executedAt": "2026-11-20T16:57:53.072Z",
+  "totalTests": 10,
+  "passed": 10,
+  "failed": 0,
+  "successRate": "100.0%",
+  "overallStatus": "VERIFIED",
+  "results": [
+    {
+      "id": "DESK-01",
+      "name": "Mouse Cursor Precision Movement",
+      "category": "MOUSE_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 366,
+      "output": {
+        "x": 350,
+        "y": 250,
+        "verified": true
+      }
+    },
+    {
+      "id": "DESK-02",
+      "name": "Mouse Click Interactions (Left, Right, Double)",
+      "category": "MOUSE_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 1794,
+      "output": {
+        "leftClick": true,
+        "rightClick": true,
+        "doubleClick": true
+      }
+    },
+    {
+      "id": "DESK-03",
+      "name": "Smooth Mouse Drag and Drop",
+      "category": "MOUSE_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 540,
+      "output": {
+        "success": true,
+        "verified": true,
+        "from": {
+          "x": 100,
+          "y": 100
+        },
+        "to": {
+          "x": 250,
+          "y": 250
+        },
+        "steps": 6,
+        "button": "left"
+      }
+    },
+    {
+      "id": "DESK-04",
+      "name": "Mouse Wheel Scrolling",
+      "category": "MOUSE_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 1152,
+      "output": {
+        "scrollDown": -120,
+        "scrollUp": 120
+      }
+    },
+    {
+      "id": "DESK-05",
+      "name": "Text Typing Simulation",
+      "category": "KEYBOARD_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 505,
+      "output": {
+        "keysSent": "VISION AI TEST",
+        "textLength": 14
+      }
+    },
+    {
+      "id": "DESK-06",
+      "name": "Keyboard Shortcuts & Hotkeys",
+      "category": "KEYBOARD_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 465,
+      "output": {
+        "hotkey": "{ESC}"
+      }
+    },
+    {
+      "id": "DESK-07",
+      "name": "Windows UI Automation Accessibility Tree Inspection",
+      "category": "UI_AUTOMATION",
+      "status": "VERIFIED",
+      "durationMs": 382,
+      "output": {
+        "totalElements": 7,
+        "buttonCount": 2,
+        "textFieldCount": 1,
+        "menuCount": 3
+      }
+    },
+    {
+      "id": "DESK-08",
+      "name": "Window Enumeration & Lifecycle Management",
+      "category": "WINDOW_MANAGEMENT",
+      "status": "VERIFIED",
+      "durationMs": 2286,
+      "output": {
+        "openWindowsDiscovered": 5,
+        "sampleWindow": "cmd (Process 3852)",
+        "stateRestoreVerified": true
+      }
+    },
+    {
+      "id": "DESK-09",
+      "name": "Filesystem Navigation, Folder Creation & File Moving",
+      "category": "FILESYSTEM_OPERATIONS",
+      "status": "VERIFIED",
+      "durationMs": 4,
+      "output": {
+        "folderCreated": "D:\\Jarvis\\scratch\\desktop_test_sandbox\\subfolder_1795193873066",
+        "fileRenamed": "D:\\Jarvis\\scratch\\desktop_test_sandbox\\subfolder_1795193873066\\renamed_test_file.txt",
+        "filesInDirectory": 1
+      }
+    },
+    {
+      "id": "DESK-10",
+      "name": "Safe Deletion with Recovery Backup Preservation",
+      "category": "FILESYSTEM_OPERATIONS",
+      "status": "VERIFIED",
+      "durationMs": 3,
+      "output": {
+        "deletedOriginal": "D:\\Jarvis\\scratch\\desktop_test_sandbox\\to_delete_1795193873070.txt",
+        "recoveryBackupPath": "D:\\Jarvis\\data\\recycle_backup\\1795193873071_to_delete_1795193873070.txt",
+        "verified": true
+      }
+    }
+  ]
+}

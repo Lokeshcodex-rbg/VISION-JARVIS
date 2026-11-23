@@ -1,0 +1,33 @@
+{
+  "audit_name": "VISION GPU Readiness & FSDP Harness Audit",
+  "harness_file": "ml_foundation/cluster_launch_fsdp.py",
+  "launcher_file": "scripts/launch_h100_cluster.sh",
+  "target_hardware": "8x NVIDIA H100 SXM5 (80GB VRAM)",
+  "static_checks": {
+    "distributed_init": true,
+    "device_setting": true,
+    "fsdp_wrapping": true,
+    "sharding_strategy": true,
+    "mixed_precision_bf16": true,
+    "rank0_checkpointing": true,
+    "distributed_sampler": true,
+    "gradient_accumulation": true,
+    "clean_shutdown": true
+  },
+  "vram_budget": {
+    "model_parameters": 98258258,
+    "sharded_weights_mb": 23.43,
+    "sharded_optimizer_mb": 187.41,
+    "sharded_gradients_mb": 23.43,
+    "estimated_activations_mb": 2304.0,
+    "total_peak_vram_gb": 2.48,
+    "gpu_capacity_gb": 80.0,
+    "vram_utilization_pct": 3.1,
+    "safety_headroom_gb": 77.52
+  },
+  "cost_accounting": {
+    "local_expenditure_to_date": "$0.00",
+    "cloud_gpus_launched": 0,
+    "status": "Experimental unlaunched package, $0.00 spend"
+  }
+}

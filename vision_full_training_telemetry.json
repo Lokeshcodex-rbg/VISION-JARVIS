@@ -1,0 +1,149 @@
+{
+  "title": "VISION Foundation Model Multi-Candidate Curated Training Telemetry",
+  "timestamp_iso": "2026-11-21T17:43:58Z",
+  "telemetry_records": [
+    {
+      "candidate": "VISION-100M-Stage4",
+      "step": 8,
+      "optimizer_update": 1,
+      "loss": 7.1422,
+      "grad_norm": 3.4501,
+      "update_magnitude": 0.00397,
+      "lr": 9.56e-05,
+      "throughput_tok_per_sec": 109.5,
+      "rss_mb": 112.2
+    },
+    {
+      "candidate": "VISION-100M-Stage4",
+      "step": 16,
+      "optimizer_update": 2,
+      "loss": 6.8903,
+      "grad_norm": 2.399,
+      "update_magnitude": 0.00163,
+      "lr": 5.37e-05,
+      "throughput_tok_per_sec": 109.8,
+      "rss_mb": 936.7
+    },
+    {
+      "candidate": "VISION-100M-Stage4",
+      "step": 24,
+      "optimizer_update": 3,
+      "loss": 7.2586,
+      "grad_norm": 1.8574,
+      "update_magnitude": 0.000532,
+      "lr": 2.05e-05,
+      "throughput_tok_per_sec": 96.0,
+      "rss_mb": 813.7
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 8,
+      "optimizer_update": 1,
+      "loss": 8.9715,
+      "grad_norm": 11.6767,
+      "update_magnitude": 0.0114,
+      "lr": 0.00032,
+      "throughput_tok_per_sec": 932.5,
+      "rss_mb": 494.8
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 16,
+      "optimizer_update": 2,
+      "loss": 8.8667,
+      "grad_norm": 9.2712,
+      "update_magnitude": 0.01,
+      "lr": 0.000395,
+      "throughput_tok_per_sec": 947.0,
+      "rss_mb": 417.8
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 24,
+      "optimizer_update": 3,
+      "loss": 8.5164,
+      "grad_norm": 3.3392,
+      "update_magnitude": 0.00791,
+      "lr": 0.00037,
+      "throughput_tok_per_sec": 972.5,
+      "rss_mb": 387.2
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 32,
+      "optimizer_update": 4,
+      "loss": 8.4623,
+      "grad_norm": 3.9206,
+      "update_magnitude": 0.00618,
+      "lr": 0.000326,
+      "throughput_tok_per_sec": 994.3,
+      "rss_mb": 419.7
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 40,
+      "optimizer_update": 5,
+      "loss": 8.4294,
+      "grad_norm": 1.8609,
+      "update_magnitude": 0.00474,
+      "lr": 0.000268,
+      "throughput_tok_per_sec": 1002.4,
+      "rss_mb": 386.5
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 48,
+      "optimizer_update": 6,
+      "loss": 8.3127,
+      "grad_norm": 1.8739,
+      "update_magnitude": 0.00353,
+      "lr": 0.000204,
+      "throughput_tok_per_sec": 999.0,
+      "rss_mb": 343.9
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 56,
+      "optimizer_update": 7,
+      "loss": 8.1674,
+      "grad_norm": 2.0775,
+      "update_magnitude": 0.00243,
+      "lr": 0.000142,
+      "throughput_tok_per_sec": 1001.9,
+      "rss_mb": 330.4
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 64,
+      "optimizer_update": 8,
+      "loss": 8.236,
+      "grad_norm": 4.0978,
+      "update_magnitude": 0.00147,
+      "lr": 8.99e-05,
+      "throughput_tok_per_sec": 1002.7,
+      "rss_mb": 335.2
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 72,
+      "optimizer_update": 9,
+      "loss": 8.0881,
+      "grad_norm": 1.8522,
+      "update_magnitude": 0.000892,
+      "lr": 5.45e-05,
+      "throughput_tok_per_sec": 998.3,
+      "rss_mb": 331.6
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "step": 80,
+      "optimizer_update": 10,
+      "loss": 8.0847,
+      "grad_norm": 2.5914,
+      "update_magnitude": 0.000655,
+      "lr": 4.02e-05,
+      "throughput_tok_per_sec": 996.9,
+      "rss_mb": 336.4
+    }
+  ]
+}

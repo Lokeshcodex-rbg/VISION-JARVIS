@@ -1,0 +1,1224 @@
+{
+  "ablation-micro": {
+    "name": "ablation-micro",
+    "weights_path": "data/neural_models/checkpoints/ablation-micro/weights.pt",
+    "sha256": "0e96e32b44b4ce2d549100fe260a552658b75a2819a2b8ded5d4bd96a3ec93e6",
+    "size_bytes": 27036734,
+    "size_mb": 25.78,
+    "total_parameters": 6748882,
+    "parameter_label": "6.75M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 4096,
+      "max_seq_len": 512
+    }
+  },
+  "ablation-q4m": {
+    "name": "ablation-q4m",
+    "weights_path": "data/neural_models/checkpoints/ablation-q4m/weights.pt",
+    "sha256": "eec45ef8d73374494a26e837be081ba48c94670eaa8bd6cc9b9d54bacddaecdb",
+    "size_bytes": 16407870,
+    "size_mb": 15.65,
+    "total_parameters": 4091730,
+    "parameter_label": "4.09M",
+    "config": {
+      "d_model": 192,
+      "n_layers": 6,
+      "n_heads": 6,
+      "vocab_size": 4096,
+      "max_seq_len": 384
+    }
+  },
+  "bench-10m-adafactor": {
+    "name": "bench-10m-adafactor",
+    "weights_path": "data/neural_models/checkpoints/bench-10m-adafactor/weights.pt",
+    "sha256": "33d9a505afa3596dfaee77d58945aad0efdb4ab11c67eb3a18c4c15a5ca6b617",
+    "size_bytes": 50753936,
+    "size_mb": 48.4,
+    "total_parameters": 12676498,
+    "parameter_label": "12.68M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 6144,
+      "max_seq_len": 1024
+    }
+  },
+  "bench-micro-adafactor": {
+    "name": "bench-micro-adafactor",
+    "weights_path": "data/neural_models/checkpoints/bench-micro-adafactor/weights.pt",
+    "sha256": "e56dd8c374f2cea01dc6891cdac1998cd5d01ea04a457588469cd4a3183f7ccd",
+    "size_bytes": 29133886,
+    "size_mb": 27.78,
+    "total_parameters": 7273170,
+    "parameter_label": "7.27M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 6144,
+      "max_seq_len": 512
+    }
+  },
+  "bench-micro-adamw": {
+    "name": "bench-micro-adamw",
+    "weights_path": "data/neural_models/checkpoints/bench-micro-adamw/weights.pt",
+    "sha256": "b8c5d646e50d2d162a3eea392117f90fc6c6a1797322a9a16f919beffed6b77e",
+    "size_bytes": 29133886,
+    "size_mb": 27.78,
+    "total_parameters": 7273170,
+    "parameter_label": "7.27M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 6144,
+      "max_seq_len": 512
+    }
+  },
+  "jarvis-v0.1.0": {
+    "name": "jarvis-v0.1.0",
+    "weights_path": "data/neural_models/checkpoints/jarvis-v0.1.0/weights.pt",
+    "sha256": "e1e2f49e96b1368b34458f4c11d507a574ee668da717148322a05255214f7fe3",
+    "size_bytes": 5261384,
+    "size_mb": 5.02,
+    "total_parameters": 1380178,
+    "parameter_label": "1.38M",
+    "config": {
+      "d_model": 128,
+      "n_layers": 4,
+      "n_heads": 4,
+      "vocab_size": 900,
+      "max_seq_len": 256
+    }
+  },
+  "jarvis-v0.2.0": {
+    "name": "jarvis-v0.2.0",
+    "weights_path": "data/neural_models/checkpoints/jarvis-v0.2.0/weights.pt",
+    "sha256": "5ed95bd8955272970892a9ad5e2ee0a4d4e033d884d7473065bb1a9969655078",
+    "size_bytes": 5261384,
+    "size_mb": 5.02,
+    "total_parameters": 1380178,
+    "parameter_label": "1.38M",
+    "config": {
+      "d_model": 128,
+      "n_layers": 4,
+      "n_heads": 4,
+      "vocab_size": 900,
+      "max_seq_len": 256
+    }
+  },
+  "jarvis-v0.3.0": {
+    "name": "jarvis-v0.3.0",
+    "weights_path": "data/neural_models/checkpoints/jarvis-v0.3.0/weights.pt",
+    "sha256": "97231f80f6bd7df851c0b3f7785fe28423a5b2282e039904f73873b15509bd6f",
+    "size_bytes": 5429634,
+    "size_mb": 5.18,
+    "total_parameters": 1380178,
+    "parameter_label": "1.38M",
+    "config": {
+      "d_model": 128,
+      "n_layers": 4,
+      "n_heads": 4,
+      "vocab_size": 900,
+      "max_seq_len": 256
+    }
+  },
+  "jarvis-v0.4.0": {
+    "name": "jarvis-v0.4.0",
+    "weights_path": "data/neural_models/checkpoints/jarvis-v0.4.0/weights.pt",
+    "sha256": "f71d75a0a47a4b8d0ff590bd759e57673c6dfcb644272fe882a38df7044d2039",
+    "size_bytes": 5546806,
+    "size_mb": 5.29,
+    "total_parameters": 1380178,
+    "parameter_label": "1.38M",
+    "config": {
+      "d_model": 128,
+      "n_layers": 4,
+      "n_heads": 4,
+      "vocab_size": 900,
+      "max_seq_len": 256
+    }
+  },
+  "jarvis-v0.5.0": {
+    "name": "jarvis-v0.5.0",
+    "weights_path": "data/neural_models/checkpoints/jarvis-v0.5.0/weights.pt",
+    "sha256": "60816607adecab36ae428b46c3c4d136d1662231075f9cbfff4a047400b47b67",
+    "size_bytes": 5546806,
+    "size_mb": 5.29,
+    "total_parameters": 1380178,
+    "parameter_label": "1.38M",
+    "config": {
+      "d_model": 128,
+      "n_layers": 4,
+      "n_heads": 4,
+      "vocab_size": 900,
+      "max_seq_len": 256
+    }
+  },
+  "jarvis-v0.6.0": {
+    "name": "jarvis-v0.6.0",
+    "weights_path": "data/neural_models/checkpoints/jarvis-v0.6.0/weights.pt",
+    "sha256": "436340343deee319be6b6e939a441ef5a59ec127ce03dd73c402f5e99fdf262b",
+    "size_bytes": 5581232,
+    "size_mb": 5.32,
+    "total_parameters": 1387858,
+    "parameter_label": "1.39M",
+    "config": {
+      "d_model": 128,
+      "n_layers": 4,
+      "n_heads": 4,
+      "vocab_size": 960,
+      "max_seq_len": 256
+    }
+  },
+  "jarvis-v0.7.0": {
+    "name": "jarvis-v0.7.0",
+    "weights_path": "data/neural_models/checkpoints/jarvis-v0.7.0/weights.pt",
+    "sha256": "049e6dea6fc86222c748ea882f6263ec495058162cea14aa793f311aa6e03980",
+    "size_bytes": 24938597,
+    "size_mb": 23.78,
+    "total_parameters": 6224594,
+    "parameter_label": "6.22M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 2048,
+      "max_seq_len": 512
+    }
+  },
+  "test-resumable-run": {
+    "name": "test-resumable-run",
+    "weights_path": "data/neural_models/checkpoints/test-resumable-run/weights.pt",
+    "sha256": "dd91b1d132ebb0d285e722b30e1fd078d9ab7766b72cd739c9c132a65c6ff251",
+    "size_bytes": 107201269,
+    "size_mb": 102.24,
+    "total_parameters": 26785394,
+    "parameter_label": "26.79M",
+    "config": {
+      "d_model": 448,
+      "n_layers": 10,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 512
+    }
+  },
+  "v12-ablate-10m-qknorm": {
+    "name": "v12-ablate-10m-qknorm",
+    "weights_path": "data/neural_models/checkpoints/v12-ablate-10m-qknorm/weights.pt",
+    "sha256": "1b94e5ea6755839f83808b58550b6b19e514dd7dc3a16649d21e360d15c474ef",
+    "size_bytes": 53382944,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "v12-ablate-10m-std": {
+    "name": "v12-ablate-10m-std",
+    "weights_path": "data/neural_models/checkpoints/v12-ablate-10m-std/weights.pt",
+    "sha256": "b23241df5f63f907ed3d6020939fb51ac109be9c98e5873ea7e39a89b0f0c6a7",
+    "size_bytes": 53375376,
+    "size_mb": 50.9,
+    "total_parameters": 13331858,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "v12-ablate-4m-std": {
+    "name": "v12-ablate-4m-std",
+    "weights_path": "data/neural_models/checkpoints/v12-ablate-4m-std/weights.pt",
+    "sha256": "45bcf348cb39e2b1cac52811011885977603ca5b477b174ff2637f2150b837d2",
+    "size_bytes": 19553598,
+    "size_mb": 18.65,
+    "total_parameters": 4878162,
+    "parameter_label": "4.88M",
+    "config": {
+      "d_model": 192,
+      "n_layers": 6,
+      "n_heads": 6,
+      "vocab_size": 8192,
+      "max_seq_len": 384
+    }
+  },
+  "vision-100m-foundation": {
+    "name": "vision-100m-foundation",
+    "weights_path": "data/neural_models/checkpoints/vision-100m-foundation/weights.pt",
+    "sha256": "8ce96183089b73e1f7c3c535920fcd3ef9733631a04846ef08f9322b6932d2b0",
+    "size_bytes": 393104321,
+    "size_mb": 374.89,
+    "total_parameters": 98258258,
+    "parameter_label": "98.26M",
+    "config": {
+      "d_model": 768,
+      "n_layers": 14,
+      "n_heads": 12,
+      "vocab_size": 8192,
+      "max_seq_len": 2048
+    }
+  },
+  "vision-100m-full-pretraining": {
+    "name": "vision-100m-full-pretraining",
+    "weights_path": "data/neural_models/checkpoints/vision-100m-full-pretraining/weights.pt",
+    "sha256": "d8eca5f06ebbef4f70348c4d9ab3d17f2c3c9a94ece7a0049c857c51befcb8be",
+    "size_bytes": 393104385,
+    "size_mb": 374.89,
+    "total_parameters": 98258258,
+    "parameter_label": "98.26M",
+    "config": {
+      "d_model": 768,
+      "n_layers": 14,
+      "n_heads": 12,
+      "vocab_size": 8192,
+      "max_seq_len": 2048
+    }
+  },
+  "vision-100m-recovered": {
+    "name": "vision-100m-recovered",
+    "weights_path": "data/neural_models/checkpoints/vision-100m-recovered/weights.pt",
+    "sha256": "b658f67743a9fa3fa9bfd1cc540c0be55192674d269cd90b4a278337982fa508",
+    "size_bytes": 393104385,
+    "size_mb": 374.89,
+    "total_parameters": 98258258,
+    "parameter_label": "98.26M",
+    "config": {
+      "d_model": 768,
+      "n_layers": 14,
+      "n_heads": 12,
+      "vocab_size": 8192,
+      "max_seq_len": 2048
+    }
+  },
+  "vision-100m-scaling-experiment": {
+    "name": "vision-100m-scaling-experiment",
+    "weights_path": "data/neural_models/checkpoints/vision-100m-scaling-experiment/weights.pt",
+    "sha256": "efbd609aa4b897cd6dc06b00c9b09cda8effb29495c9026809826b363f9bef96",
+    "size_bytes": 393103297,
+    "size_mb": 374.89,
+    "total_parameters": 98258258,
+    "parameter_label": "98.26M",
+    "config": {
+      "d_model": 768,
+      "n_layers": 14,
+      "n_heads": 12,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    }
+  },
+  "vision-100m-stage1-foundation": {
+    "name": "vision-100m-stage1-foundation",
+    "weights_path": "data/neural_models/checkpoints/vision-100m-stage1-foundation/weights.pt",
+    "sha256": "a152324e5cac8cff652c6ac141b68b124c637c727278a9c4b80ea82a1085afd6",
+    "size_bytes": 393104385,
+    "size_mb": 374.89,
+    "total_parameters": 98258258,
+    "parameter_label": "98.26M",
+    "config": {
+      "d_model": 768,
+      "n_layers": 14,
+      "n_heads": 12,
+      "vocab_size": 8192,
+      "max_seq_len": 2048
+    }
+  },
+  "vision-100m-stage3-pretraining": {
+    "name": "vision-100m-stage3-pretraining",
+    "weights_path": "data/neural_models/checkpoints/vision-100m-stage3-pretraining/weights.pt",
+    "sha256": "dc7bc1aa1a88c050c8c9ef6f218d7ce1f208d77243fddee11191c32ac21c46a0",
+    "size_bytes": 393104385,
+    "size_mb": 374.89,
+    "total_parameters": 98258258,
+    "parameter_label": "98.26M",
+    "config": {
+      "d_model": 768,
+      "n_layers": 14,
+      "n_heads": 12,
+      "vocab_size": 8192,
+      "max_seq_len": 2048
+    }
+  },
+  "vision-100m-stage4-curated": {
+    "name": "vision-100m-stage4-curated",
+    "weights_path": "data/neural_models/checkpoints/vision-100m-stage4-curated/weights.pt",
+    "sha256": "72d7d3f252558753d769f5263e72cf63fa851f50a0920daae2ef0fa3c5980c5e",
+    "size_bytes": 393104129,
+    "size_mb": 374.89,
+    "total_parameters": 98258258,
+    "parameter_label": "98.26M",
+    "config": {
+      "d_model": 768,
+      "n_layers": 14,
+      "n_heads": 12,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    }
+  },
+  "vision-12m-curated-candidate": {
+    "name": "vision-12m-curated-candidate",
+    "weights_path": "data/neural_models/checkpoints/vision-12m-curated-candidate/weights.pt",
+    "sha256": "6659c24ed932454e4765f8410cd40b5a12f1c03424505d40006a50883c0b21c5",
+    "size_bytes": 48812050,
+    "size_mb": 46.55,
+    "total_parameters": 12194444,
+    "parameter_label": "12.19M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    }
+  },
+  "vision-13m-curriculum-breakthrough": {
+    "name": "vision-13m-curriculum-breakthrough",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-curriculum-breakthrough/weights.pt",
+    "sha256": "bbf771710b46090056e3864f8ac2f2b8ab8c53a8d79cda4353e2e5e803810909",
+    "size_bytes": 53382113,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-13m-scaling-experiment": {
+    "name": "vision-13m-scaling-experiment",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-scaling-experiment/weights.pt",
+    "sha256": "4a4e04cd8e4c95e713f5567770b36c1fe9ff48a7668850c786a9bdc5a8ee33b1",
+    "size_bytes": 53381345,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-2.0-candidate-g": {
+    "name": "vision-2.0-candidate-g",
+    "weights_path": "data/neural_models/checkpoints/vision-2.0-candidate-g/weights.pt",
+    "sha256": "576e21f6b49dec1088da1f96f06d9653fe576ce50f54e6ff83266ce376198039",
+    "size_bytes": 53382497,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-25m-compact-foundation": {
+    "name": "vision-25m-compact-foundation",
+    "weights_path": "data/neural_models/checkpoints/vision-25m-compact-foundation/weights.pt",
+    "sha256": "e75895479d38ced93afa6b7c45ad7737ac473ab455dd5b43322add230780affe",
+    "size_bytes": 111085937,
+    "size_mb": 105.94,
+    "total_parameters": 27759122,
+    "parameter_label": "27.76M",
+    "config": {
+      "d_model": 448,
+      "n_layers": 10,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 128
+    }
+  },
+  "vision-local-smoke-local-proof": {
+    "name": "vision-local-smoke-local-proof",
+    "weights_path": "data/neural_models/checkpoints/vision-local-smoke-local-proof/weights.pt",
+    "sha256": "2a9029520ecf8ffc8e50b3ca4281665709aa94afb056b3495b3631e5c4bd13ad",
+    "size_bytes": 5877109,
+    "size_mb": 5.6,
+    "total_parameters": 1461586,
+    "parameter_label": "1.46M",
+    "config": {
+      "d_model": 128,
+      "n_layers": 4,
+      "n_heads": 4,
+      "vocab_size": 1536,
+      "max_seq_len": 256
+    }
+  },
+  "vision-local-tier1_10m-local-proof": {
+    "name": "vision-local-tier1_10m-local-proof",
+    "weights_path": "data/neural_models/checkpoints/vision-local-tier1_10m-local-proof/weights.pt",
+    "sha256": "ad40636ee27130d67849fbcec6a1bdd50f798b4e1d0b9b15e85b362d2542ab70",
+    "size_bytes": 47984016,
+    "size_mb": 45.76,
+    "total_parameters": 11984018,
+    "parameter_label": "11.98M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 3980,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v0.9.0-local": {
+    "name": "vision-v0.9.0-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v0.9.0-local/weights.pt",
+    "sha256": "c0f6d4598dd8b80e271b3a2bcde8ce2807657d4c731b4bddf10664aa7efd17b4",
+    "size_bytes": 53375376,
+    "size_mb": 50.9,
+    "total_parameters": 13331858,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v0.9.0-local-sft": {
+    "name": "vision-v0.9.0-local-sft",
+    "weights_path": "data/neural_models/checkpoints/vision-v0.9.0-local-sft/weights.pt",
+    "sha256": "2a5e32de4236ab41bb93ea3eb9e0a30e52659533f3c8a8d42fb8d0edbdccdd03",
+    "size_bytes": 53375376,
+    "size_mb": 50.9,
+    "total_parameters": 13331858,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.0-balanced-local": {
+    "name": "vision-v1.0-balanced-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.0-balanced-local/weights.pt",
+    "sha256": "3b58a45801860952cc3e63906582216827efd34f49533777eec6a37b3ca9bdb8",
+    "size_bytes": 29133886,
+    "size_mb": 27.78,
+    "total_parameters": 7273170,
+    "parameter_label": "7.27M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 6144,
+      "max_seq_len": 512
+    }
+  },
+  "vision-v1.0-stage1": {
+    "name": "vision-v1.0-stage1",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.0-stage1/weights.pt",
+    "sha256": "3ac25798593332e5472e8f1e5155ea7d0601c49d981d90771ba5eb5705211a69",
+    "size_bytes": 29133886,
+    "size_mb": 27.78,
+    "total_parameters": 7273170,
+    "parameter_label": "7.27M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 6144,
+      "max_seq_len": 512
+    }
+  },
+  "vision-v1.0-stage2": {
+    "name": "vision-v1.0-stage2",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.0-stage2/weights.pt",
+    "sha256": "40c5b8ede605f42022a6e6561b19c27e7ed331418c3285330f9a05d2badc9a7b",
+    "size_bytes": 29133886,
+    "size_mb": 27.78,
+    "total_parameters": 7273170,
+    "parameter_label": "7.27M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 6144,
+      "max_seq_len": 512
+    }
+  },
+  "vision-v1.0-stage3": {
+    "name": "vision-v1.0-stage3",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.0-stage3/weights.pt",
+    "sha256": "8148706705d66de2f86416cf0cda28db8a39d4b65916149a76f8d57373f61d49",
+    "size_bytes": 29133886,
+    "size_mb": 27.78,
+    "total_parameters": 7273170,
+    "parameter_label": "7.27M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 6144,
+      "max_seq_len": 512
+    }
+  },
+  "vision-v1.0-stage4": {
+    "name": "vision-v1.0-stage4",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.0-stage4/weights.pt",
+    "sha256": "f1b6627017d752c64d019b582e9db909b840ad7ccfb547604b5817945c079ac8",
+    "size_bytes": 29133886,
+    "size_mb": 27.78,
+    "total_parameters": 7273170,
+    "parameter_label": "7.27M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 6144,
+      "max_seq_len": 512
+    }
+  },
+  "vision-v1.0-stage5b": {
+    "name": "vision-v1.0-stage5b",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.0-stage5b/weights.pt",
+    "sha256": "a3b26073786edc78613b489fd057504f55d013508ca81dd0606f3e4b44ac27bf",
+    "size_bytes": 29133886,
+    "size_mb": 27.78,
+    "total_parameters": 7273170,
+    "parameter_label": "7.27M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 6144,
+      "max_seq_len": 512
+    }
+  },
+  "vision-v1.1-quality-local": {
+    "name": "vision-v1.1-quality-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.1-quality-local/weights.pt",
+    "sha256": "e0d817dd62cbc7f77d41ae105e790f403f505b15f75541d7568a3a15e31dc80e",
+    "size_bytes": 16407870,
+    "size_mb": 15.65,
+    "total_parameters": 4091730,
+    "parameter_label": "4.09M",
+    "config": {
+      "d_model": 192,
+      "n_layers": 6,
+      "n_heads": 6,
+      "vocab_size": 4096,
+      "max_seq_len": 384
+    }
+  },
+  "vision-v1.1-stage1": {
+    "name": "vision-v1.1-stage1",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.1-stage1/weights.pt",
+    "sha256": "2d1fcd1a1d1f43d7bb1897c7607d5c5e4ed5add4376f9016e0317bf3cd3e22e7",
+    "size_bytes": 16407870,
+    "size_mb": 15.65,
+    "total_parameters": 4091730,
+    "parameter_label": "4.09M",
+    "config": {
+      "d_model": 192,
+      "n_layers": 6,
+      "n_heads": 6,
+      "vocab_size": 4096,
+      "max_seq_len": 384
+    }
+  },
+  "vision-v1.1-stage2": {
+    "name": "vision-v1.1-stage2",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.1-stage2/weights.pt",
+    "sha256": "9fe382255b804e04cb1876d79fa44abb9ceecf3a0b07127a13fcd4fcebeb8ab0",
+    "size_bytes": 16407870,
+    "size_mb": 15.65,
+    "total_parameters": 4091730,
+    "parameter_label": "4.09M",
+    "config": {
+      "d_model": 192,
+      "n_layers": 6,
+      "n_heads": 6,
+      "vocab_size": 4096,
+      "max_seq_len": 384
+    }
+  },
+  "vision-v1.1-stage3": {
+    "name": "vision-v1.1-stage3",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.1-stage3/weights.pt",
+    "sha256": "4593dea23b45fbc2be1640d29f02ea9126b6ee3e9c1389450eca8f71ff9540a9",
+    "size_bytes": 16407870,
+    "size_mb": 15.65,
+    "total_parameters": 4091730,
+    "parameter_label": "4.09M",
+    "config": {
+      "d_model": 192,
+      "n_layers": 6,
+      "n_heads": 6,
+      "vocab_size": 4096,
+      "max_seq_len": 384
+    }
+  },
+  "vision-v1.1-stage4": {
+    "name": "vision-v1.1-stage4",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.1-stage4/weights.pt",
+    "sha256": "326ede9b3280508a86a3f6a77f715ecf0c185c6c614bb5be1f6bd2ce36bb09e8",
+    "size_bytes": 16407870,
+    "size_mb": 15.65,
+    "total_parameters": 4091730,
+    "parameter_label": "4.09M",
+    "config": {
+      "d_model": 192,
+      "n_layers": 6,
+      "n_heads": 6,
+      "vocab_size": 4096,
+      "max_seq_len": 384
+    }
+  },
+  "vision-v1.1-stage5": {
+    "name": "vision-v1.1-stage5",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.1-stage5/weights.pt",
+    "sha256": "e650ad83462bc0508babd27c0be564af2635f59c09279c3360163f1add342b3b",
+    "size_bytes": 16407870,
+    "size_mb": 15.65,
+    "total_parameters": 4091730,
+    "parameter_label": "4.09M",
+    "config": {
+      "d_model": 192,
+      "n_layers": 6,
+      "n_heads": 6,
+      "vocab_size": 4096,
+      "max_seq_len": 384
+    }
+  },
+  "vision-v1.1-stage5b": {
+    "name": "vision-v1.1-stage5b",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.1-stage5b/weights.pt",
+    "sha256": "55040adf87e1e7026b4e27115db882b4bdb414f0566eb72b33469fa57dadc18a",
+    "size_bytes": 16407870,
+    "size_mb": 15.65,
+    "total_parameters": 4091730,
+    "parameter_label": "4.09M",
+    "config": {
+      "d_model": 192,
+      "n_layers": 6,
+      "n_heads": 6,
+      "vocab_size": 4096,
+      "max_seq_len": 384
+    }
+  },
+  "vision-v1.2-calibrated-local": {
+    "name": "vision-v1.2-calibrated-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.2-calibrated-local/weights.pt",
+    "sha256": "af25c1db77b1b0f9de8c0b92986a001fc5a28c2905ff4a952db9c7a15cad030e",
+    "size_bytes": 53382241,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.2-quality-local": {
+    "name": "vision-v1.2-quality-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.2-quality-local/weights.pt",
+    "sha256": "9e08d4227650ae51009d76e9a8ec3e22887f1cdc12db5b357b347e572e9f60a5",
+    "size_bytes": 53382944,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.2-scratch-local": {
+    "name": "vision-v1.2-scratch-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.2-scratch-local/weights.pt",
+    "sha256": "345d2e89354da3076cf4d1667a55c312b80f90a093584c221dff2808109fa787",
+    "size_bytes": 32416589,
+    "size_mb": 30.91,
+    "total_parameters": 8092754,
+    "parameter_label": "8.09M",
+    "config": {
+      "d_model": 256,
+      "n_layers": 6,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    }
+  },
+  "vision-v1.2-sft1": {
+    "name": "vision-v1.2-sft1",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.2-sft1/weights.pt",
+    "sha256": "f6ea6282f853f74085c96688f5ae4af0761c3d440793489182c2c88adc81cd90",
+    "size_bytes": 53382944,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.2-sft2": {
+    "name": "vision-v1.2-sft2",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.2-sft2/weights.pt",
+    "sha256": "cf853c9d95d35c268b7ce13e5e27b2e4911a140e2ba1812682889521a92e484c",
+    "size_bytes": 53382944,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.2-stage1": {
+    "name": "vision-v1.2-stage1",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.2-stage1/weights.pt",
+    "sha256": "242a3679891564c733ab80a5bef3cbfe68dbc07118dab002157a88ecc8079f7a",
+    "size_bytes": 53382944,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.2-stage2": {
+    "name": "vision-v1.2-stage2",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.2-stage2/weights.pt",
+    "sha256": "e16088db579fc98c8ef7eabbf2cdcd30f57d16f0135011cbcda86fbaa308f4ee",
+    "size_bytes": 53382944,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.3-experimental-local": {
+    "name": "vision-v1.3-experimental-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.3-experimental-local/weights.pt",
+    "sha256": "b773036547f44ddc97b8a5b001c045ebfd12cd7f1920d63a4a3d8a14ab1e284b",
+    "size_bytes": 53382241,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-breakthrough-cand-f": {
+    "name": "vision-v1.4-breakthrough-cand-f",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-breakthrough-cand-f/weights.pt",
+    "sha256": "14484b4b7a0d922da3c5d3431a6a47eb646cd14b1af072e5c6048b277c6df8b3",
+    "size_bytes": 53381345,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-calibrated-local": {
+    "name": "vision-v1.4-calibrated-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-calibrated-local/weights.pt",
+    "sha256": "5575077916210c168e462b27deed5a1c08101b05aad94f7809b188a579a4caea",
+    "size_bytes": 53382241,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-dpo-preference": {
+    "name": "vision-v1.4-dpo-preference",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-dpo-preference/weights.pt",
+    "sha256": "b821e5e3a54474fc2d42938b2810628acc301a9bfaa134e5fc479d3af9d4939d",
+    "size_bytes": 53381793,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-experimental-local": {
+    "name": "vision-v1.4-experimental-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-experimental-local/weights.pt",
+    "sha256": "db637f4abac58fa74a331a57ef41d2512bb56cadcb1b7e5551143bd676913f9a",
+    "size_bytes": 53382241,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-precision-cand-e": {
+    "name": "vision-v1.4-precision-cand-e",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-precision-cand-e/weights.pt",
+    "sha256": "58ace75597ebbfb03de1967f061516769db55aabbdcbfa4778e06f1e3b813d76",
+    "size_bytes": 53382305,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-reasoning-candidate": {
+    "name": "vision-v1.4-reasoning-candidate",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-reasoning-candidate/weights.pt",
+    "sha256": "d48e364afff39e01e3f36b6bf72997009fcd23417f169e632588f8ad610ef31f",
+    "size_bytes": 53382369,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-replay-cand-a": {
+    "name": "vision-v1.4-replay-cand-a",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-replay-cand-a/weights.pt",
+    "sha256": "76cc40af323e5f66e1197d1ca2c45f7458000cf8d614c08f4b4ded687ba46194",
+    "size_bytes": 53382305,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-replay-cand-b": {
+    "name": "vision-v1.4-replay-cand-b",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-replay-cand-b/weights.pt",
+    "sha256": "2fee4c30f579ed1a29fae6aecb4a7ff0063df08fbe3247b5806132e7a7817261",
+    "size_bytes": 53382305,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-replay-cand-c": {
+    "name": "vision-v1.4-replay-cand-c",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-replay-cand-c/weights.pt",
+    "sha256": "c94f74c7d2ad32cb611bea4664c104b94b9ffcb510e40e5accee1026fdc473e8",
+    "size_bytes": 53382305,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.4-structured-cand-d": {
+    "name": "vision-v1.4-structured-cand-d",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.4-structured-cand-d/weights.pt",
+    "sha256": "b4530bcc8cbf237f656a37c4284086fcc07f958c587313a081849f2455e54ad4",
+    "size_bytes": 53382305,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-v1.5-25m-local": {
+    "name": "vision-v1.5-25m-local",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.5-25m-local/weights.pt",
+    "sha256": "fd14b5c6944482464eda68040c71742dbc02b9843c806a3e52648b32a3943940",
+    "size_bytes": 107201397,
+    "size_mb": 102.24,
+    "total_parameters": 26785394,
+    "parameter_label": "26.79M",
+    "config": {
+      "d_model": 448,
+      "n_layers": 10,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 512
+    }
+  },
+  "vision-v1.5-25m-recovered": {
+    "name": "vision-v1.5-25m-recovered",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.5-25m-recovered/weights.pt",
+    "sha256": "ab80a30809583d9538405bc2a78053349717382337d73f21c22a19d08dbf0fb9",
+    "size_bytes": 107201461,
+    "size_mb": 102.24,
+    "total_parameters": 26785394,
+    "parameter_label": "26.79M",
+    "config": {
+      "d_model": 448,
+      "n_layers": 10,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 512
+    }
+  },
+  "vision-v1.5-controlled-scratch": {
+    "name": "vision-v1.5-controlled-scratch",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.5-controlled-scratch/weights.pt",
+    "sha256": "bba4515a6078509e6908eceb9978fe9e05155c79b30fb5cabd13eccc190a9da0",
+    "size_bytes": 107201269,
+    "size_mb": 102.24,
+    "total_parameters": 26785394,
+    "parameter_label": "26.79M",
+    "config": {
+      "d_model": 448,
+      "n_layers": 10,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 512
+    }
+  },
+  "vision-v1.5-controlled-transfer": {
+    "name": "vision-v1.5-controlled-transfer",
+    "weights_path": "data/neural_models/checkpoints/vision-v1.5-controlled-transfer/weights.pt",
+    "sha256": "b6be317da99b5185770bfc2c326df272c0ae7ee3786ab2f8854ee2baf3c07499",
+    "size_bytes": 107201269,
+    "size_mb": 102.24,
+    "total_parameters": 26785394,
+    "parameter_label": "26.79M",
+    "config": {
+      "d_model": 448,
+      "n_layers": 10,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 512
+    }
+  },
+  "vision-pretraining-validation-13m": {
+    "name": "vision-pretraining-validation-13m",
+    "weights_path": "data/neural_models/checkpoints/vision-pretraining-validation-13m/weights.pt",
+    "sha256": "4f85bdeddd360cb986d01ce008378a053aca653941f41defaec9f1cddbdb3379",
+    "size_bytes": 53382368,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 1024
+    }
+  },
+  "vision-13m-sft-aligned": {
+    "name": "vision-13m-sft-aligned",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-sft-aligned/weights.pt",
+    "sha256": "085ef922342be408fb9a1b394733da687e0354a3f644de0025f24917de2eb5e2",
+    "size_bytes": 53381345,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    }
+  },
+  "vision-13m-stage3-curriculum": {
+    "name": "vision-13m-stage3-curriculum",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-stage3-curriculum/weights.pt",
+    "sha256": "3eee5775c1761bea634ee11e238b76050b25dbfc17ce0a31811e476f74552ad8",
+    "size_bytes": 53381345,
+    "size_mb": 50.91,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    }
+  },
+  "vision-13m-stage4-relational-step050": {
+    "name": "vision-13m-stage4-relational-step050",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-stage4-relational/step_050/weights.pt",
+    "step": 50,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    },
+    "sha256": "c0e8285192013f22ec1d47886351528805471f77b7d1e917e9ae16ccfef65ea4",
+    "size_bytes": 53381345,
+    "size_mb": 50.91
+  },
+  "vision-13m-stage4-relational-step100": {
+    "name": "vision-13m-stage4-relational-step100",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-stage4-relational/step_100/weights.pt",
+    "step": 100,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    },
+    "sha256": "454dd74dea570c406aff768f00dc94f3aa8f44f4c37a319cad07ad38570c9f06",
+    "size_bytes": 53381345,
+    "size_mb": 50.91
+  },
+  "vision-13m-stage4-relational-step150": {
+    "name": "vision-13m-stage4-relational-step150",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-stage4-relational/step_150/weights.pt",
+    "step": 150,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    },
+    "sha256": "7105ee96182fe4caa6dc9a0b36f00311c8ce99d0e3a35f3a9df7b171005b8b57",
+    "size_bytes": 53381345,
+    "size_mb": 50.91
+  },
+  "vision-13m-stage4-relational-step200": {
+    "name": "vision-13m-stage4-relational-step200",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-stage4-relational/step_200/weights.pt",
+    "step": 200,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    },
+    "sha256": "a71775a1377ff7d82466c03ab664ef92137d1169289e12ec089c4aa6d1ecbd2e",
+    "size_bytes": 53381345,
+    "size_mb": 50.91
+  },
+  "vision-13m-stage4-relational-step250": {
+    "name": "vision-13m-stage4-relational-step250",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-stage4-relational/step_250/weights.pt",
+    "step": 250,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    },
+    "sha256": "d87af873f50897f86d4eeded3aacbe0cf2995d17e26213d6039086cc1089c66c",
+    "size_bytes": 53381345,
+    "size_mb": 50.91
+  },
+  "vision-13m-stage4-relational": {
+    "name": "vision-13m-stage4-relational",
+    "weights_path": "data/neural_models/checkpoints/vision-13m-stage4-relational/weights.pt",
+    "step": 250,
+    "total_parameters": 13332498,
+    "parameter_label": "13.33M",
+    "config": {
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "vocab_size": 8192,
+      "max_seq_len": 256
+    },
+    "sha256": "d87af873f50897f86d4eeded3aacbe0cf2995d17e26213d6039086cc1089c66c",
+    "size_bytes": 53381345,
+    "size_mb": 50.91
+  }
+}

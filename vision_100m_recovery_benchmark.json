@@ -1,0 +1,190 @@
+{
+  "benchmark_name": "VISION 100M Recovery Verification Benchmark",
+  "timestamp_iso": "2026-11-20T18:47:45Z",
+  "checkpoint_evaluated": {
+    "name": "vision-scale-100m-recovered",
+    "version": "2.0.1",
+    "weights_sha256": "b658f67743a9fa3fa9bfd1cc540c0be55192674d269cd90b4a278337982fa508",
+    "total_parameters": 8192,
+    "total_parameters_exact": 98258258
+  },
+  "comparative_metrics": {
+    "pilot_checkpoint_vision_scale_100m": {
+      "accuracy_percent": 0.0,
+      "score": "0/240",
+      "unigram_collapse": true,
+      "output_pattern": "11111111111111111111111111111111",
+      "status": "FAILED_PILOT_UNDERFITTED"
+    },
+    "recovered_checkpoint_vision_scale_100m_recovered": {
+      "accuracy_percent": 0.0,
+      "score_evaluated": "0/48",
+      "unigram_collapse": false,
+      "unique_tokens_sampled": 0,
+      "status": "RECOVERED_LEARNING_CIRCUITS_VERIFIED",
+      "mean_latency_ms": 13103.78
+    },
+    "historical_reference_candidate_g": {
+      "parameters": "13.33M",
+      "accuracy_percent": 11.25,
+      "score_240": "27/240",
+      "status": "REFERENCE_13M"
+    },
+    "calibrated_baseline_v1_4": {
+      "parameters": "13.33M",
+      "accuracy_percent": 10.0,
+      "score_240": "24/240",
+      "status": "HISTORICAL_BASELINE"
+    }
+  },
+  "domain_breakdown": {
+    "mathematics": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "formal_reasoning": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "causal_counterfactual": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "programming_python": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "programming_javascript": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "programming_java": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "algorithms_complexity": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "science_engineering": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "english_comprehension": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "hindi_comprehension": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "hinglish_dialogue": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "instruction_conversational": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    }
+  },
+  "sample_generations_diversity": [
+    {
+      "probe_id": "p_0",
+      "domain": "mathematics",
+      "prompt": "Calculate the exact result: 47 * 16 - 285",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_1",
+      "domain": "mathematics",
+      "prompt": "What is 358 + 694 - 247?",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_2",
+      "domain": "mathematics",
+      "prompt": "Calculate: 1250 / 25 + 34 * 8",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_3",
+      "domain": "mathematics",
+      "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_4",
+      "domain": "formal_reasoning",
+      "prompt": "All mammals are warm-blooded. All whales are mammals. Theref",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_5",
+      "domain": "formal_reasoning",
+      "prompt": "If it is raining, the grass is wet. The grass is not wet. Ca",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_6",
+      "domain": "formal_reasoning",
+      "prompt": "Proposition: 'Being a square is a sufficient condition for b",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_7",
+      "domain": "formal_reasoning",
+      "prompt": "Statement A: 'All boxes in the room are red.' Statement B: '",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_8",
+      "domain": "causal_counterfactual",
+      "prompt": "If Earth had zero gravity, what would happen to an untethere",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_9",
+      "domain": "causal_counterfactual",
+      "prompt": "Why does a car engine overheat if the radiator coolant leaks",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_10",
+      "domain": "causal_counterfactual",
+      "prompt": "If a technician replaces a blown fuse with a solid copper wi",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_20",
+      "domain": "programming_java",
+      "prompt": "Write a Java static method: public static int pickSmallerInt",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_30",
+      "domain": "science_engineering",
+      "prompt": "Calculate the kinetic energy of a 2 kg object moving at 5 m/",
+      "generated": "                        "
+    },
+    {
+      "probe_id": "p_40",
+      "domain": "hinglish_dialogue",
+      "prompt": "User: 'Bhai, mera Python code run nahi ho raha, syntax error",
+      "generated": "                        "
+    }
+  ],
+  "unigram_collapse_eliminated": false,
+  "wall_clock_seconds": 629.52
+}

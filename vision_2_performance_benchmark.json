@@ -1,0 +1,53 @@
+{
+  "benchmark_program": "VISION 2.0 Performance, Latency & Quantization Benchmark",
+  "timestamp_iso": "2026-11-20T15:00:17+05:30",
+  "hardware": {
+    "cpu": "Intel Core i5-1335U",
+    "simd": "AVX2",
+    "os": "Windows"
+  },
+  "thread_scaling": {
+    "1_threads": {
+      "threads": 1,
+      "mean_ms_per_token": 84.74,
+      "p50_ms_per_token": 82.62,
+      "p95_ms_per_token": 101.5,
+      "approx_ttft_ms": 127.11,
+      "tokens_per_sec": 11.8,
+      "peak_rss_mb": 114.56
+    },
+    "2_threads": {
+      "threads": 2,
+      "mean_ms_per_token": 73.58,
+      "p50_ms_per_token": 43.9,
+      "p95_ms_per_token": 123.58,
+      "approx_ttft_ms": 110.36,
+      "tokens_per_sec": 13.6,
+      "peak_rss_mb": 110.3
+    },
+    "4_threads": {
+      "threads": 4,
+      "mean_ms_per_token": 76.69,
+      "p50_ms_per_token": 81.18,
+      "p95_ms_per_token": 112.66,
+      "approx_ttft_ms": 115.03,
+      "tokens_per_sec": 13.0,
+      "peak_rss_mb": 109.36
+    }
+  },
+  "quantization_analysis": {
+    "fp32": {
+      "weight_size_mb": 50.91,
+      "mean_ms_per_token": 113.96,
+      "tokens_per_sec": 8.8
+    },
+    "int8_dynamic": {
+      "weight_size_mb": 24.67,
+      "compression_ratio": "2.06x",
+      "mean_ms_per_token": 85.61,
+      "tokens_per_sec": 11.7,
+      "speedup_factor": 1.33,
+      "output_fidelity_match": false
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "audit_title": "VISION 100M Training Pipeline Diagnostic and Component Audit",
+  "timestamp_iso": "2026-11-20T23:33:00Z",
+  "tests": {
+    "tokenizer_encode_decode": {
+      "status": "VERIFIED",
+      "samples_tested": 6,
+      "all_exact_match": true,
+      "details": [
+        {
+          "input": "Hello world, testing tokenization.",
+          "token_ids_len": 9,
+          "decoded": "Hello world, testing tokenization.",
+          "exact_match": true
+        },
+        {
+          "input": "def add(a, b):\n    return a + b",
+          "token_ids_len": 12,
+          "decoded": "def add(a, b):\n    return a + b",
+          "exact_match": true
+        },
+        {
+          "input": "Calculate 47 * 16 - 285 = 467",
+          "token_ids_len": 19,
+          "decoded": "Calculate 47 * 16 - 285 = 467",
+          "exact_match": true
+        },
+        {
+          "input": "\u0928\u092e\u0938\u094d\u0924\u0947 \u0926\u0941\u0928\u093f\u092f\u093e! \u092f\u0939 \u090f\u0915 \u092a\u0930\u0940\u0915\u094d\u0937\u0923 \u0939\u0948\u0964",
+          "token_ids_len": 12,
+          "decoded": "\u0928\u092e\u0938\u094d\u0924\u0947 \u0926\u0941\u0928\u093f\u092f\u093e! \u092f\u0939 \u090f\u0915 \u092a\u0930\u0940\u0915\u094d\u0937\u0923 \u0939\u0948\u0964",
+          "exact_match": true
+        },
+        {
+          "input": "Kya haal hai Jarvis? Main badhiya hoon.",
+          "token_ids_len": 15,
+          "decoded": "Kya haal hai Jarvis? Main badhiya hoon.",
+          "exact_match": true
+        },
+        {
+          "input": "const x = [1, 2, 3].map(n => n * 2);",
+          "token_ids_len": 21,
+          "decoded": "const x = [1, 2, 3].map(n => n * 2);",
+          "exact_match": true
+        }
+      ]
+    },
+    "special_token_handling": {
+      "status": "VERIFIED",
+      "special_tokens": {
+        "bos": 1,
+        "eos": 2,
+        "pad": 0,
+        "user_tag": 5,
+        "user_end_tag": 17,
+        "assistant_tag": 6,
+        "assistant_end_tag": 7
+      }
+    },
+    "weight_tying": {
+      "status": "VERIFIED",
+      "lm_head_is_tok_emb": true
+    },
+    "gradient_flow": {
+      "status": "VERIFIED",
+      "all_language_layers_receiving_gradients": true,
+      "language_parameters_with_finite_grad": "107/107",
+      "multimodal_parameters_uncalled_in_text_training": "43/43 (vision_encoder and audio_classifier correctly bypassed during text pretraining)",
+      "sample_layer_gradients": {
+        "tok_emb.weight": {
+          "has_grad": true,
+          "is_finite": true,
+          "non_zero": true,
+          "grad_norm": 6.266127
+        },
+        "layers.0.attn.q_proj.weight": {
+          "has_grad": true,
+          "is_finite": true,
+          "non_zero": true
+        },
+        "layers.7.ffn.up_proj.weight": {
+          "has_grad": true,
+          "is_finite": true,
+          "non_zero": true
+        },
+        "layers.13.attn.o_proj.weight": {
+          "has_grad": true,
+          "is_finite": true,
+          "non_zero": true
+        },
+        "final_norm.weight": {
+          "has_grad": true,
+          "is_finite": true,
+          "non_zero": true
+        }
+      }
+    },
+    "label_shifting": {
+      "status": "VERIFIED",
+      "input_sequence": [
+        10,
+        20,
+        30
+      ],
+      "target_sequence": [
+        20,
+        30,
+        40
+      ],
+      "shift_aligned": true
+    },
+    "tiny_overfit_diagnostic": {
+      "status": "VERIFIED",
+      "initial_loss": 9.0548,
+      "final_loss": 0.1547,
+      "loss_reduction_ratio": 58.52,
+      "samples_reproduced": "4/4",
+      "loss_curve": [
+        {
+          "step": 0,
+          "loss": 9.0548
+        },
+        {
+          "step": 10,
+          "loss": 4.0413
+        },
+        {
+          "step": 20,
+          "loss": 1.2871
+        },
+        {
+          "step": 30,
+          "loss": 0.4411
+        },
+        {
+          "step": 40,
+          "loss": 0.211
+        },
+        {
+          "step": 49,
+          "loss": 0.1547
+        }
+      ],
+      "reproduction_details": [
+        {
+          "prompt": "What is 2 + 2?",
+          "target_response": "4",
+          "generated_text": "4",
+          "exact_or_substring_match": true
+        },
+        {
+          "prompt": "Capital of France?",
+          "target_response": "Paris",
+          "generated_text": "Paris",
+          "exact_or_substring_match": true
+        },
+        {
+          "prompt": "Python add:",
+          "target_response": "return a + b",
+          "generated_text": "return a + b",
+          "exact_or_substring_match": true
+        },
+        {
+          "prompt": "Hello in Hindi:",
+          "target_response": "\u0928\u092e\u0938\u094d\u0924\u0947",
+          "generated_text": "\u0928\u092e\u0938\u094d\u0924\u0947",
+          "exact_or_substring_match": true
+        }
+      ],
+      "pipeline_soundness_conclusion": "The Transformer learning architecture, SwiGLU forward pass, RoPE embeddings, cross-entropy loss, backprop gradient computation, and autoregressive greedy decoding are mathematically SOUND and capable of memorizing and generating target tokens when sufficient steps per token are executed."
+    }
+  }
+}

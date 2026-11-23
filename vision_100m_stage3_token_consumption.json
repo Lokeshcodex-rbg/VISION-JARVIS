@@ -1,0 +1,32 @@
+{
+  "title": "VISION 100M Stage 3 Actual Token Consumption Audit",
+  "timestamp_iso": "2026-11-21T21:52:35.087176",
+  "model_parameters": 98258258,
+  "corpus_available": {
+    "dataset_name": "vision_100m_stage3_expanded_corpus",
+    "total_bpe_tokens": 6176823,
+    "training_tokens": 5932224,
+    "validation_tokens": 244599,
+    "training_response_tokens": 4052903,
+    "raw_samples": 25246
+  },
+  "training_run_consumption": {
+    "pretraining_stage": "stage_3_continued_pretraining",
+    "micro_steps_executed": 160,
+    "optimizer_updates_executed": 20,
+    "sequence_length": 256,
+    "micro_batch_size": 2,
+    "effective_batch_size": 16,
+    "tokens_consumed_in_stage_3": 81920,
+    "cumulative_tokens_consumed_100m": 174080,
+    "effective_epochs_over_stage3_corpus": 0.02934,
+    "fraction_of_2b_chinchilla_consumed_percent": 0.008704
+  },
+  "compute_efficiency": {
+    "throughput_tok_per_sec": 257.2,
+    "total_elapsed_seconds": 318.52,
+    "total_elapsed_minutes": 5.31,
+    "peak_rss_mb": 495.5,
+    "financial_cost_usd": 0.0
+  }
+}

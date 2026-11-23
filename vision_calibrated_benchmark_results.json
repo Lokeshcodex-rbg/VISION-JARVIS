@@ -1,0 +1,152 @@
+{
+  "model": "vision-pretraining-validation-13m",
+  "decoding": "calibrated (repetition_penalty=1.15, no_repeat_ngram_size=4)",
+  "total_probes": 200,
+  "passed_probes": 1,
+  "overall_accuracy_pct": 0.5,
+  "wilson_95_ci": [
+    0.09,
+    2.78
+  ],
+  "elapsed_time_s": 117.9,
+  "domain_breakdown": {
+    "mathematics": {
+      "passed": 1,
+      "total": 40,
+      "accuracy_pct": 2.5
+    },
+    "programming_python": {
+      "passed": 0,
+      "total": 40,
+      "accuracy_pct": 0.0
+    },
+    "formal_reasoning": {
+      "passed": 0,
+      "total": 30,
+      "accuracy_pct": 0.0
+    },
+    "science_engineering": {
+      "passed": 0,
+      "total": 30,
+      "accuracy_pct": 0.0
+    },
+    "hindi_comprehension": {
+      "passed": 0,
+      "total": 20,
+      "accuracy_pct": 0.0
+    },
+    "hinglish_dialogue": {
+      "passed": 0,
+      "total": 20,
+      "accuracy_pct": 0.0
+    },
+    "instruction_following": {
+      "passed": 0,
+      "total": 20,
+      "accuracy_pct": 0.0
+    }
+  },
+  "sample_passes": [
+    {
+      "id": "TRF-0001",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (7 + 10) - 7.",
+      "expected": "10",
+      "generated": "To find the number of the equation:\n\n1. The function is 2, we can be 3, 10, 1.\n\n#x = 10.\n\nThe equation:\n#x",
+      "passed": true,
+      "reason": "EXACT_ANSWER_MATCH"
+    }
+  ],
+  "sample_failures": [
+    {
+      "id": "TRF-0002",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (11 + 13) - 12.",
+      "expected": "12",
+      "generated": "To find the number of 10.\n\nThe equation:\n\n#x = 2 + 3x - 10\n\n10\n#x + 10 = 100\n\n#",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 12, got: To find the number of 10.\n\nThe equation:\n\n#x = 2 + 3x - 10\n\n)"
+    },
+    {
+      "id": "TRF-0003",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (15 + 16) - 6.",
+      "expected": "25",
+      "generated": "To find the number of the equation:\n\n1. The function is 2, we can be 1.\n\n#x = 3x + 10\n\nThe equation:\n#x - 10",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 25, got: To find the number of the equation:\n\n1. The function is 2, w)"
+    },
+    {
+      "id": "TRF-0004",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (19 + 19) - 11.",
+      "expected": "27",
+      "generated": "To find the number of 10.\n\nThe equation:\n\n#x = 2\n\n10\n\n15x + 10\n100\n\n#\n10 = 10",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 27, got: To find the number of 10.\n\nThe equation:\n\n#x = 2\n\n10\n\n15x + )"
+    },
+    {
+      "id": "TRF-0005",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (23 + 22) - 5.",
+      "expected": "40",
+      "generated": "To find the equation:\n\n1.2 = 3, 10, 1, 15, 1.\n\n#x - 10\n\nThe number of the number of the equation:",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 40, got: To find the equation:\n\n1.2 = 3, 10, 1, 15, 1.\n\n#x - 10\n\nThe )"
+    },
+    {
+      "id": "TRF-0006",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (27 + 25) - 10.",
+      "expected": "42",
+      "generated": "To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n#\n#x - 100\n\n#\nThe equation:",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 42, got: To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n)"
+    },
+    {
+      "id": "TRF-0007",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (31 + 28) - 4.",
+      "expected": "55",
+      "generated": "To find the number of the equation:\n\n1.2 = 3, 10, 15, 1, 1.\n\n#x + 10\n\nThe 10.",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 55, got: To find the number of the equation:\n\n1.2 = 3, 10, 15, 1, 1.\n)"
+    },
+    {
+      "id": "TRF-0008",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (35 + 31) - 9.",
+      "expected": "57",
+      "generated": "To find the number of 10.\n\nThe equation:\n\n#x = 2 + 3x - 10\n\n10\n#x + 10 = 100\n\n#",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 57, got: To find the number of 10.\n\nThe equation:\n\n#x = 2 + 3x - 10\n\n)"
+    },
+    {
+      "id": "TRF-0009",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (39 + 34) - 3.",
+      "expected": "70",
+      "generated": "To find the number of the equation:\n\n1.2, we can be 3, 10, 1, 1.\n\n#x = 10.\n\nThe 100.5",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 70, got: To find the number of the equation:\n\n1.2, we can be 3, 10, 1)"
+    },
+    {
+      "id": "TRF-0010",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (43 + 37) - 8.",
+      "expected": "72",
+      "generated": "To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n10 = 100\n\n#10000\n1",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 72, got: To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n)"
+    },
+    {
+      "id": "TRF-0011",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (47 + 40) - 2.",
+      "expected": "85",
+      "generated": "To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n100\n12\n\n15x - 1000",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 85, got: To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n)"
+    }
+  ]
+}

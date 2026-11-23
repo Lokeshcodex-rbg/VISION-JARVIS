@@ -1,0 +1,352 @@
+{
+  "model_name": "vision-13m-sft-aligned",
+  "benchmark_suite": "vision_independent_transfer_test_200.jsonl",
+  "decoding_method": "calibrated (repetition_penalty=1.15, no_repeat_ngram_size=4)",
+  "benchmark_history": [
+    {
+      "step": 0,
+      "val_loss": 5.8613,
+      "benchmark": {
+        "total_probes": 200,
+        "passed_probes": 1,
+        "overall_accuracy_pct": 0.5,
+        "wilson_95_ci": [
+          0.09,
+          2.78
+        ],
+        "elapsed_time_s": 122.61,
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 1,
+            "total": 40,
+            "accuracy_pct": 2.5
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "sample_passes": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "To find the number of the equation:\n\n1. The function is 2, we can be 3, 10, 1.\n\n#x = 10.\n\nThe equation:\n#x",
+            "passed": true,
+            "reason": "EXACT_ANSWER_MATCH"
+          }
+        ],
+        "sample_failures": [
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "To find the number of 10.\n\nThe equation:\n\n#x = 2 + 3x - 10\n\n10\n#x + 10 = 100\n\n#",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 12, got: To find the number of 10.\n\nThe equation:\n\n#x = 2 + 3x - 10\n\n)"
+          },
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "To find the number of the equation:\n\n1. The function is 2, we can be 1.\n\n#x = 3x + 10\n\nThe equation:\n#x - 10",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 25, got: To find the number of the equation:\n\n1. The function is 2, w)"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "To find the number of 10.\n\nThe equation:\n\n#x = 2\n\n10\n\n15x + 10\n100\n\n#\n10 = 10",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 27, got: To find the number of 10.\n\nThe equation:\n\n#x = 2\n\n10\n\n15x + )"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "To find the equation:\n\n1.2 = 3, 10, 1, 15, 1.\n\n#x - 10\n\nThe number of the number of the equation:",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 40, got: To find the equation:\n\n1.2 = 3, 10, 1, 15, 1.\n\n#x - 10\n\nThe )"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n#\n#x - 100\n\n#\nThe equation:",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 42, got: To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n)"
+          }
+        ]
+      }
+    },
+    {
+      "step": 50,
+      "val_loss": null,
+      "benchmark": {
+        "total_probes": 200,
+        "passed_probes": 2,
+        "overall_accuracy_pct": 1.0,
+        "wilson_95_ci": [
+          0.27,
+          3.57
+        ],
+        "elapsed_time_s": 33.29,
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 2,
+            "total": 40,
+            "accuracy_pct": 5.0
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "sample_passes": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "The answer is 10.\nThe answer is (2.",
+            "passed": true,
+            "reason": "EXACT_ANSWER_MATCH"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "The answer is 12.\nThe answer is (10.",
+            "passed": true,
+            "reason": "EXACT_ANSWER_MATCH"
+          }
+        ],
+        "sample_failures": [
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "The answer is 10.\nThe answer is (2.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 25, got: The answer is 10.\nThe answer is (2.)"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "The answer is 10.\nThe answer is (2.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 27, got: The answer is 10.\nThe answer is (2.)"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "The answer is 12.\nThe answer is (3.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 40, got: The answer is 12.\nThe answer is (3.)"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "The answer is 10.\nThe answer is (20.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 42, got: The answer is 10.\nThe answer is (20.)"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "The answer is 12.\nThe answer is (3.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 55, got: The answer is 12.\nThe answer is (3.)"
+          }
+        ]
+      }
+    },
+    {
+      "step": 100,
+      "val_loss": 5.2023,
+      "benchmark": {
+        "total_probes": 200,
+        "passed_probes": 2,
+        "overall_accuracy_pct": 1.0,
+        "wilson_95_ci": [
+          0.27,
+          3.57
+        ],
+        "elapsed_time_s": 33.33,
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 2,
+            "total": 40,
+            "accuracy_pct": 5.0
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "sample_passes": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "10 = 2.\nThe answer is 3.",
+            "passed": true,
+            "reason": "EXACT_ANSWER_MATCH"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "12 = 3.\nThe answer is 10.",
+            "passed": true,
+            "reason": "EXACT_ANSWER_MATCH"
+          }
+        ],
+        "sample_failures": [
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "12 = 3.\nThe answer is 10.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 25, got: 12 = 3.\nThe answer is 10.)"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "12 = 3.\nThe answer is 10.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 27, got: 12 = 3.\nThe answer is 10.)"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "2 = 10.\nThe answer is 3.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 40, got: 2 = 10.\nThe answer is 3.)"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "10 = 2.\nThe answer is 30.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 42, got: 10 = 2.\nThe answer is 30.)"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "12 = 3.\nThe answer is 4.",
+            "passed": false,
+            "reason": "MATH_MISMATCH (Expected 55, got: 12 = 3.\nThe answer is 4.)"
+          }
+        ]
+      }
+    }
+  ]
+}

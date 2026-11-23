@@ -1,0 +1,80 @@
+{
+  "title": "VISION 100M Pretraining Checkpoint Registry & Integrity Audit",
+  "model_name": "vision-scale-100m-full-pretraining",
+  "timestamp_iso": "2026-11-21T03:26:09.297135",
+  "checkpoint_directory": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-100m-full-pretraining",
+  "final_weights_sha256": "d8eca5f06ebbef4f70348c4d9ab3d17f2c3c9a94ece7a0049c857c51befcb8be",
+  "total_parameters": 98258258,
+  "checkpoints": [
+    {
+      "checkpoint_file": "checkpoint_step_24.pt",
+      "step": 24,
+      "optimizer_updates": 3,
+      "tokens_trained": 12288,
+      "val_loss": 7.7718,
+      "val_ppl": 2372.74,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.518,
+      "unique_tokens": 2,
+      "repetition_rate_pct": 95.56,
+      "sha256": "4aacd9e1c362037d7075234a17f2f01789672da27f0cca877269d0c8be7299f3",
+      "integrity_verified": true
+    },
+    {
+      "checkpoint_file": "checkpoint_step_48.pt",
+      "step": 48,
+      "optimizer_updates": 6,
+      "tokens_trained": 24576,
+      "val_loss": 7.4705,
+      "val_ppl": 1755.56,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.421,
+      "unique_tokens": 4,
+      "repetition_rate_pct": 96.67,
+      "sha256": "64dcd06aa5ab6e10effc8198bf26699ffbd7727f2f6ecc2fdb4776e15a415fc9",
+      "integrity_verified": true
+    },
+    {
+      "checkpoint_file": "checkpoint_step_72.pt",
+      "step": 72,
+      "optimizer_updates": 9,
+      "tokens_trained": 36864,
+      "val_loss": 7.3299,
+      "val_ppl": 1525.16,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.061,
+      "unique_tokens": 4,
+      "repetition_rate_pct": 84.44,
+      "sha256": "2c4b1193a82a16374790599ed00ccd1309aa837d3acf9982150acb04931cc3c2",
+      "integrity_verified": true
+    },
+    {
+      "checkpoint_file": "checkpoint_step_96.pt",
+      "step": 96,
+      "optimizer_updates": 12,
+      "tokens_trained": 49152,
+      "val_loss": 7.2278,
+      "val_ppl": 1377.22,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.014,
+      "unique_tokens": 3,
+      "repetition_rate_pct": 84.44,
+      "sha256": "ebde74ac0e2ec33ab0bf79fd623f1215b650099287dd548c364d792eef6b7216",
+      "integrity_verified": true
+    },
+    {
+      "checkpoint_file": "checkpoint_step_120.pt",
+      "step": 120,
+      "optimizer_updates": 15,
+      "tokens_trained": 61440,
+      "val_loss": 7.1812,
+      "val_ppl": 1314.54,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.016,
+      "unique_tokens": 4,
+      "repetition_rate_pct": 86.67,
+      "sha256": "12c34cd48faa7269599f9fecd7031d577b7dcd83bb5915ba2d27e47d77e00edb",
+      "integrity_verified": true
+    }
+  ]
+}

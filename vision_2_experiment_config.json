@@ -1,0 +1,30 @@
+{
+  "model_name": "vision-2.0-candidate-g",
+  "program": "VISION 2.0 Foundation Model Evolution",
+  "timestamp_iso": "2026-11-20T14:48:32.872303",
+  "base_checkpoint": "vision-v1.4-replay-cand-b",
+  "base_sha256": "2fee4c30f579ed1a29fae6aecb4a7ff0063df08fbe3247b5806132e7a7817261",
+  "dataset": "data/neural_models/datasets/vision_2_corpus/train.jsonl",
+  "dataset_samples": 2500,
+  "sequence_length": 160,
+  "batch_size": 2,
+  "gradient_accumulation_steps": 8,
+  "effective_batch_size": 16,
+  "total_steps": 160,
+  "warmup_steps": 15,
+  "peak_lr": 1e-05,
+  "min_lr": 1e-06,
+  "lr_schedule": "cosine_annealing_with_linear_warmup",
+  "optimizer": "AdamW",
+  "betas": [
+    0.9,
+    0.95
+  ],
+  "weight_decay": 0.05,
+  "gradient_clipping_norm": 1.0,
+  "hardware": {
+    "device": "cpu",
+    "threads": 2,
+    "simd": "AVX2"
+  }
+}

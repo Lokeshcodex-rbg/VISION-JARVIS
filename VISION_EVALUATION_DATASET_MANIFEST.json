@@ -1,0 +1,104 @@
+{
+  "manifest_title": "VISION Comprehensive Evaluation Benchmark Manifest",
+  "audit_timestamp": "2026-11-22T16:20:00+05:30",
+  "evaluation_principle": "Rigorous native capability verification without external models, RAG, SymPy, or tool shortcuts. Strict separation of AST syntax from functional test execution.",
+  "total_benchmarks": 5,
+  "total_probes": 2400,
+  "benchmarks": [
+    {
+      "id": "BENCH-500-FRESH",
+      "name": "Fresh Independent 500-Probe Validation Suite",
+      "file": "vision_fresh_validation_dataset_500.jsonl",
+      "sha256": "909ee1e97aef054bd2d531a463797e447da53109d110d8ac14b04fd2a53d00b0",
+      "probes_count": 500,
+      "size_bytes": 129296,
+      "domains_breakdown": {
+        "mathematics": 40,
+        "programming_python": 40,
+        "programming_javascript": 40,
+        "programming_java": 40,
+        "programming_cpp": 40,
+        "algorithms": 40,
+        "computer_science_systems": 40,
+        "science_physics": 40,
+        "hindi_devanagari": 40,
+        "hinglish_dialog": 40,
+        "formal_reasoning": 30,
+        "tool_orchestration": 30,
+        "electronics_robotics": 20,
+        "networking_protocols": 20
+      },
+      "code_testing_mode": "Isolated unit execution with hidden assertions (not AST only)",
+      "math_testing_mode": "Contradiction-free exact numerical equivalence"
+    },
+    {
+      "id": "BENCH-100-PRIV",
+      "name": "Stage 4 Private Unexposed Evaluation Suite",
+      "file": "vision_stage4_private_eval_100.jsonl",
+      "sha256": "3499426f8dcfc96cf7b78996b797e2f9d64a09df07fcfaf3a68fe39a5caea384",
+      "probes_count": 100,
+      "size_bytes": 23616,
+      "domains_breakdown": {
+        "private_mathematics": 10,
+        "private_word_problems": 10,
+        "private_python_functions": 10,
+        "private_polyglot": 10,
+        "private_hindi_hinglish": 10,
+        "private_reading_comprehension": 10,
+        "private_multiturn": 10,
+        "private_instruction_following": 10,
+        "private_formal_logic": 10,
+        "private_science": 10
+      }
+    },
+    {
+      "id": "BENCH-100-GEN",
+      "name": "Stage 4 Generalization Benchmark Suite",
+      "file": "vision_stage4_generalization_suite_100.jsonl",
+      "sha256": "59528fc90c5a526c5999f817b5c839dd0bd025d4b8a3b377bb16f5b11296084f",
+      "probes_count": 100,
+      "size_bytes": 27190,
+      "domains_breakdown": {
+        "memorization_subset": 10,
+        "new_numerical_values": 10,
+        "unseen_operation_combinations": 10,
+        "new_word_problems": 10,
+        "new_python_functions": 10,
+        "unseen_java_javascript": 10,
+        "hindi_hinglish_generation": 10,
+        "reading_comprehension": 10,
+        "multi_turn_context": 10,
+        "instruction_following": 10
+      }
+    },
+    {
+      "id": "BENCH-200-TRF",
+      "name": "Independent Transfer Benchmark Suite",
+      "file": "vision_independent_transfer_test_200.jsonl",
+      "sha256": "c0405fb6e2419d15052c709024b8e8d7d73e01752a9dc281dcf2bc99c995a4d4",
+      "probes_count": 200,
+      "size_bytes": 48210,
+      "domains_breakdown": {
+        "mathematics": 50,
+        "programming": 50,
+        "general_reasoning": 50,
+        "polyglot_dialogue": 50
+      }
+    },
+    {
+      "id": "BENCH-1500-EXP",
+      "name": "Expanded Validation Held-Out Suite",
+      "file": "vision_expanded_validation_dataset_1500.jsonl",
+      "sha256": "161e38b330364f9b88e174b83f5c71b69f6487570aa43da19e078ba109156b26",
+      "probes_count": 1500,
+      "size_bytes": 421050,
+      "domains_breakdown": {
+        "mathematics_deep": 300,
+        "python_algorithms": 300,
+        "polyglot_cs": 300,
+        "science_physics_chem": 300,
+        "indic_hindi_hinglish": 300
+      }
+    }
+  ]
+}

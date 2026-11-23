@@ -1,0 +1,180 @@
+{
+  "benchmark_title": "VISION 100M Post-Recovery Forensic Benchmark & Cross-Candidate Multi-Domain Comparison",
+  "timestamp_iso": "2026-11-21T02:15:00Z",
+  "evaluation_dataset": "vision_independent_validation_dataset.jsonl",
+  "total_decontaminated_probes": 240,
+  "decontamination_verified": true,
+  "leakage_matches": 0,
+  "scoring_protocol": {
+    "arithmetic": "Sympy numerical equivalence + exact float match within 1e-4",
+    "python_programming": "Python AST parse + sandbox subprocess execution against test cases",
+    "javascript_programming": "Node.js subprocess assert against test suites",
+    "java_programming": "Method signature + return type regex + return statement audit",
+    "general_reasoning": "Subword token overlap >= 0.75 or exact reference match",
+    "strict_safety_gate": "Zero hallucinations or unverified scores allowed"
+  },
+  "model_comparison_table": {
+    "vision_v1_4_calibrated_baseline": {
+      "checkpoint_path": "data/neural_models/checkpoints/vision-v1.4-replay-cand-b",
+      "weights_sha256": "2fee4c30f579ed1a29fae6aecb4a7ff0063df08fbe3247b5806132e7a7817261",
+      "trainable_parameters": 13327680,
+      "probes_evaluated": 240,
+      "probes_passed": 24,
+      "accuracy_percent": 10.0,
+      "wilson_ci_95": [
+        6.83,
+        14.42
+      ],
+      "collapse_status": "NONE",
+      "output_diversity_shannon_entropy": 6.84,
+      "mean_latency_ms": 320.5,
+      "domain_breakdown": {
+        "mathematics": {
+          "passed": 2,
+          "total": 20,
+          "acc": 10.0
+        },
+        "formal_reasoning": {
+          "passed": 4,
+          "total": 20,
+          "acc": 20.0
+        },
+        "causal_counterfactual": {
+          "passed": 3,
+          "total": 20,
+          "acc": 15.0
+        },
+        "programming_python": {
+          "passed": 0,
+          "total": 20,
+          "acc": 0.0
+        },
+        "programming_javascript": {
+          "passed": 2,
+          "total": 20,
+          "acc": 10.0
+        },
+        "programming_java": {
+          "passed": 1,
+          "total": 20,
+          "acc": 5.0
+        },
+        "algorithms_complexity": {
+          "passed": 1,
+          "total": 20,
+          "acc": 5.0
+        },
+        "science_engineering": {
+          "passed": 4,
+          "total": 20,
+          "acc": 20.0
+        },
+        "english_comprehension": {
+          "passed": 3,
+          "total": 20,
+          "acc": 15.0
+        },
+        "hindi_comprehension": {
+          "passed": 2,
+          "total": 20,
+          "acc": 10.0
+        },
+        "hinglish_dialogue": {
+          "passed": 1,
+          "total": 20,
+          "acc": 5.0
+        },
+        "instruction_conversational": {
+          "passed": 1,
+          "total": 20,
+          "acc": 5.0
+        }
+      },
+      "status": "HISTORICAL_BASELINE"
+    },
+    "vision_2_0_candidate_g": {
+      "checkpoint_path": "data/neural_models/checkpoints/vision-2.0-candidate-g",
+      "weights_sha256": "576e21f6b49dec1088da1f96f06d9653fe576ce50f54e6ff83266ce376198039",
+      "trainable_parameters": 13327680,
+      "probes_evaluated": 240,
+      "probes_passed": 27,
+      "accuracy_percent": 11.25,
+      "wilson_ci_95": [
+        7.87,
+        15.82
+      ],
+      "collapse_status": "NONE",
+      "output_diversity_shannon_entropy": 7.12,
+      "mean_latency_ms": 345.1,
+      "status": "REFERENCE_13M"
+    },
+    "vision_100m_original_pilot": {
+      "checkpoint_path": "data/neural_models/checkpoints/vision-100m-foundation",
+      "weights_sha256": "8ce96183089b73e1f7c3c535920fcd3ef9733631a04846ef08f9322b6932d2b0",
+      "trainable_parameters": 98258258,
+      "probes_evaluated": 240,
+      "probes_passed": 0,
+      "accuracy_percent": 0.0,
+      "wilson_ci_95": [
+        0.0,
+        1.58
+      ],
+      "collapse_status": "DIGIT_COLLAPSED (11111111...)",
+      "output_diversity_shannon_entropy": 0.08,
+      "mean_latency_ms": 7506.8,
+      "tokens_consumed": 20480,
+      "failure_root_cause": "Full-sequence loss without response masking caused argmax collapse to digit token '1' in only 10 optimizer updates (95,955x Chinchilla deficit).",
+      "status": "FAILED_PILOT_VERIFIED"
+    },
+    "vision_100m_recovered_checkpoint": {
+      "checkpoint_path": "data/neural_models/checkpoints/vision-100m-recovered",
+      "weights_sha256": "b658f67743a9fa3fa9bfd1cc540c0be55192674d269cd90b4a278337982fa508",
+      "trainable_parameters": 98258258,
+      "probes_evaluated": 48,
+      "probes_passed": 0,
+      "accuracy_percent": 0.0,
+      "wilson_ci_95": [
+        0.0,
+        7.41
+      ],
+      "collapse_status": "WHITESPACE_COLLAPSED ('   ...')",
+      "output_diversity_shannon_entropy": 0.12,
+      "mean_latency_ms": 13103.8,
+      "tokens_consumed": 20480,
+      "failure_root_cause": "Off-by-one error in response masking (range(asst_pos + 1)) masked out target token immediately following <assistant>. Model never trained on first response token, falling back to whitespace unigram prior.",
+      "status": "FAILED_RECOVERY_VERIFIED"
+    },
+    "vision_100m_post_recovery_candidate_exp3": {
+      "pipeline_config": "Corrected Assistant Masking (range(asst_pos)) + SeqLen 128 + Residual Scaling (0.02/sqrt(28))",
+      "trainable_parameters": 98258258,
+      "collapse_status": "ACTIVE_LEARNING (ELIMINATED DEGENERATE COLLAPSE)",
+      "output_diversity_shannon_entropy": 8.808,
+      "unique_output_subwords": [
+        "python",
+        "california",
+        "42"
+      ],
+      "prompt_to_response_gradient": "RESTORED (non-zero finite gradient on token following <assistant>)",
+      "accuracy_percent": 0.0,
+      "status": "PIPELINE_VERIFIED_TRAINING_DEFICIT_REMAINING"
+    },
+    "vision_100m_post_recovery_candidate_exp4": {
+      "pipeline_config": "Corrected Assistant Masking + Extended Context (SeqLen 256) + Residual Scaling",
+      "trainable_parameters": 98258258,
+      "collapse_status": "ACTIVE_LEARNING",
+      "output_diversity_shannon_entropy": 7.7,
+      "training_loss_drop": "9.2018 -> 7.2463 (Delta 1.9555)",
+      "validation_loss": 7.4214,
+      "average_grad_norm": 9.4944,
+      "status": "RECOMMENDED_SCALING_FOUNDATION"
+    }
+  },
+  "comparative_analysis": {
+    "collapse_mechanisms_distinction": {
+      "pilot_collapse": "Digit '1' collapse caused by unmasked prompt loss diluting response signal.",
+      "recovered_collapse": "Whitespace ' ' collapse caused by masking bug deleting tgt[asst_pos] (first response token).",
+      "corrected_pipeline": "Degenerate collapse eliminated. Model generates diverse linguistic subwords with entropy > 7.7."
+    },
+    "accuracy_vs_undertraining": "Neither 100M candidate passes independent evaluation probes (0.00%) because 20,480 tokens (0.0002 tokens/parameter) is 95,955x below Chinchilla-optimal recommendations and 143x below the local 2.94M-token corpus. The 13.33M baseline (10.00%) remains superior until the 100M model is trained over the complete multi-million token corpus on GPU compute."
+  }
+}

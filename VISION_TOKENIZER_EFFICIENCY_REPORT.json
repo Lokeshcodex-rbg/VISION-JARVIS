@@ -1,0 +1,117 @@
+{
+  "tokenizer_meta": {
+    "type": "JarvisBPE",
+    "vocab_size": 8192,
+    "special_tokens_count": 23
+  },
+  "domain_efficiency": {
+    "english_general": {
+      "total_texts": 5,
+      "total_chars": 404,
+      "total_words": 59,
+      "total_tokens": 85,
+      "tokens_per_word": 1.441,
+      "chars_per_token": 4.753,
+      "compression_ratio": 4.753,
+      "round_trip_exact": true
+    },
+    "hindi_devanagari": {
+      "total_texts": 5,
+      "total_chars": 316,
+      "total_words": 57,
+      "total_tokens": 121,
+      "tokens_per_word": 2.123,
+      "chars_per_token": 2.612,
+      "compression_ratio": 2.612,
+      "round_trip_exact": true
+    },
+    "hinglish": {
+      "total_texts": 5,
+      "total_chars": 284,
+      "total_words": 49,
+      "total_tokens": 90,
+      "tokens_per_word": 1.837,
+      "chars_per_token": 3.156,
+      "compression_ratio": 3.156,
+      "round_trip_exact": true
+    },
+    "python_code": {
+      "total_texts": 5,
+      "total_chars": 563,
+      "total_words": 66,
+      "total_tokens": 197,
+      "tokens_per_word": 2.985,
+      "chars_per_token": 2.858,
+      "compression_ratio": 2.858,
+      "round_trip_exact": true
+    },
+    "mathematics_scientific": {
+      "total_texts": 5,
+      "total_chars": 282,
+      "total_words": 65,
+      "total_tokens": 121,
+      "tokens_per_word": 1.862,
+      "chars_per_token": 2.331,
+      "compression_ratio": 2.331,
+      "round_trip_exact": true
+    }
+  },
+  "edge_case_tests": [
+    {
+      "input": "'Special emojis: \ud83d\ude80 \ud83e\udd16 \ud83e\udde0 \ud83d\udcbb \ud83d\udd2c'",
+      "tokens_len": 22,
+      "round_trip": true,
+      "decoded": "'Special emojis: \ud83d\ude80 \ud83e\udd16 \ud83e\udde0 \ud83d\udcbb \ud83d\udd2c'"
+    },
+    {
+      "input": "'Rare symbols: \u2211 \u220f \u222b \u221a \u221e \u2248 \u2260 \u2264 \u2265'",
+      "tokens_len": 20,
+      "round_trip": true,
+      "decoded": "'Rare symbols: \u2211 \u220f \u222b \u221a \u221e \u2248 \u2260 \u2264 \u2265'"
+    },
+    {
+      "input": "'Corrupted bytes: \\x00\\x01\\x02\u00ff\u00fe'",
+      "tokens_len": 15,
+      "round_trip": true,
+      "decoded": "'Corrupted bytes: \\x00\\x01\\x02\u00ff\u00fe'"
+    },
+    {
+      "input": "'Mixed script: English + \u0939\u093f\u0928\u094d\u0926\u0940 + Devanagari + Python x = 42'",
+      "tokens_len": 23,
+      "round_trip": true,
+      "decoded": "'Mixed script: English + \u0939\u093f\u0928\u094d\u0926\u0940 + Devanagari + Python x = 42'"
+    }
+  ],
+  "vocab_size_tradeoffs": {
+    "vocab_8192": {
+      "vocab_size": 8192,
+      "embedding_params_d768": 6291456,
+      "embedding_mb_fp16": 12.0,
+      "embedding_fraction_of_100m": 0.0642
+    },
+    "vocab_16384": {
+      "vocab_size": 16384,
+      "embedding_params_d768": 12582912,
+      "embedding_mb_fp16": 24.0,
+      "embedding_fraction_of_100m": 0.1284
+    },
+    "vocab_20480": {
+      "vocab_size": 20480,
+      "embedding_params_d768": 15728640,
+      "embedding_mb_fp16": 30.0,
+      "embedding_fraction_of_100m": 0.1605
+    },
+    "vocab_32000": {
+      "vocab_size": 32000,
+      "embedding_params_d768": 24576000,
+      "embedding_mb_fp16": 46.88,
+      "embedding_fraction_of_100m": 0.2508
+    },
+    "vocab_50257": {
+      "vocab_size": 50257,
+      "embedding_params_d768": 38597376,
+      "embedding_mb_fp16": 73.62,
+      "embedding_fraction_of_100m": 0.3939
+    }
+  }
+}

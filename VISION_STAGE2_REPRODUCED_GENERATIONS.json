@@ -1,0 +1,51 @@
+{
+  "investigation": "Stage 2 Arithmetic False-Positive Investigation",
+  "checkpoint_evaluated": "data/neural_models/checkpoints/vision-13m-sft-aligned/weights.pt",
+  "checkpoint_sha256": "085ef922342be408fb9a1b394733da687e0354a3f644de0025f24917de2eb5e2",
+  "evaluator_defect_analysis": {
+    "flawed_file": "ml_foundation/evaluate_independent_transfer.py",
+    "flawed_function": "verify_probe",
+    "flawed_lines": "if exp_ans and exp_ans in gen_lower: return True, \"EXACT_ANSWER_MATCH\"",
+    "root_cause": "Unanchored substring check matched target number wherever it appeared, even in contradictory hallucinated equations or premises where the model explicitly concluded an incorrect final answer."
+  },
+  "probes": [
+    {
+      "probe_id": "TRF-0001",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (7 + 10) - 7.",
+      "expected_answer": "10",
+      "raw_model_output": "10 = 2.\nThe answer is 3.",
+      "extracted_answer": "3",
+      "normalized_answer": "3",
+      "buggy_scoring_decision": {
+        "passed": true,
+        "verdict_reason": "EXACT_ANSWER_MATCH",
+        "is_false_positive": true
+      },
+      "rigorous_scoring_decision": {
+        "passed": false,
+        "verdict_reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 3)",
+        "is_correct": false
+      }
+    },
+    {
+      "probe_id": "TRF-0002",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (11 + 13) - 12.",
+      "expected_answer": "12",
+      "raw_model_output": "12 = 3.\nThe answer is 10.",
+      "extracted_answer": "10",
+      "normalized_answer": "10",
+      "buggy_scoring_decision": {
+        "passed": true,
+        "verdict_reason": "EXACT_ANSWER_MATCH",
+        "is_false_positive": true
+      },
+      "rigorous_scoring_decision": {
+        "passed": false,
+        "verdict_reason": "NUMERICAL_MISMATCH (Expected 12, Extracted 10)",
+        "is_correct": false
+      }
+    }
+  ]
+}

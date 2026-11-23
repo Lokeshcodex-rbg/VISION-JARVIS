@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-21T19:11:32Z",
+  "overall_status": "ALL_TESTS_PASSED",
+  "passed_tests": 8,
+  "total_tests": 8,
+  "results": {
+    "1_tokenizer_roundtrip": "PASS",
+    "2_architecture_and_tying": "PASS",
+    "3_next_token_shift": "PASS",
+    "4_loss_masking_isolation": "PASS",
+    "5_full_depth_gradient_flow": "PASS",
+    "6_checkpoint_parity": "PASS",
+    "7_memorization_proof": "PASS (6/6)",
+    "8_deterministic_inference": "PASS"
+  }
+}

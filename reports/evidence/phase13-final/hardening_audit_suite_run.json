@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-11-10T18:08:31.476Z",
+  "passCount": 30,
+  "failCount": 0,
+  "successRate": "100.0%",
+  "results": [
+    {
+      "description": "2.1: Wrong recipient must never receive the message (strict resolution)",
+      "status": "PASS"
+    },
+    {
+      "description": "2.2: Ambiguous contact selection must stop for clarification",
+      "status": "PASS"
+    },
+    {
+      "description": "2.3: The exact message must be previewed before dispatch",
+      "status": "PASS"
+    },
+    {
+      "description": "2.4: No message can be dispatched without explicit user approval",
+      "status": "PASS"
+    },
+    {
+      "description": "2.5: Minimized window must not cause incorrect coordinate targeting (relative composer targeting)",
+      "status": "PASS"
+    },
+    {
+      "description": "2.6: A failed or inconclusive send must not be reported as delivered",
+      "status": "PASS"
+    },
+    {
+      "description": "2.7: Emergency Stop must prevent dispatch if activated before sending",
+      "status": "PASS"
+    },
+    {
+      "description": "2.8: Distinguishes DRAFTED, APPROVED, DISPATCHED, DELIVERED, FAILED, and UNVERIFIED",
+      "status": "PASS"
+    },
+    {
+      "description": "3.1 (Boundary A): Recovery before irreversible action is safe to execute",
+      "status": "PASS"
+    },
+    {
+      "description": "3.2 (Boundary B): Crash during irreversible action records uncertainty and requests user intervention",
+      "status": "PASS"
+    },
+    {
+      "description": "3.3 (Boundary C): External state inspector confirms dispatch without duplicate send",
+      "status": "PASS"
+    },
+    {
+      "description": "3.4 (Boundary D): Crash after recording result resumes at independent verification",
+      "status": "PASS"
+    },
+    {
+      "description": "3.5 (Boundary E): Crash after verification completes node persistence without duplicate re-run",
+      "status": "PASS"
+    },
+    {
+      "description": "3.6: A timeout is NEVER interpreted as proof an action did not happen",
+      "status": "PASS"
+    },
+    {
+      "description": "4.1: Corrupted checkpoint handling quarantines file and avoids crash loop",
+      "status": "PASS"
+    },
+    {
+      "description": "4.2: Duplicate worker prevention rejects secondary concurrent execution of same task",
+      "status": "PASS"
+    },
+    {
+      "description": "4.3: Stale task detection identifies abandoned running tasks",
+      "status": "PASS"
+    },
+    {
+      "description": "4.4: Restart preserves completed nodes and resumes downstream dependent nodes",
+      "status": "PASS"
+    },
+    {
+      "description": "5.1: Approval token expires when TTL elapses",
+      "status": "PASS"
+    },
+    {
+      "description": "5.2: Modifying arguments after approval fails cryptographic validation",
+      "status": "PASS"
+    },
+    {
+      "description": "5.3: Single-use token consumption prevents replay attacks",
+      "status": "PASS"
+    },
+    {
+      "description": "5.4: Tool substitution using another tools token is strictly rejected",
+      "status": "PASS"
+    },
+    {
+      "description": "5.5: Cross-task token reuse is rejected when bound to a specific taskId",
+      "status": "PASS"
+    },
+    {
+      "description": "5.6: No agent or model may approve its own privileged operation",
+      "status": "PASS"
+    },
+    {
+      "description": "5.7: Emergency latch persists to disk and remains latched across re-instantiation",
+      "status": "PASS"
+    },
+    {
+      "description": "6.1: Real window visibility and process query independent of model claim",
+      "status": "PASS"
+    },
+    {
+      "description": "6.2: Mathematical calculations verified against analytical ground truth (Beam Bending)",
+      "status": "PASS"
+    },
+    {
+      "description": "6.3: Inconclusive or missing evidence strictly reports UNVERIFIED",
+      "status": "PASS"
+    },
+    {
+      "description": "6.4: Spreadsheet verification validates real row counts and non-empty byte count",
+      "status": "PASS"
+    },
+    {
+      "description": "6.5: Code execution verified via exit code and stdout assertion",
+      "status": "PASS"
+    }
+  ]
+}

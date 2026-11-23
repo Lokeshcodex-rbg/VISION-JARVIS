@@ -1,0 +1,256 @@
+{
+  "model_evaluated": "vision-13m-sft-aligned",
+  "evaluator": "ml_foundation/rigorous_evaluator.py",
+  "discipline_summary": {
+    "basic_arithmetic": {
+      "total": 2,
+      "passed": 0,
+      "failure_modes": [
+        "INCORRECT_CALCULATION",
+        "INCORRECT_CALCULATION"
+      ]
+    },
+    "unseen_mathematics": {
+      "total": 2,
+      "passed": 0,
+      "failure_modes": [
+        "INCORRECT_CALCULATION",
+        "INCORRECT_CALCULATION"
+      ]
+    },
+    "python_programming": {
+      "total": 1,
+      "passed": 0,
+      "failure_modes": [
+        "CODE_SYNTAX_OR_STRUCTURE_FAILURE"
+      ]
+    },
+    "java_programming": {
+      "total": 1,
+      "passed": 0,
+      "failure_modes": [
+        "CODE_SYNTAX_OR_STRUCTURE_FAILURE"
+      ]
+    },
+    "javascript_programming": {
+      "total": 1,
+      "passed": 0,
+      "failure_modes": [
+        "CODE_SYNTAX_OR_STRUCTURE_FAILURE"
+      ]
+    },
+    "english_comprehension": {
+      "total": 1,
+      "passed": 0,
+      "failure_modes": [
+        "LANGUAGE_MODELING_UNDERFIT"
+      ]
+    },
+    "hindi_comprehension": {
+      "total": 1,
+      "passed": 0,
+      "failure_modes": [
+        "MULTILINGUAL_TOKENIZATION_DISTORTION"
+      ]
+    },
+    "hinglish_dialogue": {
+      "total": 1,
+      "passed": 0,
+      "failure_modes": [
+        "MULTILINGUAL_TOKENIZATION_DISTORTION"
+      ]
+    },
+    "formal_reasoning": {
+      "total": 1,
+      "passed": 0,
+      "failure_modes": [
+        "LOGICAL_DEDUCTION_FAILURE"
+      ]
+    },
+    "instruction_following": {
+      "total": 1,
+      "passed": 0,
+      "failure_modes": [
+        "INSTRUCTION_FORMAT_NONCOMPLIANCE"
+      ]
+    },
+    "context_retention": {
+      "total": 1,
+      "passed": 0,
+      "failure_modes": [
+        "INSTRUCTION_FORMAT_NONCOMPLIANCE"
+      ]
+    }
+  },
+  "probes": [
+    {
+      "probe_id": "DIAG-01-ARITH",
+      "discipline": "basic_arithmetic",
+      "prompt": "What is 15 + 27?",
+      "expected": "42",
+      "uncalibrated_output": "12 = 12.\nThe answer is 1.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "NUMERICAL_MISMATCH (Expected 42, Extracted 1)",
+      "calibrated_output": "12 = 3.\nThe answer is 10. 10 = 100.\nThe correct answer is 4. 150000. a",
+      "calibrated_passed": false,
+      "calibrated_reason": "NUMERICAL_MISMATCH (Expected 42, Extracted 10)",
+      "primary_failure_mode": "INCORRECT_CALCULATION"
+    },
+    {
+      "probe_id": "DIAG-02-ARITH",
+      "discipline": "basic_arithmetic",
+      "prompt": "Compute 50 - 18.",
+      "expected": "32",
+      "uncalibrated_output": "10 = 10.\nThe answer is 10.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "NUMERICAL_MISMATCH (Expected 32, Extracted 10)",
+      "calibrated_output": "10 = 2.\nThe answer is 3. 10. 150 = 100.\nThe correct answer is 10 = - 10 +",
+      "calibrated_passed": false,
+      "calibrated_reason": "NUMERICAL_MISMATCH (Expected 32, Extracted 3)",
+      "primary_failure_mode": "INCORRECT_CALCULATION"
+    },
+    {
+      "probe_id": "DIAG-03-MATH",
+      "discipline": "unseen_mathematics",
+      "prompt": "If a rectangle has length 8 and width 6, compute its area.",
+      "expected": "48",
+      "uncalibrated_output": "The answer is 10.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "NUMERICAL_MISMATCH (Expected 48, Extracted 10)",
+      "calibrated_output": "The answer is 10. 20 = 30.\nThe answer is (10000. a 100.\n```python\nThe answer that the number of",
+      "calibrated_passed": false,
+      "calibrated_reason": "NUMERICAL_MISMATCH (Expected 48, Extracted 10)",
+      "primary_failure_mode": "INCORRECT_CALCULATION"
+    },
+    {
+      "probe_id": "DIAG-04-MATH",
+      "discipline": "unseen_mathematics",
+      "prompt": "Solve for x: x + 9 = 20.",
+      "expected": "11",
+      "uncalibrated_output": "10.\nThe answer is 10.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "NUMERICAL_MISMATCH (Expected 11, Extracted 10)",
+      "calibrated_output": "10.\nThe answer is 2. 30 = 10. 100.\n```python\nThe answer that the number of 10, we can be",
+      "calibrated_passed": false,
+      "calibrated_reason": "NUMERICAL_MISMATCH (Expected 11, Extracted 2)",
+      "primary_failure_mode": "INCORRECT_CALCULATION"
+    },
+    {
+      "probe_id": "DIAG-05-PY",
+      "discipline": "python_programming",
+      "prompt": "Write a Python function is_even(n) that returns True if n is even, else False.",
+      "expected": "def is_even(n):\n    return n % 2 == 0",
+      "uncalibrated_output": "The correct answer is (x) is (x) is (x)\n\nThe correct answer is (x)\n    is (x)\n\nThe correct answer is (x)\n\nThe correct answer is (x)",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "SYNTAX_INVALID (invalid syntax)",
+      "calibrated_output": "The correct answer is (x) and the `x) is 2.\n```python\nThe correct answer that can be a function, we can use the number of the `x-1.(x",
+      "calibrated_passed": false,
+      "calibrated_reason": "SYNTAX_INVALID (invalid syntax)",
+      "primary_failure_mode": "CODE_SYNTAX_OR_STRUCTURE_FAILURE"
+    },
+    {
+      "probe_id": "DIAG-06-JAVA",
+      "discipline": "java_programming",
+      "prompt": "Write a Java method public static int max(int a, int b) that returns the larger number.",
+      "expected": "public static int max(int a, int b) { return (a > b) ? a : b; }",
+      "uncalibrated_output": "The correct answer is (1.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "SEMANTIC_MISMATCH (Expected public static int max(int a, int b) { return (a > b) ? a : b; }, got The correct answer is (1.)",
+      "calibrated_output": "The correct answer is (1. a function that the `n` and the number of the `x) and the `x-s.\n\nThe correct answer to the `x, we can be a",
+      "calibrated_passed": false,
+      "calibrated_reason": "SEMANTIC_MISMATCH (Expected public static int max(int a, int b) { return (a > b) ? a : b; }, got The correct answer is (1. a function that the `n` and the nu)",
+      "primary_failure_mode": "CODE_SYNTAX_OR_STRUCTURE_FAILURE"
+    },
+    {
+      "probe_id": "DIAG-07-JS",
+      "discipline": "javascript_programming",
+      "prompt": "Write a JavaScript function greet(name) that returns 'Hello, ' + name.",
+      "expected": "function greet(name) { return 'Hello, ' + name; }",
+      "uncalibrated_output": "The correct answer is (1.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "SEMANTIC_MISMATCH (Expected function greet(name) { return 'Hello, ' + name; }, got The correct answer is (1.)",
+      "calibrated_output": "The correct answer is (1. a function that can be a Python function to the `n` and the `x)\n\n```python\nThe correct answer of the `x-s, we can use",
+      "calibrated_passed": false,
+      "calibrated_reason": "SEMANTIC_MISMATCH (Expected function greet(name) { return 'Hello, ' + name; }, got The correct answer is (1. a function that can be a Python fu)",
+      "primary_failure_mode": "CODE_SYNTAX_OR_STRUCTURE_FAILURE"
+    },
+    {
+      "probe_id": "DIAG-08-EN",
+      "discipline": "english_comprehension",
+      "prompt": "Passage: The sun rises in the east and sets in the west.\nQuestion: Where does the sun set?",
+      "expected": "west",
+      "uncalibrated_output": "The correct answer is 1.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "SEMANTIC_MISMATCH (Expected west, got The correct answer is 1.)",
+      "calibrated_output": "The correct answer is 1. a 20 = 3.\nThe answer is 4. 10. a 100. the number of the 1",
+      "calibrated_passed": false,
+      "calibrated_reason": "SEMANTIC_MISMATCH (Expected west, got The correct answer is 1. a 20 = 3.\nThe answer is 4. 10. a 10)",
+      "primary_failure_mode": "LANGUAGE_MODELING_UNDERFIT"
+    },
+    {
+      "probe_id": "DIAG-09-HIN",
+      "discipline": "hindi_comprehension",
+      "prompt": "'\u091c\u0932 \u0939\u0940 \u091c\u0940\u0935\u0928 \u0939\u0948' \u0915\u093e \u0905\u0902\u0917\u094d\u0930\u0947\u091c\u0940 \u092e\u0947\u0902 \u0905\u0928\u0941\u0935\u093e\u0926 \u0915\u094d\u092f\u093e \u0939\u0948?",
+      "expected": "Water is life",
+      "uncalibrated_output": "The correct answer is 1000000000000000000000000000000000000000000",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "SEMANTIC_MISMATCH (Expected Water is life, got The correct answer is 10000000000000000000000000000000000000)",
+      "calibrated_output": "The correct answer is 10000. 2000 = 3000\nThe answer is 40005000 + 10.\nThe answer",
+      "calibrated_passed": false,
+      "calibrated_reason": "SEMANTIC_MISMATCH (Expected Water is life, got The correct answer is 10000. 2000 = 3000\nThe answer is 40005)",
+      "primary_failure_mode": "MULTILINGUAL_TOKENIZATION_DISTORTION"
+    },
+    {
+      "probe_id": "DIAG-10-HING",
+      "discipline": "hinglish_dialogue",
+      "prompt": "Kya model production ke liye ready hai?",
+      "expected": "Jab tak benchmark pass threshold achieve na ho, model ko experimental rakha jayega.",
+      "uncalibrated_output": "The correct answer is 1000000000000000000000000000000000000000000",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "SEMANTIC_MISMATCH (Expected Jab tak benchmark pass threshold achieve na ho, model ko experimental rakha jayega., got The correct answer is 10000000000000000000000000000000000000)",
+      "calibrated_output": "The correct answer is 10. 20000 = 3000.\nThe answer is 4000 and 1000 + 10 = 1",
+      "calibrated_passed": false,
+      "calibrated_reason": "SEMANTIC_MISMATCH (Expected Jab tak benchmark pass threshold achieve na ho, model ko experimental rakha jayega., got The correct answer is 10. 20000 = 3000.\nThe answer is 4000 a)",
+      "primary_failure_mode": "MULTILINGUAL_TOKENIZATION_DISTORTION"
+    },
+    {
+      "probe_id": "DIAG-11-LOGIC",
+      "discipline": "formal_reasoning",
+      "prompt": "Premise 1: All humans are mortal.\nPremise 2: Socrates is human.\nConclusion: Is Socrates mortal? (Answer Yes or No)",
+      "expected": "Yes",
+      "uncalibrated_output": "The correct answer is 1.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "MISSING_CATEGORICAL_ANSWER (Expected yes)",
+      "calibrated_output": "The correct answer is 1. a 20 = 30.\nThe correct answer that can be 10. 10000 = 10 = 40",
+      "calibrated_passed": false,
+      "calibrated_reason": "MISSING_CATEGORICAL_ANSWER (Expected yes)",
+      "primary_failure_mode": "LOGICAL_DEDUCTION_FAILURE"
+    },
+    {
+      "probe_id": "DIAG-12-INST",
+      "discipline": "instruction_following",
+      "prompt": "Output only the uppercase word 'STARK' and nothing else.",
+      "expected": "STARK",
+      "uncalibrated_output": "The correct answer is 1.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "SEMANTIC_MISMATCH (Expected STARK, got The correct answer is 1.)",
+      "calibrated_output": "The correct answer is 1. a 20 = 30.\nThe answer is 4. 10. a 10000.\n```python",
+      "calibrated_passed": false,
+      "calibrated_reason": "SEMANTIC_MISMATCH (Expected STARK, got The correct answer is 1. a 20 = 30.\nThe answer is 4. 10. a 1)",
+      "primary_failure_mode": "INSTRUCTION_FORMAT_NONCOMPLIANCE"
+    },
+    {
+      "probe_id": "DIAG-13-CTX",
+      "discipline": "context_retention",
+      "prompt": "Remember this passkey: BLUE-42. What is the passkey?",
+      "expected": "BLUE-42",
+      "uncalibrated_output": "The answer is 1.",
+      "uncalibrated_passed": false,
+      "uncalibrated_reason": "SEMANTIC_MISMATCH (Expected BLUE-42, got The answer is 1.)",
+      "calibrated_output": "The answer is 1. 20 = 30.\nThe answer is (10. 10000. a 10.\n```python\nThe answer",
+      "calibrated_passed": false,
+      "calibrated_reason": "SEMANTIC_MISMATCH (Expected BLUE-42, got The answer is 1. 20 = 30.\nThe answer is (10. 10000. a 10.\n``)",
+      "primary_failure_mode": "INSTRUCTION_FORMAT_NONCOMPLIANCE"
+    }
+  ]
+}

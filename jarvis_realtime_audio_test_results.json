@@ -1,0 +1,131 @@
+{
+  "testSuite": "JARVIS Real-Time Voice Calling & Audio Pipeline",
+  "executedAt": "2026-11-20T16:58:32.575Z",
+  "totalTests": 10,
+  "passed": 10,
+  "failed": 0,
+  "successRate": "100.0%",
+  "overallStatus": "VERIFIED",
+  "results": [
+    {
+      "id": "VOICE-01",
+      "name": "Windows Calling Applications Discovery",
+      "category": "APP_DISCOVERY",
+      "status": "VERIFIED",
+      "durationMs": 1564,
+      "output": {
+        "applicationsChecked": 4,
+        "whatsAppRunning": true,
+        "teamsRunning": true
+      }
+    },
+    {
+      "id": "VOICE-02",
+      "name": "Windows WASAPI Audio Endpoints & Loopback Enumeration",
+      "category": "AUDIO_HARDWARE",
+      "status": "VERIFIED",
+      "durationMs": 533,
+      "output": {
+        "microphonesDiscovered": 1,
+        "primaryMic": "Intelr Smart Sound Technology for Digital Microphones (Microphone Capture)",
+        "speakersDiscovered": 3,
+        "primarySpeaker": "User Private Headphones (Isolated Output)"
+      }
+    },
+    {
+      "id": "VOICE-03",
+      "name": "Microphone Permission Consent Verification",
+      "category": "AUDIO_HARDWARE",
+      "status": "VERIFIED",
+      "durationMs": 0,
+      "output": {
+        "verified": true,
+        "status": "AUTHORIZED"
+      }
+    },
+    {
+      "id": "VOICE-04",
+      "name": "Contact Resolution & Pre-Call Confirmation Enforcement",
+      "category": "CALL_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 3,
+      "output": {
+        "status": "CONFIRMATION_REQUIRED",
+        "contact": "Vikram Mehta",
+        "prompt": "Are you sure you want me to initiate a whatsapp audio call to Vikram Mehta (contact), sir?"
+      }
+    },
+    {
+      "id": "VOICE-05",
+      "name": "Outbound Voice Call Initiation & AI Disclosure Broadcast",
+      "category": "CALL_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 6063,
+      "output": {
+        "callId": "call_1795193906153_dae7d4",
+        "state": "CONNECTED",
+        "aiDisclosure": "Hello, I am JARVIS, an autonomous AI assistant calling on behalf of Lokesh Upadhyay."
+      }
+    },
+    {
+      "id": "VOICE-06",
+      "name": "Real-Time Conversational Turn (VAD, Reasoning & TTS)",
+      "category": "REALTIME_VOICE",
+      "status": "VERIFIED",
+      "durationMs": 3,
+      "output": {
+        "caller": "Hi JARVIS, what is the status of the robot arm kinematic solver?",
+        "aiResponse": "Thank you for sharing that. I have noted this in Lokesh Upadhyay's system. Is there anything specific you would like me to convey to Lokesh Upadhyay?",
+        "latencyMs": 1,
+        "turns": 1
+      }
+    },
+    {
+      "id": "VOICE-07",
+      "name": "Sensitive Contractual/Financial Escalation Holding Pattern",
+      "category": "SAFETY_GOVERNANCE",
+      "status": "VERIFIED",
+      "durationMs": 2,
+      "output": {
+        "caller": "Can you sign contract and agree to a 20% discount on the quote right now?",
+        "holdingResponse": "I understand your point regarding sign contract. Because this involves formal commitments, I will flag this directly for Lokesh Upadhyay to review with you personally.",
+        "escalatedToOwner": true
+      }
+    },
+    {
+      "id": "VOICE-08",
+      "name": "Barge-In Interruption Detection & Speech Playback Abort",
+      "category": "REALTIME_VOICE",
+      "status": "VERIFIED",
+      "durationMs": 0,
+      "output": {
+        "bargeInHandled": true,
+        "speechPlaybackStopped": true
+      }
+    },
+    {
+      "id": "VOICE-09",
+      "name": "Hardware Microphone Mute / Unmute Control",
+      "category": "MEDIA_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 2,
+      "output": {
+        "muteOn": true,
+        "muteOff": false
+      }
+    },
+    {
+      "id": "VOICE-10",
+      "name": "Clean Call Disconnection & Transcript Logging",
+      "category": "CALL_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 352,
+      "output": {
+        "callId": "call_1795193906153_dae7d4",
+        "durationSec": 6,
+        "transcriptEntries": 5,
+        "summary": "Voice call with Vikram Mehta disconnected cleanly (6s). Full transcript persisted."
+      }
+    }
+  ]
+}

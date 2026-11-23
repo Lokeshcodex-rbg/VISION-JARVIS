@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>JARVIS, powered by VISION — MADE BY LOKESH</title>
+  <meta name="description" content="JARVIS, powered by VISION (MADE BY LOKESH) — unified AI assistant, foundation model, multimodal vision, and dual ocular interface.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%230f071e'/><ellipse cx='50' cy='50' rx='42' ry='22' fill='%23e2e8f0'/><circle cx='50' cy='50' r='18' fill='%23120610'/><circle cx='50' cy='50' r='9' fill='%23000000'/></svg>">
+</head>
+<body>
+  <div id="app-container">
+    <!-- Main Full-Viewport Canvas -->
+    <canvas id="eye-canvas"></canvas>
+
+    <!-- Visual Atmosphere Overlays -->
+    <div class="vignette-overlay"></div>
+    <div class="scanline-overlay"></div>
+    <div class="laptop-bezel-frame"></div>
+
+    <!-- Minimal White Smoke Live Captions Container -->
+    <div id="smoke-captions" class="smoke-captions" aria-live="polite"></div>
+
+    <!-- Single-Screen Unified Conversation Chat Bar (Persistent Bottom Center) -->
+    <div id="stark-main-chat-bar" class="stark-main-chat-bar">
+      <!-- Explicit Autonomous Consent Prompt (Voice / Screen Observation) -->
+      <div id="stark-consent-prompt" class="stark-consent-prompt" style="display: none;" role="region" aria-live="polite">
+        <div class="consent-prompt-header">
+          <span id="stark-consent-icon" class="consent-prompt-icon">🛡️</span>
+          <div class="consent-prompt-text">
+            <div id="stark-consent-title" class="consent-prompt-title">Permission Required</div>
+            <div id="stark-consent-desc" class="consent-prompt-desc"></div>
+          </div>
+        </div>
+        <div id="stark-consent-actions" class="consent-prompt-actions"></div>
+      </div>
+
+      <!-- Inline Tool Execution Badge -->
+      <div id="stark-inline-tool-badge" class="stark-inline-tool-badge" style="display: none;">
+        <span class="inline-tool-spinner">⚙️</span>
+        <span id="stark-inline-tool-text">Executing tool...</span>
+      </div>
+
+      <!-- Attachments Preview Area -->
+      <div id="stark-chat-attachments-preview" class="stark-chat-attachments-preview" style="display: none;"></div>
+
+      <div class="stark-main-chat-inner">
+        <!-- Attachment Button -->
+        <button id="stark-main-attach-btn" class="stark-main-action-btn stark-main-attach-btn" title="Attach Image or PDF (or paste with Ctrl+V)" aria-label="Attach image or PDF">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5a2.5 2.5 0 0 1 5 0v10.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5V6H9v9.5a3 3 0 0 0 6 0V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"/>
+          </svg>
+        </button>
+        <input type="file" id="stark-main-file-input" style="display: none;" accept="image/*,application/pdf,.pdf" multiple />
+
+        <textarea id="stark-main-chat-input" class="stark-main-chat-input" rows="1" placeholder="Ask JARVIS, paste image/PDF, or issue commands... (Enter to send)" autocomplete="off" spellcheck="false"></textarea>
+        
+        <div class="stark-main-chat-actions">
+          <button id="stark-main-send-btn" class="stark-main-action-btn stark-main-send-btn" title="Send message (Enter)" aria-label="Send message">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+          <button id="stark-main-stop-btn" class="stark-main-action-btn stark-main-stop-btn" style="display: none;" title="Stop generating / Stop speaking (Esc)" aria-label="Stop speech or generation">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Status Bar & Minimal Indicators -->
+    <header id="stark-header" class="stark-header">
+      <div class="stark-status-left">
+        <button id="stark-brand-menu-btn" class="stark-brand-menu-btn" title="Open Operations Drawer (Alt+M)" aria-label="Open Operations Drawer" aria-expanded="false">
+          <span class="stark-brand-icon">☰</span>
+          <span class="stark-brand-title" title="JARVIS, powered by VISION — MADE BY LOKESH">JARVIS · VISION</span>
+        </button>
+        <div id="mic-status-badge" class="mic-status-badge state-initializing" data-jarvis-status="Initializing" data-voice-state="DISABLED" role="button" tabindex="0" title="JARVIS Autonomous Status Indicator">
+          <span class="mic-pulse-dot" id="mic-indicator-dot"></span>
+          <span id="mic-status-text">Initializing</span>
+          <span id="mic-session-timer" class="mic-session-timer" style="display: none;">0:00</span>
+        </div>
+        <div id="header-camera-indicator" class="camera-status-indicator-badge" title="Persistent Live Camera Active Indicator" style="display: none;">
+          <span class="camera-pulse-dot" id="camera-indicator-dot"></span>
+          <span id="header-camera-status-text">LIVE CAMERA ACTIVE</span>
+        </div>
+        <span class="personality-tag" id="header-personality-tag">JARVIS</span>
+        <button id="header-heart-badge" class="header-heart-badge" title="Open JARVIS Heart & Soul Core" aria-label="Open JARVIS Heart and Soul Core">
+          <img src="/assets/jarvis-heart-core.png" alt="JARVIS Heart Core" class="header-heart-thumb" />
+          <span class="header-heart-dot"></span>
+          <span>HEART CORE</span>
+        </button>
+        <button id="header-live-news-badge" class="stark-btn stark-btn-glass" title="Open Live Latest News Center" style="padding: 4px 10px; font-size: 11px;">📰 LIVE NEWS</button>
+      </div>
+      <div class="stark-status-right" style="display: flex; align-items: center; gap: 8px;">
+        <button id="btn-emergency-stop" class="stark-btn stark-btn-danger" title="Immediate Global Emergency Stop — Halts All Systems">
+          🛑 Emergency Stop
+        </button>
+      </div>
+    </header>
+
+    <!-- Secondary Operations Navigation Drawer (11+ Modules) -->
+    <div id="stark-secondary-nav-panel" class="stark-secondary-nav-panel" style="display: none;" aria-hidden="true">
+      <div class="secondary-nav-backdrop" id="secondary-nav-backdrop"></div>
+      <aside class="secondary-nav-drawer" role="dialog" aria-modal="true" aria-label="Operations Center Navigation">
+        <div class="secondary-nav-header">
+          <div class="secondary-nav-title">
+            <span class="nav-header-glyph">◈</span>
+            <h3>OPERATIONS &amp; CAPABILITIES</h3>
+            <span class="secondary-nav-tag">VISION — MADE BY LOKESH</span>
+          </div>
+          <button id="close-secondary-nav-btn" class="secondary-nav-close-btn" title="Close Drawer (Esc)">✕</button>
+        </div>
+
+        <div class="secondary-nav-body">
+          <div class="secondary-nav-section-title">PRIMARY OPERATIONAL CENTERS</div>
+          <div id="stark-drawer-nav-items" class="secondary-nav-grid">
+            <!-- Nav buttons dynamically populated by StarkNavigation -->
+          </div>
+
+          <div class="secondary-nav-section-title">QUICK UTILITIES & GOVERNANCE</div>
+          <div class="secondary-nav-utility-grid">
+            <button id="btn-floating-voice-window" class="drawer-utility-btn" title="Toggle Floating Voice Conversation Window (Ctrl+Shift+V)">
+              <span class="utility-icon">💬</span>
+              <span class="utility-label">Voice Window</span>
+            </button>
+            <button id="btn-camera-toggle" class="drawer-utility-btn" title="Toggle Live Optical Camera Input">
+              <span class="utility-icon">📷</span>
+              <span class="utility-label">Camera Sensor</span>
+            </button>
+            <button id="btn-science-workspace" class="drawer-utility-btn" title="Launch Advanced Scientific, Mathematical & Engineering Lab">
+              <span class="utility-icon">⚛️</span>
+              <span class="utility-label">Science Lab</span>
+            </button>
+            <button id="btn-quick-robot-cad" class="drawer-utility-btn" title="Open Interactive 6-DOF Robotic Arm CAD Assembly Viewer">
+              <span class="utility-icon">🦾</span>
+              <span class="utility-label">3D Robot CAD</span>
+            </button>
+            <button id="btn-capabilities-modal" class="drawer-utility-btn" title="Live Capability Registry & Empirical Ledger">
+              <span class="utility-icon">⚡</span>
+              <span class="utility-label">Capabilities</span>
+            </button>
+            <button id="open-permissions-btn" class="drawer-utility-btn" title="Permissions & Capabilities Settings">
+              <span class="utility-icon">🛡️</span>
+              <span class="utility-label">Permissions</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="secondary-nav-footer">
+          <div class="secondary-nav-hotkey-hint">
+            <span>Toggle: <kbd>Alt+M</kbd></span>
+            <span>Close: <kbd>Esc</kbd></span>
+            <span>Emergency: <kbd>Ctrl+Shift+X</kbd></span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Dedicated 3D Holographic Brain & Intelligence Center View -->
+    <div id="view-visual-brain" class="stark-view-pane" style="display: none;">
+      <div id="brain-3d-canvas-container" class="brain-3d-canvas-container"></div>
+      
+      <!-- Holographic Brain Floating HUD Controls -->
+      <div class="brain-hud-controls">
+        <div class="brain-hud-title">
+          <span class="hud-glitch-icon">🧠</span>
+          <h3>VISION NEURAL CORE — MADE BY LOKESH</h3>
+          <span class="hud-status-live">● TELEMETRY STREAM ACTIVE</span>
+        </div>
+        
+        <div class="brain-camera-presets">
+          <button class="brain-btn" data-preset="full_brain">🌐 Full Brain</button>
+          <button class="brain-btn" data-preset="left_cortex">⚡ Left Cortex</button>
+          <button class="brain-btn" data-preset="right_cortex">🔮 Right Cortex</button>
+          <button class="brain-btn" data-preset="stem_cerebellum">🧬 Stem / Cerebellum</button>
+          <button class="brain-btn" data-preset="security_core">🛡️ Security Core</button>
+          <button class="brain-btn brain-heart-shortcut" id="brain-goto-heart-btn" type="button">❤️ Heart Core</button>
+        </div>
+
+        <div class="brain-hud-toggles">
+          <label class="hud-checkbox-label">
+            <input type="checkbox" id="toggle-3d-labels" checked />
+            <span>🏷️ 3D Labels</span>
+          </label>
+          <label class="hud-checkbox-label">
+            <input type="checkbox" id="toggle-reduced-motion" />
+            <span>Reduced Motion</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Live Operations Console Telemetry Metrics Bar -->
+      <div id="brain-operations-console-bar" class="brain-operations-console-bar">
+        <div class="console-pill"><span class="pill-dot live"></span> <span class="pill-lbl">AI CORE:</span> <strong id="console-ai-model">Gemini 2.5 Flash</strong></div>
+        <div class="console-pill"><span class="pill-dot live"></span> <span class="pill-lbl">HARDWARE:</span> <strong id="console-hardware">12-Core | 0.5 GB Free</strong></div>
+        <div class="console-pill"><span class="pill-dot live"></span> <span class="pill-lbl">TASK:</span> <strong id="console-task">Standby</strong></div>
+        <div class="console-pill"><span class="pill-dot live"></span> <span class="pill-lbl">VOICE:</span> <strong id="console-voice">IDLE</strong></div>
+        <div class="console-pill"><span class="pill-dot safe"></span> <span class="pill-lbl">GATE:</span> <strong id="console-gate">ARMED</strong></div>
+      </div>
+
+      <!-- Real-Time Activity Ticker Strip -->
+      <div id="brain-telemetry-ticker" class="brain-telemetry-ticker">
+        <div class="ticker-label">LIVE ACTIVITY TELEMETRY:</div>
+        <div id="ticker-events-feed" class="ticker-events-feed">
+          <span class="ticker-event">System Initialized. All 21 subsystems operational.</span>
+        </div>
+      </div>
+
+      <!-- Floating Subsystem Inspector Drawer -->
+      <div id="subsystem-inspector-drawer" class="subsystem-inspector-drawer" style="display: none;">
+        <div class="inspector-header">
+          <div class="inspector-title-group">
+            <span id="inspector-category-badge" class="inspector-badge">COGNITION</span>
+            <h3 id="inspector-subsystem-name">Language & Reasoning Core</h3>
+            <span id="inspector-status-badge" class="inspector-status-pill operational">OPERATIONAL</span>
+          </div>
+          <button id="close-inspector-btn" class="inspector-close-btn">✕</button>
+        </div>
+        <div class="inspector-body">
+          <div class="inspector-meta-row">
+            <span>Anatomical Region:</span>
+            <strong id="inspector-region">Prefrontal Cortex</strong>
+          </div>
+          <div class="inspector-meta-row">
+            <span>Source Implementation:</span>
+            <code id="inspector-file-path">server/aiProviderAdapter.js</code>
+          </div>
+          <div class="inspector-meta-row">
+            <span>File Size / Modified:</span>
+            <span id="inspector-disk-stats">32 KB | Verified</span>
+          </div>
+          <div class="inspector-meta-row">
+            <span>Permission Governance:</span>
+            <span id="inspector-permission">READ_ONLY</span>
+          </div>
+          <div class="inspector-meta-row">
+            <span>Dependencies:</span>
+            <span id="inspector-dependencies">sub_conversation, sub_security_permissions</span>
+          </div>
+          <div class="inspector-desc-box">
+            <h4>Capability Description:</h4>
+            <p id="inspector-description"></p>
+          </div>
+          <div class="inspector-events-box">
+            <h4>Recent Subsystem Telemetry:</h4>
+            <div id="inspector-recent-events" class="inspector-events-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dedicated Heart & Soul Core View (EXACT Pulsing/Beeping JARVIS Heart Visual) -->
+    <div id="view-heart-soul" class="stark-view-pane" style="display: none;">
+      <div class="heart-soul-layout">
+        <div class="heart-visual-column">
+          <div class="heart-core-stage" id="heart-core-stage">
+            <img src="/assets/jarvis-heart-core.png" alt="JARVIS Heart and Soul Core" class="heart-core-image" />
+            <div class="heart-beep-beacon" aria-hidden="true">
+              <span class="heart-beep-ring ring-1"></span>
+              <span class="heart-beep-ring ring-2"></span>
+              <span class="heart-beep-core-dot"></span>
+            </div>
+            <div class="heart-live-banner">
+              <span class="heart-ecg-pulse">♥</span>
+              <span>HEARTBEAT PULSE ACTIVE · DESIGNED HEART (VISION + GEMINI)</span>
+            </div>
+          </div>
+          <div class="heart-controls-row">
+            <button id="heart-audio-beep-btn" class="stark-btn stark-btn-glass" type="button">🔊 Pulse Sound: OFF</button>
+            <button id="heart-refresh-btn" class="stark-btn stark-btn-glass" type="button">↻ Sync State</button>
+          </div>
+        </div>
+        <div class="heart-telemetry-column">
+          <div class="heart-card">
+            <div class="heart-card-header">
+              <h2>JARVIS — HEART, SOUL &amp; EMOTIONAL CORE</h2>
+              <span class="heart-mode-pill" id="heart-tone-pill">warm_composed</span>
+            </div>
+            <p class="heart-honesty-note" id="heart-honesty-note">
+              Computational personality &amp; emotional-intelligence model shared across VISION (Made by Lokesh) and Gemini. Designed for warmth, empathy, honesty, humour, and consistent companionship.
+            </p>
+            <div class="heart-state-grid">
+              <div class="heart-metric"><label>Detected Signal</label><strong id="heart-signal-val">neutral_steady</strong></div>
+              <div class="heart-metric"><label>Confidence</label><strong id="heart-conf-val">0.72</strong></div>
+              <div class="heart-metric"><label>Interaction Style</label><strong id="heart-style-val">collaborative_partner</strong></div>
+              <div class="heart-metric"><label>Voice Prosody</label><strong id="heart-prosody-val">warm (1.0x)</strong></div>
+              <div class="heart-metric"><label>Intensity</label><strong id="heart-intensity-val">balanced</strong></div>
+              <div class="heart-metric"><label>Provider Continuity</label><strong id="heart-provider-val">VISION + Gemini</strong></div>
+            </div>
+          </div>
+          <div class="heart-card">
+            <h3>15 Core Character Traits</h3>
+            <div class="heart-traits-grid" id="heart-traits-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View: Knowledge Graph -->
+    <div id="view-knowledge-graph" class="stark-view-pane" style="display: none;"></div>
+
+    <!-- View: Engineering Lab -->
+    <div id="view-engineering-lab" class="stark-view-pane" style="display: none;"></div>
+
+    <!-- View: AI Creation Lab -->
+    <div id="view-ai-creation-lab" class="stark-view-pane" style="display: none;"></div>
+
+    <!-- View: Research Center -->
+    <div id="view-research-center" class="stark-view-pane" style="display: none;"></div>
+
+    <!-- View: Code Development -->
+    <div id="view-code-development" class="stark-view-pane" style="display: none;"></div>
+
+    <!-- View: Simulations -->
+    <div id="view-simulations" class="stark-view-pane" style="display: none;"></div>
+
+    <!-- View: System Health -->
+    <div id="view-system-health" class="stark-view-pane" style="display: none;"></div>
+
+    <!-- View: Task History -->
+    <div id="view-task-history" class="stark-view-pane" style="display: none;"></div>
+
+    <!-- Dedicated Conversational Text Chat Experience (Part 12: Ctrl+Shift+Space) -->
+    <div id="chat-experience-overlay" class="chat-experience-overlay" style="display: none;">
+      <div class="chat-dialog-card">
+        <div class="chat-header">
+          <div class="chat-header-title">
+            <span class="chat-header-icon">💬</span>
+            <h2>JARVIS Conversational Matrix · VISION</h2>
+            <span id="chat-personality-badge" class="chat-personality-tag jarvis-tag">JARVIS</span>
+          </div>
+          <div class="chat-header-actions">
+            <select id="chat-provider-select" class="stark-btn stark-btn-glass" title="Select AI Provider (Auto / VISION / Gemini / Compare)">
+              <option value="auto">Provider: Auto</option>
+              <option value="vision">VISION (Native)</option>
+              <option value="gemini">Gemini</option>
+              <option value="compare">Compare Both</option>
+            </select>
+            <button id="chat-export-btn" class="stark-btn stark-btn-glass" title="Export Conversation Session">📥 Export</button>
+            <button id="chat-clear-btn" class="stark-btn stark-btn-glass" title="Clear Conversation">🗑️ Clear</button>
+            <button id="chat-close-btn" class="chat-close-btn" title="Close (Esc)">✕</button>
+          </div>
+        </div>
+
+        <div id="chat-messages-container" class="chat-messages-container">
+          <div class="chat-welcome-banner">
+            <h3>JARVIS & ULTRON Neural Intelligence</h3>
+            <p>Direct conversational access with adaptive depth, multi-turn reasoning, file analysis, and live tool execution. Type below or press <kbd>Ctrl+Shift+Space</kbd>.</p>
+          </div>
+        </div>
+
+        <div class="chat-input-bar">
+          <textarea id="chat-experience-input" class="chat-experience-input" rows="1" placeholder="Ask a question, request code, analyze files, or issue commands... (Enter to send, Shift+Enter for newline)"></textarea>
+          <div class="chat-input-actions">
+            <button id="chat-send-btn" class="chat-action-btn chat-send-btn" title="Send message">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+            <button id="chat-stop-btn" class="chat-action-btn chat-stop-btn" style="display: none;" title="Stop generating">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="chat-footer-status">
+          <span><kbd>Enter</kbd> to send</span>
+          <span><kbd>Shift+Enter</kbd> for newline</span>
+          <span><kbd>Esc</kbd> to minimize</span>
+          <span class="chat-continuity-pill">Shared Context & Tool Registry</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Real Camera Preview & Visual Awareness Panel (Objective B) -->
+    <div id="camera-preview-panel" class="camera-preview-panel" style="display: none;">
+      <div class="camera-panel-header">
+        <div class="camera-title-group">
+          <span class="camera-icon">📷</span>
+          <h3>JARVIS Ocular Camera Sensor</h3>
+          <span id="camera-live-badge" class="camera-live-badge">● LIVE CAMERA ACTIVE</span>
+        </div>
+        <div class="camera-device-selector-wrapper">
+          <select id="camera-device-select" class="camera-device-select" title="Select video capture camera device">
+            <option value="">Default Integrated Webcam</option>
+          </select>
+        </div>
+        <button id="close-camera-btn" class="camera-close-btn" title="Close Camera Stream">✕</button>
+      </div>
+      <div class="camera-video-wrapper">
+        <video id="camera-preview-video" autoplay playsinline muted></video>
+        <div class="camera-crosshairs"></div>
+      </div>
+      <div class="camera-panel-actions">
+        <button id="btn-analyze-desk" class="stark-btn stark-btn-primary" title="Analyze physical desk workspace">
+          🔍 What is on my desk?
+        </button>
+        <button id="btn-camera-snapshot" class="stark-btn stark-btn-glass" title="Inspect current camera frame">
+          📸 Inspect Frame
+        </button>
+        <button id="btn-inspect-engineering" class="stark-btn stark-btn-glass" title="Inspect engineering component or circuit">
+          🔬 Inspect Component
+        </button>
+        <button id="btn-compare-frames" class="stark-btn stark-btn-glass" title="Compare successive frames or components">
+          ⚖️ Compare Frames
+        </button>
+        <button id="btn-screen-diagnose" class="stark-btn stark-btn-glass" title="Capture and analyze screen">
+          🖥️ Diagnose Screen
+        </button>
+        <button id="btn-stop-camera" class="stark-btn stark-btn-danger" title="Stop camera and release hardware">
+          ⏹️ Stop Camera
+        </button>
+      </div>
+      <div id="camera-analysis-output" class="camera-analysis-output" style="display: none;">
+        <div class="analysis-output-header">VISUAL INTELLIGENCE REPORT:</div>
+        <div class="analysis-output-body" id="camera-analysis-text"></div>
+      </div>
+    </div>
+
+    <!-- Legacy Keyboard Command Bar Overlay (Phase 10: Ctrl+Shift+Space compatibility) -->
+    <div id="command-bar-overlay" class="command-bar-overlay" style="display: none;">
+      <div class="command-bar-box">
+        <div class="command-bar-header">
+          <span class="command-icon">⚡</span>
+          <input type="text" id="command-input" class="command-input" placeholder="Type a command or ask JARVIS... (e.g. Open WhatsApp, Search Downloads, Hindi mein baat karo)" autocomplete="off" spellcheck="false" />
+          <button id="command-close-btn" class="command-close-btn" title="Close (Esc)">✕</button>
+        </div>
+        <div id="command-feedback" class="command-feedback" style="display: none;">
+          <div class="feedback-meta" id="feedback-meta"></div>
+          <div class="feedback-content" id="feedback-content"></div>
+        </div>
+        <div class="command-bar-footer">
+          <span>Press <kbd>Enter</kbd> to execute</span>
+          <span><kbd>Esc</kbd> to close</span>
+          <span>Shared tool pipeline & permissions</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Permissions & Capabilities Settings Modal (Phase 2, 9 & Objective B) -->
+    <div id="permissions-modal" class="permissions-modal" style="display: none;">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <h2>🛡️ JARVIS Permissions &amp; Governance · VISION — MADE BY LOKESH</h2>
+            <p>Granular controls for computer access, camera vision, ambient sensors, personal files, and automation.</p>
+          </div>
+          <button id="close-permissions-btn" class="modal-close-btn">✕</button>
+        </div>
+
+        <div class="modal-nav">
+          <button class="nav-tab active" data-tab="permissions-tab">All Permissions (25)</button>
+          <button class="nav-tab" data-tab="sensors-hardware-tab">Hardware & Sensors Dashboard (12)</button>
+          <button class="nav-tab" data-tab="folders-tab">Authorized Folders</button>
+          <button class="nav-tab" data-tab="memory-tab">Memory & Preferences</button>
+        </div>
+
+        <!-- Tab: Hardware & Sensors Dashboard (Objective B) -->
+        <div id="sensors-hardware-tab" class="tab-pane" style="display: none;">
+          <div class="sensors-header-card">
+            <div class="sensors-header-title">
+              <h3>Physical Hardware & Ambient Environmental Sensors</h3>
+              <p>Hardware state verification, optical camera preview, screen display capture, and ambient telemetry.</p>
+            </div>
+            <div id="sensor-telemetry-strip" class="sensor-telemetry-strip">
+              <span class="telemetry-pill">Lux: <strong id="telemetry-lux">--</strong></span>
+              <span class="telemetry-pill">Battery: <strong id="telemetry-battery">--</strong></span>
+              <span class="telemetry-pill">Network: <strong id="telemetry-network">--</strong></span>
+              <span class="telemetry-pill">Cameras: <strong id="telemetry-cameras">Detecting...</strong></span>
+              <button id="btn-refresh-sensors" class="stark-btn stark-btn-glass" style="margin-left: auto; padding: 4px 10px; font-size: 11px;">🔄 Scan Hardware</button>
+            </div>
+          </div>
+          <div id="sensors-permissions-list" class="permissions-list">
+            <!-- Dynamically populated 12 sensor & camera permission items -->
+          </div>
+        </div>
+
+        <!-- Tab 1: Permissions List -->
+        <div id="permissions-tab" class="tab-pane active">
+          <div class="profile-selector-row">
+            <span class="profile-label">Governing Profile:</span>
+            <div class="profile-buttons">
+              <button id="select-jarvis-profile" class="profile-btn active">JARVIS (Broad Assistant)</button>
+              <button id="select-ultron-profile" class="profile-btn">ULTRON (Restricted Analyst)</button>
+            </div>
+            <div class="trusted-mode-toggle">
+              <label class="switch-label">
+                <input type="checkbox" id="trusted-mode-checkbox" checked />
+                <span class="switch-slider"></span>
+                <span class="switch-text">Trusted Mode (Auto-run reversible actions)</span>
+              </label>
+            </div>
+          </div>
+
+          <div id="permissions-list" class="permissions-list">
+            <!-- Dynamically populated permissions items -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Authorized Folders -->
+        <div id="folders-tab" class="tab-pane" style="display: none;">
+          <div class="folders-intro">
+            <p>Grant broad access to personal folders instead of approving individual harmless file operations.</p>
+          </div>
+          <div class="add-folder-row">
+            <input type="text" id="new-folder-input" placeholder="Enter absolute folder path (e.g. C:\Users\Username\Projects)" />
+            <button id="add-folder-btn" class="stark-btn stark-btn-primary">+ Authorize Folder</button>
+          </div>
+          <div id="permitted-folders-list" class="permitted-folders-list"></div>
+        </div>
+
+        <!-- Tab 3: Memory & Preferences -->
+        <div id="memory-tab" class="tab-pane" style="display: none;">
+          <div class="memory-header-row">
+            <p>Persistent user preferences, ongoing tasks, and remembered facts. Credentials are never stored.</p>
+            <button id="export-memories-btn" class="stark-btn stark-btn-glass">📥 Export JSON</button>
+            <button id="clear-memories-btn" class="stark-btn stark-btn-danger">🗑️ Clear All</button>
+          </div>
+          <div class="add-memory-row">
+            <input type="text" id="new-memory-input" placeholder="Add explicit preference (e.g. I prefer dark mode in VS Code)" />
+            <button id="add-memory-btn" class="stark-btn stark-btn-primary">+ Save Memory</button>
+          </div>
+          <div id="memories-list" class="memories-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Capability Registry & Empirical Ledger Modal -->
+    <div id="capabilities-modal" class="modal-backdrop" style="display: none;">
+      <div class="modal-card modal-card-wide">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="modal-icon">⚡</span>
+            <h2>JARVIS · VISION LIVE CAPABILITY REGISTRY</h2>
+          </div>
+          <button id="close-capabilities-modal" class="modal-close-btn">&times;</button>
+        </div>
+
+        <div class="modal-tabs">
+          <button class="modal-tab-btn active" data-tab="caps-list-tab">Registered Capabilities</button>
+          <button class="modal-tab-btn" data-tab="caps-experiments-tab">Experiment Ledger & Learnings</button>
+          <button class="modal-tab-btn" data-tab="caps-diagnose-tab">Dependency Diagnostics</button>
+          <button class="modal-tab-btn" data-tab="caps-beyond-tab">Beyond 100 Research</button>
+          <button class="modal-tab-btn" data-tab="caps-personal-tab">Personal Intelligence</button>
+        </div>
+
+        <!-- Tab 1: Capabilities List -->
+        <div id="caps-list-tab" class="tab-pane active">
+          <div class="caps-filter-row">
+            <button class="caps-filter-btn active" data-filter="all">All</button>
+            <button class="caps-filter-btn" data-filter="IMPLEMENTED_SOFTWARE">Implemented Software</button>
+            <button class="caps-filter-btn" data-filter="SIMULATED_RESULTS">Simulated</button>
+            <button class="caps-filter-btn" data-filter="PHYSICALLY_TESTED">Physically Tested</button>
+            <button class="caps-filter-btn" data-filter="EXTERNALLY_VERIFIED">Externally Verified</button>
+            <button id="btn-refresh-caps" class="stark-btn stark-btn-glass" style="margin-left: auto;">🔄 Refresh Status</button>
+          </div>
+          <div id="capabilities-cards-container" class="capabilities-cards-container">
+            <!-- Dynamically populated capability items -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Experiment Ledger -->
+        <div id="caps-experiments-tab" class="tab-pane" style="display: none;">
+          <div class="experiments-summary-banner" id="experiments-summary-banner">
+            <!-- Acceptance rate, total tests, learnings -->
+          </div>
+          <div id="experiments-list-container" class="experiments-list-container">
+            <!-- Dynamically populated experiments -->
+          </div>
+        </div>
+
+        <!-- Tab 3: Dependency Diagnostics -->
+        <div id="caps-diagnose-tab" class="tab-pane" style="display: none;">
+          <div class="diagnose-input-row">
+            <input type="text" id="diagnose-target-input" placeholder="Enter capability or tool name (e.g. openscad, camera, gemini)" />
+            <button id="btn-run-diagnosis" class="stark-btn stark-btn-primary">🔍 Investigate Dependency</button>
+          </div>
+          <div id="diagnosis-results-box" class="diagnosis-results-box">
+            <!-- Results and feasible alternatives -->
+          </div>
+        </div>
+
+        <!-- Tab 4: STARK Beyond 100 Research Dashboard -->
+        <div id="caps-beyond-tab" class="tab-pane" style="display: none;">
+          <div class="beyond-dashboard-summary" id="beyond-dashboard-summary" style="margin-bottom: 16px; padding: 12px; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px;">
+            <!-- Dynamically populated summary stats -->
+          </div>
+          <div id="beyond-capabilities-grid" class="capabilities-cards-container">
+            <!-- Dynamically populated future technology cards -->
+          </div>
+        </div>
+
+        <!-- Tab 5: Personal Intelligence & Proactive Context -->
+        <div id="caps-personal-tab" class="tab-pane" style="display: none;">
+          <div class="personal-intelligence-summary" id="personal-intelligence-summary" style="margin-bottom: 16px; padding: 14px; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <h4 style="margin: 0; color: #38bdf8;">🧠 Personal Intelligence & Long-Term Context</h4>
+                <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 13px;">Authoritative 8-Layer SQLite WAL | Epistemic Integrity | Context Relevance Firewall</p>
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <label for="proactive-level-select" style="color: #cbd5e1; font-size: 12px;">Assistance Level:</label>
+                <select id="proactive-level-select" style="background: #1e293b; color: #f8fafc; border: 1px solid #475569; padding: 4px 8px; border-radius: 4px; font-size: 12px;">
+                  <option value="L0_DISABLED">L0: Disabled</option>
+                  <option value="L1_CONTEXTUAL">L1: Contextual</option>
+                  <option value="L2_REMINDERS_SUMMARIES" selected>L2: Reminders & Summaries</option>
+                  <option value="L3_RECURRING_MONITORING">L3: Recurring Monitoring</option>
+                </select>
+                <button id="btn-refresh-personal-context" class="stark-btn stark-btn-glass" style="padding: 4px 10px; font-size: 12px;">🔄 Refresh</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <!-- Left: Ongoing Projects & Goals -->
+            <div style="background: rgba(30, 41, 59, 0.6); padding: 14px; border-radius: 8px; border: 1px solid #334155;">
+              <h5 style="margin: 0 0 10px 0; color: #38bdf8;">📂 Ongoing Projects & Milestones</h5>
+              <div id="personal-projects-container" style="max-height: 280px; overflow-y: auto;">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <!-- Right: Proactive Recommendations & Avoid Topics -->
+            <div style="background: rgba(30, 41, 59, 0.6); padding: 14px; border-radius: 8px; border: 1px solid #334155;">
+              <h5 style="margin: 0 0 10px 0; color: #38bdf8;">⚡ Proactive Recommendations (With Evidence)</h5>
+              <div id="proactive-recommendations-container" style="max-height: 180px; overflow-y: auto; margin-bottom: 12px;">
+                <!-- Populated dynamically -->
+              </div>
+
+              <h5 style="margin: 10px 0 6px 0; color: #f43f5e; font-size: 13px;">🛡️ Avoid Topics Registry & Deletion Verification</h5>
+              <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+                <input type="text" id="input-avoid-topic" placeholder="Register off-limits topic..." style="flex: 1; background: #0f172a; border: 1px solid #475569; color: #f8fafc; padding: 4px 8px; border-radius: 4px; font-size: 12px;" />
+                <button id="btn-add-avoid-topic" class="stark-btn stark-btn-primary" style="padding: 4px 10px; font-size: 12px;">+ Add Topic</button>
+              </div>
+              <div id="avoid-topics-list" style="font-size: 11px; color: #94a3b8;">
+                <!-- Avoid topics badges -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Microsoft Word-Style Live Document Studio Panel (Voice-Controlled Word Collaboration) -->
+    <div id="live-document-studio-panel" style="display: none; position: fixed; top: 56px; right: 20px; width: 620px; max-width: calc(100vw - 40px); max-height: calc(100vh - 120px); background: #e2e8f0; border: 1px solid #64748b; border-radius: 10px; box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65); z-index: 980; color: #111827; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; overflow: hidden;">
+      <!-- Word-Style Top Title & Ribbon Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; background: #185abd; color: #ffffff; border-bottom: 1px solid #1e3a8a;">
+        <div style="min-width: 0; flex: 1;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="background: #ffffff; color: #185abd; font-weight: 800; font-size: 11px; padding: 1px 6px; border-radius: 3px; letter-spacing: 0.04em;">W</span>
+            <span style="font-size: 11px; color: #dbeafe; font-weight: 600; letter-spacing: 0.04em;">LIVE DOCUMENT STUDIO • CANONICAL .DOCX</span>
+          </div>
+          <div id="lds-doc-title" style="font-size: 14px; font-weight: 700; color: #ffffff; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Untitled Document</div>
+          <div id="lds-doc-filename" style="font-size: 11px; color: #bfdbfe;">document.docx</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; margin-left: 10px;">
+          <button id="lds-open-word-btn" title="Open Real .docx in Microsoft Word" style="background: #ffffff; color: #185abd; border: 1px solid #dbeafe; border-radius: 5px; padding: 4px 10px; cursor: pointer; font-size: 11px; font-weight: 700;">Open in Word</button>
+          <button id="lds-minimize-btn" title="Minimize Studio" style="background: rgba(255, 255, 255, 0.16); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 5px; padding: 3px 9px; cursor: pointer; font-size: 12px;">—</button>
+          <button id="lds-close-btn" title="Close Studio" style="background: #dc2626; color: #ffffff; border: 1px solid #fca5a5; border-radius: 5px; padding: 3px 9px; cursor: pointer; font-size: 12px;">✕</button>
+        </div>
+      </div>
+
+      <!-- Studio Body -->
+      <div id="lds-body" style="display: flex; flex-direction: column; max-height: calc(100vh - 185px);">
+        <!-- Compact Status Toolbar (Outside the White Page) -->
+        <div style="background: #f8fafc; border-bottom: 1px solid #cbd5e1; padding: 7px 14px; font-size: 11px; color: #334155;">
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 4px;">
+            <span style="background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; padding: 2px 8px; border-radius: 4px;">Status: <strong id="lds-writing-status">IDLE</strong></span>
+            <span style="background: #f1f5f9; color: #1e293b; border: 1px solid #94a3b8; padding: 2px 8px; border-radius: 4px;">Progress: <strong id="lds-progress">0%</strong></span>
+            <span style="background: #dcfce7; color: #15803d; border: 1px solid #86efac; padding: 2px 8px; border-radius: 4px;">Save: <strong id="lds-save-status">SYNCED</strong></span>
+            <span style="background: #ede9fe; color: #5b21b6; border: 1px solid #c4b5fd; padding: 2px 8px; border-radius: 4px;">Voice: <strong id="lds-voice-status">READY</strong></span>
+            <span style="background: #ccfbf1; color: #0f766e; border: 1px solid #5eead4; padding: 2px 8px; border-radius: 4px;">DOCX: <strong id="lds-verify-status">VERIFIED</strong></span>
+          </div>
+          <div style="font-size: 11px; color: #475569; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            Active Section: <strong id="lds-current-section" style="color: #0f172a;">Ready</strong>
+          </div>
+        </div>
+
+        <!-- Neutral Document Workspace Surround + White A4 Word Page -->
+        <div style="background: #cbd5e1; padding: 18px 20px; overflow-y: auto; flex: 1; max-height: 430px;">
+          <div id="lds-editor-preview" style="background: #ffffff; color: #111827; width: 100%; max-width: 560px; min-height: 420px; margin: 0 auto; padding: 38px 44px; box-shadow: 0 6px 20px rgba(15, 23, 42, 0.22); border: 1px solid #94a3b8; box-sizing: border-box; font-family: 'Calibri', 'Segoe UI', Georgia, serif; font-size: 13.5px; line-height: 1.65;">
+            <div style="color: #6b7280; font-style: italic;">Blank Microsoft Word page ready. Waiting for progressive writing...</div>
+          </div>
+        </div>
+
+        <!-- Compact Revision History Footer -->
+        <div style="background: #f1f5f9; border-top: 1px solid #cbd5e1; padding: 6px 14px;">
+          <div style="font-size: 10.5px; font-weight: 700; color: #334155; margin-bottom: 2px;">REVISION HISTORY & CHECKPOINTS</div>
+          <div id="lds-revision-history" style="font-size: 11px; color: #475569; max-height: 58px; overflow-y: auto;">
+            No revisions yet.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Main ES Module Entry Point -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

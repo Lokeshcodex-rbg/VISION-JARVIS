@@ -1,0 +1,1647 @@
+<USER_REQUEST>
+# VISION — ULTIMATE AI INTELLIGENCE, COMPLETE NLP, ADVANCED TRAINING, REINFORCEMENT LEARNING & JARVIS UNIFIED CAPABILITY MASTER DIRECTIVE
+
+**Official AI:** VISION — MADE BY LOKESH  
+**Unified assistant:** JARVIS, powered by VISION  
+**Workspace:** D:\Jarvis  
+**Branch:** stark-frontier-capabilities  
+**Current reported reference model:** vision-v1.4-calibrated-local — 13,332,498 parameters  
+**Other research checkpoints:** v1.5 scratch and v1.5 recovered  
+**Current reported integration:** Gemini remains production primary; VISION remains experimental.
+
+---
+
+# PRIMARY MISSION
+
+I want to develop VISION into a genuinely capable, independently developed AI intelligence system and make JARVIS a complete, powerful, unified personal AI assistant.
+
+This directive covers the entire AI development ecosystem:
+
+1. Core language-model intelligence.
+2. Advanced NLP and computational linguistics.
+3. Data acquisition, preparation and knowledge representation.
+4. Tokenization and vocabulary optimization.
+5. Full language-model pretraining.
+6. Supervised fine-tuning.
+7. Reinforcement learning and preference optimization.
+8. Reasoning, mathematics and scientific intelligence.
+9. Programming and software engineering.
+10. Tool intelligence and function calling.
+11. Memory and conversational intelligence.
+12. Multilingual intelligence.
+13. Multimodal capabilities.
+14. Retrieval-augmented generation and knowledge systems.
+15. Model evaluation, verification and self-improvement.
+16. Advanced inference and hardware optimization.
+17. JARVIS operating-system and application capabilities.
+18. Browser, files, communication and productivity integrations.
+19. Security, privacy and permission systems.
+20. Unified interface, voice and proactive assistance.
+21. Continuous testing, monitoring, recovery and development.
+
+The goal is maximum genuine intelligence, reliability, usefulness and performance achievable within the available resources.
+
+Do not interpret this as permission to make exaggerated AGI claims, blindly increase parameters, download unlimited data, consume all RAM, use paid cloud compute or rewrite working architecture.
+
+**Implement real functionality. Measure it. Test it. Preserve what works.**
+
+# NON-NEGOTIABLE ARCHITECTURAL RULES
+
+## 1. One unified JARVIS
+
+There must be ONE assistant.
+
+- VISION is the independently developed intelligence/model.
+- JARVIS is the unified assistant powered by VISION.
+- Gemini and other configured providers are external intelligence providers.
+- JARVIS retains the same personality, conversation, memory, permissions and orchestration regardless of the selected provider.
+
+Do not create multiple independent AI agents.
+
+Research, coding, mathematics, planning, communication, file operations, browser control and other capabilities must be internal JARVIS modules, tools, services or functions under the same central orchestrator.
+
+Internal concurrent operations are permitted, but they must not become separate assistant identities or independent personalities.
+
+Preserve the existing:
+- Central orchestrator.
+- Tool Registry.
+- PermissionGate.
+- ActionVerifier.
+- EmergencyStopController.
+- Memory database.
+- DAG planner.
+- Task orchestrator.
+- Verification system.
+- Scheduler.
+- LLM router.
+- Existing interfaces and integrations.
+
+Audit before modifying. Reuse working components instead of creating duplicates.
+
+## 2. Protect the current working system
+
+Before implementation:
+
+- Verify current Git branch, commit and working tree.
+- Inspect existing architecture and repository documentation.
+- Locate every model checkpoint and training artifact.
+- Preserve user changes, local commits, tags and historical checkpoints.
+- Never rewrite Git history.
+- Never push to a remote repository.
+- Never delete existing checkpoints.
+- Never overwrite the v1.4 reference model.
+- Do not change Gemini production routing automatically.
+- Keep new VISION artifacts and datasets on D:.
+- Inspect available disk space and system memory.
+- Never use paid cloud compute without explicit permission.
+
+Create a local recovery point only when safe and without disturbing existing work.
+
+---
+
+# PART I — COMPLETE NLP AND COMPUTATIONAL LINGUISTICS
+
+Build a comprehensive NLP system that supports traditional NLP, modern neural NLP and language-model processing.
+
+Do not implement techniques merely to tick boxes. Each method must have a clear purpose, tests and measurable benefits.
+
+## 3. Text preprocessing and normalization
+
+Implement configurable pipelines for:
+
+- Unicode normalization.
+- UTF-8 validation.
+- Whitespace normalization.
+- Sentence segmentation.
+- Word tokenization.
+- Punctuation handling.
+- Number normalization.
+- Date and time normalization.
+- Special-character handling.
+- HTML and markup extraction.
+- Language identification.
+- Script identification.
+- Encoding corruption detection.
+- Repeated-character handling.
+- Contraction handling.
+- Abbreviation recognition.
+- Emoji preservation.
+- Code-aware text segmentation.
+- Document structure preservation.
+
+Preserve the original source text and provenance.
+
+Provide reversible preprocessing wherever practical.
+
+Do not destroy meaningful punctuation, formatting, mathematical expressions, programming syntax or multilingual characters.
+
+## 4. Bag of Words — BOW
+
+Implement:
+
+- Basic Bag of Words.
+- Binary term presence vectors.
+- Term-frequency vectors.
+- Document-term matrices.
+- Vocabulary construction.
+- Minimum and maximum document-frequency thresholds.
+- Stop-word configuration.
+- N-gram BOW.
+- Sparse matrix storage.
+- Vocabulary statistics.
+- Feature selection.
+- Out-of-vocabulary handling.
+
+Use cases:
+- Document classification.
+- Lightweight semantic categorization.
+- Baseline text classifiers.
+- Topic analysis.
+- Dataset exploration.
+- Search and filtering.
+
+Compare BOW with modern embedding-based representations.
+
+Do not use BOW as a replacement for contextual language understanding.
+
+## 5. TF-IDF
+
+Implement:
+
+- Term frequency.
+- Inverse document frequency.
+- TF-IDF vectors.
+- Word and character n-grams.
+- Sparse similarity calculations.
+- Cosine similarity.
+- Document ranking.
+- Keyword extraction.
+- Search indexing.
+- Query expansion experiments.
+
+Evaluate search quality using precision, recall, F1 and ranking metrics.
+
+Use TF-IDF as a lightweight retrieval and classification component within JARVIS where useful.
+
+## 6. Stemming
+
+Implement and evaluate appropriate stemming algorithms:
+
+- Porter stemming.
+- Snowball stemming.
+- English stemming.
+- Hindi stemming where reliable implementations are available.
+- Language-specific stemmer selection.
+- Custom domain-specific stemming where justified.
+
+Compare original words with stemmed forms.
+
+Measure over-stemming and under-stemming errors.
+
+Never apply stemming indiscriminately to original language-model training text.
+
+## 7. Lemmatization
+
+Implement:
+
+- Dictionary-based lemmatization.
+- Morphological lemmatization.
+- POS-aware lemmatization.
+- English lemmatization.
+- Hindi morphological normalization where supported.
+- Multilingual lemmatization.
+- Domain-aware normalization.
+- Lemma dictionaries and caching.
+
+Evaluate the effect on:
+- Search.
+- Classification.
+- Topic extraction.
+- Document grouping.
+- Knowledge indexing.
+
+Preserve original words alongside normalized lemmas.
+
+## 8. Part-of-speech tagging
+
+Implement and evaluate:
+
+- Noun detection.
+- Verb detection.
+- Adjective detection.
+- Adverb detection.
+- Pronoun detection.
+- Preposition detection.
+- Conjunction detection.
+- Determiner detection.
+- Auxiliary verb detection.
+- POS sequence analysis.
+
+Support English and Hindi where reliable.
+
+## 9. Named Entity Recognition
+
+Build NER support for:
+
+- People.
+- Organizations.
+- Locations.
+- Companies.
+- Products.
+- Dates.
+- Times.
+- Monetary values.
+- Measurements.
+- Programming technologies.
+- Scientific entities.
+- Custom entities.
+
+Use entity recognition for document understanding, knowledge extraction and memory indexing.
+
+Keep extracted facts linked to their source.
+
+## 10. Additional NLP techniques
+
+Evaluate and implement useful versions of:
+
+- N-gram language models.
+- Character n-grams.
+- Word n-grams.
+- Sentence segmentation.
+- Dependency parsing.
+- Constituency parsing where practical.
+- Semantic role labeling.
+- Coreference resolution.
+- Word sense disambiguation.
+- Keyword extraction.
+- Topic modeling.
+- Latent Dirichlet Allocation.
+- Latent Semantic Analysis.
+- Text classification.
+- Sentiment analysis.
+- Emotion classification with appropriate uncertainty.
+- Intent classification.
+- Query classification.
+- Question answering.
+- Summarization.
+- Paraphrase detection.
+- Text similarity.
+- Semantic search.
+- Document clustering.
+- Language detection.
+- Translation evaluation.
+
+Do not pretend every external library or pretrained NLP model is native to VISION. Record which capabilities are implemented locally and which use external specialist models.
+
+## 11. NLP evaluation
+
+Create a reproducible evaluation suite.
+
+Measure:
+- Precision.
+- Recall.
+- F1.
+- Accuracy.
+- Macro F1.
+- Micro F1.
+- Confusion matrices.
+- Tokenization efficiency.
+- Search relevance.
+- Retrieval precision.
+- Retrieval recall.
+- Normalization accuracy.
+- Language-specific error rates.
+
+Compare traditional NLP techniques against neural and embedding-based alternatives.
+
+Use the most effective method for each task.
+
+---
+
+# PART II — TOKENIZATION AND LANGUAGE REPRESENTATION
+
+## 12. Tokenizer research and development
+
+Audit JarvisBPE and existing vocabulary.
+
+Evaluate:
+
+- BPE.
+- Byte-level BPE.
+- WordPiece.
+- Unigram language-model tokenization.
+- SentencePiece-compatible approaches.
+- Character-level fallback.
+- Subword segmentation.
+- Special-token design.
+
+Measure token efficiency across:
+
+- English.
+- Hindi.
+- Hinglish.
+- Other supported Indian languages.
+- Python.
+- Java.
+- JavaScript.
+- TypeScript.
+- C and C++.
+- SQL.
+- Mathematical notation.
+- Scientific notation.
+- JSON.
+- URLs.
+- Code identifiers.
+
+Measure:
+- Tokens per word.
+- Tokens per character.
+- Vocabulary utilization.
+- Unknown-token frequency.
+- Sequence-length distribution.
+- Encoding and decoding accuracy.
+
+Keep checkpoint/tokenizer compatibility strict.
+
+Never replace the tokenizer of an existing checkpoint without a tested migration strategy.
+
+---
+
+# PART III — DATA INTELLIGENCE AND KNOWLEDGE PIPELINE
+
+## 13. Complete data ingestion system
+
+Build modular ingestion for:
+
+- Licensed text corpora.
+- Books with appropriate rights.
+- Documentation.
+- Educational content.
+- Scientific literature with appropriate access and licensing.
+- Mathematics datasets.
+- Programming repositories with compatible licenses.
+- Software documentation.
+- Question-answer datasets.
+- Instruction datasets.
+- Multilingual corpora.
+- Conversational datasets with appropriate permissions.
+- Tool-use examples.
+- Structured knowledge sources.
+
+Maintain provenance for every dataset.
+
+Record:
+- Dataset name.
+- Source.
+- Version.
+- License.
+- Retrieval date.
+- Language.
+- Domain.
+- Original size.
+- Filtered size.
+- Actual token count.
+- Deduplication statistics.
+- Processing configuration.
+
+Do not scrape private accounts, personal information or restricted sources.
+
+## 14. Data cleaning and quality
+
+Implement:
+
+- Exact deduplication.
+- Near-duplicate detection.
+- MinHash.
+- Locality-sensitive hashing where useful.
+- Quality scoring.
+- Language filtering.
+- Spam detection.
+- Corruption detection.
+- Repetition detection.
+- Toxicity and safety filtering.
+- Low-information filtering.
+- Code-specific filtering.
+- Mathematical expression preservation.
+- Document integrity checks.
+- Benchmark contamination detection.
+
+Do not remove difficult but valuable reasoning, mathematics or scientific examples merely because they are unusual.
+
+Maintain transparent rejection logs.
+
+## 15. Domain-balanced datasets
+
+Create measurable dataset groups:
+
+1. General language.
+2. English.
+3. Hindi.
+4. Hinglish.
+5. Other supported languages.
+6. Mathematics.
+7. Logic and reasoning.
+8. Programming.
+9. Software engineering.
+10. Computer science.
+11. Science.
+12. Engineering.
+13. Instructions.
+14. Conversations.
+15. Tool calling.
+16. JSON and structured output.
+17. Document understanding.
+18. Memory and context.
+19. Safety and uncertainty.
+
+Report actual token counts for each domain.
+
+Do not artificially duplicate examples to claim increased data volume.
+
+Use controlled sampling and document the sampling weights.
+
+---
+
+# PART IV — MODEL ARCHITECTURE AND INTELLIGENCE
+
+## 16. Architecture audit
+
+Inspect the existing transformer implementation.
+
+Evaluate:
+
+- Transformer decoder architecture.
+- Multi-head attention.
+- Grouped-query attention.
+- Multi-query attention.
+- RoPE.
+- QK normalization.
+- RMSNorm.
+- LayerNorm.
+- SwiGLU.
+- GELU.
+- Efficient attention.
+- Causal masking.
+- Residual connections.
+- Weight tying.
+- Embedding initialization.
+- Output projection.
+- Context-window configuration.
+- KV cache.
+- Padding and loss masking.
+
+Run tensor-level correctness tests.
+
+Calculate exact parameter counts from actual tensors.
+
+Check numerical stability, initialization and gradient flow.
+
+Do not change architecture simply because a technique is popular.
+
+Run controlled comparisons before adopting architectural changes.
+
+## 17. Advanced language intelligence
+
+Improve:
+
+- Grammar.
+- Vocabulary.
+- Sentence construction.
+- Coherent paragraphs.
+- Long-form generation.
+- Contextual understanding.
+- Question answering.
+- Knowledge recall.
+- Explanation quality.
+- Summarization.
+- Instruction following.
+- Conversation continuity.
+- Ambiguity handling.
+- Uncertainty.
+- Factual accuracy.
+- Hallucination resistance.
+
+Evaluate generation quality using both automated tests and blinded human assessment.
+
+## 18. Reasoning intelligence
+
+Develop dedicated datasets and evaluation for:
+
+- Arithmetic.
+- Algebra.
+- Geometry.
+- Probability.
+- Statistics.
+- Discrete mathematics.
+- Linear algebra.
+- Calculus.
+- Logic.
+- Deduction.
+- Induction.
+- Constraint satisfaction.
+- Multi-step reasoning.
+- Scientific reasoning.
+- Engineering calculations.
+- Algorithm analysis.
+- Problem decomposition.
+- Error detection.
+
+Do not rely exclusively on chain-of-thought imitation.
+
+Teach models to produce clear answers, concise justifications, intermediate verifiable calculations and uncertainty where appropriate.
+
+Never expose private internal reasoning as a requirement. Evaluate correctness and useful explanations instead.
+
+## 19. Programming intelligence
+
+Develop serious programming and software-engineering capabilities across:
+
+- Python.
+- Java.
+- JavaScript.
+- TypeScript.
+- C.
+- C++.
+- SQL.
+- HTML.
+- CSS.
+- React.
+- Node.js.
+- Backend engineering.
+- APIs.
+- Databases.
+- Testing.
+- Debugging.
+- Algorithms.
+- Data structures.
+- Security.
+- Performance optimization.
+- Git.
+- Repository understanding.
+- Build systems.
+- Deployment.
+
+Train and evaluate:
+
+- Code completion.
+- Function generation.
+- Multi-file code changes.
+- Bug identification.
+- Root-cause analysis.
+- Test generation.
+- Test interpretation.
+- Refactoring.
+- Documentation.
+- Code review.
+- Dependency analysis.
+- Security issue detection.
+
+Use executable test cases in isolated environments where possible.
+
+Do not execute untrusted generated code with unrestricted permissions.
+
+## 20. Scientific and engineering intelligence
+
+Support:
+
+- Physics.
+- Chemistry.
+- Biology.
+- Mathematics.
+- Computer science.
+- Electronics.
+- Mechanical engineering.
+- Electrical engineering.
+- Civil engineering.
+- Materials science.
+- Robotics software and control theory.
+- Data science.
+- Machine learning.
+- Statistics.
+
+Preserve units and dimensional consistency.
+
+Use calculation tools and validated references when accuracy matters.
+
+Do not present guesses as scientific facts.
+
+---
+
+# PART V — COMPLETE TRAINING SYSTEM
+
+## 21. Pretraining
+
+Implement and verify:
+
+- Causal language-model objective.
+- Correct shifted input and target tokens.
+- Attention masks.
+- Loss masks.
+- Padding masks.
+- Efficient packing.
+- Gradient accumulation.
+- Learning-rate warmup.
+- Cosine or evidence-supported scheduling.
+- Gradient clipping.
+- Optimizer state.
+- Validation evaluation.
+- Early stopping.
+- Divergence detection.
+- Reproducible initialization.
+- Resumable checkpoints.
+- Logging.
+- Resource monitoring.
+
+Track:
+- Training loss.
+- Validation loss.
+- Per-domain loss.
+- Perplexity.
+- Tokens processed.
+- Tokens per second.
+- Steps per second.
+- Learning rate.
+- Gradient norm.
+- Peak memory.
+- CPU utilization.
+- Checkpoint size.
+
+Never report training loss as proof of intelligence.
+
+## 22. Supervised fine-tuning — SFT
+
+Implement a separate, reproducible instruction-tuning stage.
+
+Include:
+- Single-turn instructions.
+- Multi-turn conversations.
+- Question answering.
+- Explanations.
+- Summaries.
+- Structured outputs.
+- Coding tasks.
+- Mathematics.
+- Reasoning.
+- Tool-use demonstrations.
+- Multilingual examples.
+- Refusal and safe-completion examples.
+
+Use appropriate loss masking.
+
+Prevent validation and test leakage.
+
+Compare:
+- Base model.
+- SFT model.
+- SFT model after subsequent optimization.
+
+## 23. Curriculum learning
+
+Implement configurable curriculum experiments.
+
+Evaluate training sequences such as:
+
+1. Basic language patterns.
+2. General knowledge.
+3. Instruction following.
+4. Mathematics foundations.
+5. Logical reasoning.
+6. Programming.
+7. Scientific problem solving.
+8. Tool use.
+9. Multilingual conversation.
+10. Complex multi-domain tasks.
+
+Do not assume a fixed curriculum is always superior.
+
+Compare curriculum training with balanced mixed-domain training.
+
+Record all sampling weights and stage transitions.
+
+---
+
+# PART VI — REINFORCEMENT LEARNING AND PREFERENCE OPTIMIZATION
+
+This is a major development area.
+
+Do not simply label ordinary supervised training as reinforcement learning.
+
+Implement the actual algorithms where technically and computationally justified.
+
+## 24. Preference dataset
+
+Create a lawful, high-quality preference dataset.
+
+Each record should contain:
+
+- Prompt.
+- Context.
+- Candidate response A.
+- Candidate response B.
+- Preferred response.
+- Preference rationale or quality labels.
+- Source.
+- Dataset version.
+- Domain.
+- Safety classification.
+- Annotator or generation provenance.
+
+Preference dimensions should include:
+
+- Factual accuracy.
+- Helpfulness.
+- Instruction adherence.
+- Reasoning correctness.
+- Code correctness.
+- Mathematical correctness.
+- Clarity.
+- Relevance.
+- Completeness.
+- Calibration.
+- Safety.
+- Appropriate uncertainty.
+
+Do not reward verbosity by default.
+
+## 25. Direct Preference Optimization — DPO
+
+Implement and test DPO where compatible with the existing model.
+
+Requirements:
+
+- Chosen and rejected response handling.
+- Reference model management.
+- Correct sequence log probabilities.
+- Response-only masking.
+- Beta parameter configuration.
+- Numerical stability.
+- Validation monitoring.
+- Preference accuracy.
+- KL or reference divergence monitoring.
+- Checkpoint saving.
+- Reproducible training.
+
+Compare the DPO model against the SFT baseline on held-out preference tests.
+
+Watch for reward hacking, response collapse and loss of general capabilities.
+
+## 26. Reward modeling
+
+Evaluate a lightweight reward model or scoring head.
+
+It should distinguish:
+
+- Correct versus incorrect answers.
+- Useful versus irrelevant answers.
+- Verified versus unsupported claims.
+- Correct versus broken code.
+- Proper versus improper tool usage.
+- Safe versus unsafe actions.
+
+Use separate validation data.
+
+Check reward-model calibration and preference accuracy.
+
+Do not let an unverified reward model autonomously approve sensitive actions.
+
+## 27. Reinforcement Learning from Human Feedback — RLHF
+
+Design a modular RLHF pipeline.
+
+Components:
+
+1. Supervised policy initialization.
+2. Preference collection.
+3. Reward model training.
+4. Policy optimization.
+5. Reference-policy constraints.
+6. KL monitoring.
+7. Evaluation.
+8. Checkpoint selection.
+9. Regression detection.
+
+Investigate PPO only if the available model, dataset, hardware and implementation can support a meaningful controlled experiment.
+
+Do not run expensive PPO experiments merely for the label.
+
+## 28. GRPO and other policy optimization
+
+Investigate:
+
+- Group Relative Policy Optimization.
+- Advantage estimation.
+- Group-based response comparison.
+- Verifiable reward functions.
+- Outcome-based rewards.
+- Process-based rewards where reliable.
+- KL regularization.
+- Reward normalization.
+- Policy stability.
+
+For mathematics and coding, use objectively verifiable outcomes where possible:
+
+- Mathematical answer validation.
+- Unit tests.
+- Compilation.
+- Test-suite execution.
+- Static analysis.
+- Structured JSON validation.
+
+For language tasks, use validated human preferences or carefully calibrated reward models.
+
+Never allow a model to reward itself without independent evaluation.
+
+## 29. Reinforcement-learning safety
+
+Establish:
+
+- Strict experiment boundaries.
+- Maximum resource budgets.
+- Checkpoint recovery.
+- Independent held-out evaluation.
+- Reward hacking detection.
+- Regression detection.
+- Safety regression tests.
+- No automatic production promotion.
+
+Compare every RL checkpoint against its SFT and v1.4 references.
+
+RL is successful only when independently measured performance improves.
+
+---
+
+# PART VII — KNOWLEDGE, RAG AND MEMORY
+
+## 30. Retrieval-augmented generation
+
+Implement a complete retrieval pipeline:
+
+- Document ingestion.
+- Parsing.
+- Chunking.
+- Metadata.
+- Embeddings.
+- Vector search.
+- Keyword search.
+- Hybrid retrieval.
+- Reranking.
+- Source citations.
+- Retrieval confidence.
+- Context assembly.
+- Contradiction detection.
+- Freshness tracking.
+
+Evaluate TF-IDF, BM25 and embedding-based retrieval.
+
+Use a lightweight local vector database or existing supported infrastructure.
+
+Avoid unnecessary database duplication.
+
+JARVIS should distinguish its internal model knowledge from externally retrieved information.
+
+## 31. Unified memory
+
+Maintain one memory system with:
+
+- Working memory.
+- Long-term semantic memory.
+- Episodic memory.
+- Project memory.
+- Conversation history.
+- User-approved preferences.
+- Decisions.
+- Task progress.
+- Corrections.
+- Provenance.
+- Timestamps.
+- Confidence.
+- Conflict resolution.
+
+Memory must be:
+- Searchable.
+- Updatable.
+- Correctable.
+- Permission-controlled.
+- Deletable on user request.
+- Protected from prompt injection.
+
+Do not turn arbitrary remembered text into executable instructions.
+
+## 32. Context intelligence
+
+Improve:
+- Conversation summarization.
+- Context selection.
+- Relevant memory retrieval.
+- Long-context handling.
+- Context compression.
+- Topic continuity.
+- Reference resolution.
+- Follow-up understanding.
+- Contradiction awareness.
+
+Measure whether memory actually improves responses.
+
+---
+
+# PART VIII — TOOL INTELLIGENCE AND AUTONOMOUS EXECUTION
+
+## 33. Unified tool-use system
+
+JARVIS should understand when and how to use tools.
+
+Support:
+
+- Tool discovery.
+- Tool descriptions.
+- Structured schemas.
+- JSON argument generation.
+- Schema validation.
+- Argument repair.
+- Tool selection.
+- Execution.
+- Result interpretation.
+- Retry.
+- Error recovery.
+- Duplicate-call prevention.
+- Result verification.
+- Audit logging.
+
+Test with real tools and realistic failure scenarios.
+
+## 34. Planning and task execution
+
+Improve the existing central orchestration system.
+
+Support:
+
+- Goal understanding.
+- Task decomposition.
+- Dependency graphs.
+- DAG scheduling.
+- Parallel internal operations.
+- Progress tracking.
+- Checkpoints.
+- Retries.
+- Cancellation.
+- Resumption.
+- Timeouts.
+- Failure recovery.
+- Completion verification.
+
+A task must not be marked complete merely because a tool returned success.
+
+## 35. Self-correction
+
+Implement controlled iterative verification:
+
+1. Produce an answer or action.
+2. Validate it using appropriate independent checks.
+3. Detect errors.
+4. Retry or revise within bounded limits.
+5. Record the result.
+6. Return an honest completion status.
+
+Use actual tests, calculations, schema validators and source verification rather than asking the same model to declare itself correct.
+
+---
+
+# PART IX — MULTILINGUAL INTELLIGENCE
+
+## 36. Multilingual development
+
+Prioritize:
+
+- English.
+- Hindi.
+- Hinglish.
+
+Prepare architecture and evaluation for additional languages.
+
+Support:
+
+- Language detection.
+- Script detection.
+- Code-switching.
+- Transliteration.
+- Translation.
+- Grammar.
+- Conversation.
+- Summarization.
+- Search.
+- Multilingual retrieval.
+- Cross-language question answering.
+
+Evaluate Devanagari Hindi and Latin-script Hinglish separately.
+
+Do not count translation ability as proof of full multilingual reasoning.
+
+---
+
+# PART X — MULTIMODAL INTELLIGENCE
+
+## 37. Image understanding
+
+Investigate:
+
+- Image encoders.
+- Vision-language models.
+- Screenshot understanding.
+- OCR.
+- Object recognition.
+- Document image understanding.
+- Charts and diagrams.
+- Image question answering.
+- Visual grounding.
+
+Distinguish native VISION capabilities from external specialist providers.
+
+## 38. Image generation and editing
+
+Integrate a supported image-generation provider or local model where available.
+
+Support:
+- Image generation.
+- Editing.
+- Variations.
+- Style controls.
+- Resolution handling.
+- Image input.
+- Output management.
+
+Clearly identify which provider generated the image.
+
+Do not claim native VISION generation if an external model performs the task.
+
+## 39. Audio and voice
+
+Implement or integrate:
+
+- Speech-to-text.
+- Text-to-speech.
+- Voice activity detection.
+- Streaming audio.
+- Turn detection.
+- Interruption handling.
+- Noise handling.
+- Transcription.
+- Audio summarization.
+- Voice commands.
+- Spoken responses.
+
+Maintain the same JARVIS conversation and memory between text and voice.
+
+## 40. Video understanding
+
+Prepare a modular workflow for:
+- Video ingestion.
+- Frame extraction.
+- Audio transcription.
+- Scene segmentation.
+- Timestamp-aware summaries.
+- Visual question answering.
+
+Do not claim real-time video capability until it has been implemented and tested.
+
+---
+
+# PART XI — COMPLETE JARVIS PERSONAL ASSISTANT CAPABILITIES
+
+## 41. Windows operating-system interaction
+
+JARVIS should be able to interact with authorized Windows applications.
+
+Support:
+
+- Launching applications.
+- Switching windows.
+- Reading visible application state.
+- Keyboard input.
+- Mouse interaction.
+- File Explorer.
+- Browser windows.
+- Settings.
+- Office applications.
+- VS Code.
+- Installed development tools.
+- Media applications.
+- System notifications.
+
+Verify the actual visible result instead of assuming that launching a process means the action succeeded.
+
+Require confirmation for destructive or sensitive operations.
+
+## 42. Browser intelligence
+
+Support:
+
+- Web search.
+- Website navigation.
+- Page reading.
+- Search result evaluation.
+- Tabs.
+- Screenshots.
+- Forms.
+- Downloads.
+- Authorized account workflows.
+- Session-aware interactions.
+- Source citations.
+
+Protect credentials and browser sessions.
+
+Never submit purchases, financial transactions or sensitive external commitments without explicit authorization.
+
+## 43. File and document intelligence
+
+Support:
+
+- File discovery.
+- Authorized directory search.
+- PDF extraction.
+- Word documents.
+- Excel.
+- PowerPoint.
+- CSV.
+- Text files.
+- Code repositories.
+- Image documents.
+- Document creation.
+- Editing.
+- Summarization.
+- Comparison.
+- Conversion.
+- Organization.
+
+Preserve original files and avoid destructive overwrites.
+
+## 44. Communication and productivity
+
+Integrate supported official APIs for:
+
+- Email.
+- Calendar.
+- Reminders.
+- Messaging.
+- Document collaboration.
+- Task management.
+- Notifications.
+
+Use official OAuth and permission scopes.
+
+Allow drafting and review before sending messages.
+
+Require approval for sensitive communication and external commitments.
+
+## 45. Business and analytical intelligence
+
+Support:
+- Sales analysis.
+- Revenue reporting.
+- Expenses.
+- Inventory.
+- Marketing performance.
+- Customer relationship management.
+- Forecasting.
+- Trend detection.
+- Financial summaries.
+- Business dashboards.
+
+Clearly label assumptions, source data and forecast uncertainty.
+
+Never initiate financial transactions without explicit approval.
+
+## 46. Proactive intelligence
+
+Create opt-in monitoring for:
+
+- Project progress.
+- Deadlines.
+- Approved websites.
+- Important changes.
+- Scheduled tasks.
+- System health.
+- Selected market or news information.
+
+Respect notification preferences.
+
+No hidden surveillance or unauthorized background collection.
+
+---
+
+# PART XII — JARVIS PERSONALITY AND INTERACTION
+
+## 47. Unified personality
+
+JARVIS must have a consistent identity across all providers.
+
+Personality objectives:
+
+- Intelligent.
+- Calm.
+- Clear.
+- Professional.
+- Helpful.
+- Natural.
+- Emotionally aware.
+- Honest.
+- Restrained.
+- Occasionally witty.
+- Contextually adaptive.
+
+Avoid robotic repetition, unnecessary disclaimers and exaggerated emotional behavior.
+
+Do not confuse personality tuning with actual intelligence.
+
+## 48. Conversation experience
+
+Implement:
+
+- Streaming responses.
+- Stop generation.
+- Regeneration.
+- Message editing where supported.
+- Conversation history.
+- Voice and text synchronization.
+- Context continuity.
+- Tool activity visibility.
+- Progress updates.
+- Clear error states.
+- Provider attribution.
+- Model selection where appropriate.
+
+Maintain one conversation experience.
+
+Do not introduce duplicate chat interfaces or duplicate memory stores.
+
+---
+
+# PART XIII — SECURITY, PERMISSIONS AND RELIABILITY
+
+## 49. Security architecture
+
+Audit and strengthen:
+
+- PermissionGate.
+- ActionVerifier.
+- EmergencyStopController.
+- Tool Registry.
+- Provider router.
+- Credential storage.
+- OAuth handling.
+- Local API authentication.
+- File access boundaries.
+- Browser permissions.
+- Audit logging.
+
+Implement prompt-injection defenses for webpages, documents, emails and tool outputs.
+
+Treat external content as untrusted data.
+
+Never expose API keys or credentials in logs.
+
+## 50. Emergency stop
+
+EmergencyStopController must:
+
+- Interrupt active tasks.
+- Cancel running operations where possible.
+- Stop tool execution.
+- Invalidate outstanding approvals.
+- Prevent automatic task resumption.
+- Require deliberate user action to restart.
+
+Test emergency stop during actual long-running operations.
+
+---
+
+# PART XIV — TRAINING, INFERENCE AND HARDWARE OPTIMIZATION
+
+## 51. Model scaling governance
+
+Evaluate candidate sizes:
+
+- 13M.
+- 25M.
+- 50M.
+- 100M.
+- 250M.
+- 500M.
+- 1B.
+- Larger future configurations.
+
+Calculate:
+- Exact parameters.
+- Weight memory.
+- Optimizer memory.
+- Activation memory.
+- Dataset tokens.
+- Compute requirements.
+- Training duration.
+- Inference latency.
+- Context memory.
+
+Use actual hardware measurements.
+
+Do not train larger models merely to increase parameter count.
+
+v1.4 remains the reference until a candidate independently outperforms it.
+
+## 52. Local hardware optimization
+
+Available hardware:
+
+- Intel i5-1335U.
+- 10 cores / 12 logical threads.
+- Intel Iris Xe integrated graphics.
+- Approximately 7.69 GiB RAM.
+- Windows 11.
+
+Investigate:
+- CPU thread tuning.
+- Hybrid P-core/E-core scheduling.
+- Memory allocation.
+- Data-loading efficiency.
+- Supported mixed precision.
+- Efficient attention.
+- Gradient accumulation.
+- Activation checkpointing.
+- Quantized inference.
+- KV caching.
+- Streaming generation.
+- Checkpoint compression.
+- Storage management.
+
+Benchmark FP32, supported lower-precision methods and INT8 rather than assuming quantization is always faster.
+
+Never exhaust system RAM or destabilize Windows.
+
+Do not assume CUDA.
+
+## 53. Inference engine
+
+Implement and test:
+
+- Checkpoint loading.
+- Strict compatibility validation.
+- Streaming generation.
+- KV cache.
+- Batch inference where feasible.
+- Context limits.
+- Stop sequences.
+- Sampling controls.
+- Repetition controls.
+- Temperature.
+- Top-k.
+- Top-p.
+- Deterministic evaluation.
+- Quantized inference.
+- Error handling.
+- Memory management.
+
+Report:
+- Time to first token.
+- Prefill latency.
+- Generation tokens per second.
+- P50 latency.
+- P95 latency.
+- Peak RAM.
+- Model load time.
+
+---
+
+# PART XV — EVALUATION AND CONTINUOUS IMPROVEMENT
+
+## 54. Comprehensive benchmark
+
+Create independent evaluation sets for:
+
+- General language.
+- Grammar.
+- Generation.
+- Knowledge.
+- Mathematics.
+- Logic.
+- Coding.
+- Science.
+- Engineering.
+- Multilingual performance.
+- Instruction following.
+- Tool calling.
+- Memory.
+- Retrieval.
+- Long context.
+- Safety.
+- Hallucination resistance.
+
+Use:
+- Exact-match scoring.
+- Accuracy.
+- Precision.
+- Recall.
+- F1.
+- Pass@1.
+- Unit-test success.
+- JSON validity.
+- Retrieval metrics.
+- Human preference evaluation.
+- Calibration.
+- Error categorization.
+
+Save raw outputs and reproducible evaluation configurations.
+
+## 55. Independent model comparison
+
+Every candidate must be evaluated against:
+
+- v1.4 reference.
+- v1.5 scratch.
+- v1.5 recovered.
+- Latest candidate.
+- Gemini baseline where API access and usage are authorized.
+
+Use identical prompts and evaluation settings.
+
+Keep provider attribution clear.
+
+Never present external model output as native VISION intelligence.
+
+## 56. Continuous improvement loop
+
+Build a controlled improvement process:
+
+1. Identify a measured weakness.
+2. Collect appropriate lawful training examples.
+3. Verify data quality.
+4. Create a reproducible experiment.
+5. Train or fine-tune a candidate.
+6. Run held-out benchmarks.
+7. Inspect failure cases.
+8. Compare against the reference.
+9. Keep or reject the candidate.
+10. Record the result.
+
+Do not allow automatic self-training on arbitrary conversations.
+
+Do not allow automatic production promotion.
+
+---
+
+# PART XVI — EXECUTION REQUIREMENTS
+
+## 57. Work in the actual repository
+
+Do not stop after producing architecture documents or plans.
+
+Perform the following work:
+
+1. Audit the current codebase.
+2. Identify existing working functionality.
+3. Identify missing functionality.
+4. Identify duplicated systems.
+5. Identify broken integrations.
+6. Prioritize the highest-impact issues.
+7. Implement missing components.
+8. Add tests.
+9. Run tests.
+10. Fix actual failures.
+11. Run controlled training experiments.
+12. Evaluate resulting checkpoints.
+13. Integrate only verified improvements.
+14. Run JARVIS end-to-end tests.
+15. Produce an honest completion report.
+
+Do not launch a massive training run without first proving the pipeline.
+
+Do not download massive datasets without inspecting storage and establishing a realistic resource budget.
+
+If a capability requires an unavailable external service, clearly identify the dependency and implement a clean integration boundary where practical.
+
+If something cannot be completed, report it honestly rather than creating a placeholder and marking it complete.
+
+## 58. Prioritization
+
+Prioritize work according to:
+
+1. Correctness.
+2. Reliability.
+3. Genuine intelligence improvement.
+4. Data quality.
+5. Generalization.
+6. Security.
+7. Inference performance.
+8. Resource efficiency.
+9. Integration quality.
+10. Feature breadth.
+
+Avoid implementing dozens of superficial features while core model quality remains poor.
+
+Use small controlled experiments and measured milestones within the existing project. Do not create unnecessary new model versions or duplicate architecture.
+
+## 59. Final acceptance report
+
+Produce a detailed report containing:
+
+### Repository
+- Current branch.
+- Starting and final commit.
+- Working-tree preservation.
+- Files changed.
+
+### NLP
+- Implemented algorithms.
+- Language support.
+- Stemming and lemmatization evaluations.
+- BOW and TF-IDF results.
+- NER and POS results.
+- Search and retrieval metrics.
+
+### Data
+- Dataset sources.
+- Licensing.
+- Actual token counts.
+- Per-domain distribution.
+- Quality metrics.
+- Deduplication results.
+- Contamination checks.
+
+### Training
+- Pretraining configuration.
+- SFT configuration.
+- Preference optimization.
+- DPO experiments.
+- RLHF/GRPO experiments where completed.
+- Actual tokens processed.
+- Training and validation metrics.
+- Checkpoint hashes.
+- Recovery tests.
+
+### Intelligence
+- Benchmark comparisons.
+- Domain-wise accuracy.
+- Coding tests.
+- Mathematical accuracy.
+- Reasoning performance.
+- Multilingual performance.
+- Tool-use accuracy.
+- Hallucination evaluation.
+
+### Performance
+- Training speed.
+- Inference speed.
+- P50 and P95 latency.
+- Peak memory.
+- CPU usage.
+- Storage requirements.
+
+### JARVIS
+- Memory tests.
+- Tool tests.
+- Browser tests.
+- File tests.
+- Voice tests.
+- Provider routing tests.
+- Permission tests.
+- Emergency stop tests.
+- End-to-end conversation tests.
+
+### Limitations
+- Features genuinely complete.
+- Features partially complete.
+- External dependencies.
+- Hardware limitations.
+- Remaining research.
+- Known failures.
+
+### Git
+- Local commit hash.
+- Files changed.
+- Test results.
+- Confirmation that no remote push or history rewrite occurred.
+
+---
+
+# FINAL DEVELOPMENT PRINCIPLE
+
+I do not want a system that merely looks advanced in a report.
+
+I want VISION to become a genuinely capable AI model through proper data, architecture, training, reasoning, evaluation and optimization.
+
+I want JARVIS to become a complete unified assistant that can understand, remember, reason, research, code, operate authorized applications, manage files, communicate, use tools, work with voice and images, and execute complex tasks safely.
+
+Every capability must have a real implementation, measurable acceptance criteria and verified behavior.
+
+**VISION — MADE BY LOKESH.**
+
+**JARVIS — POWERED BY VISION.**
+
+Build the strongest reliable system possible with the available resources. Preserve existing working systems. Execute the work. Verify everything. Never confuse feature count, parameter count, training loss or passing mock tests with genuine intelligence.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-19T10:34:20+05:30.
+
+The user's current state is as follows:
+Active Document: d:\Jarvis\js\modules\stark3DViewer.js (LANGUAGE_UNSPECIFIED)
+Cursor is on line: 30
+Other open documents:
+- d:\Jarvis\server\aiProviderAdapter.js (LANGUAGE_UNSPECIFIED)
+</ADDITIONAL_METADATA>

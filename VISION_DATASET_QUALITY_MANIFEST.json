@@ -1,0 +1,16 @@
+{
+  "manifest_version": "1.0.0",
+  "quality_scoring_criteria": {
+    "license_permissibility": "Must be Apache-2.0, MIT, CC-BY-4.0, or ODC-By",
+    "deduplication": "MinHash LSH exact and near-duplicate removal",
+    "answer_verifiability": "Math answers verified by independent SymPy/AST; Code tested by Python compiler",
+    "structural_diversity": "Rejection of fixed question/answer templates"
+  },
+  "target_pretraining_token_splits": {
+    "general_english_academic": "35%",
+    "mathematics_scientific": "25%",
+    "programming_software_engineering": "20%",
+    "hindi_devanagari_hinglish": "10%",
+    "multistep_logic_dialogue": "10%"
+  }
+}

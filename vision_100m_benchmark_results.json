@@ -1,0 +1,132 @@
+{
+  "evaluation_name": "VISION 100M Independent Multi-Domain Benchmark",
+  "timestamp_iso": "2026-11-20T17:49:56Z",
+  "validation_dataset": "vision_independent_validation_dataset.jsonl",
+  "total_probes": 240,
+  "tested_model": {
+    "model_name": "vision-scale-100m",
+    "evaluation_probes": 240,
+    "total_passed": 0,
+    "accuracy_percent": 0.0,
+    "confidence_interval_95": [
+      0.0,
+      1.58
+    ],
+    "mean_latency_ms": 7506.79,
+    "total_wall_clock_seconds": 1802.68,
+    "domain_breakdown": {
+      "mathematics": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "formal_reasoning": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "causal_counterfactual": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "programming_python": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "programming_javascript": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "programming_java": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "algorithms_complexity": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "science_engineering": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "english_comprehension": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "hindi_comprehension": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "hinglish_dialogue": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      },
+      "instruction_conversational": {
+        "correct": 0,
+        "total": 20,
+        "accuracy_percent": 0.0
+      }
+    }
+  },
+  "historical_comparative_table": {
+    "vision_v1_4_calibrated_baseline": {
+      "parameters": "13.33M",
+      "score_240": "24/240",
+      "accuracy_percent": 10.0,
+      "ci_95": [
+        6.83,
+        14.42
+      ],
+      "status": "HISTORICAL_BASELINE"
+    },
+    "vision_v1_4_candidate_b": {
+      "parameters": "13.33M",
+      "score_240": "24/240",
+      "accuracy_percent": 10.0,
+      "ci_95": [
+        6.83,
+        14.42
+      ],
+      "status": "REFERENCE_REPLAY"
+    },
+    "vision_v1_4_candidate_e": {
+      "parameters": "13.33M",
+      "score_240": "28/240",
+      "accuracy_percent": 11.67,
+      "ci_95": [
+        8.22,
+        16.31
+      ],
+      "status": "PRECISION_CANDIDATE"
+    },
+    "vision_2_0_candidate_g": {
+      "parameters": "13.33M",
+      "score_240": "27/240",
+      "accuracy_percent": 11.25,
+      "ci_95": [
+        7.87,
+        15.82
+      ],
+      "status": "V2_FOUNDATION_REFERENCE"
+    },
+    "vision_scale_100m_foundation": {
+      "parameters": "98.26M",
+      "score_240": "0/240",
+      "accuracy_percent": 0.0,
+      "ci_95": [
+        0.0,
+        1.58
+      ],
+      "status": "100M_PILOT_VALIDATED"
+    }
+  }
+}

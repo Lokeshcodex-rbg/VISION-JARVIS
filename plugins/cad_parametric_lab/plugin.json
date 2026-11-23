@@ -1,0 +1,35 @@
+{
+  "id": "cad_parametric_lab",
+  "name": "Parametric CAD & Mechanical Simulation Lab",
+  "version": "1.0.0",
+  "description": "Generates parametric 3D CAD geometries (OpenSCAD, STEP specs) and structural thermal estimates.",
+  "author": "VISION Autonomous Labs — MADE BY LOKESH",
+  "permissions": ["FILESYSTEM_WRITE", "CAD_SIMULATION"],
+  "networkPolicy": "LOCAL_ONLY",
+  "hardwareSafety": {
+    "actuatorControl": false,
+    "requiresPhysicalSafetyInterlock": false
+  },
+  "tools": [
+    {
+      "id": "generate_cad_artifact",
+      "description": "Generates parametric OpenSCAD geometry code for mechanical brackets and mounts",
+      "parameters": {
+        "partType": "string",
+        "dimensions": "object",
+        "material": "string"
+      },
+      "timeoutMs": 10000
+    },
+    {
+      "id": "simulate_thermal_dissipation",
+      "description": "Calculates steady-state thermal resistance and temperature rise across heat sinks",
+      "parameters": {
+        "powerWatts": "number",
+        "ambientTempC": "number",
+        "thermalResistanceKPerW": "number"
+      },
+      "timeoutMs": 5000
+    }
+  ]
+}

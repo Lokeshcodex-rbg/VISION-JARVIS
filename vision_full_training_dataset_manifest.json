@@ -1,0 +1,89 @@
+{
+  "title": "VISION Foundation Model Curated 25M+ Token Multi-Domain Dataset Manifest",
+  "created_at_iso": "2026-11-21T17:30:23Z",
+  "compilation_time_seconds": 17.26,
+  "tokenizer_used": "JarvisBPE v2.0.0 (8,192 vocab)",
+  "objective": "First objective 25M high-quality usable tokens fulfilled",
+  "decontamination_verified": true,
+  "held_out_leakage_probes_removed": 0,
+  "dataset_files": {
+    "train": {
+      "file": "train.jsonl",
+      "path": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_full_curated_corpus\\train.jsonl",
+      "samples": 83398,
+      "sha256": "5be5e9f866f51c5611b4ca559f281142f0bd2c5ed34f552bb22bbedd79e869ca",
+      "size_mb": 158.15,
+      "estimated_tokens": 44783191,
+      "useful_assistant_tokens": 24187404
+    },
+    "validation": {
+      "file": "val.jsonl",
+      "path": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_full_curated_corpus\\val.jsonl",
+      "samples": 4633,
+      "sha256": "ad57f6e6a27d6af6921fa50a7da2772c415c83ddacaabe1ee1e42dece6c06852",
+      "size_mb": 8.98,
+      "estimated_tokens": 2487835
+    },
+    "test": {
+      "file": "test.jsonl",
+      "path": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_full_curated_corpus\\test.jsonl",
+      "samples": 4633,
+      "sha256": "5b859d8f1947a63af7e1886ac5e34b32efe6bb2997b2a7a54c19312d936818da",
+      "size_mb": 8.72,
+      "estimated_tokens": 2487835
+    }
+  },
+  "domain_distribution": {
+    "coding_python": 14079,
+    "coding_java": 2331,
+    "tool_orchestration": 1693,
+    "hinglish_dialog": 14110,
+    "science_physics": 17957,
+    "mathematics_arithmetic": 6696,
+    "formal_reasoning": 14003,
+    "mathematics_reasoning": 7257,
+    "coding_javascript": 2354,
+    "structured_output_json": 1127,
+    "coding_sql": 1789,
+    "science_math": 1,
+    "computer_science_systems": 1
+  },
+  "provenance_and_licensing": {
+    "AI-MO/NuminaMath-CoT": {
+      "license": "Apache-2.0",
+      "domain": "mathematics_reasoning"
+    },
+    "openai/gsm8k": {
+      "license": "MIT",
+      "domain": "mathematics_arithmetic"
+    },
+    "ise-uiuc/Magicoder-Evol-Instruct-110K": {
+      "license": "Apache-2.0",
+      "domain": "coding_python"
+    },
+    "bigcode/commitpackft": {
+      "license": "BigCode-OpenRAIL-M",
+      "domain": "polyglot_systems_programming"
+    },
+    "CognitiveLab/Hindi-Instruct-Gemma": {
+      "license": "Apache-2.0",
+      "domain": "hindi_devanagari"
+    },
+    "findnitai/english-to-hinglish": {
+      "license": "CC-BY-4.0",
+      "domain": "hinglish_dialog"
+    },
+    "NousResearch/hermes-function-calling": {
+      "license": "Apache-2.0",
+      "domain": "tool_orchestration_and_json"
+    },
+    "HuggingFaceTB/cosmopedia": {
+      "license": "Apache-2.0",
+      "domain": "science_and_cs_fundamentals"
+    },
+    "cais/mmlu": {
+      "license": "MIT",
+      "domain": "formal_reasoning"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "report_name": "VISION 100M Supervised Fine-Tuning (SFT) Engineering & Readiness Audit",
+  "timestamp_iso": "2026-11-21T02:30:00Z",
+  "foundation_checkpoint_targeted": "vision-scale-100m-stage1-foundation",
+  "sft_curriculum_design": {
+    "dataset_source": "data/neural_models/datasets/vision_2_corpus/train.jsonl",
+    "total_supervised_demonstrations": 13653,
+    "useful_target_tokens": 2111265,
+    "masking_methodology": "Assistant-only loss masking (for k in range(asst_pos): tgt[k] = pad_id)",
+    "prompt_to_response_ratio": 0.394,
+    "domains_covered": {
+      "instruction_following": {
+        "samples": 1446,
+        "focus": "Strict constraints, negative constraints, JSON formatting"
+      },
+      "hindi_devanagari": {
+        "samples": 1172,
+        "focus": "Devanagari script reasoning, technical definitions"
+      },
+      "hinglish_dialogue": {
+        "samples": 1172,
+        "focus": "Natural conversational code-switching"
+      },
+      "science_engineering": {
+        "samples": 1109,
+        "focus": "Physics, electronics, robotics, embedded systems"
+      },
+      "mathematics_arithmetic": {
+        "samples": 893,
+        "focus": "Carry addition, multi-digit multiplication, division"
+      },
+      "coding_polyglot": {
+        "samples": 813,
+        "focus": "JS, Java, C++, TypeScript, SQL syntax"
+      },
+      "coding_python": {
+        "samples": 809,
+        "focus": "AST-valid Python functions, doctests, edge cases"
+      },
+      "mathematical_reasoning": {
+        "samples": 808,
+        "focus": "Algebraic derivations, fractions, word problems"
+      },
+      "tool_use_dialogue": {
+        "samples": 807,
+        "focus": "Structured function call generation"
+      }
+    }
+  },
+  "sft_training_parameters": {
+    "learning_rate": "1.0e-5 (Lower LR than pretraining to preserve representations)",
+    "warmup_ratio": 0.05,
+    "lr_scheduler": "cosine_decay_with_hard_min",
+    "effective_batch_size": 16,
+    "gradient_clipping": 1.0,
+    "sequence_length": 256,
+    "general_language_replay_buffer": "15% replay from unmasked pretraining tokens to prevent catastrophic forgetting"
+  },
+  "readiness_gate": {
+    "foundation_weights_finite": true,
+    "unigram_collapse_eliminated": true,
+    "prompt_to_response_transition_verified": true,
+    "sft_status": "READY_FOR_STAGE2_EXECUTION"
+  }
+}

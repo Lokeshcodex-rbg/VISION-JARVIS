@@ -1,0 +1,86 @@
+{
+  "audit_name": "Stage 2 SFT Training Integrity Audit",
+  "dataset_split": {
+    "train_samples": 9605,
+    "val_samples": 1060,
+    "total_samples": 10665,
+    "prompt_leakage": 0
+  },
+  "tensor_masking": {
+    "all_prompt_tokens_masked": true,
+    "first_assistant_token_supervised": true,
+    "padding_tokens_ignored": true
+  },
+  "parameter_updates": {
+    "global_update_ratio": 0.031409,
+    "layer_deltas": {
+      "tok_emb": {
+        "delta_l2": 2.4383599758148193,
+        "param_count": 2621440
+      },
+      "vision_encoder": {
+        "delta_l2": 0.0,
+        "param_count": 340492
+      },
+      "vision_encoder.blocks": {
+        "delta_l2": 0.0,
+        "param_count": 889920
+      },
+      "audio_encoder": {
+        "delta_l2": 0.0,
+        "param_count": 135686
+      },
+      "blocks.0": {
+        "delta_l2": 1.1645572436973453,
+        "param_count": 1168080
+      },
+      "blocks.1": {
+        "delta_l2": 1.1825329039711505,
+        "param_count": 1168080
+      },
+      "blocks.2": {
+        "delta_l2": 1.2160113649442792,
+        "param_count": 1168080
+      },
+      "blocks.3": {
+        "delta_l2": 1.3220939156599343,
+        "param_count": 1168080
+      },
+      "blocks.4": {
+        "delta_l2": 1.3839015737175941,
+        "param_count": 1168080
+      },
+      "blocks.5": {
+        "delta_l2": 1.4410420479252934,
+        "param_count": 1168080
+      },
+      "blocks.6": {
+        "delta_l2": 1.4819523459300399,
+        "param_count": 1168080
+      },
+      "blocks.7": {
+        "delta_l2": 1.509428424295038,
+        "param_count": 1168080
+      },
+      "norm_f": {
+        "delta_l2": 0.050279852002859116,
+        "param_count": 320
+      },
+      "lm_head": {
+        "delta_l2": 2.4383599758148193,
+        "param_count": 2621440
+      }
+    }
+  },
+  "token_accounting": {
+    "manifest_total_tokens": 1245319,
+    "manifest_target_tokens": 641802,
+    "consumed_total_tokens": 408000,
+    "consumed_target_tokens": 98919,
+    "optimizer_steps": 100,
+    "target_coverage_pct": 15.41
+  },
+  "reproducibility": {
+    "deterministic_match": true
+  }
+}

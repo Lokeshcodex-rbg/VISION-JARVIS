@@ -1,0 +1,413 @@
+{
+  "vision-v1.4-calibrated-local": {
+    "model_name": "vision-v1.4-calibrated-local",
+    "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-v1.4-calibrated-local",
+    "sha256": "5575077916210c168e462b27deed5a1c08101b05aad94f7809b188a579a4caea",
+    "parameters": 13332498,
+    "total_probes": 240,
+    "total_passed": 24,
+    "accuracy_pct": 10.0,
+    "ci_95_overall": [
+      6.81,
+      14.45
+    ],
+    "domain_summary": {
+      "mathematics": {
+        "passed": 1,
+        "total": 20,
+        "accuracy_pct": 5.0,
+        "ci_95": [
+          0.89,
+          23.61
+        ]
+      },
+      "formal_reasoning": {
+        "passed": 4,
+        "total": 20,
+        "accuracy_pct": 20.0,
+        "ci_95": [
+          8.07,
+          41.6
+        ]
+      },
+      "causal_counterfactual": {
+        "passed": 0,
+        "total": 20,
+        "accuracy_pct": 0.0,
+        "ci_95": [
+          0.0,
+          16.11
+        ]
+      },
+      "programming_python": {
+        "passed": 0,
+        "total": 20,
+        "accuracy_pct": 0.0,
+        "ci_95": [
+          0.0,
+          16.11
+        ]
+      },
+      "programming_javascript": {
+        "passed": 2,
+        "total": 20,
+        "accuracy_pct": 10.0,
+        "ci_95": [
+          2.79,
+          30.1
+        ]
+      },
+      "programming_java": {
+        "passed": 1,
+        "total": 20,
+        "accuracy_pct": 5.0,
+        "ci_95": [
+          0.89,
+          23.61
+        ]
+      },
+      "algorithms_complexity": {
+        "passed": 3,
+        "total": 20,
+        "accuracy_pct": 15.0,
+        "ci_95": [
+          5.24,
+          36.04
+        ]
+      },
+      "science_engineering": {
+        "passed": 2,
+        "total": 20,
+        "accuracy_pct": 10.0,
+        "ci_95": [
+          2.79,
+          30.1
+        ]
+      },
+      "english_comprehension": {
+        "passed": 1,
+        "total": 20,
+        "accuracy_pct": 5.0,
+        "ci_95": [
+          0.89,
+          23.61
+        ]
+      },
+      "hindi_comprehension": {
+        "passed": 1,
+        "total": 20,
+        "accuracy_pct": 5.0,
+        "ci_95": [
+          0.89,
+          23.61
+        ]
+      },
+      "hinglish_dialogue": {
+        "passed": 2,
+        "total": 20,
+        "accuracy_pct": 10.0,
+        "ci_95": [
+          2.79,
+          30.1
+        ]
+      },
+      "instruction_conversational": {
+        "passed": 7,
+        "total": 20,
+        "accuracy_pct": 35.0,
+        "ci_95": [
+          18.12,
+          56.71
+        ]
+      }
+    },
+    "mathematics_mode_comparison": {
+      "mode_a_native_passed": 1,
+      "mode_a_native_pct": 5.0,
+      "mode_b_tool_assisted_passed": 11,
+      "mode_b_tool_assisted_pct": 55.0
+    },
+    "performance": {
+      "p50_latency_ms": 171.72,
+      "p95_latency_ms": 440.82,
+      "mean_ttft_ms": 5.51,
+      "throughput_tok_s": 180.56,
+      "rss_mb": 111.6
+    },
+    "failure_count": 216
+  },
+  "vision-v1.4-precision-cand-e": {
+    "model_name": "vision-v1.4-precision-cand-e",
+    "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-v1.4-precision-cand-e",
+    "sha256": "58ace75597ebbfb03de1967f061516769db55aabbdcbfa4778e06f1e3b813d76",
+    "parameters": 13332498,
+    "total_probes": 240,
+    "total_passed": 28,
+    "accuracy_pct": 11.67,
+    "ci_95_overall": [
+      8.2,
+      16.34
+    ],
+    "domain_summary": {
+      "mathematics": {
+        "passed": 2,
+        "total": 20,
+        "accuracy_pct": 10.0,
+        "ci_95": [
+          2.79,
+          30.1
+        ]
+      },
+      "formal_reasoning": {
+        "passed": 4,
+        "total": 20,
+        "accuracy_pct": 20.0,
+        "ci_95": [
+          8.07,
+          41.6
+        ]
+      },
+      "causal_counterfactual": {
+        "passed": 1,
+        "total": 20,
+        "accuracy_pct": 5.0,
+        "ci_95": [
+          0.89,
+          23.61
+        ]
+      },
+      "programming_python": {
+        "passed": 0,
+        "total": 20,
+        "accuracy_pct": 0.0,
+        "ci_95": [
+          0.0,
+          16.11
+        ]
+      },
+      "programming_javascript": {
+        "passed": 2,
+        "total": 20,
+        "accuracy_pct": 10.0,
+        "ci_95": [
+          2.79,
+          30.1
+        ]
+      },
+      "programming_java": {
+        "passed": 1,
+        "total": 20,
+        "accuracy_pct": 5.0,
+        "ci_95": [
+          0.89,
+          23.61
+        ]
+      },
+      "algorithms_complexity": {
+        "passed": 3,
+        "total": 20,
+        "accuracy_pct": 15.0,
+        "ci_95": [
+          5.24,
+          36.04
+        ]
+      },
+      "science_engineering": {
+        "passed": 4,
+        "total": 20,
+        "accuracy_pct": 20.0,
+        "ci_95": [
+          8.07,
+          41.6
+        ]
+      },
+      "english_comprehension": {
+        "passed": 0,
+        "total": 20,
+        "accuracy_pct": 0.0,
+        "ci_95": [
+          0.0,
+          16.11
+        ]
+      },
+      "hindi_comprehension": {
+        "passed": 1,
+        "total": 20,
+        "accuracy_pct": 5.0,
+        "ci_95": [
+          0.89,
+          23.61
+        ]
+      },
+      "hinglish_dialogue": {
+        "passed": 4,
+        "total": 20,
+        "accuracy_pct": 20.0,
+        "ci_95": [
+          8.07,
+          41.6
+        ]
+      },
+      "instruction_conversational": {
+        "passed": 6,
+        "total": 20,
+        "accuracy_pct": 30.0,
+        "ci_95": [
+          14.55,
+          51.9
+        ]
+      }
+    },
+    "mathematics_mode_comparison": {
+      "mode_a_native_passed": 2,
+      "mode_a_native_pct": 10.0,
+      "mode_b_tool_assisted_passed": 11,
+      "mode_b_tool_assisted_pct": 55.0
+    },
+    "performance": {
+      "p50_latency_ms": 255.16,
+      "p95_latency_ms": 672.78,
+      "mean_ttft_ms": 7.12,
+      "throughput_tok_s": 139.32,
+      "rss_mb": 101.9
+    },
+    "failure_count": 212
+  },
+  "vision-13m-curriculum-breakthrough": {
+    "model_name": "vision-13m-curriculum-breakthrough",
+    "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-13m-curriculum-breakthrough",
+    "sha256": "bbf771710b46090056e3864f8ac2f2b8ab8c53a8d79cda4353e2e5e803810909",
+    "parameters": 13332498,
+    "total_probes": 240,
+    "total_passed": 14,
+    "accuracy_pct": 5.83,
+    "ci_95_overall": [
+      3.51,
+      9.55
+    ],
+    "domain_summary": {
+      "mathematics": {
+        "passed": 2,
+        "total": 20,
+        "accuracy_pct": 10.0,
+        "ci_95": [
+          2.79,
+          30.1
+        ]
+      },
+      "formal_reasoning": {
+        "passed": 0,
+        "total": 20,
+        "accuracy_pct": 0.0,
+        "ci_95": [
+          0.0,
+          16.11
+        ]
+      },
+      "causal_counterfactual": {
+        "passed": 0,
+        "total": 20,
+        "accuracy_pct": 0.0,
+        "ci_95": [
+          0.0,
+          16.11
+        ]
+      },
+      "programming_python": {
+        "passed": 0,
+        "total": 20,
+        "accuracy_pct": 0.0,
+        "ci_95": [
+          0.0,
+          16.11
+        ]
+      },
+      "programming_javascript": {
+        "passed": 2,
+        "total": 20,
+        "accuracy_pct": 10.0,
+        "ci_95": [
+          2.79,
+          30.1
+        ]
+      },
+      "programming_java": {
+        "passed": 2,
+        "total": 20,
+        "accuracy_pct": 10.0,
+        "ci_95": [
+          2.79,
+          30.1
+        ]
+      },
+      "algorithms_complexity": {
+        "passed": 1,
+        "total": 20,
+        "accuracy_pct": 5.0,
+        "ci_95": [
+          0.89,
+          23.61
+        ]
+      },
+      "science_engineering": {
+        "passed": 1,
+        "total": 20,
+        "accuracy_pct": 5.0,
+        "ci_95": [
+          0.89,
+          23.61
+        ]
+      },
+      "english_comprehension": {
+        "passed": 0,
+        "total": 20,
+        "accuracy_pct": 0.0,
+        "ci_95": [
+          0.0,
+          16.11
+        ]
+      },
+      "hindi_comprehension": {
+        "passed": 0,
+        "total": 20,
+        "accuracy_pct": 0.0,
+        "ci_95": [
+          0.0,
+          16.11
+        ]
+      },
+      "hinglish_dialogue": {
+        "passed": 2,
+        "total": 20,
+        "accuracy_pct": 10.0,
+        "ci_95": [
+          2.79,
+          30.1
+        ]
+      },
+      "instruction_conversational": {
+        "passed": 4,
+        "total": 20,
+        "accuracy_pct": 20.0,
+        "ci_95": [
+          8.07,
+          41.6
+        ]
+      }
+    },
+    "mathematics_mode_comparison": {
+      "mode_a_native_passed": 2,
+      "mode_a_native_pct": 10.0,
+      "mode_b_tool_assisted_passed": 11,
+      "mode_b_tool_assisted_pct": 55.0
+    },
+    "performance": {
+      "p50_latency_ms": 129.01,
+      "p95_latency_ms": 307.32,
+      "mean_ttft_ms": 7.46,
+      "throughput_tok_s": 137.11,
+      "rss_mb": 114.5
+    },
+    "failure_count": 226
+  }
+}

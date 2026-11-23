@@ -1,0 +1,72 @@
+{
+  "system": {
+    "nodeVersion": "v22.23.2",
+    "platform": "win32",
+    "arch": "x64",
+    "date": "2026-11-10T14:43:44.460Z"
+  },
+  "scales": {
+    "100": {
+      "recordCount": 100,
+      "ingestTimeMs": 1.79,
+      "ingestThroughputOpsSec": 56019,
+      "pointLookupLatencyMs": 0.0349,
+      "pointLookupLatencyUs": 34.9,
+      "temporalQueryLatencyMs": 0.87,
+      "retrievalLatencyMs": 0.09,
+      "precision": 1,
+      "recall": 1,
+      "totalTargetItems": 4,
+      "retrievedItems": 4
+    },
+    "1000": {
+      "recordCount": 1000,
+      "ingestTimeMs": 11.08,
+      "ingestThroughputOpsSec": 90251,
+      "pointLookupLatencyMs": 0.035,
+      "pointLookupLatencyUs": 34.96,
+      "temporalQueryLatencyMs": 0.55,
+      "retrievalLatencyMs": 0.24,
+      "precision": 1,
+      "recall": 1,
+      "totalTargetItems": 40,
+      "retrievedItems": 40
+    },
+    "10000": {
+      "recordCount": 10000,
+      "ingestTimeMs": 149.04,
+      "ingestThroughputOpsSec": 67095,
+      "pointLookupLatencyMs": 0.0436,
+      "pointLookupLatencyUs": 43.6,
+      "temporalQueryLatencyMs": 4.19,
+      "retrievalLatencyMs": 4.08,
+      "precision": 1,
+      "recall": 1,
+      "totalTargetItems": 400,
+      "retrievedItems": 400
+    },
+    "100000": {
+      "recordCount": 100000,
+      "ingestTimeMs": 1462.53,
+      "ingestThroughputOpsSec": 68375,
+      "pointLookupLatencyMs": 0.0441,
+      "pointLookupLatencyUs": 44.09,
+      "temporalQueryLatencyMs": 31.82,
+      "retrievalLatencyMs": 51.77,
+      "precision": 1,
+      "recall": 1,
+      "totalTargetItems": 4000,
+      "retrievedItems": 4000
+    }
+  },
+  "graphBenchmark": {
+    "nodeCount": 500,
+    "edgeCount": 1000,
+    "traversal1HopAvgMs": 0.123,
+    "traversal2HopAvgMs": 0.3618
+  },
+  "contradictionBenchmark": {
+    "detectionChecks": 50,
+    "avgDetectionLatencyMs": 2.5002
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "project_title": "VISION Full-Scale Model Training & Architecture Specification",
+  "version": "4.0.0",
+  "created_at_iso": "2026-11-21T17:35:00Z",
+  "hardware_environment": {
+    "host_cpu": "13th Gen Intel(R) Core(TM) i5-1335U (10 cores: 2P + 8E, 12 logical processors)",
+    "host_ram_total_kb": 8064456,
+    "host_ram_free_kb": 744044,
+    "gpu_detected": "Intel Iris Xe Graphics (Integrated)",
+    "pytorch_device": "cpu",
+    "pytorch_version": "2.15.0+cpu",
+    "storage_drive": "D:",
+    "storage_free_gb": 64.35,
+    "cloud_spend_policy": "$0.00 (Zero paid cloud compute authorized without explicit user permission)"
+  },
+  "dataset_configuration": {
+    "dataset_directory": "data/neural_models/datasets/vision_full_curated_corpus",
+    "train_samples": 83398,
+    "val_samples": 4633,
+    "test_samples": 4633,
+    "total_usable_tokens": 49758862,
+    "train_target_tokens": 24187404,
+    "decontamination_verified": true,
+    "domains_covered": 32
+  },
+  "evaluated_architectures": {
+    "vision-scale-100m": {
+      "model_name": "vision-scale-100m",
+      "total_parameters": 98258258,
+      "language_parameters": 95168460,
+      "d_model": 768,
+      "n_layers": 14,
+      "n_heads": 12,
+      "n_kv_heads": 4,
+      "d_ff": 2048,
+      "vocab_size": 8192,
+      "max_seq_len": 2048,
+      "tie_word_embeddings": true,
+      "measured_tokens_per_sec_cpu": 105.0,
+      "chinchilla_target_tokens": 1965165160,
+      "role": "Sovereign foundation 100M parameter target"
+    },
+    "vision-scale-25m": {
+      "model_name": "vision-scale-25m",
+      "total_parameters": 25527052,
+      "language_parameters": 25527052,
+      "d_model": 448,
+      "n_layers": 10,
+      "n_heads": 8,
+      "n_kv_heads": 4,
+      "d_ff": 1152,
+      "vocab_size": 8192,
+      "max_seq_len": 1024,
+      "tie_word_embeddings": true,
+      "measured_tokens_per_sec_cpu": 450.0,
+      "chinchilla_target_tokens": 510541040,
+      "role": "High-density compact candidate (4.3x higher training throughput)"
+    },
+    "vision-scale-12m": {
+      "model_name": "vision-scale-12m",
+      "total_parameters": 12194444,
+      "language_parameters": 12194444,
+      "d_model": 320,
+      "n_layers": 8,
+      "n_heads": 8,
+      "n_kv_heads": 4,
+      "d_ff": 896,
+      "vocab_size": 8192,
+      "max_seq_len": 1024,
+      "tie_word_embeddings": true,
+      "measured_tokens_per_sec_cpu": 1150.0,
+      "chinchilla_target_tokens": 243888880,
+      "role": "Fast emergence edge candidate (11x higher training throughput)"
+    }
+  },
+  "training_hyperparameters": {
+    "optimizer": "AdamW",
+    "betas": [0.9, 0.95],
+    "eps": 1e-8,
+    "weight_decay": 0.01,
+    "peak_learning_rate": 3e-4,
+    "min_learning_rate": 3e-5,
+    "lr_schedule": "cosine_with_warmup",
+    "warmup_steps": 16,
+    "max_grad_norm": 1.0,
+    "gradient_accumulation_steps": 8,
+    "batch_size_per_device": 2,
+    "sequence_length": 256,
+    "loss_objective": "causal_language_modeling_with_assistant_target_masking",
+    "ignore_index": 0
+  },
+  "staged_curriculum": {
+    "Stage_A": "Foundation pretraining on balanced multi-domain textbook & general knowledge",
+    "Stage_B": "Continued pretraining on polyglot programming, mathematics, science, and Devanagari Hindi",
+    "Stage_C": "Supervised instruction tuning on QA, explanations, and conversation",
+    "Stage_D": "Verifiable reasoning on step-by-step math and executable code",
+    "Stage_E": "Generalization evaluation on held-out 240-probe and 500-probe test suites",
+    "Stage_F": "Preference optimization (post-SFT stabilization)"
+  },
+  "production_fallback": {
+    "active_primary": "Gemini 2.5 / 3.5 via central orchestrator",
+    "rule": "External APIs, Gemini, RAG, and tools are strictly prohibited during native VISION benchmarking"
+  }
+}

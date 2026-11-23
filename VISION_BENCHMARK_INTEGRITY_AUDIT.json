@@ -1,0 +1,33 @@
+{
+  "audit_timestamp": "2026-11-22T16:15:00+05:30",
+  "suites": [
+    {
+      "file": "vision_independent_transfer_test_200.jsonl",
+      "sha256": "c0405fb6e2419d15052c709024b8e8d7d73e01752a9dc281dcf2bc99c995a4d4",
+      "probe_count": 200,
+      "size_bytes": 65620,
+      "status": "IMMUTABLE_PRESERVED"
+    },
+    {
+      "file": "vision_stage4_generalization_suite_100.jsonl",
+      "sha256": "59528fc90c5a526c5999f817b5c839dd0bd025d4b8a3b377bb16f5b11296084f",
+      "probe_count": 100,
+      "size_bytes": 27190,
+      "status": "IMMUTABLE_PRESERVED"
+    },
+    {
+      "file": "vision_stage4_private_eval_100.jsonl",
+      "sha256": "343f017ec1686926b069ae06e15a614f2b831f0565049e295bcda87d5abb29d6",
+      "probe_count": 100,
+      "size_bytes": 23616,
+      "status": "IMMUTABLE_PRESERVED"
+    },
+    {
+      "file": "vision_expanded_validation_dataset_1500.jsonl",
+      "sha256": "6b948a62fcff53c7b105814768bc527f727972897cef59e7da80b9d7a3ec7b41",
+      "probe_count": 1500,
+      "size_bytes": 494337,
+      "status": "IMMUTABLE_PRESERVED"
+    }
+  ]
+}

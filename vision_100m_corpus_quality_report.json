@@ -1,0 +1,284 @@
+{
+  "audit_name": "VISION 100M Full Training Corpus Quality and Token Accounting Report",
+  "timestamp_iso": "2026-11-21T02:04:00Z",
+  "training_corpus": {
+    "file": "D:/Jarvis\\data/neural_models/datasets/vision_2_corpus/train.jsonl",
+    "total_samples": 13653,
+    "total_tokens": 2942980,
+    "prompt_tokens": 831715,
+    "response_tokens": 2111265,
+    "prompt_to_response_ratio": 0.394,
+    "useful_response_token_percent": 71.74,
+    "sequence_lengths": {
+      "mean": 215.56,
+      "median": 165.0,
+      "p50": 165.0,
+      "p75": 333.0,
+      "p90": 388.0,
+      "p95": 427.4,
+      "p99": 551.48,
+      "max": 1546,
+      "min": 49
+    },
+    "prompt_lengths": {
+      "mean": 60.92,
+      "median": 47.0,
+      "p90": 111.0
+    },
+    "response_lengths": {
+      "mean": 154.64,
+      "median": 105.0,
+      "p90": 314.0
+    },
+    "duplicate_instructions_count": 24,
+    "duplicate_rate_percent": 0.18,
+    "empty_or_malformed_samples": 0,
+    "short_responses_count": 0,
+    "truncation_rates": {
+      "at_128": 63.3,
+      "at_256": 38.31,
+      "at_512": 1.58,
+      "at_1024": 0.01
+    },
+    "domain_distribution": {
+      "programming_java": {
+        "samples": 698,
+        "tokens": 113111,
+        "token_share_percent": 3.84
+      },
+      "instruction_following": {
+        "samples": 1446,
+        "tokens": 104116,
+        "token_share_percent": 3.54
+      },
+      "tool_use_dialogue": {
+        "samples": 807,
+        "tokens": 252279,
+        "token_share_percent": 8.57
+      },
+      "mathematics_fractions": {
+        "samples": 439,
+        "tokens": 45565,
+        "token_share_percent": 1.55
+      },
+      "programming_javascript": {
+        "samples": 723,
+        "tokens": 103286,
+        "token_share_percent": 3.51
+      },
+      "science_engineering": {
+        "samples": 1109,
+        "tokens": 310568,
+        "token_share_percent": 10.55
+      },
+      "coding_python": {
+        "samples": 809,
+        "tokens": 208234,
+        "token_share_percent": 7.08
+      },
+      "hindi_devanagari": {
+        "samples": 1172,
+        "tokens": 312649,
+        "token_share_percent": 10.62
+      },
+      "coding_polyglot": {
+        "samples": 813,
+        "tokens": 263545,
+        "token_share_percent": 8.96
+      },
+      "mathematics_reasoning": {
+        "samples": 808,
+        "tokens": 329992,
+        "token_share_percent": 11.21
+      },
+      "mathematics_algebra": {
+        "samples": 450,
+        "tokens": 44452,
+        "token_share_percent": 1.51
+      },
+      "hinglish_dialog": {
+        "samples": 1172,
+        "tokens": 282025,
+        "token_share_percent": 9.58
+      },
+      "programming_python": {
+        "samples": 729,
+        "tokens": 110651,
+        "token_share_percent": 3.76
+      },
+      "general_language_academic": {
+        "samples": 815,
+        "tokens": 276552,
+        "token_share_percent": 9.4
+      },
+      "causal_reasoning": {
+        "samples": 300,
+        "tokens": 41508,
+        "token_share_percent": 1.41
+      },
+      "mathematics_arithmetic": {
+        "samples": 893,
+        "tokens": 96724,
+        "token_share_percent": 3.29
+      },
+      "formal_reasoning": {
+        "samples": 470,
+        "tokens": 47723,
+        "token_share_percent": 1.62
+      }
+    },
+    "language_distribution": {
+      "english": {
+        "samples": 13653,
+        "tokens": 2942980,
+        "token_share_percent": 100.0
+      }
+    }
+  },
+  "validation_corpus": {
+    "file": "D:/Jarvis\\data/neural_models/datasets/vision_2_corpus/val.jsonl",
+    "total_samples": 758,
+    "total_tokens": 163948,
+    "prompt_tokens": 44879,
+    "response_tokens": 119069,
+    "prompt_to_response_ratio": 0.377,
+    "useful_response_token_percent": 72.63,
+    "sequence_lengths": {
+      "mean": 216.29,
+      "median": 166.0,
+      "p50": 166.0,
+      "p75": 336.0,
+      "p90": 392.3,
+      "p95": 427.15,
+      "p99": 527.91,
+      "max": 640,
+      "min": 50
+    },
+    "prompt_lengths": {
+      "mean": 59.21,
+      "median": 46.0,
+      "p90": 102.0
+    },
+    "response_lengths": {
+      "mean": 157.08,
+      "median": 105.0,
+      "p90": 316.0
+    },
+    "duplicate_instructions_count": 0,
+    "duplicate_rate_percent": 0.0,
+    "empty_or_malformed_samples": 0,
+    "short_responses_count": 0,
+    "truncation_rates": {
+      "at_128": 61.35,
+      "at_256": 38.92,
+      "at_512": 1.06,
+      "at_1024": 0.0
+    },
+    "domain_distribution": {
+      "hindi_devanagari": {
+        "samples": 76,
+        "tokens": 22192,
+        "token_share_percent": 13.54
+      },
+      "instruction_following": {
+        "samples": 89,
+        "tokens": 6421,
+        "token_share_percent": 3.92
+      },
+      "hinglish_dialog": {
+        "samples": 63,
+        "tokens": 15682,
+        "token_share_percent": 9.57
+      },
+      "mathematics_reasoning": {
+        "samples": 49,
+        "tokens": 19722,
+        "token_share_percent": 12.03
+      },
+      "coding_python": {
+        "samples": 38,
+        "tokens": 9782,
+        "token_share_percent": 5.97
+      },
+      "programming_python": {
+        "samples": 28,
+        "tokens": 4247,
+        "token_share_percent": 2.59
+      },
+      "formal_reasoning": {
+        "samples": 30,
+        "tokens": 3114,
+        "token_share_percent": 1.9
+      },
+      "causal_reasoning": {
+        "samples": 15,
+        "tokens": 2064,
+        "token_share_percent": 1.26
+      },
+      "mathematics_arithmetic": {
+        "samples": 49,
+        "tokens": 5249,
+        "token_share_percent": 3.2
+      },
+      "programming_javascript": {
+        "samples": 32,
+        "tokens": 4521,
+        "token_share_percent": 2.76
+      },
+      "coding_polyglot": {
+        "samples": 42,
+        "tokens": 13878,
+        "token_share_percent": 8.46
+      },
+      "general_language_academic": {
+        "samples": 50,
+        "tokens": 16812,
+        "token_share_percent": 10.25
+      },
+      "mathematics_algebra": {
+        "samples": 26,
+        "tokens": 2580,
+        "token_share_percent": 1.57
+      },
+      "science_engineering": {
+        "samples": 51,
+        "tokens": 14157,
+        "token_share_percent": 8.64
+      },
+      "tool_use_dialogue": {
+        "samples": 43,
+        "tokens": 13225,
+        "token_share_percent": 8.07
+      },
+      "mathematics_fractions": {
+        "samples": 33,
+        "tokens": 3424,
+        "token_share_percent": 2.09
+      },
+      "programming_java": {
+        "samples": 44,
+        "tokens": 6878,
+        "token_share_percent": 4.2
+      }
+    },
+    "language_distribution": {
+      "english": {
+        "samples": 758,
+        "tokens": 163948,
+        "token_share_percent": 100.0
+      }
+    }
+  },
+  "train_validation_test_separation": {
+    "test_probes_count": 240,
+    "exact_leakage_matches": 0,
+    "leakage_rate_percent": 0.0,
+    "is_decontaminated": true
+  },
+  "provenance_and_licensing": {
+    "synthetic_curriculum_engine": "ml_foundation/generate_synthetic_multitask_corpus.py",
+    "reference_instruction_sources": "Internal curated arithmetic, formal logic, multi-language, and standard open code templates",
+    "licensing": "MIT / Apache 2.0 clean, internal synthetic generation",
+    "commercial_usability": "Verified decontaminated from proprietary benchmark keys"
+  }
+}

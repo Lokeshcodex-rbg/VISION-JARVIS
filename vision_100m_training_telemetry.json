@@ -1,0 +1,214 @@
+{
+  "telemetry_title": "VISION 100M Pretraining Step-by-Step Telemetry",
+  "timestamp_iso": "2026-11-21T02:37:19.692760",
+  "model_name": "vision-scale-100m-stage1-foundation",
+  "steps_count": 8,
+  "total_optimizer_updates": 8,
+  "step_telemetry": [
+    {
+      "step": 8,
+      "optimizer_update": 1,
+      "loss": 9.1818,
+      "grad_norm": 22.8452,
+      "lr": 0.0002,
+      "tokens_processed": 4096,
+      "tokens_per_sec": 99.4,
+      "elapsed_seconds": 41.21,
+      "rss_memory_mb": 510.6
+    },
+    {
+      "step": 16,
+      "optimizer_update": 2,
+      "loss": 8.5529,
+      "grad_norm": 20.6046,
+      "lr": 0.0002444938580832048,
+      "tokens_processed": 8192,
+      "tokens_per_sec": 84.1,
+      "elapsed_seconds": 97.45,
+      "rss_memory_mb": 446.8
+    },
+    {
+      "step": 24,
+      "optimizer_update": 3,
+      "loss": 8.5673,
+      "grad_norm": 7.0449,
+      "lr": 0.00021451154941697748,
+      "tokens_processed": 12288,
+      "tokens_per_sec": 95.7,
+      "elapsed_seconds": 128.45,
+      "rss_memory_mb": 365.0
+    },
+    {
+      "step": 32,
+      "optimizer_update": 4,
+      "loss": 8.1384,
+      "grad_norm": 4.7204,
+      "lr": 0.0001654776123060462,
+      "tokens_processed": 16384,
+      "tokens_per_sec": 90.7,
+      "elapsed_seconds": 180.72,
+      "rss_memory_mb": 606.9
+    },
+    {
+      "step": 40,
+      "optimizer_update": 5,
+      "loss": 7.9606,
+      "grad_norm": 2.7071,
+      "lr": 0.00010952238769395384,
+      "tokens_processed": 20480,
+      "tokens_per_sec": 82.6,
+      "elapsed_seconds": 247.99,
+      "rss_memory_mb": 45.3
+    },
+    {
+      "step": 48,
+      "optimizer_update": 6,
+      "loss": 8.1017,
+      "grad_norm": 1.9489,
+      "lr": 6.048845058302252e-05,
+      "tokens_processed": 24576,
+      "tokens_per_sec": 81.5,
+      "elapsed_seconds": 301.73,
+      "rss_memory_mb": 32.2
+    },
+    {
+      "step": 56,
+      "optimizer_update": 7,
+      "loss": 7.9469,
+      "grad_norm": 2.1464,
+      "lr": 3.050614191679523e-05,
+      "tokens_processed": 28672,
+      "tokens_per_sec": 82.3,
+      "elapsed_seconds": 348.18,
+      "rss_memory_mb": 43.2
+    },
+    {
+      "step": 60,
+      "optimizer_update": 8,
+      "loss": 3.6555,
+      "grad_norm": 1.892,
+      "lr": 2.522199305181945e-05,
+      "tokens_processed": 30720,
+      "tokens_per_sec": 82.0,
+      "elapsed_seconds": 374.7,
+      "rss_memory_mb": 260.4
+    }
+  ],
+  "sample_generations": [
+    {
+      "prompt": "Calculate 25 + 17",
+      "entropy": 8.637,
+      "generated_tokens": [
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69
+      ],
+      "generated_text": "................"
+    },
+    {
+      "prompt": "def multiply(a, b):",
+      "entropy": 8.667,
+      "generated_tokens": [
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69
+      ],
+      "generated_text": "................"
+    },
+    {
+      "prompt": "Capital of France is",
+      "entropy": 8.667,
+      "generated_tokens": [
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69
+      ],
+      "generated_text": "................"
+    },
+    {
+      "prompt": "What is kinetic energy?",
+      "entropy": 8.668,
+      "generated_tokens": [
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69
+      ],
+      "generated_text": "................"
+    },
+    {
+      "prompt": "Hello in Hindi",
+      "entropy": 8.67,
+      "generated_tokens": [
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69
+      ],
+      "generated_text": "................"
+    }
+  ]
+}

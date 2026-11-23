@@ -1,0 +1,539 @@
+{
+  "Stage 3 Curriculum": {
+    "dataset_name": "Stage 3 Curriculum",
+    "dataset_dir": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_stage3_curriculum",
+    "total_samples": 10435,
+    "domains": {
+      "mathematics": 4978,
+      "programming_python": 1858,
+      "science_engineering": 884,
+      "hindi_devanagari": 1817,
+      "instruction_following": 898
+    },
+    "synthetic_samples": 3398,
+    "synthetic_pct": 32.56,
+    "dominant_question_templates": [
+      {
+        "template": "Calculate {NUM} - {NUM}.",
+        "count": 129,
+        "pct": 1.24
+      },
+      {
+        "template": "Calculate {NUM} + {NUM}.",
+        "count": 129,
+        "pct": 1.24
+      },
+      {
+        "template": "What is {NUM} * {NUM}?",
+        "count": 129,
+        "pct": 1.24
+      },
+      {
+        "template": "What is {NUM} - {NUM}?",
+        "count": 125,
+        "pct": 1.2
+      },
+      {
+        "template": "Compute the value of {NUM} * {NUM}.",
+        "count": 124,
+        "pct": 1.19
+      },
+      {
+        "template": "Evaluate: {NUM} - {NUM}.",
+        "count": 117,
+        "pct": 1.12
+      },
+      {
+        "template": "What is {NUM} + {NUM}?",
+        "count": 114,
+        "pct": 1.09
+      },
+      {
+        "template": "Compute the value of {NUM} + {NUM}.",
+        "count": 114,
+        "pct": 1.09
+      },
+      {
+        "template": "Calculate {NUM} * {NUM}.",
+        "count": 112,
+        "pct": 1.07
+      },
+      {
+        "template": "Evaluate: {NUM} + {NUM}.",
+        "count": 109,
+        "pct": 1.04
+      },
+      {
+        "template": "Compute the value of {NUM} - {NUM}.",
+        "count": 107,
+        "pct": 1.03
+      },
+      {
+        "template": "Evaluate: {NUM} * {NUM}.",
+        "count": 101,
+        "pct": 0.97
+      },
+      {
+        "template": "Find the result of ({NUM} + {NUM}) - {NUM}.",
+        "count": 74,
+        "pct": 0.71
+      },
+      {
+        "template": "Compute: ({NUM} * {NUM}) - {NUM}.",
+        "count": 72,
+        "pct": 0.69
+      },
+      {
+        "template": "Find the result of ({NUM} * {NUM}) - {NUM}.",
+        "count": 69,
+        "pct": 0.66
+      }
+    ],
+    "dominant_answer_templates": [
+      {
+        "template": "{NUM}",
+        "count": 557,
+        "pct": 5.34
+      },
+      {
+        "template": "The answer is {NUM}.",
+        "count": 311,
+        "pct": 2.98
+      },
+      {
+        "template": "The value is {NUM}.",
+        "count": 243,
+        "pct": 2.33
+      },
+      {
+        "template": "{NUM} + {NUM} = {NUM}",
+        "count": 143,
+        "pct": 1.37
+      },
+      {
+        "template": "{NUM} * {NUM} = {NUM}",
+        "count": 121,
+        "pct": 1.16
+      },
+      {
+        "template": "```python",
+        "count": 121,
+        "pct": 1.16
+      },
+      {
+        "template": "{NUM} * {NUM} evaluates to {NUM}.",
+        "count": 107,
+        "pct": 1.03
+      },
+      {
+        "template": "{NUM} + {NUM} evaluates to {NUM}.",
+        "count": 105,
+        "pct": 1.01
+      },
+      {
+        "template": "{NUM} - {NUM} evaluates to {NUM}.",
+        "count": 85,
+        "pct": 0.81
+      },
+      {
+        "template": "{NUM} - {NUM} = {NUM}",
+        "count": 76,
+        "pct": 0.73
+      },
+      {
+        "template": "-{NUM}",
+        "count": 69,
+        "pct": 0.66
+      },
+      {
+        "template": "(C)",
+        "count": 63,
+        "pct": 0.6
+      },
+      {
+        "template": "Here is a Python function that implements this approach:",
+        "count": 62,
+        "pct": 0.59
+      },
+      {
+        "template": "(B)",
+        "count": 59,
+        "pct": 0.57
+      },
+      {
+        "template": "(A)",
+        "count": 59,
+        "pct": 0.57
+      }
+    ],
+    "multiple_choice_distribution": {
+      "C": 162,
+      "B": 174,
+      "D": 159,
+      "A": 170
+    },
+    "contradictions_detected_count": 45,
+    "sample_contradictions": [
+      {
+        "sample_idx": 2339,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "5 = 1",
+          "25 = 6"
+        ],
+        "text_snippet": "He spend $1.5 on soda because 2 - .5 = 1.5\nHe bought 6 ounces of soda because 1.5 / .25 = 6\n#### 6"
+      },
+      {
+        "sample_idx": 2346,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "05 = 4"
+        ],
+        "text_snippet": "A quarter is worth five nickels because .25 / .05 = 5\nShe gets 100 nickels from the bank because 20 x 5 = 100\n20 of the "
+      },
+      {
+        "sample_idx": 2362,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "2 = 5"
+        ],
+        "text_snippet": "She loses 5 marbles because 25 x .2 = 5\nShe has 20 marbles after this because 25 - 5 = 20\nHer friend gives her 40 marble"
+      },
+      {
+        "sample_idx": 2390,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "25 = 60",
+          "75 = 45"
+        ],
+        "text_snippet": "There are 60 goldfish because 15 / .25 = 60\n75% of the fish are below the surface because 100 - 25 = 75\nThere are 45 gol"
+      },
+      {
+        "sample_idx": 2414,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "20 = 36"
+        ],
+        "text_snippet": "Borris uses 90 x 2 = 180 kilograms of grapes per year.\nThe increase of kilograms of grapes he needed per year is 180 x 0"
+      },
+      {
+        "sample_idx": 2434,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "2 = 1"
+        ],
+        "text_snippet": "The height of the sunflowers from Packet A is the same as the height of the sunflowers from Packet B + 20%. If Y represe"
+      },
+      {
+        "sample_idx": 2454,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "4 = 48",
+          "6 = 72"
+        ],
+        "text_snippet": "There are 48 adults because 120 x .4 = 48\n60% of members are children because 100 - 40 = 60\nThere are 72 children becaus"
+      },
+      {
+        "sample_idx": 2572,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "4 = 100"
+        ],
+        "text_snippet": "He had 40 before losing them into the sewer because 20 x 2 =40\nHe started with 100 because 40/.4=100\n#### 100"
+      },
+      {
+        "sample_idx": 2653,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "2 = 1",
+          "3 = 50"
+        ],
+        "text_snippet": "A bag of feed is enough for 10 chickens because 20 / 2 = 10\nEach chicken costs $.2 to raise because 2 / 10 = .2\nEach chi"
+      },
+      {
+        "sample_idx": 2778,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "6 = 3"
+        ],
+        "text_snippet": "He is $25 short for the game because 60 - 35 = 25\nHe caught 3 trout because 5 x .6 = 3\nHe caught 2 blue-gill because 5 -"
+      }
+    ]
+  },
+  "Stage 2 SFT Alignment": {
+    "dataset_name": "Stage 2 SFT Alignment",
+    "dataset_dir": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_sft_alignment",
+    "total_samples": 10665,
+    "domains": {
+      "mathematics": 4483,
+      "programming_python": 1858,
+      "science_engineering": 1370,
+      "hindi_devanagari": 1817,
+      "instruction_following": 1137
+    },
+    "synthetic_samples": 3637,
+    "synthetic_pct": 34.1,
+    "dominant_question_templates": [
+      {
+        "template": "What is {NUM} * {NUM}?",
+        "count": 190,
+        "pct": 1.78
+      },
+      {
+        "template": "Solve for the result: {NUM} * {NUM}.",
+        "count": 171,
+        "pct": 1.6
+      },
+      {
+        "template": "Compute the exact value of {NUM} * {NUM}.",
+        "count": 168,
+        "pct": 1.58
+      },
+      {
+        "template": "What is {NUM} + {NUM}?",
+        "count": 164,
+        "pct": 1.54
+      },
+      {
+        "template": "Compute the exact value of {NUM} - {NUM}.",
+        "count": 160,
+        "pct": 1.5
+      },
+      {
+        "template": "Solve for the result: {NUM} - {NUM}.",
+        "count": 158,
+        "pct": 1.48
+      },
+      {
+        "template": "Solve for the result: {NUM} + {NUM}.",
+        "count": 157,
+        "pct": 1.47
+      },
+      {
+        "template": "What is {NUM} - {NUM}?",
+        "count": 156,
+        "pct": 1.46
+      },
+      {
+        "template": "Compute the exact value of {NUM} + {NUM}.",
+        "count": 146,
+        "pct": 1.37
+      },
+      {
+        "template": "Evaluate the expression: ({NUM} - {NUM}) - {NUM}.",
+        "count": 93,
+        "pct": 0.87
+      },
+      {
+        "template": "Evaluate the expression: ({NUM} * {NUM}) - {NUM}.",
+        "count": 93,
+        "pct": 0.87
+      },
+      {
+        "template": "Calculate the value of {NUM} - {NUM} + {NUM}.",
+        "count": 92,
+        "pct": 0.86
+      },
+      {
+        "template": "Calculate the value of {NUM} * {NUM} + {NUM}.",
+        "count": 88,
+        "pct": 0.83
+      },
+      {
+        "template": "Evaluate the expression: ({NUM} * {NUM}) + {NUM}.",
+        "count": 88,
+        "pct": 0.83
+      },
+      {
+        "template": "Evaluate the expression: ({NUM} + {NUM}) - {NUM}.",
+        "count": 87,
+        "pct": 0.82
+      }
+    ],
+    "dominant_answer_templates": [
+      {
+        "template": "{NUM}",
+        "count": 549,
+        "pct": 5.15
+      },
+      {
+        "template": "The answer is {NUM}.",
+        "count": 374,
+        "pct": 3.51
+      },
+      {
+        "template": "The exact value is {NUM}.",
+        "count": 229,
+        "pct": 2.15
+      },
+      {
+        "template": "{NUM} * {NUM} = {NUM}.",
+        "count": 127,
+        "pct": 1.19
+      },
+      {
+        "template": "Calculating: {NUM} * {NUM} gives {NUM}.",
+        "count": 121,
+        "pct": 1.13
+      },
+      {
+        "template": "```python",
+        "count": 121,
+        "pct": 1.13
+      },
+      {
+        "template": "Calculating: {NUM} + {NUM} gives {NUM}.",
+        "count": 120,
+        "pct": 1.13
+      },
+      {
+        "template": "{NUM} + {NUM} = {NUM}.",
+        "count": 117,
+        "pct": 1.1
+      },
+      {
+        "template": "Calculating: {NUM} - {NUM} gives {NUM}.",
+        "count": 74,
+        "pct": 0.69
+      },
+      {
+        "template": "{NUM} - {NUM} = {NUM}.",
+        "count": 69,
+        "pct": 0.65
+      },
+      {
+        "template": "Here is a Python function that implements this approach:",
+        "count": 62,
+        "pct": 0.58
+      },
+      {
+        "template": "-{NUM}",
+        "count": 56,
+        "pct": 0.53
+      },
+      {
+        "template": "Neural Interface Link",
+        "count": 55,
+        "pct": 0.52
+      },
+      {
+        "template": "({NUM} * {NUM}) - {NUM} = {NUM} - {NUM} = {NUM}.",
+        "count": 52,
+        "pct": 0.49
+      },
+      {
+        "template": "({NUM} * {NUM}) + {NUM} = {NUM} + {NUM} = {NUM}.",
+        "count": 50,
+        "pct": 0.47
+      }
+    ],
+    "multiple_choice_distribution": {},
+    "contradictions_detected_count": 40,
+    "sample_contradictions": [
+      {
+        "sample_idx": 2314,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "5 = 1",
+          "25 = 6"
+        ],
+        "text_snippet": "He spend $1.5 on soda because 2 - .5 = 1.5\nHe bought 6 ounces of soda because 1.5 / .25 = 6\n#### 6"
+      },
+      {
+        "sample_idx": 2322,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "05 = 4"
+        ],
+        "text_snippet": "A quarter is worth five nickels because .25 / .05 = 5\nShe gets 100 nickels from the bank because 20 x 5 = 100\n20 of the "
+      },
+      {
+        "sample_idx": 2340,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "2 = 5"
+        ],
+        "text_snippet": "She loses 5 marbles because 25 x .2 = 5\nShe has 20 marbles after this because 25 - 5 = 20\nHer friend gives her 40 marble"
+      },
+      {
+        "sample_idx": 2368,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "25 = 60",
+          "75 = 45"
+        ],
+        "text_snippet": "There are 60 goldfish because 15 / .25 = 60\n75% of the fish are below the surface because 100 - 25 = 75\nThere are 45 gol"
+      },
+      {
+        "sample_idx": 2394,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "20 = 36"
+        ],
+        "text_snippet": "Borris uses 90 x 2 = 180 kilograms of grapes per year.\nThe increase of kilograms of grapes he needed per year is 180 x 0"
+      },
+      {
+        "sample_idx": 2411,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "2 = 1"
+        ],
+        "text_snippet": "The height of the sunflowers from Packet A is the same as the height of the sunflowers from Packet B + 20%. If Y represe"
+      },
+      {
+        "sample_idx": 2432,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "4 = 48",
+          "6 = 72"
+        ],
+        "text_snippet": "There are 48 adults because 120 x .4 = 48\n60% of members are children because 100 - 40 = 60\nThere are 72 children becaus"
+      },
+      {
+        "sample_idx": 2548,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "4 = 100"
+        ],
+        "text_snippet": "He had 40 before losing them into the sewer because 20 x 2 =40\nHe started with 100 because 40/.4=100\n#### 100"
+      },
+      {
+        "sample_idx": 2630,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "2 = 1",
+          "3 = 50"
+        ],
+        "text_snippet": "A bag of feed is enough for 10 chickens because 20 / 2 = 10\nEach chicken costs $.2 to raise because 2 / 10 = .2\nEach chi"
+      },
+      {
+        "sample_idx": 2771,
+        "domain": "mathematics",
+        "source": "openai__gsm8k",
+        "contradictions": [
+          "5 = 16"
+        ],
+        "text_snippet": "Bianca = 12.5 hours\nCeleste 2 * 12.5 = 25 hours\nMcClain = 25 - 8.5 = 16.5 hours\nTotal + 12.5 + 25 + 16.5 = 54 hours\n54 h"
+      }
+    ]
+  }
+}

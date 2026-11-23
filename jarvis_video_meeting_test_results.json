@@ -1,0 +1,106 @@
+{
+  "testSuite": "JARVIS Real-Time Video Call & Online Meeting Participation",
+  "executedAt": "2026-11-20T16:59:04.671Z",
+  "totalTests": 8,
+  "passed": 8,
+  "failed": 0,
+  "successRate": "100.0%",
+  "overallStatus": "VERIFIED",
+  "results": [
+    {
+      "id": "MEET-01",
+      "name": "Meeting URL & Protocol Parsing (Google Meet, Teams, Zoom)",
+      "category": "LINK_PARSER",
+      "status": "VERIFIED",
+      "durationMs": 0,
+      "output": {
+        "meetCode": "xyz-abcd-efg",
+        "teamsPlatform": "microsoft_teams",
+        "zoomPlatform": "zoom"
+      }
+    },
+    {
+      "id": "MEET-02",
+      "name": "Pre-Join Confirmation & Consent Gate Enforcement",
+      "category": "CONSENT_GATE",
+      "status": "VERIFIED",
+      "durationMs": 3,
+      "output": {
+        "status": "CONFIRMATION_REQUIRED",
+        "prompt": "Are you sure you want me to join \"Apex Robotics Architecture Review\" on Google Meet as your transparent AI assistant, sir?"
+      }
+    },
+    {
+      "id": "MEET-03",
+      "name": "Google Meet Join & Transparent AI Disclosure Broadcast",
+      "category": "MEETING_LIFECYCLE",
+      "status": "VERIFIED",
+      "durationMs": 656,
+      "output": {
+        "meetingId": "mtg_1795193943362_bc3d85",
+        "aiName": "JARVIS (AI Assistant for Lokesh Upadhyay)",
+        "disclosure": "Hello everyone, I am JARVIS, an autonomous AI assistant joining on behalf of Lokesh Upadhyay. I can share verified project updates, take structured meeting notes, and explain shared presentation slides."
+      }
+    },
+    {
+      "id": "MEET-04",
+      "name": "Microphone & Camera Hardware Controls",
+      "category": "MEDIA_CONTROL",
+      "status": "VERIFIED",
+      "durationMs": 24,
+      "output": {
+        "microphoneActive": true,
+        "cameraActive": true
+      }
+    },
+    {
+      "id": "MEET-05",
+      "name": "Meeting Speech Transcription & Automated Action Items Extraction",
+      "category": "TRANSCRIPTION_MINUTES",
+      "status": "VERIFIED",
+      "durationMs": 1,
+      "output": {
+        "actionItemsCount": 1,
+        "task": "Action item: Lokesh please send the finalized BOM calculator by Friday.",
+        "assignee": "Lokesh",
+        "deadline": "Friday"
+      }
+    },
+    {
+      "id": "MEET-06",
+      "name": "Visual Presentation Slide & Diagram Multimodal Understanding",
+      "category": "VISUAL_INTELLIGENCE",
+      "status": "VERIFIED",
+      "durationMs": 600,
+      "output": {
+        "detectedTitle": "VISION AI & Autonomous Multi-Agent Robotics Architecture",
+        "bulletPointsCount": 4,
+        "diagramsDetected": 1,
+        "explanationLength": 446
+      }
+    },
+    {
+      "id": "MEET-07",
+      "name": "Structured Meeting Minutes Generation & Export",
+      "category": "TRANSCRIPTION_MINUTES",
+      "status": "VERIFIED",
+      "durationMs": 28,
+      "output": {
+        "meetingTitle": "Apex Robotics Architecture Review",
+        "actionItemsCount": 1,
+        "summary": "Meeting \"Apex Robotics Architecture Review\" concluded after 1s with 2 turns recorded, 1 action item(s) extracted, and 1 presentation slide(s) analyzed."
+      }
+    },
+    {
+      "id": "MEET-08",
+      "name": "Graceful Meeting Departure & Active Session Cleanup",
+      "category": "MEETING_LIFECYCLE",
+      "status": "VERIFIED",
+      "durationMs": 0,
+      "output": {
+        "activeCount": 0,
+        "cleanupVerified": true
+      }
+    }
+  ]
+}

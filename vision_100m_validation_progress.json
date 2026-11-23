@@ -1,0 +1,320 @@
+{
+  "title": "VISION 100M Pretraining Multi-Domain Validation Progress",
+  "model_name": "vision-scale-100m-full-pretraining",
+  "timestamp_iso": "2026-11-21T03:26:09.299209",
+  "domain_groups_audited": [
+    "mathematics",
+    "programming",
+    "reasoning",
+    "science",
+    "multilingual",
+    "instruction_and_tools"
+  ],
+  "validation_records": [
+    {
+      "step": 24,
+      "optimizer_updates": 3,
+      "tokens_trained": 12288,
+      "validation_loss": 7.7718,
+      "validation_ppl": 2372.74,
+      "per_domain_validation_loss": {
+        "multilingual": 8.6052,
+        "instruction_and_tools": 7.7921,
+        "mathematics": 6.4514,
+        "programming": 7.5963,
+        "reasoning": 7.5944,
+        "science": 8.2292
+      },
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.518,
+      "sample_outputs": [
+        {
+          "prompt": "Calculate 25 + 17",
+          "domain": "mathematics",
+          "entropy": 8.496,
+          "generated_text": "                ",
+          "length": 16
+        },
+        {
+          "prompt": "def multiply(a, b):",
+          "domain": "programming",
+          "entropy": 8.519,
+          "generated_text": "..........      ",
+          "length": 16
+        },
+        {
+          "prompt": "Capital of France is",
+          "domain": "general_knowledge",
+          "entropy": 8.522,
+          "generated_text": "..........      ",
+          "length": 16
+        },
+        {
+          "prompt": "What is kinetic energy?",
+          "domain": "science",
+          "entropy": 8.521,
+          "generated_text": "..........      ",
+          "length": 16
+        },
+        {
+          "prompt": "Hello in Hindi",
+          "domain": "multilingual",
+          "entropy": 8.524,
+          "generated_text": "...........     ",
+          "length": 16
+        },
+        {
+          "prompt": "Return strict JSON: {\"status\": \"ok\"}",
+          "domain": "instruction",
+          "entropy": 8.528,
+          "generated_text": "................",
+          "length": 16
+        }
+      ]
+    },
+    {
+      "step": 48,
+      "optimizer_updates": 6,
+      "tokens_trained": 24576,
+      "validation_loss": 7.4705,
+      "validation_ppl": 1755.56,
+      "per_domain_validation_loss": {
+        "multilingual": 8.5306,
+        "instruction_and_tools": 7.4757,
+        "mathematics": 5.8051,
+        "programming": 7.2057,
+        "reasoning": 7.3632,
+        "science": 8.0222
+      },
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.421,
+      "sample_outputs": [
+        {
+          "prompt": "Calculate 25 + 17",
+          "domain": "mathematics",
+          "entropy": 8.365,
+          "generated_text": "............. 1 ",
+          "length": 16
+        },
+        {
+          "prompt": "def multiply(a, b):",
+          "domain": "programming",
+          "entropy": 8.429,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Capital of France is",
+          "domain": "general_knowledge",
+          "entropy": 8.432,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "What is kinetic energy?",
+          "domain": "science",
+          "entropy": 8.432,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Hello in Hindi",
+          "domain": "multilingual",
+          "entropy": 8.432,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Return strict JSON: {\"status\": \"ok\"}",
+          "domain": "instruction",
+          "entropy": 8.435,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        }
+      ]
+    },
+    {
+      "step": 72,
+      "optimizer_updates": 9,
+      "tokens_trained": 36864,
+      "validation_loss": 7.3299,
+      "validation_ppl": 1525.16,
+      "per_domain_validation_loss": {
+        "multilingual": 8.4333,
+        "instruction_and_tools": 7.2256,
+        "mathematics": 5.6697,
+        "programming": 7.003,
+        "reasoning": 7.2599,
+        "science": 7.9652
+      },
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.061,
+      "sample_outputs": [
+        {
+          "prompt": "Calculate 25 + 17",
+          "domain": "mathematics",
+          "entropy": 7.267,
+          "generated_text": " 111 1 1 1 1    ",
+          "length": 16
+        },
+        {
+          "prompt": "def multiply(a, b):",
+          "domain": "programming",
+          "entropy": 8.217,
+          "generated_text": ".\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Capital of France is",
+          "domain": "general_knowledge",
+          "entropy": 8.219,
+          "generated_text": "...\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "What is kinetic energy?",
+          "domain": "science",
+          "entropy": 8.219,
+          "generated_text": ".....\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Hello in Hindi",
+          "domain": "multilingual",
+          "entropy": 8.22,
+          "generated_text": "....\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Return strict JSON: {\"status\": \"ok\"}",
+          "domain": "instruction",
+          "entropy": 8.225,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        }
+      ]
+    },
+    {
+      "step": 96,
+      "optimizer_updates": 12,
+      "tokens_trained": 49152,
+      "validation_loss": 7.2278,
+      "validation_ppl": 1377.22,
+      "per_domain_validation_loss": {
+        "multilingual": 8.3868,
+        "instruction_and_tools": 7.1427,
+        "mathematics": 5.4147,
+        "programming": 6.914,
+        "reasoning": 7.1333,
+        "science": 7.8864
+      },
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.014,
+      "sample_outputs": [
+        {
+          "prompt": "Calculate 25 + 17",
+          "domain": "mathematics",
+          "entropy": 7.488,
+          "generated_text": " 11 1 1 1 1 1 1 ",
+          "length": 16
+        },
+        {
+          "prompt": "def multiply(a, b):",
+          "domain": "programming",
+          "entropy": 8.116,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Capital of France is",
+          "domain": "general_knowledge",
+          "entropy": 8.119,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "What is kinetic energy?",
+          "domain": "science",
+          "entropy": 8.12,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Hello in Hindi",
+          "domain": "multilingual",
+          "entropy": 8.12,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Return strict JSON: {\"status\": \"ok\"}",
+          "domain": "instruction",
+          "entropy": 8.123,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        }
+      ]
+    },
+    {
+      "step": 120,
+      "optimizer_updates": 15,
+      "tokens_trained": 61440,
+      "validation_loss": 7.1812,
+      "validation_ppl": 1314.54,
+      "per_domain_validation_loss": {
+        "multilingual": 8.3421,
+        "instruction_and_tools": 7.0974,
+        "mathematics": 5.3483,
+        "programming": 6.862,
+        "reasoning": 7.0788,
+        "science": 7.8574
+      },
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.016,
+      "sample_outputs": [
+        {
+          "prompt": "Calculate 25 + 17",
+          "domain": "mathematics",
+          "entropy": 7.548,
+          "generated_text": " 1111 1 1 1 1 1 ",
+          "length": 16
+        },
+        {
+          "prompt": "def multiply(a, b):",
+          "domain": "programming",
+          "entropy": 8.106,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Capital of France is",
+          "domain": "general_knowledge",
+          "entropy": 8.109,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "What is kinetic energy?",
+          "domain": "science",
+          "entropy": 8.111,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Hello in Hindi",
+          "domain": "multilingual",
+          "entropy": 8.11,
+          "generated_text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "length": 16
+        },
+        {
+          "prompt": "Return strict JSON: {\"status\": \"ok\"}",
+          "domain": "instruction",
+          "entropy": 8.11,
+          "generated_text": " \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+          "length": 16
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "claimed_dataset_name": "vision_25m_balanced",
+  "nominal_claim": "25,000,000 tokens",
+  "exact_measured_tokens": 23567617,
+  "token_discrepancy": -1432383,
+  "token_discrepancy_pct": -5.73,
+  "total_samples": 89583,
+  "split_breakdown": {
+    "train": {
+      "samples": 85103,
+      "bpe_tokens": 22391733,
+      "pillar_tokens": {
+        "formal_reasoning_and_exam": 2859020,
+        "instruction_following_and_dialogue": 4739603,
+        "general_language_and_science": 4754050,
+        "hindi_and_hinglish": 1482486,
+        "mathematics_and_reasoning": 3813428,
+        "polyglot_programming": 4743146
+      }
+    },
+    "val": {
+      "samples": 4480,
+      "bpe_tokens": 1175884,
+      "pillar_tokens": {
+        "mathematics_and_reasoning": 186610,
+        "general_language_and_science": 246080,
+        "instruction_following_and_dialogue": 260412,
+        "polyglot_programming": 257074,
+        "formal_reasoning_and_exam": 141027,
+        "hindi_and_hinglish": 84681
+      }
+    }
+  },
+  "length_distribution": {
+    "mean": 263.1,
+    "p50": 256,
+    "p90": 422,
+    "p99": 503,
+    "min": 18,
+    "max": 512,
+    "truncated_at_128_samples": 79736,
+    "truncated_at_128_pct": 89.01,
+    "effective_usable_tokens_at_128": 10966066
+  },
+  "deduplication": {
+    "unique_samples": 80833,
+    "duplicate_samples": 8750,
+    "duplicate_rate_pct": 9.767
+  },
+  "benchmark_contamination": {
+    "expanded_1500_exact_matches": 2,
+    "expanded_1500_8gram_overlap": 16,
+    "transfer_200_exact_matches": 0,
+    "transfer_200_8gram_overlap": 0,
+    "is_decontaminated": false
+  },
+  "pillar_distribution": {
+    "formal_reasoning_and_exam": {
+      "samples": 13641,
+      "tokens": 3000047,
+      "token_share_pct": 12.73
+    },
+    "instruction_following_and_dialogue": {
+      "samples": 20939,
+      "tokens": 5000015,
+      "token_share_pct": 21.22
+    },
+    "general_language_and_science": {
+      "samples": 19583,
+      "tokens": 5000130,
+      "token_share_pct": 21.22
+    },
+    "hindi_and_hinglish": {
+      "samples": 6331,
+      "tokens": 1567167,
+      "token_share_pct": 6.65
+    },
+    "mathematics_and_reasoning": {
+      "samples": 14676,
+      "tokens": 4000038,
+      "token_share_pct": 16.97
+    },
+    "polyglot_programming": {
+      "samples": 14413,
+      "tokens": 5000220,
+      "token_share_pct": 21.22
+    }
+  },
+  "licensing_distribution": {
+    "MIT": {
+      "tokens": 9500063,
+      "token_share_pct": 40.31
+    },
+    "Apache-2.0": {
+      "tokens": 10367679,
+      "token_share_pct": 43.99
+    },
+    "CC-BY-4.0": {
+      "tokens": 1500138,
+      "token_share_pct": 6.37
+    },
+    "OpenRAIL-M": {
+      "tokens": 999603,
+      "token_share_pct": 4.24
+    },
+    "BigCode-OpenRAIL-M": {
+      "tokens": 1200134,
+      "token_share_pct": 5.09
+    }
+  },
+  "provenance_sources": {
+    "TIGER-Lab__WebInstructSub": 6999673,
+    "HuggingFaceTB__cosmopedia": 5000130,
+    "AI-MO__NuminaMath-CoT": 1500434,
+    "ai4bharat__sangraha": 1500138,
+    "ise-uiuc__Magicoder-Evol-Instruct-110K": 1500119,
+    "microsoft__orca-math-word-problems-200k": 1500001,
+    "ise-uiuc__Magicoder-OSS-Instruct-75K": 1200262,
+    "bigcode__self-oss-instruct-sc2-exec-filter-50k": 1200134,
+    "m-a-p__CodeFeedback-Filtered-Instruction": 1099705,
+    "cais__mmlu": 1000389
+  }
+}

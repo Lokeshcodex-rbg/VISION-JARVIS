@@ -1,0 +1,71 @@
+{
+  "title": "VISION 100M Stage 3 Checkpoint Registry & Integrity Audit",
+  "model_name": "vision-scale-100m-stage3-pretraining",
+  "timestamp_iso": "2026-11-21T21:52:35.085603",
+  "checkpoint_directory": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-100m-stage3-pretraining",
+  "final_weights_sha256": "dc7bc1aa1a88c050c8c9ef6f218d7ce1f208d77243fddee11191c32ac21c46a0",
+  "total_parameters": 98258258,
+  "checkpoints": [
+    {
+      "checkpoint_file": "checkpoint_step_32.pt",
+      "step": 32,
+      "optimizer_updates": 4,
+      "tokens_trained": 16384,
+      "val_loss": 7.8175,
+      "val_ppl": 2483.76,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 8.018,
+      "sha256": "a8f51764df7a669f97ea1ee311aa074ebb46576cfd60a4f0355b413690b06278"
+    },
+    {
+      "checkpoint_file": "checkpoint_step_64.pt",
+      "step": 64,
+      "optimizer_updates": 8,
+      "tokens_trained": 32768,
+      "val_loss": 7.7355,
+      "val_ppl": 2288.08,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 7.687,
+      "sha256": "3c57d896bd34011fdacfd07b71cb447ee3b3f6787af55a8dea3bb260e8920a19"
+    },
+    {
+      "checkpoint_file": "checkpoint_step_96.pt",
+      "step": 96,
+      "optimizer_updates": 12,
+      "tokens_trained": 49152,
+      "val_loss": 7.6876,
+      "val_ppl": 2181.14,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 7.372,
+      "sha256": "cdf2c3e6e28db87ab8143381424a43d79d4c7d6942ce4f4038c202f0f078de31"
+    },
+    {
+      "checkpoint_file": "checkpoint_step_128.pt",
+      "step": 128,
+      "optimizer_updates": 16,
+      "tokens_trained": 65536,
+      "val_loss": 7.6501,
+      "val_ppl": 2100.88,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 7.689,
+      "unique_tokens": 2,
+      "repetition_rate_pct": 96.67,
+      "sha256": "f0f1bbbf8a53c6a4e4c80e628fa610292e4390c9d5becb722f07169acf5c33cc",
+      "integrity_verified": true
+    },
+    {
+      "checkpoint_file": "checkpoint_step_160.pt",
+      "step": 160,
+      "optimizer_updates": 20,
+      "tokens_trained": 81920,
+      "val_loss": 7.6501,
+      "val_ppl": 2100.93,
+      "first_token_accuracy": 0.0,
+      "mean_entropy": 7.615,
+      "unique_tokens": 2,
+      "repetition_rate_pct": 95.56,
+      "sha256": "d5f0e2e77b98b0d324310edc02a1d5e08a324067a8d4fb9e2ac2cb37541f6b70",
+      "integrity_verified": true
+    }
+  ]
+}

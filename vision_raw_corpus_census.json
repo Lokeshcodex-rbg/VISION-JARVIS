@@ -1,0 +1,137 @@
+{
+  "timestamp": "2026-11-21T19:14:11Z",
+  "total_bytes": 6482875754,
+  "total_size_gb": 6.038,
+  "total_estimated_tokens": 1815205203,
+  "total_estimated_tokens_billion": 1.815,
+  "repositories": [
+    {
+      "repo_id": "AI-MO__NuminaMath-CoT",
+      "file_count": 2,
+      "size_mb": 470.7,
+      "sample_bpe_density": 0.404,
+      "estimated_tokens": 138200262,
+      "estimated_tokens_millions": 138.2
+    },
+    {
+      "repo_id": "CognitiveLab__Hindi-Instruct-Gemma-Prompt-formate",
+      "file_count": 1,
+      "size_mb": 164.3,
+      "sample_bpe_density": 0.335,
+      "estimated_tokens": 48243922,
+      "estimated_tokens_millions": 48.24
+    },
+    {
+      "repo_id": "HuggingFaceFW__fineweb-edu",
+      "file_count": 1,
+      "size_mb": 2053.1,
+      "sample_bpe_density": 0.295,
+      "estimated_tokens": 602789351,
+      "estimated_tokens_millions": 602.79
+    },
+    {
+      "repo_id": "HuggingFaceTB__cosmopedia",
+      "file_count": 6,
+      "size_mb": 1095.7,
+      "sample_bpe_density": 0.289,
+      "estimated_tokens": 321685465,
+      "estimated_tokens_millions": 321.69
+    },
+    {
+      "repo_id": "HuggingFaceTB__finemath",
+      "file_count": 1,
+      "size_mb": 273.0,
+      "sample_bpe_density": 0.57,
+      "estimated_tokens": 80154848,
+      "estimated_tokens_millions": 80.15
+    },
+    {
+      "repo_id": "TIGER-Lab__WebInstructSub",
+      "file_count": 1,
+      "size_mb": 132.2,
+      "sample_bpe_density": 0.4,
+      "estimated_tokens": 38823861,
+      "estimated_tokens_millions": 38.82
+    },
+    {
+      "repo_id": "ai4bharat__sangraha",
+      "file_count": 2,
+      "size_mb": 532.6,
+      "sample_bpe_density": 0.462,
+      "estimated_tokens": 156385983,
+      "estimated_tokens_millions": 156.39
+    },
+    {
+      "repo_id": "bigcode__commitpackft",
+      "file_count": 8,
+      "size_mb": 443.3,
+      "sample_bpe_density": 0.492,
+      "estimated_tokens": 130141824,
+      "estimated_tokens_millions": 130.14
+    },
+    {
+      "repo_id": "bigcode__self-oss-instruct-sc2-exec-filter-50k",
+      "file_count": 1,
+      "size_mb": 86.0,
+      "sample_bpe_density": 0.376,
+      "estimated_tokens": 25235884,
+      "estimated_tokens_millions": 25.24
+    },
+    {
+      "repo_id": "cais__mmlu",
+      "file_count": 1,
+      "size_mb": 45.3,
+      "sample_bpe_density": 0.291,
+      "estimated_tokens": 13303844,
+      "estimated_tokens_millions": 13.3
+    },
+    {
+      "repo_id": "ise-uiuc__Magicoder-Evol-Instruct-110K",
+      "file_count": 1,
+      "size_mb": 243.4,
+      "sample_bpe_density": 0.317,
+      "estimated_tokens": 71452142,
+      "estimated_tokens_millions": 71.45
+    },
+    {
+      "repo_id": "ise-uiuc__Magicoder-OSS-Instruct-75K",
+      "file_count": 1,
+      "size_mb": 193.8,
+      "sample_bpe_density": 0.305,
+      "estimated_tokens": 56896327,
+      "estimated_tokens_millions": 56.9
+    },
+    {
+      "repo_id": "m-a-p__CodeFeedback-Filtered-Instruction",
+      "file_count": 1,
+      "size_mb": 354.0,
+      "sample_bpe_density": 0.276,
+      "estimated_tokens": 103943927,
+      "estimated_tokens_millions": 103.94
+    },
+    {
+      "repo_id": "microsoft__orca-math-word-problems-200k",
+      "file_count": 1,
+      "size_mb": 80.3,
+      "sample_bpe_density": 0.334,
+      "estimated_tokens": 23589649,
+      "estimated_tokens_millions": 23.59
+    },
+    {
+      "repo_id": "openai__gsm8k",
+      "file_count": 1,
+      "size_mb": 2.2,
+      "sample_bpe_density": 0.387,
+      "estimated_tokens": 645832,
+      "estimated_tokens_millions": 0.65
+    },
+    {
+      "repo_id": "smangrul__hindi_instruct_v1",
+      "file_count": 1,
+      "size_mb": 12.6,
+      "sample_bpe_density": 0.35,
+      "estimated_tokens": 3712082,
+      "estimated_tokens_millions": 3.71
+    }
+  ]
+}

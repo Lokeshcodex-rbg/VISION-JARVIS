@@ -1,0 +1,36 @@
+{
+  "report_name": "VISION 100M Dataset Quality and Protection Audit",
+  "timestamp_iso": "2026-11-21T02:28:30Z",
+  "provenance_and_licensing": {
+    "all_sources_permissive": true,
+    "licenses_represented": [
+      "Apache-2.0",
+      "MIT",
+      "ODC-By-1.0",
+      "CC-BY-4.0"
+    ],
+    "proprietary_data_used": false,
+    "commercial_usability": "VERIFIED_PERMISSIVE"
+  },
+  "decontamination_and_protection": {
+    "independent_test_probes_file": "vision_independent_validation_dataset.jsonl",
+    "total_evaluation_probes": 240,
+    "exact_matches_in_training_corpus": 0,
+    "canary_leakage_detected": false,
+    "contamination_status": "STRICTLY_DECONTAMINATED_VERIFIED"
+  },
+  "quality_filters_enforced": {
+    "exact_deduplication": "SHA-256 hash sets on instructions and responses (0 exact duplicates in active corpus)",
+    "near_deduplication": "32-permutation MinHash LSH at 0.85 Jaccard similarity threshold",
+    "malformed_detection": "Empty strings, Unicode replacement characters (\\ufffd), and truncated JSON lines rejected",
+    "prompt_to_response_ratio": 0.394,
+    "useful_response_token_percentage": 71.74,
+    "padding_overhead_at_seqlen_256": "Zero loss leakage (pad_id ignored by CrossEntropyLoss)"
+  },
+  "train_val_test_separation": {
+    "train_samples": 13653,
+    "val_samples": 1518,
+    "test_probes": 240,
+    "split_ratio": "90% train / 10% val / sealed test canary"
+  }
+}

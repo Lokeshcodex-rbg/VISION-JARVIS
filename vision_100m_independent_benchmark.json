@@ -1,0 +1,250 @@
+{
+  "benchmark_name": "VISION 100M Stage 1 Foundation Independent Intelligence Benchmark",
+  "timestamp_iso": "2026-11-20T21:09:14Z",
+  "checkpoint_evaluated": {
+    "name": "vision-scale-100m-stage1-foundation",
+    "version": "3.0.0",
+    "weights_sha256": "a152324e5cac8cff652c6ac141b68b124c637c727278a9c4b80ea82a1085afd6",
+    "total_parameters": 98258258
+  },
+  "evaluation_summary": {
+    "probes_evaluated": 48,
+    "probes_passed": 0,
+    "accuracy_percent": 0.0,
+    "wilson_ci_95": [
+      0.0,
+      7.41
+    ],
+    "mean_first_token_entropy": 8.652,
+    "unigram_collapse_eliminated": false,
+    "unique_output_words_count": 1,
+    "mean_latency_ms": 2032.83,
+    "wall_clock_seconds": 97.62
+  },
+  "domain_breakdown": {
+    "mathematics": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "formal_reasoning": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "causal_counterfactual": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "programming_python": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "programming_javascript": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "programming_java": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "algorithms_complexity": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "science_engineering": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "english_comprehension": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "hindi_comprehension": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "hinglish_dialogue": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    },
+    "instruction_conversational": {
+      "correct": 0,
+      "total": 4,
+      "accuracy_percent": 0.0
+    }
+  },
+  "sample_generations": [
+    {
+      "probe_id": "p_0",
+      "domain": "mathematics",
+      "prompt": "Calculate the exact result: 47 * 16 - 285",
+      "entropy": 8.629,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_1",
+      "domain": "mathematics",
+      "prompt": "What is 358 + 694 - 247?",
+      "entropy": 8.633,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_2",
+      "domain": "mathematics",
+      "prompt": "Calculate: 1250 / 25 + 34 * 8",
+      "entropy": 8.627,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_3",
+      "domain": "mathematics",
+      "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+      "entropy": 8.629,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_4",
+      "domain": "formal_reasoning",
+      "prompt": "All mammals are warm-blooded. All whales are mammals. Theref",
+      "entropy": 8.648,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_5",
+      "domain": "formal_reasoning",
+      "prompt": "If it is raining, the grass is wet. The grass is not wet. Ca",
+      "entropy": 8.646,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_6",
+      "domain": "formal_reasoning",
+      "prompt": "Proposition: 'Being a square is a sufficient condition for b",
+      "entropy": 8.652,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_7",
+      "domain": "formal_reasoning",
+      "prompt": "Statement A: 'All boxes in the room are red.' Statement B: '",
+      "entropy": 8.645,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_8",
+      "domain": "causal_counterfactual",
+      "prompt": "If Earth had zero gravity, what would happen to an untethere",
+      "entropy": 8.655,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_9",
+      "domain": "causal_counterfactual",
+      "prompt": "Why does a car engine overheat if the radiator coolant leaks",
+      "entropy": 8.659,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_10",
+      "domain": "causal_counterfactual",
+      "prompt": "If a technician replaces a blown fuse with a solid copper wi",
+      "entropy": 8.662,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_11",
+      "domain": "causal_counterfactual",
+      "prompt": "A computer suddenly turns off during a thunderstorm. Besides",
+      "entropy": 8.658,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_12",
+      "domain": "programming_python",
+      "prompt": "Write a Python function `square_sum(a, b)` returning the sum",
+      "entropy": 8.655,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_13",
+      "domain": "programming_python",
+      "prompt": "Write a Python function `filter_even(nums)` returning a list",
+      "entropy": 8.66,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_14",
+      "domain": "programming_python",
+      "prompt": "Write a Python function `is_palindrome_word(s)` returning Tr",
+      "entropy": 8.66,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_20",
+      "domain": "programming_java",
+      "prompt": "Write a Java static method: public static int pickSmallerInt",
+      "entropy": 8.655,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_30",
+      "domain": "science_engineering",
+      "prompt": "Calculate the kinetic energy of a 2 kg object moving at 5 m/",
+      "entropy": 8.626,
+      "generated": "........................"
+    },
+    {
+      "probe_id": "p_40",
+      "domain": "hinglish_dialogue",
+      "prompt": "User: 'Bhai, mera Python code run nahi ho raha, syntax error",
+      "entropy": 8.652,
+      "generated": "........................"
+    }
+  ],
+  "historical_comparison": {
+    "vision_v1_4_calibrated_baseline": {
+      "parameters": "13.33M",
+      "accuracy_percent": 10.0,
+      "score_240": "24/240",
+      "status": "HISTORICAL_BASELINE"
+    },
+    "vision_2_0_candidate_g": {
+      "parameters": "13.33M",
+      "accuracy_percent": 11.25,
+      "score_240": "27/240",
+      "status": "REFERENCE_13M"
+    },
+    "vision_scale_100m_original_pilot": {
+      "parameters": "98.26M",
+      "accuracy_percent": 0.0,
+      "score_240": "0/240",
+      "collapse_mode": "Digit '1' ('1111...')",
+      "status": "FAILED_PILOT"
+    },
+    "vision_scale_100m_recovered": {
+      "parameters": "98.26M",
+      "accuracy_percent": 0.0,
+      "score_48": "0/48",
+      "collapse_mode": "Whitespace ' ' ('   ...')",
+      "status": "FAILED_RECOVERY"
+    },
+    "vision_scale_100m_stage1_foundation": {
+      "parameters": "98.26M",
+      "accuracy_percent": 0.0,
+      "score_evaluated": "0/48",
+      "collapse_mode": "None (Eliminated)",
+      "mean_entropy": 8.652,
+      "status": "STAGE1_FOUNDATION_EVALUATED"
+    }
+  }
+}

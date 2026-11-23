@@ -1,0 +1,422 @@
+{
+  "program": "VISION Billion-Token Pretraining Native Benchmark",
+  "checkpoint": "vision-pretraining-validation-13m",
+  "weights_sha256": "4f85bdeddd360cb986d01ce008378a053aca653941f41defaec9f1cddbdb3379",
+  "total_parameters": 13332498,
+  "total_probes": 200,
+  "passed_probes": 0,
+  "overall_accuracy_pct": 0.0,
+  "wilson_95_ci": [
+    0.0,
+    1.88
+  ],
+  "domain_breakdown": {
+    "mathematics": {
+      "passed": 0,
+      "total": 40,
+      "accuracy_pct": 0.0
+    },
+    "programming_python": {
+      "passed": 0,
+      "total": 40,
+      "accuracy_pct": 0.0
+    },
+    "formal_reasoning": {
+      "passed": 0,
+      "total": 30,
+      "accuracy_pct": 0.0
+    },
+    "science_engineering": {
+      "passed": 0,
+      "total": 30,
+      "accuracy_pct": 0.0
+    },
+    "hindi_comprehension": {
+      "passed": 0,
+      "total": 20,
+      "accuracy_pct": 0.0
+    },
+    "hinglish_dialogue": {
+      "passed": 0,
+      "total": 20,
+      "accuracy_pct": 0.0
+    },
+    "instruction_following": {
+      "passed": 0,
+      "total": 20,
+      "accuracy_pct": 0.0
+    }
+  },
+  "evaluation_progression": [
+    {
+      "step": 0,
+      "accuracy_pct": 0.0,
+      "passed_probes": 0,
+      "total_probes": 200,
+      "wilson_ci": [
+        0.0,
+        1.88
+      ],
+      "domain_breakdown": {
+        "mathematics": {
+          "passed": 0,
+          "total": 40,
+          "accuracy_pct": 0.0
+        },
+        "programming_python": {
+          "passed": 0,
+          "total": 40,
+          "accuracy_pct": 0.0
+        },
+        "formal_reasoning": {
+          "passed": 0,
+          "total": 30,
+          "accuracy_pct": 0.0
+        },
+        "science_engineering": {
+          "passed": 0,
+          "total": 30,
+          "accuracy_pct": 0.0
+        },
+        "hindi_comprehension": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        },
+        "hinglish_dialogue": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        },
+        "instruction_following": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        }
+      }
+    },
+    {
+      "step": 50,
+      "accuracy_pct": 0.0,
+      "passed_probes": 0,
+      "total_probes": 200,
+      "wilson_ci": [
+        0.0,
+        1.88
+      ],
+      "domain_breakdown": {
+        "mathematics": {
+          "passed": 0,
+          "total": 40,
+          "accuracy_pct": 0.0
+        },
+        "programming_python": {
+          "passed": 0,
+          "total": 40,
+          "accuracy_pct": 0.0
+        },
+        "formal_reasoning": {
+          "passed": 0,
+          "total": 30,
+          "accuracy_pct": 0.0
+        },
+        "science_engineering": {
+          "passed": 0,
+          "total": 30,
+          "accuracy_pct": 0.0
+        },
+        "hindi_comprehension": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        },
+        "hinglish_dialogue": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        },
+        "instruction_following": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        }
+      }
+    },
+    {
+      "step": 100,
+      "accuracy_pct": 0.0,
+      "passed_probes": 0,
+      "total_probes": 200,
+      "wilson_ci": [
+        0.0,
+        1.88
+      ],
+      "domain_breakdown": {
+        "mathematics": {
+          "passed": 0,
+          "total": 40,
+          "accuracy_pct": 0.0
+        },
+        "programming_python": {
+          "passed": 0,
+          "total": 40,
+          "accuracy_pct": 0.0
+        },
+        "formal_reasoning": {
+          "passed": 0,
+          "total": 30,
+          "accuracy_pct": 0.0
+        },
+        "science_engineering": {
+          "passed": 0,
+          "total": 30,
+          "accuracy_pct": 0.0
+        },
+        "hindi_comprehension": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        },
+        "hinglish_dialogue": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        },
+        "instruction_following": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        }
+      }
+    },
+    {
+      "step": 150,
+      "accuracy_pct": 0.0,
+      "passed_probes": 0,
+      "total_probes": 200,
+      "wilson_ci": [
+        0.0,
+        1.88
+      ],
+      "domain_breakdown": {
+        "mathematics": {
+          "passed": 0,
+          "total": 40,
+          "accuracy_pct": 0.0
+        },
+        "programming_python": {
+          "passed": 0,
+          "total": 40,
+          "accuracy_pct": 0.0
+        },
+        "formal_reasoning": {
+          "passed": 0,
+          "total": 30,
+          "accuracy_pct": 0.0
+        },
+        "science_engineering": {
+          "passed": 0,
+          "total": 30,
+          "accuracy_pct": 0.0
+        },
+        "hindi_comprehension": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        },
+        "hinglish_dialogue": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        },
+        "instruction_following": {
+          "passed": 0,
+          "total": 20,
+          "accuracy_pct": 0.0
+        }
+      }
+    }
+  ],
+  "sample_evaluations": [
+    {
+      "id": "TRF-0001",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (7 + 10) - 7.",
+      "expected": "10",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 10, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0002",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (11 + 13) - 12.",
+      "expected": "12",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 12, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0003",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (15 + 16) - 6.",
+      "expected": "25",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 25, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0004",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (19 + 19) - 11.",
+      "expected": "27",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 27, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0005",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (23 + 22) - 5.",
+      "expected": "40",
+      "generated": "To find the equation:\n\n1.\n#x = 12x = 12\n\n#\n#\n#\n#x =",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 40, got: To find the equation:\n\n1.\n#x = 12x = 12\n\n#\n#\n#\n#x =)"
+    },
+    {
+      "id": "TRF-0006",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (27 + 25) - 10.",
+      "expected": "42",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 42, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0007",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (31 + 28) - 4.",
+      "expected": "55",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 55, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0008",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (35 + 31) - 9.",
+      "expected": "57",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 57, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0009",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (39 + 34) - 3.",
+      "expected": "70",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 70, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0010",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (43 + 37) - 8.",
+      "expected": "72",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 72, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0011",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (47 + 40) - 2.",
+      "expected": "85",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 85, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0012",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (51 + 43) - 7.",
+      "expected": "87",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 87, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0013",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (55 + 46) - 12.",
+      "expected": "89",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 89, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0014",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (59 + 49) - 6.",
+      "expected": "102",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 102, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0015",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (63 + 52) - 11.",
+      "expected": "104",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 104, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0016",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (67 + 55) - 5.",
+      "expected": "117",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 117, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0017",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (71 + 58) - 10.",
+      "expected": "119",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 119, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0018",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (75 + 61) - 4.",
+      "expected": "132",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 132, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0019",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (79 + 64) - 9.",
+      "expected": "134",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 134, got: To find the number of the number of the number of the number)"
+    },
+    {
+      "id": "TRF-0020",
+      "domain": "mathematics",
+      "prompt": "Compute the exact value of (83 + 67) - 3.",
+      "expected": "147",
+      "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of",
+      "passed": false,
+      "reason": "MATH_MISMATCH (Expected 147, got: To find the number of the number of the number of the number)"
+    }
+  ]
+}

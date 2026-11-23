@@ -1,0 +1,400 @@
+{
+  "provenance_summary": "Direct provenance verification across all 26 raw corpus datasets in data/corpus_raw",
+  "total_datasets": 26,
+  "datasets": [
+    {
+      "id": "cosmopedia_openstax",
+      "repo_id": "HuggingFaceTB/cosmopedia",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "science_engineering",
+      "stage_role": "pretrain",
+      "origin_class": "synthetic",
+      "manifest_bytes": 346992522,
+      "actual_disk_files": 2,
+      "actual_disk_bytes": 346992522,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "cosmopedia_khanacademy",
+      "repo_id": "HuggingFaceTB/cosmopedia",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "science_math",
+      "stage_role": "pretrain",
+      "origin_class": "synthetic",
+      "manifest_bytes": 49139761,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 49139761,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "cosmopedia_stanford",
+      "repo_id": "HuggingFaceTB/cosmopedia",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "general_academic",
+      "stage_role": "pretrain",
+      "origin_class": "synthetic",
+      "manifest_bytes": 253620171,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 253620171,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "cosmopedia_wikihow",
+      "repo_id": "HuggingFaceTB/cosmopedia",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "multistep_reasoning",
+      "stage_role": "pretrain",
+      "origin_class": "synthetic",
+      "manifest_bytes": 250990566,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 250990566,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "finemath_4plus",
+      "repo_id": "HuggingFaceTB/finemath",
+      "license": "ODC-By-1.0",
+      "card_license": "odc-by",
+      "domain": "mathematics",
+      "stage_role": "pretrain",
+      "origin_class": "public",
+      "manifest_bytes": 286267316,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 286267316,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "fineweb_edu_10bt_s0",
+      "repo_id": "HuggingFaceFW/fineweb-edu",
+      "license": "ODC-By-1.0",
+      "card_license": "odc-by",
+      "domain": "language",
+      "stage_role": "pretrain",
+      "origin_class": "public",
+      "manifest_bytes": 2152819114,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 2152819114,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "sangraha_hindi_verified",
+      "repo_id": "ai4bharat/sangraha",
+      "license": "CC-BY-4.0",
+      "card_license": "cc-by-4.0",
+      "domain": "hindi_devanagari",
+      "stage_role": "pretrain",
+      "origin_class": "curated",
+      "manifest_bytes": 378091240,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 378091240,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "sangraha_hinglish_wiki",
+      "repo_id": "ai4bharat/sangraha",
+      "license": "CC-BY-4.0",
+      "card_license": "cc-by-4.0",
+      "domain": "hinglish",
+      "stage_role": "pretrain",
+      "origin_class": "synthetic",
+      "manifest_bytes": 180430131,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 180430131,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "numina_math_cot",
+      "repo_id": "AI-MO/NuminaMath-CoT",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "mathematics",
+      "stage_role": "sft",
+      "origin_class": "curated",
+      "manifest_bytes": 493572366,
+      "actual_disk_files": 2,
+      "actual_disk_bytes": 493572366,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "magicoder_oss_instruct_75k",
+      "repo_id": "ise-uiuc/Magicoder-OSS-Instruct-75K",
+      "license": "MIT",
+      "card_license": "mit",
+      "domain": "coding",
+      "stage_role": "sft",
+      "origin_class": "synthetic",
+      "manifest_bytes": 203201169,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 203201169,
+      "file_types": [
+        ".jsonl"
+      ]
+    },
+    {
+      "id": "codefeedback_filtered",
+      "repo_id": "m-a-p/CodeFeedback-Filtered-Instruction",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "coding",
+      "stage_role": "sft",
+      "origin_class": "curated",
+      "manifest_bytes": 371228314,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 371228314,
+      "file_types": [
+        ".jsonl"
+      ]
+    },
+    {
+      "id": "sc2_exec_python_50k",
+      "repo_id": "bigcode/self-oss-instruct-sc2-exec-filter-50k",
+      "license": "ODC-By-1.0",
+      "card_license": "odc-by",
+      "domain": "coding_python",
+      "stage_role": "sft",
+      "origin_class": "synthetic",
+      "manifest_bytes": 90128158,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 90128158,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "commitpackft_swe",
+      "repo_id": "bigcode/commitpackft",
+      "license": "MIT",
+      "card_license": "mit",
+      "domain": "software_engineering",
+      "stage_role": "sft",
+      "origin_class": "public",
+      "manifest_bytes": 424770138,
+      "actual_disk_files": 5,
+      "actual_disk_bytes": 424770138,
+      "file_types": [
+        ".jsonl"
+      ]
+    },
+    {
+      "id": "webinstruct_stem",
+      "repo_id": "TIGER-Lab/WebInstructSub",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "science_engineering",
+      "stage_role": "sft",
+      "origin_class": "curated",
+      "manifest_bytes": 138656648,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 138656648,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "oasst2_trees",
+      "repo_id": "OpenAssistant/oasst2",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "instruction_multilingual",
+      "stage_role": "sft",
+      "origin_class": "curated",
+      "manifest_bytes": 54370156,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 54370156,
+      "file_types": [
+        ".gz"
+      ]
+    },
+    {
+      "id": "glaive_function_calling_v2",
+      "repo_id": "glaiveai/glaive-function-calling-v2",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "tool_use",
+      "stage_role": "sft",
+      "origin_class": "synthetic",
+      "manifest_bytes": 271190065,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 271190065,
+      "file_types": [
+        ".json"
+      ]
+    },
+    {
+      "id": "hermes_function_calling_v1",
+      "repo_id": "NousResearch/hermes-function-calling-v1",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "tool_use",
+      "stage_role": "sft",
+      "origin_class": "synthetic",
+      "manifest_bytes": 20746693,
+      "actual_disk_files": 2,
+      "actual_disk_bytes": 20746693,
+      "file_types": [
+        ".json"
+      ]
+    },
+    {
+      "id": "smangrul_hindi_instruct",
+      "repo_id": "smangrul/hindi_instruct_v1",
+      "license": "MIT",
+      "card_license": "mit",
+      "domain": "hindi_devanagari",
+      "stage_role": "sft",
+      "origin_class": "curated",
+      "manifest_bytes": 13257438,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 13257438,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "damerajee_small_hindi_instruct",
+      "repo_id": "damerajee/small-hindi-instruct",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "hinglish_dialog",
+      "stage_role": "sft",
+      "origin_class": "curated",
+      "manifest_bytes": 72634,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 72634,
+      "file_types": [
+        ".csv"
+      ]
+    },
+    {
+      "id": "cognitivelab_hindi_instruct",
+      "repo_id": "CognitiveLab/Hindi-Instruct-Gemma-Prompt-formate",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "hindi_devanagari",
+      "stage_role": "sft",
+      "origin_class": "curated",
+      "manifest_bytes": 172299722,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 172299722,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "cosmopedia_auto_math_text",
+      "repo_id": "HuggingFaceTB/cosmopedia",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "mathematics",
+      "stage_role": "pretrain",
+      "origin_class": "synthetic",
+      "manifest_bytes": 248133641,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 248133641,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "gsm8k_train",
+      "repo_id": "openai/gsm8k",
+      "license": "MIT",
+      "card_license": [
+        "mit"
+      ],
+      "domain": "mathematics",
+      "stage_role": "sft",
+      "origin_class": "curated",
+      "manifest_bytes": 2306545,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 2306545,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "orca_math_200k",
+      "repo_id": "microsoft/orca-math-word-problems-200k",
+      "license": "MIT",
+      "card_license": "mit",
+      "domain": "mathematics",
+      "stage_role": "sft",
+      "origin_class": "synthetic",
+      "manifest_bytes": 84248748,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 84248748,
+      "file_types": [
+        ".parquet"
+      ]
+    },
+    {
+      "id": "magicoder_evol_instruct_110k",
+      "repo_id": "ise-uiuc/Magicoder-Evol-Instruct-110K",
+      "license": "Apache-2.0",
+      "card_license": "apache-2.0",
+      "domain": "coding",
+      "stage_role": "sft",
+      "origin_class": "synthetic",
+      "manifest_bytes": 255186224,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 255186224,
+      "file_types": [
+        ".jsonl"
+      ]
+    },
+    {
+      "id": "commitpackft_c_ts_sql",
+      "repo_id": "bigcode/commitpackft",
+      "license": "MIT",
+      "card_license": "mit",
+      "domain": "software_engineering",
+      "stage_role": "sft",
+      "origin_class": "public",
+      "manifest_bytes": 40022091,
+      "actual_disk_files": 3,
+      "actual_disk_bytes": 40022091,
+      "file_types": [
+        ".jsonl"
+      ]
+    },
+    {
+      "id": "mmlu_aux_train",
+      "repo_id": "cais/mmlu",
+      "license": "MIT",
+      "card_license": [
+        "mit"
+      ],
+      "domain": "science_knowledge",
+      "stage_role": "sft",
+      "origin_class": "curated",
+      "manifest_bytes": 47513731,
+      "actual_disk_files": 1,
+      "actual_disk_bytes": 47513731,
+      "file_types": [
+        ".parquet"
+      ]
+    }
+  ]
+}

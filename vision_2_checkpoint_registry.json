@@ -1,0 +1,250 @@
+{
+  "registry_version": "2.0.0",
+  "timestamp_iso": "2026-11-20T14:38:00+05:30",
+  "git_branch": "stark-frontier-capabilities",
+  "git_commit": "53be7a7",
+  "official_ai": "VISION \u2014 MADE BY LOKESH",
+  "unified_assistant": "JARVIS, powered by VISION",
+  "checkpoints": {
+    "vision-v1.4-calibrated-local": {
+      "name": "vision-v1.4-calibrated-local",
+      "role": "Permanent Calibrated Baseline",
+      "status": "Active Reference",
+      "parent_checkpoint": "vision-v1.4-experimental-local",
+      "weights_path": "data\\neural_models\\checkpoints\\vision-v1.4-calibrated-local\\weights.pt",
+      "sha256": "5575077916210c168e462b27deed5a1c08101b05aad94f7809b188a579a4caea",
+      "size_bytes": 53382241,
+      "size_mb": 50.91,
+      "architecture_config": {
+        "model_name": "jarvis-local-10m",
+        "version": "vision-v1.4-calibrated-local",
+        "vocab_size": 8192,
+        "d_model": 320,
+        "n_layers": 8,
+        "n_heads": 8,
+        "n_kv_heads": 4,
+        "d_ff": 896,
+        "max_seq_len": 1024,
+        "dropout": 0.05,
+        "rope_theta": 10000.0,
+        "image_size": 64,
+        "patch_size": 8,
+        "vision_layers": 3,
+        "vision_dim": 192,
+        "num_visual_classes": 8,
+        "audio_feature_dim": 32,
+        "num_audio_classes": 6,
+        "tie_word_embeddings": true,
+        "use_sdpa": true,
+        "gradient_checkpointing": false,
+        "qk_norm": true
+      },
+      "eval_aggregate": {
+        "passed": 61,
+        "total": 720,
+        "pct": 8.47,
+        "ci_95": [
+          6.65,
+          10.73
+        ]
+      },
+      "eval_sets": {
+        "Set_A": "24/240 (10.0%)",
+        "Set_B": "19/240 (7.92%)",
+        "Set_C": "18/240 (7.50%)"
+      }
+    },
+    "vision-v1.4-replay-cand-b": {
+      "name": "vision-v1.4-replay-cand-b",
+      "role": "Generalization Replay Reference",
+      "status": "Active Research Reference (Highest Historical Score)",
+      "parent_checkpoint": "vision-v1.4-calibrated-local",
+      "weights_path": "data\\neural_models\\checkpoints\\vision-v1.4-replay-cand-b\\weights.pt",
+      "sha256": "2fee4c30f579ed1a29fae6aecb4a7ff0063df08fbe3247b5806132e7a7817261",
+      "size_bytes": 53382305,
+      "size_mb": 50.91,
+      "architecture_config": {
+        "model_name": "jarvis-local-10m",
+        "version": "vision-v1.4-replay-cand-b",
+        "vocab_size": 8192,
+        "d_model": 320,
+        "n_layers": 8,
+        "n_heads": 8,
+        "n_kv_heads": 4,
+        "d_ff": 896,
+        "max_seq_len": 1024,
+        "dropout": 0.05,
+        "rope_theta": 10000.0,
+        "image_size": 64,
+        "patch_size": 8,
+        "vision_layers": 3,
+        "vision_dim": 192,
+        "num_visual_classes": 8,
+        "audio_feature_dim": 32,
+        "num_audio_classes": 6,
+        "tie_word_embeddings": true,
+        "use_sdpa": true,
+        "gradient_checkpointing": false,
+        "qk_norm": true
+      },
+      "eval_aggregate": {
+        "passed": 64,
+        "total": 720,
+        "pct": 8.89,
+        "ci_95": [
+          7.02,
+          11.19
+        ]
+      },
+      "eval_sets": {
+        "Set_A": "25/240 (10.42%)",
+        "Set_B": "20/240 (8.33%)",
+        "Set_C": "19/240 (7.92%)"
+      }
+    },
+    "vision-v1.4-precision-cand-e": {
+      "name": "vision-v1.4-precision-cand-e",
+      "role": "Structured Arithmetic Candidate",
+      "status": "Archived (OOD Catastrophic Forgetting Detected)",
+      "parent_checkpoint": "vision-v1.4-replay-cand-b",
+      "weights_path": "data\\neural_models\\checkpoints\\vision-v1.4-precision-cand-e\\weights.pt",
+      "sha256": "58ace75597ebbfb03de1967f061516769db55aabbdcbfa4778e06f1e3b813d76",
+      "size_bytes": 53382305,
+      "size_mb": 50.91,
+      "architecture_config": {
+        "model_name": "jarvis-local-10m",
+        "version": "vision-v1.4-precision-cand-e",
+        "vocab_size": 8192,
+        "d_model": 320,
+        "n_layers": 8,
+        "n_heads": 8,
+        "n_kv_heads": 4,
+        "d_ff": 896,
+        "max_seq_len": 1024,
+        "dropout": 0.05,
+        "rope_theta": 10000.0,
+        "image_size": 64,
+        "patch_size": 8,
+        "vision_layers": 3,
+        "vision_dim": 192,
+        "num_visual_classes": 8,
+        "audio_feature_dim": 32,
+        "num_audio_classes": 6,
+        "tie_word_embeddings": true,
+        "use_sdpa": true,
+        "gradient_checkpointing": false,
+        "qk_norm": true
+      },
+      "eval_aggregate": {
+        "passed": 58,
+        "total": 720,
+        "pct": 8.06,
+        "ci_95": [
+          6.28,
+          10.27
+        ]
+      },
+      "eval_sets": {
+        "Set_A": "28/240 (11.67%)",
+        "Set_B": "16/240 (6.67%)",
+        "Set_C": "14/240 (5.83%)"
+      }
+    },
+    "vision-v1.4-breakthrough-cand-f": {
+      "name": "vision-v1.4-breakthrough-cand-f",
+      "role": "Decontaminated Curriculum Breakthrough Candidate",
+      "status": "Active Breakthrough Reference",
+      "parent_checkpoint": "vision-v1.4-replay-cand-b",
+      "weights_path": "data\\neural_models\\checkpoints\\vision-v1.4-breakthrough-cand-f\\weights.pt",
+      "sha256": "14484b4b7a0d922da3c5d3431a6a47eb646cd14b1af072e5c6048b277c6df8b3",
+      "size_bytes": 53381345,
+      "size_mb": 50.91,
+      "architecture_config": {
+        "model_name": "jarvis-local-10m",
+        "version": "vision-v1.4-calibrated-local",
+        "vocab_size": 8192,
+        "d_model": 320,
+        "n_layers": 8,
+        "n_heads": 8,
+        "n_kv_heads": 4,
+        "d_ff": 896,
+        "max_seq_len": 1024,
+        "dropout": 0.05,
+        "rope_theta": 10000.0,
+        "image_size": 64,
+        "patch_size": 8,
+        "vision_layers": 3,
+        "vision_dim": 192,
+        "num_visual_classes": 8,
+        "audio_feature_dim": 32,
+        "num_audio_classes": 6,
+        "tie_word_embeddings": true,
+        "use_sdpa": true,
+        "gradient_checkpointing": false,
+        "qk_norm": true
+      },
+      "eval_aggregate": {
+        "passed": 61,
+        "total": 720,
+        "pct": 8.47,
+        "ci_95": [
+          6.65,
+          10.73
+        ]
+      },
+      "eval_sets": {
+        "Set_A": "25/240 (10.42%)",
+        "Set_B": "19/240 (7.92%)",
+        "Set_C": "17/240 (7.08%)"
+      }
+    },
+    "vision-2.0-candidate-g": {
+      "name": "vision-2.0-candidate-g",
+      "role": "VISION 2.0 Foundation Model Candidate (10.6M Token Multi-Domain Pretrained)",
+      "status": "Evaluated Candidate (Highest Overall Score: 91/720)",
+      "parent_checkpoint": "vision-v1.4-replay-cand-b",
+      "weights_path": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-2.0-candidate-g\\weights.pt",
+      "sha256": "576e21f6b49dec1088da1f96f06d9653fe576ce50f54e6ff83266ce376198039",
+      "size_bytes": 53382497,
+      "size_mb": 50.91,
+      "architecture_config": {
+        "model_name": "jarvis-local-10m",
+        "version": "vision-v1.4-replay-cand-b",
+        "vocab_size": 8192,
+        "d_model": 320,
+        "n_layers": 8,
+        "n_heads": 8,
+        "n_kv_heads": 4,
+        "d_ff": 896,
+        "max_seq_len": 1024,
+        "dropout": 0.05,
+        "rope_theta": 10000.0,
+        "image_size": 64,
+        "patch_size": 8,
+        "vision_layers": 3,
+        "vision_dim": 192,
+        "num_visual_classes": 8,
+        "audio_feature_dim": 32,
+        "num_audio_classes": 6,
+        "tie_word_embeddings": true,
+        "use_sdpa": true,
+        "gradient_checkpointing": false,
+        "qk_norm": true
+      },
+      "eval_aggregate": {
+        "passed": 91,
+        "total": 720,
+        "pct": 12.64,
+        "ci_95": [
+          10.41,
+          15.27
+        ]
+      },
+      "eval_sets": {
+        "Set_A": "28/240 (11.67%)",
+        "Set_B": "33/240 (13.75%)",
+        "Set_C": "30/240 (12.5%)"
+      }
+    }
+  }
+}

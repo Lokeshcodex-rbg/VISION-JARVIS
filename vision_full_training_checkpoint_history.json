@@ -1,0 +1,36 @@
+{
+  "title": "VISION Foundation Model Checkpoint History Registry",
+  "timestamp_iso": "2026-11-21T17:43:58Z",
+  "checkpoints": [
+    {
+      "candidate": "VISION-100M-Stage4",
+      "model_name": "vision-scale-100m-stage4-curated",
+      "parameters": 98258258,
+      "checkpoint_file": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-100m-stage4-curated\\weights.pt",
+      "sha256": "72d7d3f252558753d769f5263e72cf63fa851f50a0920daae2ef0fa3c5980c5e",
+      "file_size_mb": 374.89,
+      "total_steps": 24,
+      "optimizer_updates": 3,
+      "tokens_processed": 12288,
+      "final_train_loss": 7.2586,
+      "validation_loss": 6.8762,
+      "validation_ppl": 968.93,
+      "first_token_entropy": 13.784
+    },
+    {
+      "candidate": "VISION-12M-Emergence",
+      "model_name": "vision-scale-12m-curated",
+      "parameters": 12194444,
+      "checkpoint_file": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-12m-curated-candidate\\weights.pt",
+      "sha256": "6659c24ed932454e4765f8410cd40b5a12f1c03424505d40006a50883c0b21c5",
+      "file_size_mb": 46.55,
+      "total_steps": 80,
+      "optimizer_updates": 10,
+      "tokens_processed": 40960,
+      "final_train_loss": 8.0847,
+      "validation_loss": 8.1261,
+      "validation_ppl": 3381.44,
+      "first_token_entropy": 17.818
+    }
+  ]
+}

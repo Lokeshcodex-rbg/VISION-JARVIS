@@ -1,0 +1,35 @@
+{
+  "id": "scientific_paper_bibtex",
+  "name": "Scholarly BibTeX & Research Metadata Resolver",
+  "version": "1.0.0",
+  "description": "Formats research paper citations into standard BibTeX records and validates academic DOIs.",
+  "author": "VISION Research Division — MADE BY LOKESH",
+  "permissions": ["SCHOLARLY_CITATION"],
+  "networkPolicy": "READ_ONLY_WEB",
+  "hardwareSafety": {
+    "actuatorControl": false,
+    "requiresPhysicalSafetyInterlock": false
+  },
+  "tools": [
+    {
+      "id": "format_bibtex_entry",
+      "description": "Converts paper metadata into formatted BibTeX entry",
+      "parameters": {
+        "title": "string",
+        "authors": "array",
+        "year": "number",
+        "journalOrVenue": "string",
+        "doi": "string"
+      },
+      "timeoutMs": 5000
+    },
+    {
+      "id": "validate_doi",
+      "description": "Validates format and DOI resolution format",
+      "parameters": {
+        "doi": "string"
+      },
+      "timeoutMs": 5000
+    }
+  ]
+}

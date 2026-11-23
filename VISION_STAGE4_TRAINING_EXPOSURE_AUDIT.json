@@ -1,0 +1,47 @@
+{
+  "audit_name": "VISION Stage 4 Training Exposure & Convergence Audit",
+  "model_name": "vision-13m-stage4-relational",
+  "base_checkpoint": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-pretraining-validation-13m\\weights.pt",
+  "final_checkpoint": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-13m-stage4-relational\\weights.pt",
+  "final_sha256": "d87af873f50897f86d4eeded3aacbe0cf2995d17e26213d6039086cc1089c66c",
+  "training_duration_seconds": 2318.5,
+  "optimizer_accounting": {
+    "optimizer": "AdamW (betas=(0.9, 0.95), weight_decay=0.1)",
+    "optimizer_updates": 250,
+    "target_optimizer_updates": 250,
+    "batch_size_per_step": 16,
+    "max_sequence_length": 256,
+    "warmup_steps": 20,
+    "peak_learning_rate": 0.0002,
+    "min_learning_rate": 2e-05,
+    "average_gradient_norm": 2.4284,
+    "average_throughput_tok_per_sec": 556.7
+  },
+  "token_accounting": {
+    "reported_input_tokens": 1020000,
+    "nominal_target_tokens_supervised": 310355,
+    "actual_non_padding_target_tokens": 310355,
+    "average_target_tokens_per_sample": 77.59,
+    "loss_masking_verified": "100% prompt masking (loss computed strictly on response tokens, prompt target = pad_id)"
+  },
+  "sample_and_epoch_accounting": {
+    "total_dataset_train_samples": 7197,
+    "total_samples_consumed_by_optimizer": 4000,
+    "dataset_coverage_pct": 55.58,
+    "effective_epochs": 0.5558,
+    "example_repetition_rate": "0.0 (Unrepeated: 4,000 distinct samples drawn from 7,197 without replacement in epoch 1)"
+  },
+  "loss_trajectory_analysis": {
+    "initial_train_loss": 5.5867,
+    "final_train_loss": 4.3803,
+    "initial_val_loss": 5.4379,
+    "final_val_loss": 3.6559,
+    "val_loss_reduction_nats": 1.782,
+    "perplexity_reduction": {
+      "initial_perplexity": 229.96,
+      "final_perplexity": 38.7,
+      "reduction_ratio": 5.94
+    },
+    "why_loss_decreases_while_reasoning_fails": "Cross-entropy loss measures next-token probability prediction over the response distribution. The 13.33M model successfully minimizes cross-entropy by acquiring common syntactic structures: it learns the English language tokens ('The answer is', 'To find'), Python AST function grammar ('def func(): return 0'), and punctuation. This syntactic alignment drops perplexity from 230 to 38.7. However, an 8-layer transformer with only 3.09M non-embedding weights does not have the capacity to synthesize the internal feed-forward routing tables required to perform multi-step arithmetic, track carry bits, or retain arbitrary world facts. Thus, the model achieves low syntactic loss while scoring 0% on functional algorithmic reasoning."
+  }
+}

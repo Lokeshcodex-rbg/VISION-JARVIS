@@ -1,0 +1,220 @@
+{
+  "timestamp": "2026-11-10T18:08:36.391Z",
+  "totalSuites": 19,
+  "suitesPassed": 19,
+  "suitesFailed": 0,
+  "suitesSkipped": 0,
+  "grandTotalPassedAssertions": 753,
+  "grandTotalFailedAssertions": 0,
+  "results": [
+    {
+      "file": "test_stark_advanced_voice_conversation_acceptance_suite.js",
+      "phase": "Phase 1",
+      "subsystem": "Advanced Voice & Audio Streaming",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 2965,
+      "passed": 36,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_advanced_voice_conversation_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_browser_automation_acceptance_suite.js",
+      "phase": "Phase 2",
+      "subsystem": "SAC Browser Automation",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 7378,
+      "passed": 14,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_browser_automation_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_local_agent_complete_acceptance_suite.js",
+      "phase": "Phase 3",
+      "subsystem": "Windows Local Desktop Agent",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 10353,
+      "passed": 85,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_local_agent_complete_acceptance_suite.log"
+    },
+    {
+      "file": "test_windows_local_agent_acceptance_suite.js",
+      "phase": "Phase 3",
+      "subsystem": "Windows System Integration",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 5322,
+      "passed": 49,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_windows_local_agent_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_permission_policy_acceptance_suite.js",
+      "phase": "Phase 4",
+      "subsystem": "Permission Policy & Gate",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 1793,
+      "passed": 73,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_permission_policy_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_emergency_stop_audit_system_acceptance_suite.js",
+      "phase": "Phase 5",
+      "subsystem": "Emergency Stop & Cryptographic Audit",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 6156,
+      "passed": 99,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_emergency_stop_audit_system_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_dag_planning_acceptance_suite.js",
+      "phase": "Phase 6",
+      "subsystem": "Dependency DAG & Execution Engine",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 1290,
+      "passed": 16,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_dag_planning_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_multi_agent_orchestration_acceptance_suite.js",
+      "phase": "Phase 7",
+      "subsystem": "Multi-Agent Specialist Coordination",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 1028,
+      "passed": 20,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_multi_agent_orchestration_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_infinite_scale_memory_acceptance_suite.js",
+      "phase": "Phase 8",
+      "subsystem": "8-Layer Scalable SQLite Memory",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 138416,
+      "passed": 21,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_infinite_scale_memory_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_advanced_research_knowledge_acceptance_suite.js",
+      "phase": "Phase 9",
+      "subsystem": "Deep Research & Synthesis",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 1869,
+      "passed": 21,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_advanced_research_knowledge_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_advanced_computer_intelligence_acceptance_suite.js",
+      "phase": "Phase 10",
+      "subsystem": "Computer Intelligence & Self-Coding",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 24060,
+      "passed": 22,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_advanced_computer_intelligence_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_autonomous_learning_acceptance_suite.js",
+      "phase": "Phase 10",
+      "subsystem": "Autonomous Skill Acquisition",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 2169,
+      "passed": 25,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_autonomous_learning_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_phase11_multimodal_intelligence_acceptance_suite.js",
+      "phase": "Phase 11",
+      "subsystem": "Multimodal Vision & Audio Inspection",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 18239,
+      "passed": 36,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_phase11_multimodal_intelligence_acceptance_suite.log"
+    },
+    {
+      "file": "test_stark_phase12_scientific_engineering_intelligence_suite.js",
+      "phase": "Phase 12",
+      "subsystem": "Engineering & Scientific Intelligence",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 7518,
+      "passed": 43,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_phase12_scientific_engineering_intelligence_suite.log"
+    },
+    {
+      "file": "test_phase12_structural_beam_regression.js",
+      "phase": "Phase 12",
+      "subsystem": "Structural Beam Mathematical Verification",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 4492,
+      "passed": 16,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_phase12_structural_beam_regression.log"
+    },
+    {
+      "file": "test_stark_phase13_production_autonomous_execution_suite.js",
+      "phase": "Phase 13",
+      "subsystem": "Production Autonomous Execution Engine",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 4907,
+      "passed": 59,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_phase13_production_autonomous_execution_suite.log"
+    },
+    {
+      "file": "test_phase13_final_hardening_audit.js",
+      "phase": "Phase 13",
+      "subsystem": "Crash Recovery, Idempotency & WhatsApp Hardening",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 5504,
+      "passed": 30,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_phase13_final_hardening_audit.log"
+    },
+    {
+      "file": "test_whatsapp_confirmation_and_stop_invariants.js",
+      "phase": "Phase 13",
+      "subsystem": "WhatsApp Confirmation & Stop Invariants",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 1806,
+      "passed": 10,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_whatsapp_confirmation_and_stop_invariants.log"
+    },
+    {
+      "file": "test_stark_phase14_personal_intelligence_acceptance_suite.js",
+      "phase": "Phase 14",
+      "subsystem": "Personal Context, KG & Proactive Assistance",
+      "status": "PASS",
+      "exitCode": 0,
+      "durationMs": 1433,
+      "passed": 78,
+      "failed": 0,
+      "logFile": "reports\\evidence\\phase14\\regression_logs\\test_stark_phase14_personal_intelligence_acceptance_suite.log"
+    }
+  ]
+}

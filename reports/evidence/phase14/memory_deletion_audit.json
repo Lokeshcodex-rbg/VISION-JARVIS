@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-11-10T18:13:48.853Z",
+  "totalChecks": 7,
+  "passed": 7,
+  "failed": 0,
+  "successRate": "100.0%",
+  "testMemoryId": "mem_del_audit_1794334428825",
+  "testEntityId": "kg_entity_del_1794334428825",
+  "auditReceiptId": "rcpt_66d8a49d1b77f34b",
+  "checks": [
+    {
+      "name": "Store 1: Authoritative SQLite table record purged",
+      "status": "PASS",
+      "evidence": "db.getMemory returned null"
+    },
+    {
+      "name": "Store 2: FTS index purged without lingering keyword matches",
+      "status": "PASS",
+      "evidence": "FTS search returned 0 matches"
+    },
+    {
+      "name": "Store 3: Knowledge Graph entity and connecting edges neutralized",
+      "status": "PASS",
+      "evidence": "Entity node null and relation edges neutralized"
+    },
+    {
+      "name": "Store 4: In-memory fallback and operational caches purged",
+      "status": "PASS",
+      "evidence": "Record absent from in-memory arrays"
+    },
+    {
+      "name": "Store 5: Conversational active context reset and purged",
+      "status": "PASS",
+      "evidence": "Active conversational subject and entity cleared"
+    },
+    {
+      "name": "Store 6: Forensic audit receipt generated without leaking private content",
+      "status": "PASS",
+      "evidence": "Audit receipt recorded SHA-256 (66d8a49d1b77f34bc515e7f29cd19713b6055fc43e8f5b48a95657834fa633cc) without plaintext"
+    },
+    {
+      "name": "Store 7: Cold-storage snapshot limitations and backup retention boundary documented",
+      "status": "PASS",
+      "evidence": "Clear disclosure that VACUUM INTO snapshots rotate via backup lifecycle"
+    }
+  ],
+  "retentionLimitations": {
+    "activeStoragePurgedImmediately": true,
+    "sqliteTablePurged": true,
+    "ftsIndexesPurged": true,
+    "knowledgeGraphPurged": true,
+    "inMemoryCachesPurged": true,
+    "coldStorageSnapshots": "Historical VACUUM INTO backup snapshots created prior to deletion retain point-in-time state until standard retention lifecycle rotation.",
+    "documentedRetentionPolicy": "Active operational data is purged with zero latency. Cold storage snapshot archives are retained according to the 30-day disaster recovery schedule."
+  }
+}

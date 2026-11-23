@@ -1,0 +1,23 @@
+{
+  "dataset_name": "vision_stage4_relational",
+  "dataset_dir": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_stage4_relational",
+  "max_seq_len": 256,
+  "total_samples": 7996,
+  "train_samples": 7197,
+  "val_samples": 799,
+  "structural_groups_count": 5368,
+  "structural_leakage_count": 0,
+  "total_tokens": 1065265,
+  "supervised_target_tokens": 613152,
+  "target_supervision_ratio_pct": 57.56,
+  "pillar_breakdown": {
+    "mathematics_and_reasoning": 4688,
+    "polyglot_programming": 1523,
+    "formal_reasoning_and_exam": 11,
+    "general_language_and_science": 394,
+    "hindi_and_hinglish": 1375,
+    "instruction_following_and_dialogue": 5
+  },
+  "generalization_suite_file": "D:\\Jarvis\\vision_stage4_generalization_suite_100.jsonl",
+  "generalization_suite_probes": 100
+}

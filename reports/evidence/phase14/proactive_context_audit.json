@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-11-10T18:15:52.379Z",
+  "totalChecks": 9,
+  "passed": 9,
+  "failed": 0,
+  "successRate": "100.0%",
+  "checks": [
+    {
+      "name": "Audit 1: Historical / superseded facts are strictly excluded from current memory queries",
+      "status": "PASS",
+      "evidence": "getValidMemories() returned 0 instances of isCurrent=0"
+    },
+    {
+      "name": "Audit 2: All 5 confidence classifications remain strictly distinct without collapsing",
+      "status": "PASS",
+      "evidence": "5 distinct classes: USER_CONFIRMED, SOURCE_VERIFIED, MODEL_INFERRED, UNCERTAIN, SUPERSEDED"
+    },
+    {
+      "name": "Audit 3: Untrusted external web and email content strictly blocked from confirmed memory",
+      "status": "PASS",
+      "evidence": "Web & email attempts to write USER_CONFIRMED rejected with SECURITY_VIOLATION"
+    },
+    {
+      "name": "Audit 4: Context Relevance Firewall strictly excludes personal memories from engineering tasks",
+      "status": "PASS",
+      "evidence": "Personal items filtered, only relevant engineering project memory allowed"
+    },
+    {
+      "name": "Audit 5: Proactive Level L0 strictly suppresses all proactive recommendations",
+      "status": "PASS",
+      "evidence": "Level L0 returned proposed: false"
+    },
+    {
+      "name": "Audit 6: Proactive Level L1 allows contextual tips but suppresses L2 summaries",
+      "status": "PASS",
+      "evidence": "L1 permitted contextual tip, blocked L2 summary"
+    },
+    {
+      "name": "Audit 7: L2/L3 recommendations strictly require explicit user approval (requiresApproval=true)",
+      "status": "PASS",
+      "evidence": "All L2/L3 recommendations generated with requiresApproval=true"
+    },
+    {
+      "name": "Audit 8: Proactive assistance NEVER auto-executes consequential operations or messaging",
+      "status": "PASS",
+      "evidence": "Suggested actions are staged for human approval only"
+    },
+    {
+      "name": "Audit 9: Quiet hours, deduplication, snooze, and dismissal lifecycle verified",
+      "status": "PASS",
+      "evidence": "Snoozed and dismissed states updated and persisted accurately"
+    }
+  ]
+}

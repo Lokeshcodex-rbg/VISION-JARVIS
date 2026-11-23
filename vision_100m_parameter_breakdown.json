@@ -1,0 +1,157 @@
+{
+  "model_name": "vision-scale-100m",
+  "model_family": "VISION",
+  "unified_assistant": "JARVIS",
+  "version": "2.0.0",
+  "target_parameter_class": "100M",
+  "summary": {
+    "total_trainable_parameters": 98258258,
+    "language_parameters": 94394112,
+    "vision_parameters": 3194444,
+    "audio_parameters": 669702,
+    "word_embeddings_tied": true,
+    "untied_parameters_equivalent": 104549714
+  },
+  "hyperparameters": {
+    "vocab_size": 8192,
+    "d_model": 768,
+    "n_layers": 14,
+    "n_heads": 12,
+    "n_kv_heads": 4,
+    "head_dim": 64,
+    "gqa_ratio": "12:4 (3:1)",
+    "d_ff": 2048,
+    "swiglu_multiplier": 2.6667,
+    "max_seq_len": 2048,
+    "rope_theta": 10000.0,
+    "gradient_checkpointing": true,
+    "tie_word_embeddings": true
+  },
+  "components": {
+    "token_embeddings": {
+      "layer_name": "tok_emb",
+      "shape": [
+        8192,
+        768
+      ],
+      "parameters": 6291456,
+      "percentage_of_total": 6.4
+    },
+    "transformer_layers": {
+      "number_of_layers": 14,
+      "per_layer_breakdown": {
+        "attention": {
+          "q_proj": {
+            "shape": [
+              768,
+              768
+            ],
+            "parameters": 589824
+          },
+          "k_proj": {
+            "shape": [
+              768,
+              256
+            ],
+            "parameters": 196608
+          },
+          "v_proj": {
+            "shape": [
+              768,
+              256
+            ],
+            "parameters": 196608
+          },
+          "o_proj": {
+            "shape": [
+              768,
+              768
+            ],
+            "parameters": 589824
+          },
+          "total_attention_per_layer": 1572864
+        },
+        "feed_forward_swiglu": {
+          "gate_proj": {
+            "shape": [
+              768,
+              2048
+            ],
+            "parameters": 1572864
+          },
+          "up_proj": {
+            "shape": [
+              768,
+              2048
+            ],
+            "parameters": 1572864
+          },
+          "down_proj": {
+            "shape": [
+              2048,
+              768
+            ],
+            "parameters": 1572864
+          },
+          "total_ffn_per_layer": 4718592
+        },
+        "normalization": {
+          "attn_norm": {
+            "shape": [
+              768
+            ],
+            "parameters": 768
+          },
+          "ffn_norm": {
+            "shape": [
+              768
+            ],
+            "parameters": 768
+          },
+          "total_norm_per_layer": 1536
+        },
+        "total_parameters_per_layer": 6292992
+      },
+      "all_layers_subtotal": {
+        "attention_all_layers": 22020096,
+        "ffn_all_layers": 66060288,
+        "layer_norms_all_layers": 21504,
+        "total_transformer_blocks": 88101888
+      }
+    },
+    "final_norm": {
+      "shape": [
+        768
+      ],
+      "parameters": 768
+    },
+    "output_head": {
+      "tied_to_token_embeddings": true,
+      "standalone_parameters": 0,
+      "note": "lm_head weights are shared with tok_emb to regularize representation space and reduce parameter bloat."
+    },
+    "multimodal_vision": {
+      "parameters": 3194444,
+      "percentage_of_total": 3.25,
+      "components": "Conv2d patch encoder (dim 256, 4 layers) + spatial embedding + projection head to d_model"
+    },
+    "multimodal_audio": {
+      "parameters": 669702,
+      "percentage_of_total": 0.68,
+      "components": "Conv1d acoustic feature extractor + projection head to d_model"
+    }
+  },
+  "memory_footprint_bytes": {
+    "weights_fp32": 393033032,
+    "weights_fp32_mb": 374.83,
+    "weights_fp16": 196516516,
+    "weights_fp16_mb": 187.41,
+    "weights_int8": 98258258,
+    "weights_int8_mb": 93.71,
+    "weights_int4": 49129129.0,
+    "weights_int4_mb": 46.85,
+    "adamw_optimizer_states_fp32_mb": 749.65,
+    "gradients_fp32_mb": 374.83,
+    "minimum_training_ram_fp32_mb": 1499.3
+  }
+}

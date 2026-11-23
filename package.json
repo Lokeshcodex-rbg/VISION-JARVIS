@@ -1,0 +1,31 @@
+{
+  "name": "vision-jarvis",
+  "version": "1.0.0",
+  "description": "VISION / JARVIS — Multi-Model AI Desktop Automation Assistant",
+  "main": "desktop/main.js",
+  "scripts": {
+    "start": "electron .",
+    "desktop": "electron .",
+    "server": "node server.js",
+    "dev": "node server.js",
+    "test": "node tests/test_stark_master_regression_suite.js"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "desktop-automation",
+    "electron",
+    "pytorch",
+    "gemini-api"
+  ],
+  "author": "Lokesh Upadhyay",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^45.0.0"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.2.3",
+    "playwright": "^1.65.0",
+    "three": "^0.186.1"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "report_name": "VISION 100M Host Hardware and Resource Utilization Audit",
+  "timestamp_iso": "2026-11-21T02:33:00Z",
+  "host_machine_specifications": {
+    "processor": "13th Gen Intel(R) Core(TM) i5-1335U",
+    "physical_cores": 10,
+    "logical_processors": 12,
+    "base_architecture": "x86_64",
+    "gpu_hardware": "Intel(R) Iris(R) Xe Graphics (Integrated)",
+    "cuda_support": false,
+    "cuda_device_count": 0,
+    "total_visible_ram_mb": 7875.45,
+    "available_ram_mb": 21.82,
+    "ram_utilization_percent": 99
+  },
+  "storage_allocation": {
+    "d_drive_total_gb": 195.31,
+    "d_drive_used_gb": 125.81,
+    "d_drive_free_gb": 69.51,
+    "c_drive_free_gb": 26.9,
+    "storage_safety_headroom": "SAFE (> 20 GB free on D:, > 10 GB free on C:)"
+  },
+  "execution_constraints_enforced": {
+    "pinned_threads": 2,
+    "rationale": "Prevents thermal throttling on Intel Core i5 and preserves CPU headroom for host OS and live applications",
+    "gradient_checkpointing": true,
+    "sdpa_scaled_dot_product": true,
+    "mixed_precision_capability": "CPU Float32 / BFloat16",
+    "max_rss_memory_budget_mb": 2048.0
+  },
+  "model_memory_breakdown_mb": {
+    "model_weights_fp32": 393.03,
+    "adamw_optimizer_states_fp32": 786.07,
+    "gradients_fp32": 393.03,
+    "activations_seqlen_256": 250.0,
+    "total_runtime_working_set_mb": 1822.13,
+    "weights_on_disk_pt_mb": 374.89
+  },
+  "empirical_throughput_measured": {
+    "local_cpu_throughput_tokens_per_sec": 12.9,
+    "tokens_per_optimizer_update": 4096,
+    "effective_batch_size": 16,
+    "training_speed_samples_per_sec": 0.1
+  },
+  "financial_and_cloud_status": {
+    "cloud_compute_purchased": false,
+    "total_financial_expenditure_usd": 0.0,
+    "external_api_costs_incurred": 0.0,
+    "governance_compliance": "STRICT_LOCAL_ONLY_ZERO_COST"
+  }
+}

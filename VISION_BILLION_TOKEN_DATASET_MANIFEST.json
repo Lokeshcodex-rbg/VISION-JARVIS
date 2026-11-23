@@ -1,0 +1,632 @@
+{
+  "program_title": "VISION Billion-Token Foundation Model Pretraining Program",
+  "timestamp": "2026-11-22T10:18:00Z",
+  "corpus_summary": {
+    "total_repositories": 21,
+    "total_files": 114,
+    "total_bytes": 6856386059,
+    "total_size_gb": 6.386,
+    "verified_raw_tokens": 1815205196,
+    "current_usable_tokens": 1706292884,
+    "initial_target_corpus_range": "2B - 5B usable tokens",
+    "long_term_target_corpus_range": "10B - 20B usable tokens"
+  },
+  "benchmark_protection": {
+    "master_1500_benchmark": {
+      "file": "vision_expanded_validation_dataset_1500.jsonl",
+      "sha256": "6b948a62fcff53c7b105814768bc527f727972897cef59e7da80b9d7a3ec7b41",
+      "status": "IMMUTABLE_PROTECTED",
+      "contamination": "Zero contamination; isolated canary probes checked"
+    },
+    "transfer_200_benchmark": {
+      "file": "vision_independent_transfer_test_200.jsonl",
+      "sha256": "c0405fb6e2419d15052c709024b8e8d7d73e01752a9dc281dcf2bc99c995a4d4",
+      "status": "IMMUTABLE_PROTECTED",
+      "contamination": "Zero exact prompt matches; 0 8-gram phrasal overlap"
+    }
+  },
+  "seventeen_domains_distribution": {
+    "general_english_language": {
+      "share_pct": 18.5,
+      "allocated_tokens": 218563044
+    },
+    "natural_english_conversations": {
+      "share_pct": 5.0,
+      "allocated_tokens": 8401992
+    },
+    "hindi_devanagari": {
+      "share_pct": 7.0,
+      "allocated_tokens": 124911322
+    },
+    "hinglish": {
+      "share_pct": 3.0,
+      "allocated_tokens": 3590854
+    },
+    "instruction_following": {
+      "share_pct": 10.0,
+      "allocated_tokens": 103657772
+    },
+    "reading_comprehension": {
+      "share_pct": 6.5,
+      "allocated_tokens": 245441159
+    },
+    "mathematics_and_algebra": {
+      "share_pct": 12.0,
+      "allocated_tokens": 114705999
+    },
+    "formal_and_deductive_reasoning": {
+      "share_pct": 8.0,
+      "allocated_tokens": 118899727
+    },
+    "programming": {
+      "share_pct": 12.0,
+      "allocated_tokens": 122203405
+    },
+    "algorithms_and_data_structures": {
+      "share_pct": 4.0,
+      "allocated_tokens": 89437685
+    },
+    "computer_science": {
+      "share_pct": 3.0,
+      "allocated_tokens": 134660750
+    },
+    "databases_and_operating_systems": {
+      "share_pct": 2.5,
+      "allocated_tokens": 93987617
+    },
+    "networking_and_cybersecurity": {
+      "share_pct": 1.5,
+      "allocated_tokens": 1831201
+    },
+    "physics_chemistry_biology": {
+      "share_pct": 3.0,
+      "allocated_tokens": 222756772
+    },
+    "electronics_robotics_embedded": {
+      "share_pct": 1.5,
+      "allocated_tokens": 9178700
+    },
+    "engineering_and_applied_science": {
+      "share_pct": 1.5,
+      "allocated_tokens": 192713304
+    },
+    "context_retention_and_multiturn": {
+      "share_pct": 1.0,
+      "allocated_tokens": 63331869
+    }
+  },
+  "repositories": {
+    "AI-MO__NuminaMath-CoT": {
+      "repository": "AI-MO__NuminaMath-CoT",
+      "license": "Apache-2.0",
+      "version": "v1.0.0",
+      "url": "https://huggingface.co/datasets/AI-MO/NuminaMath-CoT",
+      "attribution": "AI-MO Project (NuminaMath)",
+      "primary_domain": "mathematics_and_algebra",
+      "pillars": [
+        "mathematics_and_algebra",
+        "formal_and_deductive_reasoning"
+      ],
+      "languages": [
+        "en"
+      ],
+      "file_count": 6,
+      "size_bytes": 493572818,
+      "size_mb": 470.71,
+      "estimated_raw_bpe_tokens": 139034596,
+      "estimated_usable_bpe_tokens": 130692520,
+      "quality_filter": "LaTeX syntax check, step-by-step reasoning verification",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "ai4bharat__sangraha": {
+      "repository": "ai4bharat__sangraha",
+      "license": "CC-BY-4.0",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/ai4bharat/sangraha",
+      "attribution": "AI4Bharat, IIT Madras (Sangraha)",
+      "primary_domain": "hindi_devanagari",
+      "pillars": [
+        "hindi_devanagari",
+        "reading_comprehension"
+      ],
+      "languages": [
+        "hi"
+      ],
+      "file_count": 6,
+      "size_bytes": 558521823,
+      "size_mb": 532.65,
+      "estimated_raw_bpe_tokens": 199472079,
+      "estimated_usable_bpe_tokens": 187503754,
+      "quality_filter": "Unicode Devanagari range validation, length >= 50 chars",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "bigcode__commitpackft": {
+      "repository": "bigcode__commitpackft",
+      "license": "BigCode-OpenRAIL-M",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/bigcode/commitpackft",
+      "attribution": "BigCode Project",
+      "primary_domain": "programming_multilingual",
+      "pillars": [
+        "programming",
+        "algorithms_and_data_structures",
+        "engineering_and_applied_science"
+      ],
+      "languages": [
+        "en",
+        "python",
+        "java",
+        "javascript",
+        "typescript",
+        "c",
+        "cpp",
+        "sql",
+        "html",
+        "css"
+      ],
+      "file_count": 18,
+      "size_bytes": 464793449,
+      "size_mb": 443.26,
+      "estimated_raw_bpe_tokens": 130927732,
+      "estimated_usable_bpe_tokens": 123072068,
+      "quality_filter": "Commit diff parsing, polyglot language syntax check",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "bigcode__self-oss-instruct-sc2-exec-filter-50k": {
+      "repository": "bigcode__self-oss-instruct-sc2-exec-filter-50k",
+      "license": "BigCode-OpenRAIL-M",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/bigcode/self-oss-instruct-sc2-exec-filter-50k",
+      "attribution": "BigCode Project (StarCoder2)",
+      "primary_domain": "programming_python",
+      "pillars": [
+        "programming",
+        "algorithms_and_data_structures",
+        "computer_science"
+      ],
+      "languages": [
+        "python"
+      ],
+      "file_count": 4,
+      "size_bytes": 90128482,
+      "size_mb": 85.95,
+      "estimated_raw_bpe_tokens": 25388304,
+      "estimated_usable_bpe_tokens": 23865005,
+      "quality_filter": "Unit-test execution verified, AST syntax validation",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "cais__mmlu": {
+      "repository": "cais__mmlu",
+      "license": "MIT",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/cais/mmlu",
+      "attribution": "Center for AI Safety (Hendrycks et al.)",
+      "primary_domain": "formal_and_deductive_reasoning",
+      "pillars": [
+        "formal_and_deductive_reasoning",
+        "physics_chemistry_biology",
+        "computer_science"
+      ],
+      "languages": [
+        "en"
+      ],
+      "file_count": 4,
+      "size_bytes": 47514054,
+      "size_mb": 45.31,
+      "estimated_raw_bpe_tokens": 13384240,
+      "estimated_usable_bpe_tokens": 12581185,
+      "quality_filter": "Question-answer consistency, strict formatting",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "CognitiveLab__Hindi-Instruct-Gemma-Prompt-formate": {
+      "repository": "CognitiveLab__Hindi-Instruct-Gemma-Prompt-formate",
+      "license": "Apache-2.0",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/CognitiveLab/Hindi-Instruct-Gemma-Prompt-formate",
+      "attribution": "CognitiveLab",
+      "primary_domain": "hindi_devanagari",
+      "pillars": [
+        "hindi_devanagari",
+        "instruction_following"
+      ],
+      "languages": [
+        "hi"
+      ],
+      "file_count": 4,
+      "size_bytes": 172300046,
+      "size_mb": 164.32,
+      "estimated_raw_bpe_tokens": 61535730,
+      "estimated_usable_bpe_tokens": 57843586,
+      "quality_filter": "Devanagari script ratio >= 0.70",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "damerajee__small-hindi-instruct": {
+      "repository": "damerajee__small-hindi-instruct",
+      "license": "MIT",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/damerajee/small-hindi-instruct",
+      "attribution": "damerajee",
+      "primary_domain": "hindi_devanagari",
+      "pillars": [
+        "hindi_devanagari",
+        "natural_english_conversations"
+      ],
+      "languages": [
+        "hi"
+      ],
+      "file_count": 4,
+      "size_bytes": 72934,
+      "size_mb": 0.07,
+      "estimated_raw_bpe_tokens": 26047,
+      "estimated_usable_bpe_tokens": 24484,
+      "quality_filter": "Non-empty instruction-response pairs",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "findnitai__english-to-hinglish": {
+      "repository": "findnitai__english-to-hinglish",
+      "license": "MIT",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/findnitai/english-to-hinglish",
+      "attribution": "findnitai",
+      "primary_domain": "hinglish_dialogue",
+      "pillars": [
+        "hinglish",
+        "natural_english_conversations"
+      ],
+      "languages": [
+        "hinglish"
+      ],
+      "file_count": 4,
+      "size_bytes": 27122412,
+      "size_mb": 25.87,
+      "estimated_raw_bpe_tokens": 7640116,
+      "estimated_usable_bpe_tokens": 7181709,
+      "quality_filter": "Latin transliterated Hindi verification, conversational flow",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "glaiveai__glaive-function-calling-v2": {
+      "repository": "glaiveai__glaive-function-calling-v2",
+      "license": "Apache-2.0",
+      "version": "v2.0",
+      "url": "https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2",
+      "attribution": "Glaive AI",
+      "primary_domain": "instruction_following",
+      "pillars": [
+        "instruction_following",
+        "context_retention_and_multiturn",
+        "computer_science"
+      ],
+      "languages": [
+        "en",
+        "json"
+      ],
+      "file_count": 4,
+      "size_bytes": 271190389,
+      "size_mb": 258.63,
+      "estimated_raw_bpe_tokens": 76391658,
+      "estimated_usable_bpe_tokens": 71808158,
+      "quality_filter": "JSON schema validation, parameter binding verification",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "HuggingFaceFW__fineweb-edu": {
+      "repository": "HuggingFaceFW__fineweb-edu",
+      "license": "ODC-By-1.0",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu",
+      "attribution": "Hugging Face (FineWeb-Edu)",
+      "primary_domain": "general_english_language",
+      "pillars": [
+        "general_english_language",
+        "reading_comprehension",
+        "physics_chemistry_biology",
+        "engineering_and_applied_science"
+      ],
+      "languages": [
+        "en"
+      ],
+      "file_count": 4,
+      "size_bytes": 2152819438,
+      "size_mb": 2053.09,
+      "estimated_raw_bpe_tokens": 606428010,
+      "estimated_usable_bpe_tokens": 570042329,
+      "quality_filter": "Educational score >= 3.0, fasttext language ID == en",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "HuggingFaceTB__cosmopedia": {
+      "repository": "HuggingFaceTB__cosmopedia",
+      "license": "Apache-2.0",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/HuggingFaceTB/cosmopedia",
+      "attribution": "Hugging Face (Cosmopedia)",
+      "primary_domain": "general_english_language",
+      "pillars": [
+        "general_english_language",
+        "physics_chemistry_biology",
+        "computer_science",
+        "databases_and_operating_systems"
+      ],
+      "languages": [
+        "en"
+      ],
+      "file_count": 14,
+      "size_bytes": 1148877623,
+      "size_mb": 1095.66,
+      "estimated_raw_bpe_tokens": 323627499,
+      "estimated_usable_bpe_tokens": 304209849,
+      "quality_filter": "Synthetic textbook filtering, textbook tone and structure",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "HuggingFaceTB__finemath": {
+      "repository": "HuggingFaceTB__finemath",
+      "license": "ODC-By-1.0",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/HuggingFaceTB/finemath",
+      "attribution": "Hugging Face (FineMath)",
+      "primary_domain": "mathematics_and_algebra",
+      "pillars": [
+        "mathematics_and_algebra",
+        "formal_and_deductive_reasoning"
+      ],
+      "languages": [
+        "en"
+      ],
+      "file_count": 4,
+      "size_bytes": 286267640,
+      "size_mb": 273.01,
+      "estimated_raw_bpe_tokens": 80638771,
+      "estimated_usable_bpe_tokens": 75800444,
+      "quality_filter": "Math score >= 3.0, symbol ratio validation",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "ise-uiuc__Magicoder-Evol-Instruct-110K": {
+      "repository": "ise-uiuc__Magicoder-Evol-Instruct-110K",
+      "license": "MIT",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/ise-uiuc/Magicoder-Evol-Instruct-110K",
+      "attribution": "ISE-UIUC (Wei et al.)",
+      "primary_domain": "programming_polyglot",
+      "pillars": [
+        "programming",
+        "algorithms_and_data_structures",
+        "computer_science"
+      ],
+      "languages": [
+        "python",
+        "java",
+        "javascript",
+        "cpp",
+        "c",
+        "sql"
+      ],
+      "file_count": 4,
+      "size_bytes": 255186546,
+      "size_mb": 243.36,
+      "estimated_raw_bpe_tokens": 71883534,
+      "estimated_usable_bpe_tokens": 67570521,
+      "quality_filter": "Syntactic parsing, multi-step code reasoning",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "ise-uiuc__Magicoder-OSS-Instruct-75K": {
+      "repository": "ise-uiuc__Magicoder-OSS-Instruct-75K",
+      "license": "MIT",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/ise-uiuc/Magicoder-OSS-Instruct-75K",
+      "attribution": "ISE-UIUC (Wei et al.)",
+      "primary_domain": "programming_polyglot",
+      "pillars": [
+        "programming",
+        "algorithms_and_data_structures",
+        "databases_and_operating_systems"
+      ],
+      "languages": [
+        "python",
+        "java",
+        "javascript",
+        "typescript",
+        "c",
+        "cpp"
+      ],
+      "file_count": 4,
+      "size_bytes": 203201493,
+      "size_mb": 193.79,
+      "estimated_raw_bpe_tokens": 57239857,
+      "estimated_usable_bpe_tokens": 53805465,
+      "quality_filter": "Permissible GitHub source verification, AST validation",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "m-a-p__CodeFeedback-Filtered-Instruction": {
+      "repository": "m-a-p__CodeFeedback-Filtered-Instruction",
+      "license": "Apache-2.0",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/m-a-p/CodeFeedback-Filtered-Instruction",
+      "attribution": "Multimodal Art Projection (M-A-P)",
+      "primary_domain": "programming_polyglot",
+      "pillars": [
+        "programming",
+        "instruction_following",
+        "context_retention_and_multiturn"
+      ],
+      "languages": [
+        "en",
+        "python",
+        "javascript",
+        "java",
+        "cpp"
+      ],
+      "file_count": 4,
+      "size_bytes": 371228638,
+      "size_mb": 354.03,
+      "estimated_raw_bpe_tokens": 104571447,
+      "estimated_usable_bpe_tokens": 98297160,
+      "quality_filter": "Feedback alignment check, compiler output verification",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "microsoft__orca-math-word-problems-200k": {
+      "repository": "microsoft__orca-math-word-problems-200k",
+      "license": "MIT",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/microsoft/orca-math-word-problems-200k",
+      "attribution": "Microsoft Research (Orca Math)",
+      "primary_domain": "mathematics_and_algebra",
+      "pillars": [
+        "mathematics_and_algebra",
+        "formal_and_deductive_reasoning"
+      ],
+      "languages": [
+        "en"
+      ],
+      "file_count": 4,
+      "size_bytes": 84249072,
+      "size_mb": 80.35,
+      "estimated_raw_bpe_tokens": 23732132,
+      "estimated_usable_bpe_tokens": 22308204,
+      "quality_filter": "Numeric result verification, step isolation",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "NousResearch__hermes-function-calling-v1": {
+      "repository": "NousResearch__hermes-function-calling-v1",
+      "license": "MIT",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/NousResearch/hermes-function-calling-v1",
+      "attribution": "Nous Research",
+      "primary_domain": "instruction_following",
+      "pillars": [
+        "instruction_following",
+        "context_retention_and_multiturn",
+        "networking_and_cybersecurity"
+      ],
+      "languages": [
+        "en",
+        "json"
+      ],
+      "file_count": 6,
+      "size_bytes": 20747121,
+      "size_mb": 19.79,
+      "estimated_raw_bpe_tokens": 5844259,
+      "estimated_usable_bpe_tokens": 5493603,
+      "quality_filter": "Multi-turn tool-call verification",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "openai__gsm8k": {
+      "repository": "openai__gsm8k",
+      "license": "MIT",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/openai/gsm8k",
+      "attribution": "OpenAI (Cobbe et al.)",
+      "primary_domain": "mathematics_and_algebra",
+      "pillars": [
+        "mathematics_and_algebra",
+        "formal_and_deductive_reasoning"
+      ],
+      "languages": [
+        "en"
+      ],
+      "file_count": 4,
+      "size_bytes": 2306868,
+      "size_mb": 2.2,
+      "estimated_raw_bpe_tokens": 649821,
+      "estimated_usable_bpe_tokens": 610831,
+      "quality_filter": "Calculation trail verification, calculator consistency",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "OpenAssistant__oasst2": {
+      "repository": "OpenAssistant__oasst2",
+      "license": "Apache-2.0",
+      "version": "v2.0",
+      "url": "https://huggingface.co/datasets/OpenAssistant/oasst2",
+      "attribution": "LAION / OpenAssistant Community",
+      "primary_domain": "natural_english_conversations",
+      "pillars": [
+        "natural_english_conversations",
+        "context_retention_and_multiturn",
+        "instruction_following"
+      ],
+      "languages": [
+        "en",
+        "multilingual"
+      ],
+      "file_count": 4,
+      "size_bytes": 54370479,
+      "size_mb": 51.85,
+      "estimated_raw_bpe_tokens": 15315627,
+      "estimated_usable_bpe_tokens": 14396689,
+      "quality_filter": "Human-ranked quality score >= 0.6, conversation depth >= 2",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "smangrul__hindi_instruct_v1": {
+      "repository": "smangrul__hindi_instruct_v1",
+      "license": "Apache-2.0",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/smangrul/hindi_instruct_v1",
+      "attribution": "smangrul",
+      "primary_domain": "hindi_devanagari",
+      "pillars": [
+        "hindi_devanagari",
+        "instruction_following"
+      ],
+      "languages": [
+        "hi"
+      ],
+      "file_count": 4,
+      "size_bytes": 13257762,
+      "size_mb": 12.64,
+      "estimated_raw_bpe_tokens": 4734915,
+      "estimated_usable_bpe_tokens": 4450820,
+      "quality_filter": "Devanagari script presence, non-empty response",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    },
+    "TIGER-Lab__WebInstructSub": {
+      "repository": "TIGER-Lab__WebInstructSub",
+      "license": "Apache-2.0",
+      "version": "v1.0",
+      "url": "https://huggingface.co/datasets/TIGER-Lab/WebInstructSub",
+      "attribution": "TIGER-Lab (Yue et al.)",
+      "primary_domain": "instruction_following",
+      "pillars": [
+        "instruction_following",
+        "reading_comprehension",
+        "electronics_robotics_embedded",
+        "engineering_and_applied_science"
+      ],
+      "languages": [
+        "en"
+      ],
+      "file_count": 4,
+      "size_bytes": 138656972,
+      "size_mb": 132.23,
+      "estimated_raw_bpe_tokens": 39058301,
+      "estimated_usable_bpe_tokens": 36714802,
+      "quality_filter": "Web extract cleaner, academic Q&A verification",
+      "deduplication_method": "Exact SHA-256 + 8-gram MinHash LSH filter",
+      "benchmark_contamination_status": "CLEAN (0 exact matches vs 1500 master & 200 transfer)"
+    }
+  },
+  "licensing_summary": {
+    "Apache-2.0": "Permissible with notice; 43.9% token share",
+    "MIT": "Permissible standard open source; 40.3% token share",
+    "ODC-By-1.0": "Open Data Commons Attribution; 7.8% token share",
+    "CC-BY-4.0": "Creative Commons Attribution (Sangraha); 6.4% token share",
+    "BigCode-OpenRAIL-M": "Responsible AI commercial/research open use; 5.1% token share",
+    "OpenRAIL-M": "Responsible AI open use; 4.2% token share"
+  }
+}

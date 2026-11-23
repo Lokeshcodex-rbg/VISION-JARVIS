@@ -1,0 +1,47 @@
+{
+  "audit_title": "VISION 100M Token Consumption and Discrepancy Investigation",
+  "timestamp_iso": "2026-11-20T23:32:00Z",
+  "corpus_metrics": {
+    "total_corpus_tokens": 10609055,
+    "total_corpus_samples": 15171,
+    "average_tokens_per_sample": 699.3,
+    "corpus_status": "EXISTS_ON_DISK_VERIFIED"
+  },
+  "pilot_training_metrics": {
+    "tokens_actually_consumed": 20480,
+    "fraction_of_corpus_consumed_percent": 0.193,
+    "fraction_of_corpus_consumed_ratio": 0.00193,
+    "epochs_completed": 0.00193,
+    "dataset_handling": "TRUNCATED_TO_PILOT_SLICE",
+    "dataset_slice_loaded": 1200,
+    "forward_backward_steps": 80,
+    "gradient_accumulation_steps": 8,
+    "optimizer_parameter_updates": 10,
+    "micro_batch_size": 2,
+    "effective_batch_size_samples": 16,
+    "sequence_length": 128,
+    "tokens_per_optimizer_step": 2048,
+    "total_trainable_parameters": 98258258,
+    "tokens_per_parameter_ratio": 0.00020843,
+    "chinchilla_recommended_tokens": 1965165160,
+    "chinchilla_deficit_ratio": 95955.3
+  },
+  "loss_and_entropy_analysis": {
+    "initial_loss": 9.1366,
+    "final_loss": 7.8068,
+    "uniform_random_loss_vocab_8192": 9.0109,
+    "initial_perplexity": 9289.13,
+    "final_perplexity": 2457.25,
+    "interpretation": "Initial loss (9.14) reflects near-uniform random distribution over 8,192 tokens. Final loss (7.81) reflects early emergence of unigram frequency bias, reducing entropy from ~9.01 to 7.81 but remaining far above fluent generation threshold (~2.0-3.5)."
+  },
+  "collapse_mechanism_investigation": {
+    "root_cause": "EXTREME_UNDERFITTING_DUE_TO_LOCAL_COMPUTE_LIMITS",
+    "explanation": "A 98M parameter model initialized randomly requires at least 100M-2B tokens to form syntax and semantic attention circuits. In 20,480 tokens across 10 optimizer updates, gradient descent minimized cross-entropy by biasing the output layer towards high-frequency unigram tokens (such as digit '1' and whitespace), causing argmax greedy decoding to collapse into repeating '11111111111111111111111111111111'.",
+    "benchmark_score_0_of_240_explained": "Because greedy decoding generated '11111111...', all 240 independent evaluation probes (which test arithmetic answers like '467', Python functions like 'def add(a, b):', Java methods, logic proofs, etc.) scored 0.00%. This is an expected mathematical consequence of severe under-training."
+  },
+  "remediation_requirements": {
+    "phase_1_immediate": "Audit complete training pipeline (RoPE, causal mask, label shifting, loss masking) using a tiny overfit diagnostic test to prove mathematical correctness of learning circuits.",
+    "phase_2_recovery": "Warm-start or curriculum train the 100M architecture on focused high-density instruction/math/code tokens and verify loss reduction and token diversity.",
+    "phase_3_scaling": "Map compute requirements for 10M-token local pretraining vs cloud GPU cluster compute."
+  }
+}

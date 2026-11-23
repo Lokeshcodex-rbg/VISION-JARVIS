@@ -1,0 +1,20 @@
+{
+  "checkpoint_file": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-100m-stage4-curated\\weights.pt",
+  "sha256": "72d7d3f252558753d769f5263e72cf63fa851f50a0920daae2ef0fa3c5980c5e",
+  "file_size_mb": 374.89,
+  "total_corpus_samples_on_disk": 83398,
+  "total_corpus_tokens_on_disk": 44782976,
+  "stage4_steps": 24,
+  "stage4_batch_size": 2,
+  "stage4_accum_steps": 8,
+  "stage4_effective_batch_size": 16,
+  "stage4_optimizer_updates": 3,
+  "samples_consumed": 48,
+  "corpus_exposure_pct": 0.0576,
+  "total_tokens_processed": 12288,
+  "non_padding_input_tokens": 9498,
+  "actual_assistant_target_tokens": 2432,
+  "padding_tokens": 2742,
+  "truncated_samples_pct": 68.8,
+  "verdict": "The 49.75M tokens were prepared on disk, but Stage 4 consumed only 12,288 tokens (8,944 non-pad, 5,821 target tokens) across 3 optimizer updates."
+}

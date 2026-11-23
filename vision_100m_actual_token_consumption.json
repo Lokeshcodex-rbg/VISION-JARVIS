@@ -1,0 +1,31 @@
+{
+  "title": "VISION 100M Actual Token Consumption Audit",
+  "timestamp_iso": "2026-11-21T03:26:09.304857",
+  "model_parameters": 98258258,
+  "corpus_available": {
+    "total_bpe_tokens": 3269995,
+    "training_tokens": 2942980,
+    "validation_tokens": 327015,
+    "training_response_tokens": 2111265,
+    "raw_samples": 15171
+  },
+  "training_run_consumption": {
+    "pretraining_stage": "stage_2_full_pretraining",
+    "micro_steps_executed": 120,
+    "optimizer_updates_executed": 15,
+    "sequence_length": 256,
+    "micro_batch_size": 2,
+    "effective_batch_size": 16,
+    "tokens_consumed_in_stage_2": 61440,
+    "cumulative_tokens_consumed_100m": 92160,
+    "effective_epochs_over_train_corpus": 0.03132,
+    "fraction_of_2b_chinchilla_consumed_percent": 0.004608
+  },
+  "compute_efficiency": {
+    "throughput_tok_per_sec": 41.5,
+    "total_elapsed_seconds": 1481.63,
+    "total_elapsed_minutes": 24.69,
+    "peak_rss_mb": 397.1,
+    "financial_cost_usd": 0.0
+  }
+}

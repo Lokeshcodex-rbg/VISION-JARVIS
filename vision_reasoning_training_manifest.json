@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-11-20T08:16:19.334366+00:00",
+  "candidate": "vision-v1.4-breakthrough-cand-f",
+  "base_model": "vision-v1.4-calibrated-local",
+  "base_sha256": "5575077916210c168e462b27deed5a1c08101b05aad94f7809b188a579a4caea",
+  "cand_f_sha256": "14484b4b7a0d922da3c5d3431a6a47eb646cd14b1af072e5c6048b277c6df8b3",
+  "corpus_file": "D:\\Jarvis\\data\\learning\\breakthrough_training_corpus.json",
+  "corpus_samples": 576,
+  "steps": 120,
+  "peak_lr": 1e-05,
+  "batch_size_effective": 16,
+  "duration_seconds": 42.97,
+  "final_loss": 5.7102,
+  "final_ppl": 301.93,
+  "step_history": [
+    {
+      "step": 20,
+      "lr": 9.852160846158808e-06,
+      "loss": 5.827,
+      "ppl": 339.34
+    },
+    {
+      "step": 40,
+      "lr": 8.542787051233088e-06,
+      "loss": 5.6706,
+      "ppl": 290.21
+    },
+    {
+      "step": 60,
+      "lr": 6.267349866846807e-06,
+      "loss": 5.6356,
+      "ppl": 280.23
+    },
+    {
+      "step": 80,
+      "lr": 3.748284521571738e-06,
+      "loss": 5.6174,
+      "ppl": 275.17
+    },
+    {
+      "step": 100,
+      "lr": 1.785376463667517e-06,
+      "loss": 5.6277,
+      "ppl": 278.02
+    },
+    {
+      "step": 120,
+      "lr": 1.0018351322731485e-06,
+      "loss": 5.7102,
+      "ppl": 301.93
+    }
+  ]
+}

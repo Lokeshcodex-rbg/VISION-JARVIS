@@ -1,0 +1,277 @@
+{
+  "25M": {
+    "spec": {
+      "d_model": 448,
+      "n_layers": 10,
+      "n_heads": 8,
+      "n_kv_heads": 4,
+      "d_ff": 1280,
+      "vocab_size": 8192,
+      "tied": true,
+      "language_backbone_params": 26903744,
+      "multimodal_params": 3864146,
+      "total_trainable_params": 30767890,
+      "exact_millions": 30.77
+    },
+    "target_tokens": 500000000,
+    "chinchilla_ratio": 16.3,
+    "memory": {
+      "fp32_weights_mb": 117.4,
+      "bf16_weights_mb": 58.7,
+      "adamw_states_mb": 234.7,
+      "min_training_vram_gb": 0.46
+    },
+    "hardware_estimates": {
+      "Local CPU (i5-1335U, 4 thr)": {
+        "throughput_tok_sec": 850.0,
+        "training_hours": 163.4,
+        "training_days": 6.81,
+        "dollar_cost_usd": 0.0
+      },
+      "1x NVIDIA RTX 4090 (24GB)": {
+        "throughput_tok_sec": 45000.0,
+        "training_hours": 3.1,
+        "training_days": 0.13,
+        "dollar_cost_usd": 1.2
+      },
+      "1x NVIDIA A100 (80GB SXM4)": {
+        "throughput_tok_sec": 90000.0,
+        "training_hours": 1.5,
+        "training_days": 0.06,
+        "dollar_cost_usd": 1.99
+      },
+      "8x NVIDIA A100 (80GB Cluster)": {
+        "throughput_tok_sec": 680000.0,
+        "training_hours": 0.2,
+        "training_days": 0.01,
+        "dollar_cost_usd": 2.11
+      },
+      "8x NVIDIA H100 (80GB SXM5)": {
+        "throughput_tok_sec": 1800000.0,
+        "training_hours": 0.1,
+        "training_days": 0.0,
+        "dollar_cost_usd": 1.54
+      }
+    }
+  },
+  "100M": {
+    "spec": {
+      "d_model": 768,
+      "n_layers": 14,
+      "n_heads": 12,
+      "n_kv_heads": 4,
+      "d_ff": 2048,
+      "vocab_size": 8192,
+      "tied": true,
+      "language_backbone_params": 94394112,
+      "multimodal_params": 3864146,
+      "total_trainable_params": 98258258,
+      "exact_millions": 98.26
+    },
+    "target_tokens": 2000000000,
+    "chinchilla_ratio": 20.4,
+    "memory": {
+      "fp32_weights_mb": 374.8,
+      "bf16_weights_mb": 187.4,
+      "adamw_states_mb": 749.7,
+      "min_training_vram_gb": 1.48
+    },
+    "hardware_estimates": {
+      "Local CPU (i5-1335U, 4 thr)": {
+        "throughput_tok_sec": 82.0,
+        "training_hours": 6775.1,
+        "training_days": 282.29,
+        "dollar_cost_usd": 0.0
+      },
+      "1x NVIDIA RTX 4090 (24GB)": {
+        "throughput_tok_sec": 16000.0,
+        "training_hours": 34.7,
+        "training_days": 1.45,
+        "dollar_cost_usd": 13.54
+      },
+      "1x NVIDIA A100 (80GB SXM4)": {
+        "throughput_tok_sec": 38000.0,
+        "training_hours": 14.6,
+        "training_days": 0.61,
+        "dollar_cost_usd": 18.86
+      },
+      "8x NVIDIA A100 (80GB Cluster)": {
+        "throughput_tok_sec": 280000.0,
+        "training_hours": 2.0,
+        "training_days": 0.08,
+        "dollar_cost_usd": 20.48
+      },
+      "8x NVIDIA H100 (80GB SXM5)": {
+        "throughput_tok_sec": 750000.0,
+        "training_hours": 0.7,
+        "training_days": 0.03,
+        "dollar_cost_usd": 14.76
+      }
+    }
+  },
+  "250M": {
+    "spec": {
+      "d_model": 1024,
+      "n_layers": 20,
+      "n_heads": 16,
+      "n_kv_heads": 4,
+      "d_ff": 2816,
+      "vocab_size": 8192,
+      "tied": true,
+      "language_backbone_params": 233874432,
+      "multimodal_params": 3864146,
+      "total_trainable_params": 237738578,
+      "exact_millions": 237.74
+    },
+    "target_tokens": 5000000000,
+    "chinchilla_ratio": 21.0,
+    "memory": {
+      "fp32_weights_mb": 906.9,
+      "bf16_weights_mb": 453.5,
+      "adamw_states_mb": 1813.8,
+      "min_training_vram_gb": 3.59
+    },
+    "hardware_estimates": {
+      "Local CPU (i5-1335U, 4 thr)": {
+        "throughput_tok_sec": 28.0,
+        "training_hours": 49603.2,
+        "training_days": 2066.8,
+        "dollar_cost_usd": 0.0
+      },
+      "1x NVIDIA RTX 4090 (24GB)": {
+        "throughput_tok_sec": 6500.0,
+        "training_hours": 213.7,
+        "training_days": 8.9,
+        "dollar_cost_usd": 83.33
+      },
+      "1x NVIDIA A100 (80GB SXM4)": {
+        "throughput_tok_sec": 18000.0,
+        "training_hours": 77.2,
+        "training_days": 3.22,
+        "dollar_cost_usd": 99.54
+      },
+      "8x NVIDIA A100 (80GB Cluster)": {
+        "throughput_tok_sec": 135000.0,
+        "training_hours": 10.3,
+        "training_days": 0.43,
+        "dollar_cost_usd": 106.17
+      },
+      "8x NVIDIA H100 (80GB SXM5)": {
+        "throughput_tok_sec": 380000.0,
+        "training_hours": 3.7,
+        "training_days": 0.15,
+        "dollar_cost_usd": 72.81
+      }
+    }
+  },
+  "500M": {
+    "spec": {
+      "d_model": 1280,
+      "n_layers": 26,
+      "n_heads": 20,
+      "n_kv_heads": 4,
+      "d_ff": 3584,
+      "vocab_size": 8192,
+      "tied": true,
+      "language_backbone_params": 470616320,
+      "multimodal_params": 3864146,
+      "total_trainable_params": 474480466,
+      "exact_millions": 474.48
+    },
+    "target_tokens": 10000000000,
+    "chinchilla_ratio": 21.1,
+    "memory": {
+      "fp32_weights_mb": 1810.0,
+      "bf16_weights_mb": 905.0,
+      "adamw_states_mb": 3620.0,
+      "min_training_vram_gb": 7.16
+    },
+    "hardware_estimates": {
+      "Local CPU (i5-1335U, 4 thr)": {
+        "throughput_tok_sec": 11.0,
+        "training_hours": 252525.3,
+        "training_days": 10521.89,
+        "dollar_cost_usd": 0.0
+      },
+      "1x NVIDIA RTX 4090 (24GB)": {
+        "throughput_tok_sec": 3200.0,
+        "training_hours": 868.1,
+        "training_days": 36.17,
+        "dollar_cost_usd": 338.54
+      },
+      "1x NVIDIA A100 (80GB SXM4)": {
+        "throughput_tok_sec": 9500.0,
+        "training_hours": 292.4,
+        "training_days": 12.18,
+        "dollar_cost_usd": 377.19
+      },
+      "8x NVIDIA A100 (80GB Cluster)": {
+        "throughput_tok_sec": 72000.0,
+        "training_hours": 38.6,
+        "training_days": 1.61,
+        "dollar_cost_usd": 398.15
+      },
+      "8x NVIDIA H100 (80GB SXM5)": {
+        "throughput_tok_sec": 210000.0,
+        "training_hours": 13.2,
+        "training_days": 0.55,
+        "dollar_cost_usd": 263.49
+      }
+    }
+  },
+  "1B": {
+    "spec": {
+      "d_model": 2048,
+      "n_layers": 24,
+      "n_heads": 16,
+      "n_kv_heads": 4,
+      "d_ff": 5632,
+      "vocab_size": 8192,
+      "tied": true,
+      "language_backbone_params": 1099008000,
+      "multimodal_params": 3864146,
+      "total_trainable_params": 1102872146,
+      "exact_millions": 1102.87
+    },
+    "target_tokens": 20000000000,
+    "chinchilla_ratio": 18.1,
+    "memory": {
+      "fp32_weights_mb": 4207.1,
+      "bf16_weights_mb": 2103.6,
+      "adamw_states_mb": 8414.2,
+      "min_training_vram_gb": 16.64
+    },
+    "hardware_estimates": {
+      "Local CPU (i5-1335U, 4 thr)": {
+        "throughput_tok_sec": 4.5,
+        "training_hours": 1234567.9,
+        "training_days": 51440.33,
+        "dollar_cost_usd": 0.0
+      },
+      "1x NVIDIA RTX 4090 (24GB)": {
+        "throughput_tok_sec": 1400.0,
+        "training_hours": 3968.3,
+        "training_days": 165.34,
+        "dollar_cost_usd": 1547.62
+      },
+      "1x NVIDIA A100 (80GB SXM4)": {
+        "throughput_tok_sec": 4800.0,
+        "training_hours": 1157.4,
+        "training_days": 48.23,
+        "dollar_cost_usd": 1493.06
+      },
+      "8x NVIDIA A100 (80GB Cluster)": {
+        "throughput_tok_sec": 36000.0,
+        "training_hours": 154.3,
+        "training_days": 6.43,
+        "dollar_cost_usd": 1592.59
+      },
+      "8x NVIDIA H100 (80GB SXM5)": {
+        "throughput_tok_sec": 110000.0,
+        "training_hours": 50.5,
+        "training_days": 2.1,
+        "dollar_cost_usd": 1006.06
+      }
+    }
+  }
+}

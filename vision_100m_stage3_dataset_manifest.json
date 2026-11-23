@@ -1,0 +1,87 @@
+{
+  "manifest_title": "VISION 100M Stage 3 Verified Corpus Expansion Manifest",
+  "dataset_name": "vision_100m_stage3_expanded_corpus",
+  "timestamp_iso": "2026-11-21T03:55:00Z",
+  "curation_standards": {
+    "deduplication": "Exact SHA-256 instruction hashing with zero duplicates",
+    "decontamination": "Zero probe overlap against 720-probe independent validation suites",
+    "python_syntax_validation": "100% AST validated via Python ast.parse",
+    "mathematical_integrity": "Verified problem-solution chain-of-thought derivations",
+    "provenance_and_licenses": "All 21 sources permissive (Apache-2.0, MIT, CC-BY-4.0)"
+  },
+  "total_samples": 25246,
+  "splits": {
+    "train": {
+      "file": "train.jsonl",
+      "samples": 23984,
+      "total_bpe_tokens": 5932224,
+      "useful_response_target_tokens": 3958069
+    },
+    "val": {
+      "file": "val.jsonl",
+      "samples": 1262,
+      "total_bpe_tokens": 244599,
+      "useful_response_target_tokens": 94834
+    }
+  },
+  "token_census": {
+    "grand_total_bpe_tokens": 6176823,
+    "train_bpe_tokens": 5932224,
+    "val_bpe_tokens": 244599,
+    "useful_response_target_tokens": 4052903,
+    "response_token_ratio_percent": 65.61
+  },
+  "domain_distribution": {
+    "programming_java": 698,
+    "instruction_following": 1446,
+    "tool_use_dialogue": 927,
+    "mathematics_fractions": 439,
+    "programming_javascript": 723,
+    "science_engineering": 3093,
+    "coding_python": 3309,
+    "hindi_devanagari": 2664,
+    "coding_polyglot": 813,
+    "mathematics_reasoning": 3308,
+    "mathematics_algebra": 450,
+    "hinglish_dialog": 2672,
+    "programming_python": 729,
+    "general_language_academic": 812,
+    "causal_reasoning": 300,
+    "mathematics_arithmetic": 2393,
+    "formal_reasoning": 470
+  },
+  "source_provenance": {
+    "synthetic_verified_code": 2150,
+    "synthetic_strict_instruction": 1446,
+    "hermes_function_calling_v1": 927,
+    "synthetic_verified_carry": 1782,
+    "cosmopedia_openstax": 797,
+    "sc2_exec_python_50k": 809,
+    "synthetic_multilingual": 728,
+    "commitpackft_c": 813,
+    "numina_math_cot": 3308,
+    "sangraha_hindi_verified": 799,
+    "sangraha_hinglish_wiki": 809,
+    "cosmopedia_stanford": 812,
+    "synthetic_verified_science": 296,
+    "synthetic_verified_causal": 300,
+    "synthetic_verified_logic": 470,
+    "orca_math_200k": 1500,
+    "magicoder_evol_110k": 2500,
+    "cosmopedia_v2": 2000,
+    "cognitive_lab_hindi": 1500,
+    "findnitai_hinglish": 1500
+  },
+  "file_checksums": {
+    "train.jsonl": {
+      "path": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_100m_stage3_corpus\\train.jsonl",
+      "sha256": "a321c12207b4a99f86b6d5c610732ffbe6bc2f4d204457fefe28cab850dde02a",
+      "size_mb": 34.38
+    },
+    "val.jsonl": {
+      "path": "D:\\Jarvis\\data\\neural_models\\datasets\\vision_100m_stage3_corpus\\val.jsonl",
+      "sha256": "39eb2a251d8b034e1fd9f12ed23f570952b02eb838532566768f27a7a120bcc8",
+      "size_mb": 0.85
+    }
+  }
+}

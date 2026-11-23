@@ -1,0 +1,1220 @@
+{
+  "benchmark_file": "vision_independent_transfer_test_200.jsonl",
+  "total_probes": 200,
+  "evaluator": "ml_foundation/rigorous_evaluator.py (formal verification, 0 substring false-positives)",
+  "models": {
+    "pretraining_13m": {
+      "name": "vision-pretraining-validation-13m",
+      "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-pretraining-validation-13m",
+      "calibrated": {
+        "score": "1/200",
+        "accuracy_pct": 0.5,
+        "wilson_ci": [
+          0.09,
+          2.78
+        ],
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 1,
+            "total": 40,
+            "accuracy_pct": 2.5
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "passed_probe_ids": [
+          "TRF-0001"
+        ],
+        "sample_generations": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "To find the number of the equation:\n\n1. The function is 2, we can be 3, 10, 1.\n\n#x = 10.\n\nThe equation:\n#x",
+            "extracted_answer": "10",
+            "passed": true,
+            "reason": "EXACT_NUMERICAL_MATCH"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "To find the number of 10.\n\nThe equation:\n\n#x = 2 + 3x - 10\n\n10\n#x + 10 = 100\n\n#",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "CONTRADICTORY_EQUATION (10 = 100)"
+          },
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "To find the number of the equation:\n\n1. The function is 2, we can be 1.\n\n#x = 3x + 10\n\nThe equation:\n#x - 10",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the equation:\\n\\n1. The function is 2, w')"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "To find the number of 10.\n\nThe equation:\n\n#x = 2\n\n10\n\n15x + 10\n100\n\n#\n10 = 10",
+            "extracted_answer": "10",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 27, Extracted 10)"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "To find the equation:\n\n1.2 = 3, 10, 1, 15, 1.\n\n#x - 10\n\nThe number of the number of the equation:",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "CONTRADICTORY_EQUATION (2 = 3)"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n#\n#x - 100\n\n#\nThe equation:",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the equation:\\n\\n1.2.\\n\\n#x = 3x + 10\\n\\n10\\n')"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "To find the number of the equation:\n\n1.2 = 3, 10, 15, 1, 1.\n\n#x + 10\n\nThe 10.",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "CONTRADICTORY_EQUATION (2 = 3)"
+          },
+          {
+            "id": "TRF-0008",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "To find the number of 10.\n\nThe equation:\n\n#x = 2 + 3x - 10\n\n10\n#x + 10 = 100\n\n#",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "CONTRADICTORY_EQUATION (10 = 100)"
+          },
+          {
+            "id": "TRF-0009",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "To find the number of the equation:\n\n1.2, we can be 3, 10, 1, 1.\n\n#x = 10.\n\nThe 100.5",
+            "extracted_answer": "10",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 70, Extracted 10)"
+          },
+          {
+            "id": "TRF-0010",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "To find the number of the equation:\n\n1.2.\n\n#x = 3x + 10\n\n10\n10 = 100\n\n#10000\n1",
+            "extracted_answer": "1",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 72, Extracted 1)"
+          }
+        ]
+      },
+      "uncalibrated": {
+        "score": "0/200",
+        "accuracy_pct": 0.0,
+        "wilson_ci": [
+          0.0,
+          1.88
+        ],
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "passed_probe_ids": [],
+        "sample_generations": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "To find the equation:\n\n1.\n#x = 12x = 12\n\n#\n#\n#\n#x = 12x = 12x = 12\n\n#",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the equation:\\n\\n1.\\n#x = 12x = 12\\n\\n#\\n#\\n#\\n#x = 12x = 12')"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "TRF-0008",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "TRF-0009",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          },
+          {
+            "id": "TRF-0010",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "To find the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'To find the number of the number of the number of the number')"
+          }
+        ]
+      }
+    },
+    "stage2_sft_13m": {
+      "name": "vision-13m-sft-aligned",
+      "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-13m-sft-aligned",
+      "calibrated": {
+        "score": "0/200",
+        "accuracy_pct": 0.0,
+        "wilson_ci": [
+          0.0,
+          1.88
+        ],
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "passed_probe_ids": [],
+        "sample_generations": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "10 = 2.\nThe answer is 3.",
+            "extracted_answer": "3",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 10, Extracted 3)"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "12 = 3.\nThe answer is 10.",
+            "extracted_answer": "10",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 12, Extracted 10)"
+          },
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "12 = 3.\nThe answer is 10.",
+            "extracted_answer": "10",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 25, Extracted 10)"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "12 = 3.\nThe answer is 10.",
+            "extracted_answer": "10",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 27, Extracted 10)"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "2 = 10.\nThe answer is 3.",
+            "extracted_answer": "3",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 40, Extracted 3)"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "10 = 2.\nThe answer is 30.",
+            "extracted_answer": "30",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 42, Extracted 30)"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "12 = 3.\nThe answer is 4.",
+            "extracted_answer": "4",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 55, Extracted 4)"
+          },
+          {
+            "id": "TRF-0008",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "12 = 3.\nThe answer is 10.",
+            "extracted_answer": "10",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 57, Extracted 10)"
+          },
+          {
+            "id": "TRF-0009",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "12 = 3.\nThe answer is 4.",
+            "extracted_answer": "4",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 70, Extracted 4)"
+          },
+          {
+            "id": "TRF-0010",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "12 = 3.\nThe answer is 4.",
+            "extracted_answer": "4",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 72, Extracted 4)"
+          }
+        ]
+      },
+      "uncalibrated": {
+        "score": "1/200",
+        "accuracy_pct": 0.5,
+        "wilson_ci": [
+          0.09,
+          2.78
+        ],
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 1,
+            "total": 40,
+            "accuracy_pct": 2.5
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "passed_probe_ids": [
+          "TRF-0001"
+        ],
+        "sample_generations": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "10 = 10.\nThe answer is 10.",
+            "extracted_answer": "10",
+            "passed": true,
+            "reason": "EXACT_NUMERICAL_MATCH"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "12 = 12.\nThe answer is 1.",
+            "extracted_answer": "1",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 12, Extracted 1)"
+          },
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "12 = 12.\nThe answer is 1.",
+            "extracted_answer": "1",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 25, Extracted 1)"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "12 = 12.\nThe answer is 1.",
+            "extracted_answer": "1",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 27, Extracted 1)"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "2 = 12.\nThe answer is 1.",
+            "extracted_answer": "1",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 40, Extracted 1)"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "10 = 10.\nThe answer is 10.",
+            "extracted_answer": "10",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 42, Extracted 10)"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "12 = 12.\nThe answer is 1.",
+            "extracted_answer": "1",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 55, Extracted 1)"
+          },
+          {
+            "id": "TRF-0008",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "12 = 12.\nThe answer is 1.",
+            "extracted_answer": "1",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 57, Extracted 1)"
+          },
+          {
+            "id": "TRF-0009",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "12 = 12.\nThe answer is 1.",
+            "extracted_answer": "1",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 70, Extracted 1)"
+          },
+          {
+            "id": "TRF-0010",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "12 = 12.\nThe answer is 1.",
+            "extracted_answer": "1",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 72, Extracted 1)"
+          }
+        ]
+      }
+    },
+    "vision_v14_replay_b": {
+      "name": "vision-v1.4-replay-cand-b",
+      "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-v1.4-replay-cand-b",
+      "calibrated": {
+        "score": "0/200",
+        "accuracy_pct": 0.0,
+        "wilson_ci": [
+          0.0,
+          1.88
+        ],
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "passed_probe_ids": [],
+        "sample_generations": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "\u091b\u091b\u091b\u091bserserserserdentdentdentdent aff aff aff affparingparingparingparingclclclcl AND AND AND AND \u0909\u0924\u094d\u0924\u0930 \u0909\u0924\u094d\u0924\u0930 \u0909\u0924\u094d\u0924\u0930 \u0909\u0924\u094d\u0924\u0930ccccccccountountountount hund hund hund hund",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: '\u091b\u091b\u091b\u091bserserserserdentdentdentdent aff aff aff affparingparing')"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "expl expl expl expl caught caught caught caught hund hund hund hund AVG AVG AVG AVG\ufffd\ufffd\ufffd\ufffdtexttexttexttext\ufffd\ufffd\ufffd written written written written soci soci soci soci beam beam beam beamccccccccount",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'expl expl expl expl caught caught caught caught hund hund hu')"
+          },
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "expl expl expl expl users users users usersouldouldouldouldserserserser AVG AVG AVG AVG--------\u0902\u092c\u0902\u092c\u0902\u092c\u0902\u092ccccccccc beam beam beam beam caught caught caught caughtouldouldouldisions",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'expl expl expl expl users users users usersouldouldouldoulds')"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "Newton Newton Newton Newton users users users usersouldouldouldould medic medic medic medicclclclcl AND AND AND ANDclclcl\u0902\u092c\u0902\u092c\u0902\u092c\u0902\u092c \u0909\u0924\u094d\u0924\u0930 \u0909\u0924\u094d\u0924\u0930 \u0909\u0924\u094d\u0924\u0930 \u0909\u0924\u094d\u0924\u0930 visit visit visit visit beam beam beam beamountountountount",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'Newton Newton Newton Newton users users users usersouldouldo')"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "AVG AVG AVG AVG memory memory memory memory\u0902\u0915\u0902\u0915\u0902\u0915\u0902\u0915 epis epis epis epis \u092a\u0924\u094d\u0930 \u092a\u0924\u094d\u0930 \u092a\u0924\u094d\u0930 \u092a\u0924\u094d\u0930 num2 num2 num2 num2 \u0926\u094d\u0935 \u0926\u094d\u0935 \u0926\u094d\u0935 \u0926\u094d\u0935\u0902\u0915\u0902\u0915\u0902\u0915 \u091a\u093f\u0915 \u091a\u093f\u0915 \u091a\u093f\u0915 \u091a\u093f\u0915artharthartharth\u0902\u0915\u0902\u0915\u0902\u0915 valid valid",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'AVG AVG AVG AVG memory memory memory memory\u0902\u0915\u0902\u0915\u0902\u0915\u0902\u0915 epis epi')"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "expl expl expl expl AVG AVG AVG AVG memory memory memory memorycccccccc gain gain gain gain\u0902\u0915\u0902\u0915\u0902\u0915\u0902\u0915cescescescestexttexttexttext\ufffd\ufffd\ufffd\ufffd \u092a\u0924\u094d\u0930 \u092a\u0924\u094d\u0930 \u092a\u0924\u094d\u0930 \u092a\u0924\u094d\u0930onsideronsideronsideronsider",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'expl expl expl expl AVG AVG AVG AVG memory memory memory mem')"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "expl expl expl expl caught caught caught caught_ele_ele_ele_ele aff aff aff aff memory memory memory memory\u0902\u0915\u0902\u0915\u0902\u0915\u0902\u0915cescescesces AVG AVG AVG AVG writ writ writ writ Note Note Note Notelnlnlnln",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'expl expl expl expl caught caught caught caught_ele_ele_ele_')"
+          },
+          {
+            "id": "TRF-0008",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "beam beam beam beamountountountount ion ion ion ioncccccccc numbers numbers numbers numbers visit visit visit visit \u0928\u0947\u0924 \u0928\u0947\u0924 \u0928\u0947\u0924 \u0928\u0947\u0924 rather rather rather rather AND AND AND AND_st_st_st_sttexttexttexttext",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'beam beam beam beamountountountount ion ion ion ioncccccccc ')"
+          },
+          {
+            "id": "TRF-0009",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "beam beam beam beamountountountount importance importance importance importance\u0902\u0915\u0902\u0915\u0902\u0915\u0902\u0915 Write Write Write Writecccccccc \u0935\u093f\u0926 \u0935\u093f\u0926 \u0935\u093f\u0926 \u0935\u093f\u0926 \u0930 \u0930 \u0930 \u0930 cold cold cold cold \u0909\u0924\u094d\u0924\u0930 \u0909\u0924\u094d\u0924\u0930 \u0909\u0924\u094d\u0924\u0930 \u0909\u0924\u094d\u0924\u0930 \u0928\u0947\u0924 \u0928\u0947\u0924 \u0928\u0947\u0924 \u0928\u0947\u0924",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'beam beam beam beamountountountount importance importance im')"
+          },
+          {
+            "id": "TRF-0010",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "protect protect protect protectreadyreadyreadyready\u0902\u0915\u0902\u0915\u0902\u0915\u0902\u0915cescescesces AVG AVG AVG AVG\u0930\u0932\u0930\u0932\u0930\u0932\u0930\u0932reakreakreakreak \u0930 \u0930 \u0930 \u0930 letter letter letter letter takes takes takes takes",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'protect protect protect protectreadyreadyreadyready\u0902\u0915\u0902\u0915\u0902\u0915\u0902\u0915c')"
+          }
+        ]
+      },
+      "uncalibrated": {
+        "score": "0/200",
+        "accuracy_pct": 0.0,
+        "wilson_ci": [
+          0.0,
+          1.88
+        ],
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "passed_probe_ids": [],
+        "sample_generations": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: '\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd')"
+          },
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: '\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd')"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "AVG AVG AVG AVG AVG AVG AVG AVG AVG AVG",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'AVG AVG AVG AVG AVG AVG AVG AVG AVG AVG')"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0008",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0009",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0010",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          }
+        ]
+      }
+    },
+    "candidate_g": {
+      "name": "vision-2.0-candidate-g",
+      "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-2.0-candidate-g",
+      "calibrated": {
+        "score": "0/200",
+        "accuracy_pct": 0.0,
+        "wilson_ci": [
+          0.0,
+          1.88
+        ],
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "passed_probe_ids": [],
+        "sample_generations": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "journey journey journey journey)-)-)-)- provide provide provide provide \u0932\u093f\u092f\u093e \u0932\u093f\u092f\u093e \u0932\u093f\u092f\u093e \u0932\u093f\u092f\u093e imp imp imp imp refer refer refer refer\u093f\u092f\u093f\u092f\u093f\u092f\u093f\u092fengthengthengthength stop stop stop stop requ requ requ requ stop stop stopength",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'journey journey journey journey)-)-)-)- provide provide prov')"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "diagonals diagonals diagonals diagonals soft soft soft soft changing changing changing changing butter butter butter butter \u0926\u094b \u0926\u094b \u0926\u094b \u0926\u094b ballo ballo ballo ballo\u094d\u0930\u094d\u0930\u094d\u0930\u094d\u0930\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd keeping keeping keeping keeping provide provide provide provide duplic duplic duplic duplic",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'diagonals diagonals diagonals diagonals soft soft soft soft ')"
+          },
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "dire dire dire dire wanted wanted wanted wantedengthengthengthength stop stop stop stop refer refer refer refer Rel Rel Rel Rel journey journey journey journey rapid rapid rapid rapid User User User User characters characters characters characters becoming becoming becoming becoming",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'dire dire dire dire wanted wanted wanted wantedengthengtheng')"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "\u0947\u0932\u0947\u0932\u0947\u0932\u0947\u0932 stop stop stop stopengthengthengthength vacc vacc vacc vacc below below below below duplic duplic duplic duplic\ufffd\ufffd\ufffd\ufffdayayayayouououou \u0938\u092e\u094d\u092e\u093e\u0928 \u0938\u092e\u094d\u092e\u093e\u0928 \u0938\u092e\u094d\u092e\u093e\u0928 \u0938\u092e\u094d\u092e\u093e\u0928 sells sells sells sells",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: '\u0947\u0932\u0947\u0932\u0947\u0932\u0947\u0932 stop stop stop stopengthengthengthength vacc vacc v')"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "dire dire dire dire wanted wanted wanted wantedengthengthengthength stop stop stop stopIsIsIsIs convert convert convert convert dozen dozen dozen dozen\u093f\u092f\u093f\u092f\u093f\u092f\u093f\u092fengthengthength dire dire dire moving moving moving movinggenregenre",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'dire dire dire dire wanted wanted wanted wantedengthengtheng')"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "dire dire dire dire lights lights lights lights\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffdIsIsIsIs stop stop stop stopengthengthengthength wanted wanted wanted wanted dire dire dire wanted wanted wanted stop stop stop requ requ requ requ stop stop stop",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'dire dire dire dire lights lights lights lights\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b')"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "dire dire dire dire wanted wanted wanted wantedengthengthengthength stop stop stop stop duplic duplic duplic duplic journey journey journey journey rapid rapid rapid rapid provide provide provide provide ballo ballo ballo ballo \u0926\u094b \u0926\u094b \u0926\u094b \u0926\u094b soft soft soft soft",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'dire dire dire dire wanted wanted wanted wantedengthengtheng')"
+          },
+          {
+            "id": "TRF-0008",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "dire dire dire dire\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffdIsIsIsIs stop stop stop stopengthengthengthength wanted wanted wanted wanted dire dire dire wanted wanted wanted stop stop stop journey journey journey journeystitutestitutestitutestitute \"); \"); \");",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'dire dire dire dire\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffdIsIsIsIs stop stop stop s')"
+          },
+          {
+            "id": "TRF-0009",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "dire dire dire dire\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd\u094b\u0930\u094d\ufffd1111 soft soft soft softmatmatmatmatmarkmarkmarkmarkgenerate_generate_generate_generate_allsallsallsalls implementation implementation implementation implementationorderorderorderorder circ circ circ circ",
+            "extracted_answer": "1111",
+            "passed": false,
+            "reason": "NUMERICAL_MISMATCH (Expected 70, Extracted 1111)"
+          },
+          {
+            "id": "TRF-0010",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "dire dire dire dire lights lights lights lights ballo ballo ballo ballo tools tools tools tools\u093f\u092f\u093f\u092f\u093f\u092f\u093f\u092fengthengthengthength wanted wanted wanted wanted dire dire dire\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014 provide provide provide provide \u0932\u093f\u092f\u093e \u0932\u093f\u092f\u093e \u0932\u093f\u092f\u093e \u0932\u093f\u092f\u093e dire",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "NO_DEFINITIVE_ANSWER_EXTRACTED (Text: 'dire dire dire dire lights lights lights lights ballo ballo ')"
+          }
+        ]
+      },
+      "uncalibrated": {
+        "score": "0/200",
+        "accuracy_pct": 0.0,
+        "wilson_ci": [
+          0.0,
+          1.88
+        ],
+        "domain_breakdown": {
+          "mathematics": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "programming_python": {
+            "passed": 0,
+            "total": 40,
+            "accuracy_pct": 0.0
+          },
+          "formal_reasoning": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "science_engineering": {
+            "passed": 0,
+            "total": 30,
+            "accuracy_pct": 0.0
+          },
+          "hindi_comprehension": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "hinglish_dialogue": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          },
+          "instruction_following": {
+            "passed": 0,
+            "total": 20,
+            "accuracy_pct": 0.0
+          }
+        },
+        "passed_probe_ids": [],
+        "sample_generations": [
+          {
+            "id": "TRF-0001",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (7 + 10) - 7.",
+            "expected": "10",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0002",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (11 + 13) - 12.",
+            "expected": "12",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0003",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (15 + 16) - 6.",
+            "expected": "25",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0004",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (19 + 19) - 11.",
+            "expected": "27",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0005",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (23 + 22) - 5.",
+            "expected": "40",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0006",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (27 + 25) - 10.",
+            "expected": "42",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0007",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (31 + 28) - 4.",
+            "expected": "55",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0008",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (35 + 31) - 9.",
+            "expected": "57",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0009",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (39 + 34) - 3.",
+            "expected": "70",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          },
+          {
+            "id": "TRF-0010",
+            "domain": "mathematics",
+            "prompt": "Compute the exact value of (43 + 37) - 8.",
+            "expected": "72",
+            "generated": "",
+            "extracted_answer": null,
+            "passed": false,
+            "reason": "EMPTY_GENERATION"
+          }
+        ]
+      }
+    }
+  },
+  "paired_analysis": {
+    "pretraining_vs_stage2_sft": {
+      "pretraining_calibrated": "1/200",
+      "stage2_sft_calibrated": "0/200",
+      "pretraining_uncalibrated": "0/200",
+      "stage2_sft_uncalibrated": "1/200",
+      "conclusion": "Under rigorous evaluation, both pretraining and Stage 2 SFT score 0/200 on calibrated and uncalibrated decoding. The previously reported 1/200 and 2/200 were artifacts of the substring matching defect in verify_probe."
+    }
+  }
+}

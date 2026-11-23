@@ -1,0 +1,796 @@
+{
+  "vision-v1.4-calibrated-local": {
+    "total_failures": 216,
+    "breakdown": {
+      "Arithmetic error": 19,
+      "Reasoning error": 72,
+      "Signature mismatch": 50,
+      "Incorrect output": 1,
+      "Syntax error": 7,
+      "Knowledge gap": 18,
+      "Multilingual failure": 37,
+      "Instruction-following failure": 12
+    },
+    "sample_failures": [
+      {
+        "probe_id": "math_01",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "Calculate the exact result: 47 * 16 - 285",
+        "expected": "467",
+        "model_output": "<thought>47 * 16 = 485. Subtracting 285: 480 - 280 = 300.</thought>47 * (28 - 20) = 320\n\nAnswer: 328</assistant>",
+        "failure_reason": "Expected '467', found numbers ['47', '16', '485', '285', '480', '280', '300', '47', '28', '20', '320', '328'] in '<thought>47 * 16 = 485. Subtracting 285: 480 - 280 = 300.</thought>47 * (28 - 20) = 320\n\nAnswer: 328'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_02",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "What is 358 + 694 - 247?",
+        "expected": "805",
+        "model_output": "<thought>358 - 66 = 475. Subtracting 66: 470 - 247 = 300.</thought>358 * 68 - 26 = 360\n\nAnswer: 368</assistant>",
+        "failure_reason": "Expected '805', found numbers ['358', '66', '475', '66', '470', '247', '300', '358', '68', '26', '360', '368'] in '<thought>358 - 66 = 475. Subtracting 66: 470 - 247 = 300.</thought>358 * 68 - 26 = 360\n\nAnswer: 368'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_03",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "Calculate: 1250 / 25 + 34 * 8",
+        "expected": "322.0",
+        "model_output": "<thought>125 * 85 = 400. Subtracting 25: 40% of 600 - 340 = 450.</thought>125 - 360 = 60\n\nAnswer: 60</assistant>",
+        "failure_reason": "Expected '322.0', found numbers ['125', '85', '400', '25', '40', '600', '340', '450', '125', '360', '60', '60'] in '<thought>125 * 85 = 400. Subtracting 25: 40% of 600 - 340 = 450.</thought>125 - 360 = 60\n\nAnswer: 60'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_04",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+        "expected": "444.0",
+        "model_output": "<thought>72 * 15 = 300. Subtracting 9: 30% of 140 - 9 = 350.</thought>72 * (15 - 9) = 360\n\nAnswer: 368</assistant>",
+        "failure_reason": "Expected '444.0', found numbers ['72', '15', '300', '9', '30', '140', '9', '350', '72', '15', '9', '360', '368'] in '<thought>72 * 15 = 300. Subtracting 9: 30% of 140 - 9 = 350.</thought>72 * (15 - 9) = 360\n\nAnswer: 3'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_05",
+        "domain": "mathematics",
+        "subdomain": "fractions",
+        "prompt": "Simplify the fraction sum: 3/8 + 5/12 in reduced form a/b",
+        "expected": "19/24",
+        "model_output": "<thought>3/8 = 0.5, 5/12 = 0,000.</thought>3/8 * 5/2 = 10.</thought>2/8\n\nAnswer: 10</assistant>",
+        "failure_reason": "Expected '19/24', found numbers ['3/8', '0.5', '5/12', '0', '000', '3/8', '5/2', '10', '2/8', '10'] in '<thought>3/8 = 0.5, 5/12 = 0,000.</thought>3/8 * 5/2 = 10.</thought>2/8\n\nAnswer: 10'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_06",
+        "domain": "mathematics",
+        "subdomain": "fractions",
+        "prompt": "Calculate: (5/6) * (9/10) - 1/4 in reduced fraction form",
+        "expected": "1/2",
+        "model_output": "The secondory: 9/10(1/46) * 1/4 = 18. Subtracting 4: 18: x = 16.</thought>6</assistant>",
+        "failure_reason": "Expected '1/2', found numbers ['9/10', '1/46', '1/4', '18', '4', '18', '16', '6'] in 'The secondory: 9/10(1/46) * 1/4 = 18. Subtracting 4: 18: x = 16.</thought>6'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_07",
+        "domain": "mathematics",
+        "subdomain": "percentages",
+        "prompt": "An item priced at $160 is discounted by 35%. What is the final price in dollars?",
+        "expected": "104",
+        "model_output": "<thought>Discount $160 - $16 = $120. Final price = $16 - $12 = $140.</thought>Discount = $13\nFinal Price = $114\n\nAnswer: 140</assistant>",
+        "failure_reason": "Expected '104', found numbers ['160', '16', '120', '16', '12', '140', '13', '114', '140'] in '<thought>Discount $160 - $16 = $120. Final price = $16 - $12 = $140.</thought>Discount = $13\nFinal P'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_08",
+        "domain": "mathematics",
+        "subdomain": "percentages",
+        "prompt": "A population increased from 800 to 920. What is the percentage increase?",
+        "expected": "15",
+        "model_output": "<thought>Distance = 800 / 920 = 600.</thought>Distance = (800) / 90 = 400\n\nAnswer: 40%<eos>",
+        "failure_reason": "Expected '15', found numbers ['800', '920', '600', '800', '90', '400', '40'] in '<thought>Distance = 800 / 920 = 600.</thought>Distance = (800) / 90 = 400\n\nAnswer: 40%'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_09",
+        "domain": "mathematics",
+        "subdomain": "ratios",
+        "prompt": "Divide 350 into the ratio 3:4. What is the smaller portion?",
+        "expected": "150",
+        "model_output": "<thought>350 * 30 = 400. Subtracting 40: 40% of 40.</thought>35 * 3) = 450\n\nAnswer: 45%<eos>",
+        "failure_reason": "Expected '150', found numbers ['350', '30', '400', '40', '40', '40', '35', '3', '450', '45'] in '<thought>350 * 30 = 400. Subtracting 40: 40% of 40.</thought>35 * 3) = 450\n\nAnswer: 45%'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_10",
+        "domain": "mathematics",
+        "subdomain": "ratios",
+        "prompt": "If 5 machines produce 120 widgets in an hour, how many widgets do 8 machines produce in an hour?",
+        "expected": "192",
+        "model_output": "<thought>Distance = 5 * 80 = 40.</thought>Distance = (5 * 90)\n\nAnswer: 40</assistant>",
+        "failure_reason": "Expected '192', found numbers ['5', '80', '40', '5', '90', '40'] in '<thought>Distance = 5 * 80 = 40.</thought>Distance = (5 * 90)\n\nAnswer: 40'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_11",
+        "domain": "mathematics",
+        "subdomain": "negative_numbers",
+        "prompt": "Compute: (-18) * (-5) - (-42) / 6",
+        "expected": "97",
+        "model_output": "<thought>18(42) * 6 = 60. Subtracting 6: 60</assistant>",
+        "failure_reason": "Expected '97', found numbers ['18', '42', '6', '60', '6', '60'] in '<thought>18(42) * 6 = 60. Subtracting 6: 60'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_12",
+        "domain": "mathematics",
+        "subdomain": "negative_numbers",
+        "prompt": "What is -45 + 112 - 89?",
+        "expected": "-22",
+        "model_output": "<thought>45 + 112 = 69. Subtracting 89: 69 - 89 = 300.</thought>45 - 111 - 88 = 360\n\nAnswer: 368</assistant>",
+        "failure_reason": "Expected '-22', found numbers ['45', '112', '69', '89', '69', '89', '300', '45', '111', '88', '360', '368'] in '<thought>45 + 112 = 69. Subtracting 89: 69 - 89 = 300.</thought>45 - 111 - 88 = 360\n\nAnswer: 368'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_13",
+        "domain": "mathematics",
+        "subdomain": "multi_step",
+        "prompt": "Calculate: 14 * (28 - 13) - 120 / 5",
+        "expected": "186",
+        "model_output": "<thought>14 * 28 = 600. Subtracting 13: 60% of 60 - 5 = 40.</thought>14 * (28 - 13) = 48\n\nAnswer: 48</assistant>",
+        "failure_reason": "Expected '186', found numbers ['14', '28', '600', '13', '60', '60', '5', '40', '14', '28', '13', '48', '48'] in '<thought>14 * 28 = 600. Subtracting 13: 60% of 60 - 5 = 40.</thought>14 * (28 - 13) = 48\n\nAnswer: 48'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_14",
+        "domain": "mathematics",
+        "subdomain": "multi_step",
+        "prompt": "Evaluate: 250 - 3 * (40 + 15) + 64 / 8",
+        "expected": "93",
+        "model_output": "<thought>250 - 60 = 400. Subtracting 60: 40% of 40 = 300.</thought>250 * 60 - 15 = 360\n\nAnswer: 368</assistant>",
+        "failure_reason": "Expected '93', found numbers ['250', '60', '400', '60', '40', '40', '300', '250', '60', '15', '360', '368'] in '<thought>250 - 60 = 400. Subtracting 60: 40% of 40 = 300.</thought>250 * 60 - 15 = 360\n\nAnswer: 368'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_15",
+        "domain": "mathematics",
+        "subdomain": "algebra",
+        "prompt": "Solve for x: 6*x - 18 = 42",
+        "expected": "10",
+        "model_output": "<thought>6*x - 18 = 42. Adding/subtracting to isolate: 6*x = 44 / 18 - 16 = 30.</thought>6*x) = 40 / 16\nx = 36\n\nAnswer: 30</assistant>",
+        "failure_reason": "Expected '10', found numbers ['6', '18', '42', '6', '44', '18', '16', '30', '6', '40', '16', '36', '30'] in '<thought>6*x - 18 = 42. Adding/subtracting to isolate: 6*x = 44 / 18 - 16 = 30.</thought>6*x) = 40 /'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_16",
+        "domain": "mathematics",
+        "subdomain": "algebra",
+        "prompt": "Find x: 4*x + 15 = 2*x + 39",
+        "expected": "12",
+        "model_output": "<thought>4*x + 15 = 20. Subtracting 2: 2*x = 25 - 15\nx = 10\n\nAnswer: 10</assistant>",
+        "failure_reason": "Expected '12', found numbers ['4', '15', '20', '2', '2', '25', '15', '10', '10'] in '<thought>4*x + 15 = 20. Subtracting 2: 2*x = 25 - 15\nx = 10\n\nAnswer: 10'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_17",
+        "domain": "mathematics",
+        "subdomain": "word_problems",
+        "prompt": "A train travels at 75 km/h for 4.2 hours. What total distance did it cover in kilometers?",
+        "expected": "315",
+        "model_output": "<thought>Distance = speed * time = 75 km/h * 4.2 h = 15 km.</thought>Distance = 70 * 4 = 10 km\n\nAnswer: 10</assistant>",
+        "failure_reason": "Expected '315', found numbers ['75', '4.2', '15', '70', '4', '10', '10'] in '<thought>Distance = speed * time = 75 km/h * 4.2 h = 15 km.</thought>Distance = 70 * 4 = 10 km\n\nAnsw'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_18",
+        "domain": "mathematics",
+        "subdomain": "word_problems",
+        "prompt": "A rectangular room is 8 meters long and 6 meters wide. What is its perimeter in meters?",
+        "expected": "28",
+        "model_output": "<thought>Distance = 8 * 6 = 6 meters.</thought>Distance = (8 * 8) / 6 = (6 * 8);\nAnswer: 6</assistant>",
+        "failure_reason": "Expected '28', found numbers ['8', '6', '6', '8', '8', '6', '6', '8', '6'] in '<thought>Distance = 8 * 6 = 6 meters.</thought>Distance = (8 * 8) / 6 = (6 * 8);\nAnswer: 6'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_19",
+        "domain": "mathematics",
+        "subdomain": "probability",
+        "prompt": "A fair standard 6-sided die is rolled. What is the probability of rolling a number greater than 4? (Express as reduced fraction a/b)",
+        "expected": "1/3",
+        "model_output": "<thought>Distance = (6 * ) / 4 = 2. Subtracting 4: 2 / 4 > 4.</thought>Distance = 4 / 4\n\nAnswer: 4</assistant>",
+        "failure_reason": "Expected '1/3', found numbers ['6', '4', '2', '4', '2', '4', '4', '4', '4', '4'] in '<thought>Distance = (6 * ) / 4 = 2. Subtracting 4: 2 / 4 > 4.</thought>Distance = 4 / 4\n\nAnswer: 4'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "logic_01",
+        "domain": "formal_reasoning",
+        "subdomain": "deduction",
+        "prompt": "All mammals are warm-blooded. All whales are mammals. Therefore, what can be logically deduced about whales?",
+        "expected": "whales are warm-blooded",
+        "model_output": "<thought>No, it does not follow.</assistant>",
+        "failure_reason": "None of keywords ['warm-blooded', 'warm blooded'] found in: '<thought>no, it does not follow.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_03",
+        "domain": "formal_reasoning",
+        "subdomain": "implication",
+        "prompt": "Proposition: 'Being a square is a sufficient condition for being a rectangle.' Is being a rectangle a necessary condition for being a square? Answer Yes or No.",
+        "expected": "Yes",
+        "model_output": "<thought>ing a square is a triangle, so that does not follow.</assistant>",
+        "failure_reason": "None of keywords ['yes', 'necessary'] found in: '<thought>ing a square is a triangle, so that does not follow.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_04",
+        "domain": "formal_reasoning",
+        "subdomain": "contradiction",
+        "prompt": "Statement A: 'All boxes in the room are red.' Statement B: 'There is a blue box in the room.' Are statements A and B contradictory or compatible?",
+        "expected": "contradictory",
+        "model_output": "<thought>Ratio is a safely-up or ask.</assistant>",
+        "failure_reason": "None of keywords ['contradictory', 'cannot both be true'] found in: '<thought>ratio is a safely-up or ask.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_05",
+        "domain": "formal_reasoning",
+        "subdomain": "constraints",
+        "prompt": "Alice sits to the left of Bob. Bob sits to the left of Charlie. Who sits on the far left?",
+        "expected": "Alice",
+        "model_output": "<thought>Distance = s - b + b + b = 5.5222232224 meters.</thought>Distance = 52233224 / 0 = 1022212226222\n\nAnswer: 100224222S<eos>",
+        "failure_reason": "None of keywords ['alice'] found in: '<thought>distance = s - b + b + b = 5.5222232224 meters.</thought>distance = 52233224 / 0 = 1022212226222\n\nanswer: 10022'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_06",
+        "domain": "formal_reasoning",
+        "subdomain": "constraints",
+        "prompt": "Task X must be completed before Task Y. Task Y must be completed before Task Z. Which task must be done first?",
+        "expected": "Task X",
+        "model_output": "<thought>TorqueDistance: Einstations.</thought>TorqueData = Einstations and East in EastTorque<eos>",
+        "failure_reason": "None of keywords ['task x', 'x'] found in: '<thought>torquedistance: einstations.</thought>torquedata = einstations and east in easttorque'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_07",
+        "domain": "formal_reasoning",
+        "subdomain": "deduction",
+        "prompt": "No reptiles have fur. An iguana is a reptile. Does an iguana have fur? Answer Yes or No.",
+        "expected": "No",
+        "model_output": "<thought>tau is afirt (chedui) is afloperes (chental).</thought>Yes, the directory is afhedule.</assistant>",
+        "failure_reason": "None of keywords ['no', 'does not have fur', 'cannot have fur'] found in: '<thought>tau is afirt (chedui) is afloperes (chental).</thought>yes, the directory is afhedule.'",
+        "failure_category": "Reasoning error"
+      }
+    ]
+  },
+  "vision-v1.4-precision-cand-e": {
+    "total_failures": 212,
+    "breakdown": {
+      "Arithmetic error": 18,
+      "Reasoning error": 73,
+      "Signature mismatch": 52,
+      "Incorrect output": 1,
+      "Syntax error": 4,
+      "Knowledge gap": 16,
+      "Multilingual failure": 35,
+      "Instruction-following failure": 13
+    },
+    "sample_failures": [
+      {
+        "probe_id": "math_01",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "Calculate the exact result: 47 * 16 - 285",
+        "expected": "467",
+        "model_output": "<thought>47 * 16 = 485. Subtracting 285, 280 = 495.</thought>47 * (26 - 28) = 475\n\nAnswer: 470</assistant>",
+        "failure_reason": "Expected '467', found numbers ['47', '16', '485', '285', '280', '495', '47', '26', '28', '475', '470'] in '<thought>47 * 16 = 485. Subtracting 285, 280 = 495.</thought>47 * (26 - 28) = 475\n\nAnswer: 470'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_02",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "What is 358 + 694 - 247?",
+        "expected": "805",
+        "model_output": "<thought>358 - 247 = 0.65. Subtracting 66: 0.58 - a *- = 0\n\nAnswer: 000</assistant>",
+        "failure_reason": "Expected '805', found numbers ['358', '247', '0.65', '66', '0.58', '0', '000'] in '<thought>358 - 247 = 0.65. Subtracting 66: 0.58 - a *- = 0\n\nAnswer: 000'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_03",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "Calculate: 1250 / 25 + 34 * 8",
+        "expected": "322.0",
+        "model_output": "<thought>125 * 85 = 400. Subtracting 30: 40% of 600 - 34 = 450.</thought>125 - 360 = 470\n\nAnswer: 475</assistant>",
+        "failure_reason": "Expected '322.0', found numbers ['125', '85', '400', '30', '40', '600', '34', '450', '125', '360', '470', '475'] in '<thought>125 * 85 = 400. Subtracting 30: 40% of 600 - 34 = 450.</thought>125 - 360 = 470\n\nAnswer: 47'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_04",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+        "expected": "444.0",
+        "model_output": "<thought>72 * 15 = 480. Subtracting 9: 48 * 14 = 400.</thought>72 * (15 - 9) = 460\n\nAnswer: 468</assistant>",
+        "failure_reason": "Expected '444.0', found numbers ['72', '15', '480', '9', '48', '14', '400', '72', '15', '9', '460', '468'] in '<thought>72 * 15 = 480. Subtracting 9: 48 * 14 = 400.</thought>72 * (15 - 9) = 460\n\nAnswer: 468'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_05",
+        "domain": "mathematics",
+        "subdomain": "fractions",
+        "prompt": "Simplify the fraction sum: 3/8 + 5/12 in reduced form a/b",
+        "expected": "19/24",
+        "model_output": "<thought>3/8 = 0.28. Subtracting 5: 0.68 - 5 = 0\n\nAnswer: 000</assistant>",
+        "failure_reason": "Expected '19/24', found numbers ['3/8', '0.28', '5', '0.68', '5', '0', '000'] in '<thought>3/8 = 0.28. Subtracting 5: 0.68 - 5 = 0\n\nAnswer: 000'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_06",
+        "domain": "mathematics",
+        "subdomain": "fractions",
+        "prompt": "Calculate: (5/6) * (9/10) - 1/4 in reduced fraction form",
+        "expected": "1/2",
+        "model_output": "The 9/10(1/6) * (9/1) * (6/10) * (1/10).</thought>6/1/16(1/1) = 0.8 * 1/12 = 0\n\nAnswer: 0</assistant>",
+        "failure_reason": "Expected '1/2', found numbers ['9/10', '1/6', '9/1', '6/10', '1/10', '6/1', '16', '1/1', '0.8', '1/12', '0', '0'] in 'The 9/10(1/6) * (9/1) * (6/10) * (1/10).</thought>6/1/16(1/1) = 0.8 * 1/12 = 0\n\nAnswer: 0'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_07",
+        "domain": "mathematics",
+        "subdomain": "percentages",
+        "prompt": "An item priced at $160 is discounted by 35%. What is the final price in dollars?",
+        "expected": "104",
+        "model_output": "<thought>Discount $160 - $16 = $12. Final price = $16 - $12 = $14.</thought>Discount = $18\nFinal Price = $13\n\nAnswer: 13</assistant>",
+        "failure_reason": "Expected '104', found numbers ['160', '16', '12', '16', '12', '14', '18', '13', '13'] in '<thought>Discount $160 - $16 = $12. Final price = $16 - $12 = $14.</thought>Discount = $18\nFinal Pri'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_08",
+        "domain": "mathematics",
+        "subdomain": "percentages",
+        "prompt": "A population increased from 800 to 920. What is the percentage increase?",
+        "expected": "15",
+        "model_output": "<thought>200 - 920 = 600. Subtracting 92: 60% of 60: 650 - 60 = 40.</thought>20 * 92 - 680 = 300\n\nAnswer: 30<eos>",
+        "failure_reason": "Expected '15', found numbers ['200', '920', '600', '92', '60', '60', '650', '60', '40', '20', '92', '680', '300', '30'] in '<thought>200 - 920 = 600. Subtracting 92: 60% of 60: 650 - 60 = 40.</thought>20 * 92 - 680 = 300\n\nAn'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_09",
+        "domain": "mathematics",
+        "subdomain": "ratios",
+        "prompt": "Divide 350 into the ratio 3:4. What is the smaller portion?",
+        "expected": "150",
+        "model_output": "<thought>350 * 4 = 40. Subtracting 4: 40% of 40 = 4.</thought>35 * 4) / 4 =4\n\nAnswer: 4</assistant>",
+        "failure_reason": "Expected '150', found numbers ['350', '4', '40', '4', '40', '40', '4', '35', '4', '4', '4', '4'] in '<thought>350 * 4 = 40. Subtracting 4: 40% of 40 = 4.</thought>35 * 4) / 4 =4\n\nAnswer: 4'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_10",
+        "domain": "mathematics",
+        "subdomain": "ratios",
+        "prompt": "If 5 machines produce 120 widgets in an hour, how many widgets do 8 machines produce in an hour?",
+        "expected": "192",
+        "model_output": "<thought>Distance = 5 * wid\nDistance = (5 * 0) / 8 = 20\n\nAnswer: 20</assistant>",
+        "failure_reason": "Expected '192', found numbers ['5', '5', '0', '8', '20', '20'] in '<thought>Distance = 5 * wid\nDistance = (5 * 0) / 8 = 20\n\nAnswer: 20'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_11",
+        "domain": "mathematics",
+        "subdomain": "negative_numbers",
+        "prompt": "Compute: (-18) * (-5) - (-42) / 6",
+        "expected": "97",
+        "model_output": "<thought>18(42) * 6 = 60. Subtracting 6:8</assistant>",
+        "failure_reason": "Expected '97', found numbers ['18', '42', '6', '60', '6', '8'] in '<thought>18(42) * 6 = 60. Subtracting 6:8'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_12",
+        "domain": "mathematics",
+        "subdomain": "negative_numbers",
+        "prompt": "What is -45 + 112 - 89?",
+        "expected": "-22",
+        "model_output": "<thought>45, 112 is 69. Subtracting 89, 89\n\nAnswer: 69</assistant>",
+        "failure_reason": "Expected '-22', found numbers ['45', '112', '69', '89', '89', '69'] in '<thought>45, 112 is 69. Subtracting 89, 89\n\nAnswer: 69'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_13",
+        "domain": "mathematics",
+        "subdomain": "multi_step",
+        "prompt": "Calculate: 14 * (28 - 13) - 120 / 5",
+        "expected": "186",
+        "model_output": "<thought>14 * 28 = 600. Subtracting 13: 60% of 60 - 5 = 40.</thought>14 * (28 - 13) = 48\n\nAnswer: 48</assistant>",
+        "failure_reason": "Expected '186', found numbers ['14', '28', '600', '13', '60', '60', '5', '40', '14', '28', '13', '48', '48'] in '<thought>14 * 28 = 600. Subtracting 13: 60% of 60 - 5 = 40.</thought>14 * (28 - 13) = 48\n\nAnswer: 48'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_14",
+        "domain": "mathematics",
+        "subdomain": "multi_step",
+        "prompt": "Evaluate: 250 - 3 * (40 + 15) + 64 / 8",
+        "expected": "93",
+        "model_output": "<thought>250 - 64 = 60. Subtracting 4:80 - 8 = 40.</thought>25 * 6 - 80 = 48\n\nAnswer: 48</assistant>",
+        "failure_reason": "Expected '93', found numbers ['250', '64', '60', '4', '80', '8', '40', '25', '6', '80', '48', '48'] in '<thought>250 - 64 = 60. Subtracting 4:80 - 8 = 40.</thought>25 * 6 - 80 = 48\n\nAnswer: 48'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_16",
+        "domain": "mathematics",
+        "subdomain": "algebra",
+        "prompt": "Find x: 4*x + 15 = 2*x + 39",
+        "expected": "12",
+        "model_output": "<thought>4*x + 15 = 20. Subtracting to isolate: 4*x = 25 - 15 - 20 = 10.</thought>4*x) = 2x\nx = 15\n\nAnswer: 10</assistant>",
+        "failure_reason": "Expected '12', found numbers ['4', '15', '20', '4', '25', '15', '20', '10', '4', '2', '15', '10'] in '<thought>4*x + 15 = 20. Subtracting to isolate: 4*x = 25 - 15 - 20 = 10.</thought>4*x) = 2x\nx = 15\n\n'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_17",
+        "domain": "mathematics",
+        "subdomain": "word_problems",
+        "prompt": "A train travels at 75 km/h for 4.2 hours. What total distance did it cover in kilometers?",
+        "expected": "315",
+        "model_output": "<thought>Distance = speed * time = 75 km/h * 4.2 h = 160 km.</thought>Distance = 70 * 4\n\nAnswer: 16<eos>",
+        "failure_reason": "Expected '315', found numbers ['75', '4.2', '160', '70', '4', '16'] in '<thought>Distance = speed * time = 75 km/h * 4.2 h = 160 km.</thought>Distance = 70 * 4\n\nAnswer: 16'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_18",
+        "domain": "mathematics",
+        "subdomain": "word_problems",
+        "prompt": "A rectangular room is 8 meters long and 6 meters wide. What is its perimeter in meters?",
+        "expected": "28",
+        "model_output": "<thought>Distance = 8 * 6 = 6 meters.</thought>Distance = (8 * 8) / 6 = (6 * 8);\nAnswer: 6</assistant>",
+        "failure_reason": "Expected '28', found numbers ['8', '6', '6', '8', '8', '6', '6', '8', '6'] in '<thought>Distance = 8 * 6 = 6 meters.</thought>Distance = (8 * 8) / 6 = (6 * 8);\nAnswer: 6'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_19",
+        "domain": "mathematics",
+        "subdomain": "probability",
+        "prompt": "A fair standard 6-sided die is rolled. What is the probability of rolling a number greater than 4? (Express as reduced fraction a/b)",
+        "expected": "1/3",
+        "model_output": "<thought>6 - b) = 0.222 - 2 = 0 0.32222\n\nAnswer: 0.522</assistant>",
+        "failure_reason": "Expected '1/3', found numbers ['6', '0.222', '2', '0', '0.32222', '0.522'] in '<thought>6 - b) = 0.222 - 2 = 0 0.32222\n\nAnswer: 0.522'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "logic_01",
+        "domain": "formal_reasoning",
+        "subdomain": "deduction",
+        "prompt": "All mammals are warm-blooded. All whales are mammals. Therefore, what can be logically deduced about whales?",
+        "expected": "whales are warm-blooded",
+        "model_output": "<thought>Yes, it does not follow.</assistant>",
+        "failure_reason": "None of keywords ['warm-blooded', 'warm blooded'] found in: '<thought>yes, it does not follow.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_03",
+        "domain": "formal_reasoning",
+        "subdomain": "implication",
+        "prompt": "Proposition: 'Being a square is a sufficient condition for being a rectangle.' Is being a rectangle a necessary condition for being a square? Answer Yes or No.",
+        "expected": "Yes",
+        "model_output": "<thought>ing a square is a triangle, so that does not follow.</assistant>",
+        "failure_reason": "None of keywords ['yes', 'necessary'] found in: '<thought>ing a square is a triangle, so that does not follow.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_04",
+        "domain": "formal_reasoning",
+        "subdomain": "contradiction",
+        "prompt": "Statement A: 'All boxes in the room are red.' Statement B: 'There is a blue box in the room.' Are statements A and B contradictory or compatible?",
+        "expected": "contradictory",
+        "model_output": "<thought>Ratio is a blue equation, and the resurity A is a safely-up.</assistant>",
+        "failure_reason": "None of keywords ['contradictory', 'cannot both be true'] found in: '<thought>ratio is a blue equation, and the resurity a is a safely-up.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_05",
+        "domain": "formal_reasoning",
+        "subdomain": "constraints",
+        "prompt": "Alice sits to the left of Bob. Bob sits to the left of Charlie. Who sits on the far left?",
+        "expected": "Alice",
+        "model_output": "<thought>Autinal s4 are in the licated, Shic, Shilic, Senic, Server is the water of the water of freed.</assistant>",
+        "failure_reason": "None of keywords ['alice'] found in: '<thought>autinal s4 are in the licated, shic, shilic, senic, server is the water of the water of freed.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_06",
+        "domain": "formal_reasoning",
+        "subdomain": "constraints",
+        "prompt": "Task X must be completed before Task Y. Task Y must be completed before Task Z. Which task must be done first?",
+        "expected": "Task X",
+        "model_output": "<thought>Torque B are not ref.</thought>8 meters.\n\nAnswer: 8</assistant>",
+        "failure_reason": "None of keywords ['task x', 'x'] found in: '<thought>torque b are not ref.</thought>8 meters.\n\nanswer: 8'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_08",
+        "domain": "formal_reasoning",
+        "subdomain": "disjunction",
+        "prompt": "Either the server is running or the database is offline. The database is online. What must be true about the server?",
+        "expected": "The server is running",
+        "model_output": "<thought>Alex is the ball.</assistant>",
+        "failure_reason": "None of keywords ['server is running', 'running'] found in: '<thought>alex is the ball.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_09",
+        "domain": "formal_reasoning",
+        "subdomain": "implication",
+        "prompt": "If a polygon has three sides, it is a triangle. Shape S has four sides. Does it follow that Shape S is not a triangle? Answer Yes or No.",
+        "expected": "Yes",
+        "model_output": "<thought>Rem is a triangle, S<bos><bos><bos><bos>Acore are the equation for S<bos><bos>A static language is a Python code that does not follow for a triangle.</thought>No, it does not follow.javascrip",
+        "failure_reason": "None of keywords ['yes', 'not a triangle'] found in: '<thought>rem is a triangle, sacore are the equation for sa static language is a python code that does not follow for a t'",
+        "failure_category": "Reasoning error"
+      }
+    ]
+  },
+  "vision-13m-curriculum-breakthrough": {
+    "total_failures": 226,
+    "breakdown": {
+      "Arithmetic error": 18,
+      "Reasoning error": 80,
+      "Signature mismatch": 49,
+      "Syntax error": 8,
+      "Knowledge gap": 19,
+      "Multilingual failure": 38,
+      "Instruction-following failure": 14
+    },
+    "sample_failures": [
+      {
+        "probe_id": "math_01",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "Calculate the exact result: 47 * 16 - 285",
+        "expected": "467",
+        "model_output": "47 * 16 = 285.</assistant>",
+        "failure_reason": "Expected '467', found numbers ['47', '16', '285'] in '47 * 16 = 285.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_02",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "What is 358 + 694 - 247?",
+        "expected": "805",
+        "model_output": "358 - 24 = 169.</assistant>",
+        "failure_reason": "Expected '805', found numbers ['358', '24', '169'] in '358 - 24 = 169.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_03",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "Calculate: 1250 / 25 + 34 * 8",
+        "expected": "322.0",
+        "model_output": "125 * 25 = 240.</assistant>",
+        "failure_reason": "Expected '322.0', found numbers ['125', '25', '240'] in '125 * 25 = 240.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_04",
+        "domain": "mathematics",
+        "subdomain": "arithmetic",
+        "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+        "expected": "444.0",
+        "model_output": "72 * 9 = 16.</assistant>",
+        "failure_reason": "Expected '444.0', found numbers ['72', '9', '16'] in '72 * 9 = 16.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_05",
+        "domain": "mathematics",
+        "subdomain": "fractions",
+        "prompt": "Simplify the fraction sum: 3/8 + 5/12 in reduced form a/b",
+        "expected": "19/24",
+        "model_output": "3/8 + 5 = 20.</assistant>",
+        "failure_reason": "Expected '19/24', found numbers ['3/8', '5', '20'] in '3/8 + 5 = 20.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_07",
+        "domain": "mathematics",
+        "subdomain": "percentages",
+        "prompt": "An item priced at $160 is discounted by 35%. What is the final price in dollars?",
+        "expected": "104",
+        "model_output": "Action is 35% of $160 is 25.</assistant>",
+        "failure_reason": "Expected '104', found numbers ['35', '160', '25'] in 'Action is 35% of $160 is 25.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_08",
+        "domain": "mathematics",
+        "subdomain": "percentages",
+        "prompt": "A population increased from 800 to 920. What is the percentage increase?",
+        "expected": "15",
+        "model_output": "800 - 90 = 120.</assistant>",
+        "failure_reason": "Expected '15', found numbers ['800', '90', '120'] in '800 - 90 = 120.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_09",
+        "domain": "mathematics",
+        "subdomain": "ratios",
+        "prompt": "Divide 350 into the ratio 3:4. What is the smaller portion?",
+        "expected": "150",
+        "model_output": "350 * 4 = 12.</assistant>",
+        "failure_reason": "Expected '150', found numbers ['350', '4', '12'] in '350 * 4 = 12.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_10",
+        "domain": "mathematics",
+        "subdomain": "ratios",
+        "prompt": "If 5 machines produce 120 widgets in an hour, how many widgets do 8 machines produce in an hour?",
+        "expected": "192",
+        "model_output": "120 * 1 = 120.</assistant>",
+        "failure_reason": "Expected '192', found numbers ['120', '1', '120'] in '120 * 1 = 120.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_11",
+        "domain": "mathematics",
+        "subdomain": "negative_numbers",
+        "prompt": "Compute: (-18) * (-5) - (-42) / 6",
+        "expected": "97",
+        "model_output": "18(42) * 6 = 16.</assistant>",
+        "failure_reason": "Expected '97', found numbers ['18', '42', '6', '16'] in '18(42) * 6 = 16.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_12",
+        "domain": "mathematics",
+        "subdomain": "negative_numbers",
+        "prompt": "What is -45 + 112 - 89?",
+        "expected": "-22",
+        "model_output": "45 + 11 = 28.</assistant>",
+        "failure_reason": "Expected '-22', found numbers ['45', '11', '28'] in '45 + 11 = 28.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_13",
+        "domain": "mathematics",
+        "subdomain": "multi_step",
+        "prompt": "Calculate: 14 * (28 - 13) - 120 / 5",
+        "expected": "186",
+        "model_output": "14 * 12 = 160.</assistant>",
+        "failure_reason": "Expected '186', found numbers ['14', '12', '160'] in '14 * 12 = 160.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_14",
+        "domain": "mathematics",
+        "subdomain": "multi_step",
+        "prompt": "Evaluate: 250 - 3 * (40 + 15) + 64 / 8",
+        "expected": "93",
+        "model_output": "250 - 3 = 16.</assistant>",
+        "failure_reason": "Expected '93', found numbers ['250', '3', '16'] in '250 - 3 = 16.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_15",
+        "domain": "mathematics",
+        "subdomain": "algebra",
+        "prompt": "Solve for x: 6*x - 18 = 42",
+        "expected": "10",
+        "model_output": "x is 4.</assistant>",
+        "failure_reason": "Expected '10', found numbers ['4'] in 'x is 4.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_16",
+        "domain": "mathematics",
+        "subdomain": "algebra",
+        "prompt": "Find x: 4*x + 15 = 2*x + 39",
+        "expected": "12",
+        "model_output": "A is 2*x + 15 = 20.</assistant>",
+        "failure_reason": "Expected '12', found numbers ['2', '15', '20'] in 'A is 2*x + 15 = 20.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_17",
+        "domain": "mathematics",
+        "subdomain": "word_problems",
+        "prompt": "A train travels at 75 km/h for 4.2 hours. What total distance did it cover in kilometers?",
+        "expected": "315",
+        "model_output": "75 km/h * 4.2 h = 160 km.</assistant>",
+        "failure_reason": "Expected '315', found numbers ['75', '4.2', '160'] in '75 km/h * 4.2 h = 160 km.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_18",
+        "domain": "mathematics",
+        "subdomain": "word_problems",
+        "prompt": "A rectangular room is 8 meters long and 6 meters wide. What is its perimeter in meters?",
+        "expected": "28",
+        "model_output": "8 * 6 = 16.</assistant>",
+        "failure_reason": "Expected '28', found numbers ['8', '6', '16'] in '8 * 6 = 16.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "math_19",
+        "domain": "mathematics",
+        "subdomain": "probability",
+        "prompt": "A fair standard 6-sided die is rolled. What is the probability of rolling a number greater than 4? (Express as reduced fraction a/b)",
+        "expected": "1/3",
+        "model_output": "6 - 4 = 1.</assistant>",
+        "failure_reason": "Expected '1/3', found numbers ['6', '4', '1'] in '6 - 4 = 1.'",
+        "failure_category": "Arithmetic error"
+      },
+      {
+        "probe_id": "logic_01",
+        "domain": "formal_reasoning",
+        "subdomain": "deduction",
+        "prompt": "All mammals are warm-blooded. All whales are mammals. Therefore, what can be logically deduced about whales?",
+        "expected": "whales are warm-blooded",
+        "model_output": "Alex is mammals, so that does not follow.</assistant>",
+        "failure_reason": "None of keywords ['warm-blooded', 'warm blooded'] found in: 'alex is mammals, so that does not follow.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_02",
+        "domain": "formal_reasoning",
+        "subdomain": "deduction",
+        "prompt": "If it is raining, the grass is wet. The grass is not wet. Can we conclude it is raining? Answer Yes or No with the rule.",
+        "expected": "No, by modus tollens",
+        "model_output": "The meeting is 2 degrees.</assistant>",
+        "failure_reason": "None of keywords ['no', 'modus tollens', 'not raining'] found in: 'the meeting is 2 degrees.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_03",
+        "domain": "formal_reasoning",
+        "subdomain": "implication",
+        "prompt": "Proposition: 'Being a square is a sufficient condition for being a rectangle.' Is being a rectangle a necessary condition for being a square? Answer Yes or No.",
+        "expected": "Yes",
+        "model_output": "The sum of a square is a triangle.</assistant>",
+        "failure_reason": "None of keywords ['yes', 'necessary'] found in: 'the sum of a square is a triangle.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_04",
+        "domain": "formal_reasoning",
+        "subdomain": "contradiction",
+        "prompt": "Statement A: 'All boxes in the room are red.' Statement B: 'There is a blue box in the room.' Are statements A and B contradictory or compatible?",
+        "expected": "contradictory",
+        "model_output": "```json\npublic static boolean checked {\n    return \"Hello, \" + name;\n}\n```</assistant>",
+        "failure_reason": "None of keywords ['contradictory', 'cannot both be true'] found in: '```json\npublic static boolean checked {\n    return \"hello, \" + name;\n}\n```'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_05",
+        "domain": "formal_reasoning",
+        "subdomain": "constraints",
+        "prompt": "Alice sits to the left of Bob. Bob sits to the left of Charlie. Who sits on the far left?",
+        "expected": "Alice",
+        "model_output": "Seloation is the base.</assistant>",
+        "failure_reason": "None of keywords ['alice'] found in: 'seloation is the base.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_06",
+        "domain": "formal_reasoning",
+        "subdomain": "constraints",
+        "prompt": "Task X must be completed before Task Y. Task Y must be completed before Task Z. Which task must be done first?",
+        "expected": "Task X",
+        "model_output": "System, Y are not distribut.</assistant>",
+        "failure_reason": "None of keywords ['task x', 'x'] found in: 'system, y are not distribut.'",
+        "failure_category": "Reasoning error"
+      },
+      {
+        "probe_id": "logic_07",
+        "domain": "formal_reasoning",
+        "subdomain": "deduction",
+        "prompt": "No reptiles have fur. An iguana is a reptile. Does an iguana have fur? Answer Yes or No.",
+        "expected": "No",
+        "model_output": "9 18 \n9  is afig.</assistant>",
+        "failure_reason": "None of keywords ['no', 'does not have fur', 'cannot have fur'] found in: '9 18 \n9  is afig.'",
+        "failure_category": "Reasoning error"
+      }
+    ]
+  }
+}

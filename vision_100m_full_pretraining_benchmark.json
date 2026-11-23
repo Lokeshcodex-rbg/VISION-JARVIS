@@ -1,0 +1,729 @@
+{
+  "benchmark_title": "VISION 100M Multi-Checkpoint Comprehensive Independent Benchmark",
+  "timestamp_iso": "2026-11-20T22:12:27Z",
+  "total_probes_per_checkpoint": 48,
+  "domains_evaluated": [
+    "mathematics",
+    "formal_reasoning",
+    "causal_counterfactual",
+    "programming_python",
+    "programming_javascript",
+    "programming_java",
+    "algorithms_complexity",
+    "science_engineering",
+    "english_comprehension",
+    "hindi_comprehension",
+    "hinglish_dialogue",
+    "instruction_conversational"
+  ],
+  "checkpoints": [
+    {
+      "model_id": "vision-v1.4-calibrated-local",
+      "display_name": "VISION v1.4 (Reference)",
+      "weights_sha256": "5575077916210c168e462b27deed5a1c08101b05aad94f7809b188a579a4caea",
+      "file_size_mb": 50.91,
+      "trainable_parameters": 13332498,
+      "total_probes_evaluated": 48,
+      "passed_probes": 1,
+      "pass_rate_percent": 2.08,
+      "wilson_ci_95": [
+        0.37,
+        10.9
+      ],
+      "mean_first_token_entropy": 1.118,
+      "mean_latency_ms": 769.9,
+      "unique_output_words": 235,
+      "domain_scores": {
+        "mathematics": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "formal_reasoning": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "causal_counterfactual": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_python": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_javascript": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_java": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "algorithms_complexity": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "science_engineering": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "english_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hindi_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hinglish_dialogue": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "instruction_conversational": {
+          "correct": 1,
+          "total": 4,
+          "accuracy_percent": 25.0
+        }
+      },
+      "sample_outputs": [
+        {
+          "prompt": "Calculate the exact result: 47 * 16 - 285",
+          "domain": "mathematics",
+          "entropy": 0.07,
+          "generated": "47 * 16 = 485. Subtracting 285: 48"
+        },
+        {
+          "prompt": "What is 358 + 694 - 247?",
+          "domain": "mathematics",
+          "entropy": 0.048,
+          "generated": "358 - 66 = 358. Subtracting 66: 35"
+        },
+        {
+          "prompt": "Calculate: 1250 / 25 + 34 * 8",
+          "domain": "mathematics",
+          "entropy": 0.128,
+          "generated": "125 * 85 = 450. Subtracting 250: 4"
+        },
+        {
+          "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+          "domain": "mathematics",
+          "entropy": 0.083,
+          "generated": "72 * 15 = 144. Subtracting 9: 144 -"
+        },
+        {
+          "prompt": "All mammals are warm-blooded. All whales are mammals. Theref",
+          "domain": "formal_reasoning",
+          "entropy": 0.059,
+          "generated": "No, it does not follow."
+        },
+        {
+          "prompt": "If it is raining, the grass is wet. The grass is not wet. Ca",
+          "domain": "formal_reasoning",
+          "entropy": 0.059,
+          "generated": "Action is scad + (A).The meeting is scad + b, b is the heavi"
+        }
+      ],
+      "status": "EVALUATED"
+    },
+    {
+      "model_id": "vision-2.0-candidate-g",
+      "display_name": "VISION 2.0 Candidate G",
+      "weights_sha256": "576e21f6b49dec1088da1f96f06d9653fe576ce50f54e6ff83266ce376198039",
+      "file_size_mb": 50.91,
+      "trainable_parameters": 13332498,
+      "total_probes_evaluated": 48,
+      "passed_probes": 1,
+      "pass_rate_percent": 2.08,
+      "wilson_ci_95": [
+        0.37,
+        10.9
+      ],
+      "mean_first_token_entropy": 1.151,
+      "mean_latency_ms": 763.9,
+      "unique_output_words": 222,
+      "domain_scores": {
+        "mathematics": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "formal_reasoning": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "causal_counterfactual": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_python": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_javascript": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_java": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "algorithms_complexity": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "science_engineering": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "english_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hindi_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hinglish_dialogue": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "instruction_conversational": {
+          "correct": 1,
+          "total": 4,
+          "accuracy_percent": 25.0
+        }
+      },
+      "sample_outputs": [
+        {
+          "prompt": "Calculate the exact result: 47 * 16 - 285",
+          "domain": "mathematics",
+          "entropy": 0.079,
+          "generated": "47 * 16 = 485. Subtracting 285, 28"
+        },
+        {
+          "prompt": "What is 358 + 694 - 247?",
+          "domain": "mathematics",
+          "entropy": 0.056,
+          "generated": "358 - 247 = 0.35. Subtracting 66: "
+        },
+        {
+          "prompt": "Calculate: 1250 / 25 + 34 * 8",
+          "domain": "mathematics",
+          "entropy": 0.12,
+          "generated": "125 * 85 = 400. Subtracting 25: 40"
+        },
+        {
+          "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+          "domain": "mathematics",
+          "entropy": 0.094,
+          "generated": "72 * 15 = 144. Subtracting 9: 144 -"
+        },
+        {
+          "prompt": "All mammals are warm-blooded. All whales are mammals. Theref",
+          "domain": "formal_reasoning",
+          "entropy": 0.054,
+          "generated": "Yes, it does not follow."
+        },
+        {
+          "prompt": "If it is raining, the grass is wet. The grass is not wet. Ca",
+          "domain": "formal_reasoning",
+          "entropy": 0.059,
+          "generated": "The meeting is schedu.No, it does not follow."
+        }
+      ],
+      "status": "EVALUATED"
+    },
+    {
+      "model_id": "vision-100m-foundation",
+      "display_name": "VISION 100M (Original Pilot)",
+      "weights_sha256": "8ce96183089b73e1f7c3c535920fcd3ef9733631a04846ef08f9322b6932d2b0",
+      "file_size_mb": 374.89,
+      "trainable_parameters": 98258258,
+      "total_probes_evaluated": 48,
+      "passed_probes": 0,
+      "pass_rate_percent": 0.0,
+      "wilson_ci_95": [
+        0.0,
+        7.41
+      ],
+      "mean_first_token_entropy": 8.712,
+      "mean_latency_ms": 4448.4,
+      "unique_output_words": 5,
+      "domain_scores": {
+        "mathematics": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "formal_reasoning": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "causal_counterfactual": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_python": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_javascript": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_java": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "algorithms_complexity": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "science_engineering": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "english_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hindi_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hinglish_dialogue": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "instruction_conversational": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        }
+      },
+      "sample_outputs": [
+        {
+          "prompt": "Calculate the exact result: 47 * 16 - 285",
+          "domain": "mathematics",
+          "entropy": 8.641,
+          "generated": "111111111111111111111111"
+        },
+        {
+          "prompt": "What is 358 + 694 - 247?",
+          "domain": "mathematics",
+          "entropy": 8.654,
+          "generated": "111111111111111111111111"
+        },
+        {
+          "prompt": "Calculate: 1250 / 25 + 34 * 8",
+          "domain": "mathematics",
+          "entropy": 8.637,
+          "generated": "111111111111111111111111"
+        },
+        {
+          "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+          "domain": "mathematics",
+          "entropy": 8.618,
+          "generated": "111111111111111111111111"
+        },
+        {
+          "prompt": "All mammals are warm-blooded. All whales are mammals. Theref",
+          "domain": "formal_reasoning",
+          "entropy": 8.731,
+          "generated": ",,,,,,,,,,,,,,,,,,,,,,,,"
+        },
+        {
+          "prompt": "If it is raining, the grass is wet. The grass is not wet. Ca",
+          "domain": "formal_reasoning",
+          "entropy": 8.71,
+          "generated": "........................"
+        }
+      ],
+      "status": "EVALUATED"
+    },
+    {
+      "model_id": "vision-100m-recovered",
+      "display_name": "VISION 100M (Recovered)",
+      "weights_sha256": "b658f67743a9fa3fa9bfd1cc540c0be55192674d269cd90b4a278337982fa508",
+      "file_size_mb": 374.89,
+      "trainable_parameters": 98258258,
+      "total_probes_evaluated": 48,
+      "passed_probes": 0,
+      "pass_rate_percent": 0.0,
+      "wilson_ci_95": [
+        0.0,
+        7.41
+      ],
+      "mean_first_token_entropy": 8.47,
+      "mean_latency_ms": 4455.1,
+      "unique_output_words": 0,
+      "domain_scores": {
+        "mathematics": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "formal_reasoning": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "causal_counterfactual": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_python": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_javascript": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_java": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "algorithms_complexity": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "science_engineering": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "english_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hindi_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hinglish_dialogue": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "instruction_conversational": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        }
+      },
+      "sample_outputs": [
+        {
+          "prompt": "Calculate the exact result: 47 * 16 - 285",
+          "domain": "mathematics",
+          "entropy": 8.41,
+          "generated": "                        "
+        },
+        {
+          "prompt": "What is 358 + 694 - 247?",
+          "domain": "mathematics",
+          "entropy": 8.425,
+          "generated": "                        "
+        },
+        {
+          "prompt": "Calculate: 1250 / 25 + 34 * 8",
+          "domain": "mathematics",
+          "entropy": 8.417,
+          "generated": "                        "
+        },
+        {
+          "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+          "domain": "mathematics",
+          "entropy": 8.417,
+          "generated": "                        "
+        },
+        {
+          "prompt": "All mammals are warm-blooded. All whales are mammals. Theref",
+          "domain": "formal_reasoning",
+          "entropy": 8.477,
+          "generated": "                        "
+        },
+        {
+          "prompt": "If it is raining, the grass is wet. The grass is not wet. Ca",
+          "domain": "formal_reasoning",
+          "entropy": 8.471,
+          "generated": "                        "
+        }
+      ],
+      "status": "EVALUATED"
+    },
+    {
+      "model_id": "vision-scale-100m-stage1-foundation",
+      "display_name": "VISION 100M (EXP-4 Stage 1)",
+      "weights_sha256": "a152324e5cac8cff652c6ac141b68b124c637c727278a9c4b80ea82a1085afd6",
+      "file_size_mb": 374.89,
+      "trainable_parameters": 98258258,
+      "total_probes_evaluated": 48,
+      "passed_probes": 0,
+      "pass_rate_percent": 0.0,
+      "wilson_ci_95": [
+        0.0,
+        7.41
+      ],
+      "mean_first_token_entropy": 8.652,
+      "mean_latency_ms": 4381.4,
+      "unique_output_words": 1,
+      "domain_scores": {
+        "mathematics": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "formal_reasoning": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "causal_counterfactual": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_python": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_javascript": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_java": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "algorithms_complexity": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "science_engineering": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "english_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hindi_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hinglish_dialogue": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "instruction_conversational": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        }
+      },
+      "sample_outputs": [
+        {
+          "prompt": "Calculate the exact result: 47 * 16 - 285",
+          "domain": "mathematics",
+          "entropy": 8.629,
+          "generated": "........................"
+        },
+        {
+          "prompt": "What is 358 + 694 - 247?",
+          "domain": "mathematics",
+          "entropy": 8.633,
+          "generated": "........................"
+        },
+        {
+          "prompt": "Calculate: 1250 / 25 + 34 * 8",
+          "domain": "mathematics",
+          "entropy": 8.627,
+          "generated": "........................"
+        },
+        {
+          "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+          "domain": "mathematics",
+          "entropy": 8.629,
+          "generated": "........................"
+        },
+        {
+          "prompt": "All mammals are warm-blooded. All whales are mammals. Theref",
+          "domain": "formal_reasoning",
+          "entropy": 8.648,
+          "generated": "........................"
+        },
+        {
+          "prompt": "If it is raining, the grass is wet. The grass is not wet. Ca",
+          "domain": "formal_reasoning",
+          "entropy": 8.646,
+          "generated": "........................"
+        }
+      ],
+      "status": "EVALUATED"
+    },
+    {
+      "model_id": "vision-scale-100m-full-pretraining",
+      "display_name": "VISION 100M (New Full Pretraining)",
+      "weights_sha256": "d8eca5f06ebbef4f70348c4d9ab3d17f2c3c9a94ece7a0049c857c51befcb8be",
+      "file_size_mb": 374.89,
+      "trainable_parameters": 98258258,
+      "total_probes_evaluated": 48,
+      "passed_probes": 0,
+      "pass_rate_percent": 0.0,
+      "wilson_ci_95": [
+        0.0,
+        7.41
+      ],
+      "mean_first_token_entropy": 8.019,
+      "mean_latency_ms": 4310.2,
+      "unique_output_words": 5,
+      "domain_scores": {
+        "mathematics": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "formal_reasoning": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "causal_counterfactual": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_python": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_javascript": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "programming_java": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "algorithms_complexity": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "science_engineering": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "english_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hindi_comprehension": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "hinglish_dialogue": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        },
+        "instruction_conversational": {
+          "correct": 0,
+          "total": 4,
+          "accuracy_percent": 0.0
+        }
+      },
+      "sample_outputs": [
+        {
+          "prompt": "Calculate the exact result: 47 * 16 - 285",
+          "domain": "mathematics",
+          "entropy": 7.533,
+          "generated": " 1111 1 1 1 1 1 1 1 1 1 "
+        },
+        {
+          "prompt": "What is 358 + 694 - 247?",
+          "domain": "mathematics",
+          "entropy": 7.467,
+          "generated": " 11 1 1 1 1 1 1 1 1 1 1 "
+        },
+        {
+          "prompt": "Calculate: 1250 / 25 + 34 * 8",
+          "domain": "mathematics",
+          "entropy": 7.426,
+          "generated": " 1 1 1 1 1 1 1 1 1 1 1 1"
+        },
+        {
+          "prompt": "Evaluate: 72 * (15 - 9) + 144 / 12",
+          "domain": "mathematics",
+          "entropy": 7.406,
+          "generated": " 1 1 1 1 1 1 1 1 1 1 1 1"
+        },
+        {
+          "prompt": "All mammals are warm-blooded. All whales are mammals. Theref",
+          "domain": "formal_reasoning",
+          "entropy": 8.074,
+          "generated": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        },
+        {
+          "prompt": "If it is raining, the grass is wet. The grass is not wet. Ca",
+          "domain": "formal_reasoning",
+          "entropy": 8.061,
+          "generated": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        }
+      ],
+      "status": "EVALUATED"
+    }
+  ]
+}

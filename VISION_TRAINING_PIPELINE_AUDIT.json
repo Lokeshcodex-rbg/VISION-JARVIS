@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-11-22T02:45:00Z",
+  "tokenizer_info": {
+    "vocab_size": 8192,
+    "pad_id": 0,
+    "eos_id": 2,
+    "assistant_id": 6
+  },
+  "checks": {
+    "shifted_alignment_and_masking": {
+      "passed": true,
+      "asst_token_in_input_at_pos": 11,
+      "input_at_asst_pos": "<assistant>",
+      "target_at_asst_pos": "4",
+      "expected_first_resp_token": "4",
+      "prompt_tokens_masked_to_pad_count": 11,
+      "details": "When input is <assistant>, target is the first token of assistant response. All user prompt tokens before it are masked to pad_id."
+    },
+    "zero_loss_on_padding": {
+      "passed": true,
+      "loss_standard": 8.90334,
+      "loss_with_corrupted_pad_logits": 8.90334,
+      "difference": 0.0,
+      "details": "Cross-entropy ignore_index=pad_id strictly ignores padding positions; corrupted logits on pad positions produce zero loss change."
+    },
+    "gradient_backpropagation": {
+      "passed": true,
+      "total_text_transformer_tensors": 20,
+      "text_tensors_with_positive_gradients": 20,
+      "missing_or_zero_grad_text_tensors": [],
+      "multimodal_encoder_tensors_unactivated_in_text_mode": 43,
+      "sample_grad_norms": {
+        "tok_emb.weight": 9.279634,
+        "blocks.0.norm1.weight": 0.046956,
+        "blocks.0.attn.q_proj.weight": 0.104154,
+        "blocks.0.attn.k_proj.weight": 0.102624,
+        "blocks.0.attn.v_proj.weight": 2.821551,
+        "blocks.0.attn.o_proj.weight": 5.906621,
+        "blocks.0.norm2.weight": 0.049916,
+        "blocks.0.mlp.gate_proj.weight": 1.250042
+      },
+      "details": "All active text transformer embedding, self-attention (Q, K, V, O), MLP (gate, up, down), and RMSNorm layers receive non-zero gradients."
+    },
+    "parameter_update_execution": {
+      "passed": true,
+      "mean_parameter_update_ratio": 0.015164,
+      "sample_update_ratios": {
+        "tok_emb.weight": 0.049923,
+        "vision_encoder.cls_token": 0.0,
+        "vision_encoder.pos_embed": 0.0,
+        "vision_encoder.patch_embed.0.weight": 0.0,
+        "vision_encoder.patch_embed.0.bias": 0.0,
+        "vision_encoder.patch_embed.2.weight": 0.0,
+        "vision_encoder.patch_embed.2.bias": 0.0,
+        "vision_encoder.blocks.0.norm1.weight": 0.0
+      },
+      "details": "AdamW updates all parameters with appropriate step magnitude."
+    },
+    "weight_decay_parameter_grouping": {
+      "passed": true,
+      "decay_param_count": 35,
+      "no_decay_param_count": 28,
+      "sample_no_decay": [
+        "vision_encoder.patch_embed.0.bias",
+        "vision_encoder.patch_embed.2.bias",
+        "vision_encoder.blocks.0.norm1.weight",
+        "vision_encoder.blocks.0.attn.in_proj_bias",
+        "vision_encoder.blocks.0.attn.out_proj.bias"
+      ],
+      "details": "1D parameters (biases, RMSNorm / LayerNorm scales) correctly segregated from weight decay."
+    },
+    "checkpoint_serialization_integrity": {
+      "passed": true,
+      "total_tensors": 64,
+      "exact_matches": 64,
+      "mismatches": [],
+      "details": "All state_dict tensors reloaded with exact bitwise identity."
+    }
+  },
+  "overall_audit_passed": true
+}

@@ -1,0 +1,162 @@
+{
+  "candidate_name": "vision-scale-100m",
+  "program": "VISION 100M Foundation Model Pretraining",
+  "timestamp_iso": "2026-11-20T22:49:26.170880",
+  "status": "COMPLETED",
+  "checkpoint_dir": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-100m-foundation",
+  "weights_sha256": "8ce96183089b73e1f7c3c535920fcd3ef9733631a04846ef08f9322b6932d2b0",
+  "weights_size_mb": 374.89,
+  "total_parameters": 98258258,
+  "training_telemetry": {
+    "total_steps": 80,
+    "warmup_steps": 10,
+    "peak_lr": 0.00015,
+    "min_lr": 1.5e-05,
+    "initial_loss": 9.1366,
+    "final_loss": 7.8068,
+    "val_loss": 7.8322,
+    "val_ppl": 2520.57,
+    "wall_clock_seconds": 328.51,
+    "tokens_per_second": 62.3,
+    "total_tokens_trained": 20480,
+    "peak_process_rss_mb": 424.09
+  },
+  "step_history_sample": [
+    {
+      "step": 8,
+      "loss": 9.1366,
+      "lr": 0.00011999999999999999,
+      "elapsed_s": 35.31,
+      "tokens_per_sec": 58.0,
+      "rss_memory_mb": 1461.21
+    },
+    {
+      "step": 16,
+      "loss": 8.5724,
+      "lr": 0.00014830763407227307,
+      "elapsed_s": 73.27,
+      "tokens_per_sec": 55.9,
+      "rss_memory_mb": 864.95
+    },
+    {
+      "step": 24,
+      "loss": 8.1263,
+      "lr": 0.0001388336946261879,
+      "elapsed_s": 117.52,
+      "tokens_per_sec": 52.3,
+      "rss_memory_mb": 1254.53
+    },
+    {
+      "step": 32,
+      "loss": 8.4471,
+      "lr": 0.00012217550452974193,
+      "elapsed_s": 155.9,
+      "tokens_per_sec": 52.5,
+      "rss_memory_mb": 995.95
+    },
+    {
+      "step": 40,
+      "loss": 8.2625,
+      "lr": 0.00010045748707575055,
+      "elapsed_s": 180.84,
+      "tokens_per_sec": 56.6,
+      "rss_memory_mb": 1284.12
+    },
+    {
+      "step": 48,
+      "loss": 8.0339,
+      "lr": 7.644934664901823e-05,
+      "elapsed_s": 202.49,
+      "tokens_per_sec": 60.7,
+      "rss_memory_mb": 1103.64
+    },
+    {
+      "step": 56,
+      "loss": 7.9602,
+      "lr": 5.321284760956482e-05,
+      "elapsed_s": 223.34,
+      "tokens_per_sec": 64.2,
+      "rss_memory_mb": 883.78
+    },
+    {
+      "step": 64,
+      "loss": 7.8868,
+      "lr": 3.371134669165107e-05,
+      "elapsed_s": 243.3,
+      "tokens_per_sec": 67.3,
+      "rss_memory_mb": 1458.23
+    },
+    {
+      "step": 72,
+      "loss": 7.7027,
+      "lr": 2.0431875352777084e-05,
+      "elapsed_s": 286.29,
+      "tokens_per_sec": 64.4,
+      "rss_memory_mb": 743.58
+    },
+    {
+      "step": 80,
+      "loss": 7.8068,
+      "lr": 1.5067968008461266e-05,
+      "elapsed_s": 328.49,
+      "tokens_per_sec": 62.3,
+      "rss_memory_mb": 1039.79
+    }
+  ],
+  "compute_feasibility_analysis_section_16": {
+    "measured_cpu_throughput_tok_sec": 62.3,
+    "thread_allocation": 2,
+    "projection_table": {
+      "100K_tokens": {
+        "tokens": 100000,
+        "local_cpu_est_hours": 0.45,
+        "local_cpu_feasibility": "FEASIBLE (<1 hr)",
+        "rtx4090_est_hours": 0.002,
+        "cloud_8xa100_est_minutes": 0.01
+      },
+      "500K_tokens": {
+        "tokens": 500000,
+        "local_cpu_est_hours": 2.23,
+        "local_cpu_feasibility": "FEASIBLE (Overnight)",
+        "rtx4090_est_hours": 0.009,
+        "cloud_8xa100_est_minutes": 0.07
+      },
+      "1M_tokens": {
+        "tokens": 1000000,
+        "local_cpu_est_hours": 4.46,
+        "local_cpu_feasibility": "FEASIBLE (Overnight)",
+        "rtx4090_est_hours": 0.019,
+        "cloud_8xa100_est_minutes": 0.14
+      },
+      "5M_tokens": {
+        "tokens": 5000000,
+        "local_cpu_est_hours": 22.28,
+        "local_cpu_feasibility": "PROHIBITIVE ON CPU",
+        "rtx4090_est_hours": 0.093,
+        "cloud_8xa100_est_minutes": 0.69
+      },
+      "10M_tokens": {
+        "tokens": 10000000,
+        "local_cpu_est_hours": 44.56,
+        "local_cpu_feasibility": "PROHIBITIVE ON CPU",
+        "rtx4090_est_hours": 0.185,
+        "cloud_8xa100_est_minutes": 1.39
+      },
+      "50M_tokens": {
+        "tokens": 50000000,
+        "local_cpu_est_hours": 222.78,
+        "local_cpu_feasibility": "PROHIBITIVE ON CPU",
+        "rtx4090_est_hours": 0.926,
+        "cloud_8xa100_est_minutes": 6.94
+      },
+      "100M_tokens": {
+        "tokens": 100000000,
+        "local_cpu_est_hours": 445.56,
+        "local_cpu_feasibility": "PROHIBITIVE ON CPU",
+        "rtx4090_est_hours": 1.852,
+        "cloud_8xa100_est_minutes": 13.89
+      }
+    },
+    "hardware_bottleneck_audit": "CPU instruction decode and memory bandwidth during GEMM. AVX2 utilized. For full 10M-token corpus pretraining, estimated ~20-30 hours on local CPU, or ~11 minutes on an 8x A100 GPU cluster."
+  }
+}

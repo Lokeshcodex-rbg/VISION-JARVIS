@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-11-20T08:47:38.274660+00:00",
+  "evaluation_sets": [
+    "Set A (240)",
+    "Set B (240)",
+    "Set C (240)"
+  ],
+  "total_probes_evaluated_per_model": 720,
+  "candidates": [
+    "vision-v1.4-calibrated-local",
+    "vision-v1.4-replay-cand-b",
+    "vision-v1.4-precision-cand-e",
+    "vision-v1.4-breakthrough-cand-f"
+  ]
+}

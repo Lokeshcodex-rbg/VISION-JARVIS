@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-11-21T18:57:37.873939+00:00",
+  "mission": "VISION Independent Intelligence Validation & Generalization Mission",
+  "dataset_file": "D:\\Jarvis\\vision_independent_validation_dataset.jsonl",
+  "dataset_sha256": "dd7533874aed446d89833f9637a8aabf4e8848eb6888e16865b9ea1eeb8e2baf",
+  "total_probes": 240,
+  "decoding": {
+    "temperature": 0.01,
+    "max_new_tokens": 110,
+    "repetition_penalty": 1.05,
+    "no_repeat_ngram_size": 4,
+    "threads": 2
+  },
+  "checkpoints_evaluated": [
+    {
+      "name": "vision-v1.4-calibrated-local",
+      "path": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-v1.4-calibrated-local",
+      "sha256": "5575077916210c168e462b27deed5a1c08101b05aad94f7809b188a579a4caea"
+    },
+    {
+      "name": "vision-v1.4-precision-cand-e",
+      "path": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-v1.4-precision-cand-e",
+      "sha256": "58ace75597ebbfb03de1967f061516769db55aabbdcbfa4778e06f1e3b813d76"
+    },
+    {
+      "name": "vision-13m-curriculum-breakthrough",
+      "path": "D:\\Jarvis\\data\\neural_models\\checkpoints\\vision-13m-curriculum-breakthrough",
+      "sha256": "bbf771710b46090056e3864f8ac2f2b8ab8c53a8d79cda4353e2e5e803810909"
+    }
+  ]
+}
